@@ -1,7 +1,7 @@
 #Filename: zshrc
 
 #Created: 2008-05-22
-#Changed: 2011-01-24
+#Changed: 2011-02-14
 
 #DESCRIPTION: Zsh startup file.
 #Feel free to use any line you want.
@@ -80,12 +80,24 @@ autoload colors && colors
 # All prompt and no work makes Tobias a poor boy
 loading prompt
 
-PS1="%(!.%K{red}.)\
-%F{blue}%n%f@\
-%F{green}%m%k%f:\
-%1(j.%F{cyan}%j%f:.)\
-%(?..%F{red}%?%f:)\
-%F{cyan}%~%f%# "
+# add red background if running with privileges
+PS1="%(!.%K{red}.)"
+# (blue) username@
+PS1+="%F{blue}%n%f@"
+# (green) hostname:
+PS1+="%F{green}%m%k%f:"
+# (cyan) path with prefix, truncated to 55 characters
+PS1+="%F{cyan}%55<..<%~%<<%f"
+# newline if length(prompt)>70
+PS1+="%70(l.
+.)"
+# (cyan) :jobs (if any)
+PS1+="%1(j.:%F{cyan}%j%f.)"
+# (red) :exit code (if >0)
+PS1+="%(?..:%F{red}%?%f)"
+# % or # based on privileges
+PS1+="%# "
+
 PS2="%F{cyan}(%_)%f "
 # }}}
 
