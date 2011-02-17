@@ -1,7 +1,7 @@
 #Filename: zshrc
 
 #Created: 2008-05-22
-#Changed: 2011-02-14
+#Changed: 2011-02-17
 
 #DESCRIPTION: Zsh startup file.
 #Feel free to use any line you want.
@@ -89,8 +89,8 @@ PS1+="%F{green}%m%k%f:"
 # (cyan) path with prefix, truncated to 55 characters
 PS1+="%F{cyan}%55<..<%~%<<%f"
 # newline if length(prompt)>70
-PS1+="%70(l.
-.)"
+#PS1+="%70(l.
+#.)"
 # (cyan) :jobs (if any)
 PS1+="%1(j.:%F{cyan}%j%f.)"
 # (red) :exit code (if >0)
@@ -110,7 +110,7 @@ loading alias
 alias inst="yaourt -S"
 alias remove="yaourt -Rcs"
 alias update="yaourt -Syua"
-alias updatemirrors="sudo reflector -l 10 -o /etc/pacman.d/mirrorlist && yaourt -Syy"
+alias updatemirrors="sudo reflector -l 10 -r -o /etc/pacman.d/mirrorlist && yaourt -Syy"
 alias search="yaourt -Ss"
 alias sudo="sudo "
 alias psgrep="ps -ef | grep"
@@ -149,15 +149,15 @@ bindkey -a "u"  undo
 bindkey -a "^R" redo
 
 case $TERM in
-	linux | screen* | eterm-color)
+	linux | screen* )
 		bindkey "^[[1~" beginning-of-line
 		bindkey "^[[4~" end-of-line ;;
 	
-	*xterm* | (dt|k)term)
+	xterm* )
 		bindkey "^[[H"  beginning-of-line
 		bindkey "^[[F"  end-of-line ;;
 	
-	*rxvt* | Eterm)
+	*rxvt* )
 		bindkey "^[[7~" beginning-of-line
 		bindkey "^[[8~" end-of-line ;;
 esac
