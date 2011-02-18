@@ -58,7 +58,6 @@ setopt \
 	list_packed \
 	mail_warning  \
 	no_hup \
-	rm_star_wait \
 	share_history \
 	transient_rprompt \
 
@@ -220,6 +219,10 @@ loading functions
 warn () {
 	beep -r 3
 	echo "$bg[red]$fg_bold[white] !!! Warning !!! \a"     
+}
+
+start stop restart() {
+	sudo /etc/rc.d/$1 $0
 }
 
 preexec () {
