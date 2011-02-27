@@ -1,10 +1,11 @@
 #Filename: zshrc
 
 #Created: 2008-05-22
-#Changed: 2011-02-17
+#Changed: 2011-02-27
 
 #DESCRIPTION: Zsh startup file.
 #Feel free to use any line you want.
+#First time: run mkdir ~/.zsh
 
 #Contact: tobias@frilling-online.de
 
@@ -23,9 +24,10 @@ loading() {
 # {{{ env
 loading env
 setopt all_export
-#eval $(dircolors | sed 's/01;32/04;&/g')
 eval $(dircolors)
 PATH="$HOME/bin:$PATH"
+# gcc coloring
+[[ -d /usr/lib/colorgcc/bin ]] && PATH="/usr/lib/colorgcc/bin:$PATH"
 HISTFILE=$HOME/.zsh/zhistory
 HISTSIZE=1000
 SAVEHIST=1000
@@ -109,7 +111,7 @@ loading alias
 alias inst="yaourt -S"
 alias remove="yaourt -Rcs"
 alias update="yaourt -Syua"
-alias updatemirrors="sudo reflector -l 10 -r -o /etc/pacman.d/mirrorlist && yaourt -Syy"
+alias updatemirrors="sudo reflector -l 10 -r -o /etc/pacman.d/mirrorlist && sudo pacman-color -Syy"
 alias search="yaourt -Ss"
 alias sudo="sudo "
 alias psgrep="ps -ef | grep"
@@ -264,11 +266,12 @@ ext () {
 	for file in $@; do
 		if [[ -f $file ]]; then
 			case ${(L)file} in
+				*.tar.lrz)           lrzuntar $file ;;
+				*.lrz)               lrzip -d $file ;;
 				*.tar*|*.tgz|*.tbz)  tar -xvf $file ;;
-				*.bz2)               bzip2 -d $file ;;
-				*.gz)                gunzip -d $file ;;
+				*.bz2)               bunzip2 $file ;;
+				*.gz|*.z)            gunzip $file ;;
 				*.zip|*.cbz)         unzip $file ;;
-				*.z)                 uncompress $file ;;
 				*.rar|*.cbr)         unrar x $file ;;
 				*.xz)                unxz $file ;;
 				*) echo "'$file' Error. Please go away" ;;
