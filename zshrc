@@ -1,7 +1,7 @@
 #Filename: zshrc
 
 #Created: 2008-05-22
-#Changed: 2011-03-09
+#Changed: 2011-03-16
 
 #DESCRIPTION: Zsh startup file.
 #Feel free to use any line you want.
@@ -111,7 +111,6 @@ loading alias
 alias inst="yaourt -S"
 alias remove="yaourt -Rcs"
 alias update="yaourt -Syua"
-alias updatemirrors="sudo reflector -l 10 -r -o /etc/pacman.d/mirrorlist && sudo pacman-color -Syy"
 alias search="yaourt -Ss"
 alias sudo="sudo "
 alias psgrep="ps -ef | grep"
