@@ -1,7 +1,7 @@
 #Filename: zshrc
 
 #Created: 2008-05-22
-#Changed: 2011-02-27
+#Changed: 2011-03-09
 
 #DESCRIPTION: Zsh startup file.
 #Feel free to use any line you want.
@@ -29,8 +29,8 @@ PATH="$HOME/bin:$PATH"
 # gcc coloring
 [[ -d /usr/lib/colorgcc/bin ]] && PATH="/usr/lib/colorgcc/bin:$PATH"
 HISTFILE=$HOME/.zsh/zhistory
-HISTSIZE=1000
-SAVEHIST=1000
+HISTSIZE=10000
+SAVEHIST=10000
 PAGER="less"
 LESS="-iJM"
 VIEWER=$PAGER
