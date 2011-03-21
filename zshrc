@@ -1,7 +1,7 @@
 #Filename: zshrc
 
 #Created: 2008-05-22
-#Changed: 2011-03-16
+#Changed: 2011-03-21
 
 #DESCRIPTION: Zsh startup file.
 #Feel free to use any line you want.
@@ -10,7 +10,6 @@
 #Contact: tobias@frilling-online.de
 
 if [[ -e /usr/bin/tmux \
-	&& $TTY != /dev/tty? \
 	&& -z $TMUX ]]; then
 	exec tmux -2 new
 fi
