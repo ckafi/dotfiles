@@ -200,18 +200,6 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 	#proxy syslog www-data mldonkey sys snort
 # }}}
 
-# {{{ apps
-if [[ $SHLVL == 1 ]]; then
-	loading applications
-	if [[ -x /usr/bin/remind ]]; then
-		rem -h
-	fi
-	if [[ -x /usr/bin/todo ]]; then
-		todo --database ~/.todo
-	fi
-fi
-# }}}
-
 # {{{ functions
 loading functions
 [[ -e /etc/zsh_command_not_found ]] && . /etc/zsh_command_not_found
