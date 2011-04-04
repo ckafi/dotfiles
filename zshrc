@@ -1,7 +1,7 @@
 #Filename: zshrc
 
 #Created: 2008-05-22
-#Changed: 2011-03-21
+#Changed: 2011-04-03
 
 #DESCRIPTION: Zsh startup file.
 #Feel free to use any line you want.
@@ -11,7 +11,11 @@
 
 if [[ -e /usr/bin/tmux \
 	&& -z $TMUX ]]; then
-	exec tmux -2 new
+		if [[ $TERM == 'linux' ]]; then
+			exec tmux
+		else
+			exec tmux -2 new
+		fi
 fi
 
 loading() {
@@ -27,6 +31,8 @@ eval $(dircolors)
 PATH="$HOME/bin:$PATH"
 # gcc coloring
 [[ -d /usr/lib/colorgcc/bin ]] && PATH="/usr/lib/colorgcc/bin:$PATH"
+# for remind
+DontQueue=1
 HISTFILE=$HOME/.zsh/zhistory
 HISTSIZE=10000
 SAVEHIST=10000
@@ -111,7 +117,9 @@ alias inst="yaourt -S"
 alias remove="yaourt -Rcs"
 alias update="yaourt -Syua"
 alias search="yaourt -Ss"
+alias xext="file-roller"
 alias sudo="sudo "
+alias se="sudoedit"
 alias psgrep="ps -ef | grep"
 alias -g grep="grep --color=auto"
 alias ls="ls --color=auto"
