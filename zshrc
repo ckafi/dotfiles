@@ -1,7 +1,7 @@
 #Filename: zshrc
 
 #Created: 2008-05-22
-#Changed: 2011-04-03
+#Changed: 2011-04-08
 
 #DESCRIPTION: Zsh startup file.
 #Feel free to use any line you want.
@@ -113,24 +113,25 @@ loading alias
 	#eval "alias $i=' $i'"
 #done
 
-alias inst="yaourt -S"
-alias remove="yaourt -Rcs"
-alias update="yaourt -Syua"
-alias search="yaourt -Ss"
-alias xext="file-roller"
-alias sudo="sudo "
-alias se="sudoedit"
-alias psgrep="ps -ef | grep"
 alias -g grep="grep --color=auto"
-alias ls="ls --color=auto"
-alias ll="ls -Ahl"
-alias dirs="dirs -v"
-alias rm="rm -v"
-alias mv="mv -iv"
 alias cp="cp -iv"
+alias dirs="dirs -v"
+alias inst="yaourt -S"
+alias ll="ls -Ahl"
+alias ls="ls --color=auto"
+alias mpdplay="mplayer -nocache -prefer-ipv4 http://maschinenraum:8000"
+alias mv="mv -iv"
+alias psgrep="ps -ef | grep"
+alias remove="yaourt -Rcs"
+alias rm="rm -v"
 alias rscp="rsync -ahP --no-whole-file --inplace"
 alias rsmv="rscp --remove-source-files"
-alias mpdplay="mplayer -nocache -prefer-ipv4 http://maschinenraum:8000"
+alias se="sudoedit"
+alias search="yaourt -Ss"
+alias sudo="sudo "
+alias update="yaourt -Syua"
+alias vimwiki="vim +VimwikiIndex"
+alias xext="file-roller"
 # }}}
 
 # {{{ key-bindings
