@@ -1,7 +1,7 @@
 #Filename: zshrc
 
 #Created: 2008-05-22
-#Changed: 2011-04-08
+#Changed: 2011-04-26
 
 #DESCRIPTION: Zsh startup file.
 #Feel free to use any line you want.
@@ -113,7 +113,7 @@ loading alias
 	#eval "alias $i=' $i'"
 #done
 
-alias -g grep="grep --color=auto"
+alias -g grep="egrep --color=auto"
 alias cp="cp -iv"
 alias dirs="dirs -v"
 alias inst="yaourt -S"
