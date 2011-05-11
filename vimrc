@@ -61,15 +61,15 @@ set completeopt=menu,menuone,longest,preview
 "}}}
 
 " Autocmds {{{
-autocmd FileType zsh setlocal makeprg=chmod\ +x\ %;./%
+autocmd FileType perl   setlocal makeprg=perl\ %
 autocmd FileType python setlocal comments=:# makeprg=python3\ %
-autocmd FileType perl setlocal makeprg=perl\ %
-autocmd FileType tex setlocal fo+=aw
-autocmd BufEnter *.go setf go
-autocmd FileType scala setlocal ts=2 sw=2
+autocmd FileType scala  setlocal ts=2 sts=2 sw=2
+autocmd FileType tex    setlocal fo+=aw
+autocmd FileType zsh    setlocal makeprg=chmod\ +x\ %;./%
 
-autocmd BufNewFile,BufRead *.pde set filetype=arduino
-autocmd BufNewFile,BufRead *.scala set filetype=scala
+autocmd BufEnter *.go    setlocal filetype=go
+autocmd BufEnter *.pde   setlocal filetype=arduino
+autocmd BufEnter *.scala setlocal filetype=scala
 "}}}
 
 " color {{{
