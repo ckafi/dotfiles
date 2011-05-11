@@ -1,30 +1,10 @@
 " System-Stuff {{{
-" Vim5 and later versions support syntax highlighting. Uncommenting the
-" following enables syntax highlighting by default.
-if has("syntax")
-	syntax on
-endif
-
-" If using a dark background within the editing area and syntax highlighting
-" turn on this option as well
-set background=dark
+syntax on
+filetype plugin indent on
 
 " Uncomment the following to have Vim jump to the last position when
 " reopening a file
-if has("autocmd")
-  au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
-endif
-
-" Uncomment the following to have Vim load indentation rules and plugins
-" according to the detected filetype.
-if has("autocmd")
-	filetype plugin indent on
-endif
-
-" Source a global configuration file if available
-if filereadable("/etc/vim/vimrc.local")
-	source /etc/vim/vimrc.local
-endif
+au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 " }}}
 
 " sets {{{
@@ -73,6 +53,7 @@ autocmd BufEnter *.scala setlocal filetype=scala
 "}}}
 
 " color {{{
+set background=dark
 colorscheme relaxedgreen
 set cursorline
 highlight col79 ctermbg=red guibg=red
