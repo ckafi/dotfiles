@@ -73,7 +73,7 @@ let Tlist_Use_Right_Window = "1"
 let g:acp_completeoptPreview = 1
 let g:yankring_history_dir = "$HOME/.vim"
 let showmarks_enable = "0"
-let tlist_scala_settings = 'scala;c:classes;t:traits;T:types;m:methods;p:packages'
+let tlist_scala_settings = 'scala;c:classes;o:objects;t:traits;T:types;m:methods;p:packages'
 " für vim-latexsuite
 set grepprg=grep\ -nH\ $*
 let g:tex_flavor = "latex"
