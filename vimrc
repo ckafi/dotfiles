@@ -47,9 +47,9 @@ autocmd FileType scala  setlocal ts=2 sts=2 sw=2
 autocmd FileType tex    setlocal fo+=aw
 autocmd FileType zsh    setlocal makeprg=chmod\ +x\ %;./%
 
-autocmd BufEnter *.go    setlocal filetype=go
-autocmd BufEnter *.pde   setlocal filetype=arduino
-autocmd BufEnter *.scala setlocal filetype=scala
+autocmd BufEnter *.go    setfiletype go
+autocmd BufEnter *.pde   setfiletype arduino
+autocmd BufEnter *.scala setfiletype scala
 "}}}
 
 " color {{{
@@ -82,13 +82,13 @@ let g:Tex_ViewRule_dvi = "xdvi"
 "}}}
 
 " Keymaps {{{
-noremap   <silent> <F5>       :nohls<CR>
-noremap   <silent> <F6>       :TlistToggle<CR>
-noremap   <silent> <F7>       :NERDTreeToggle<CR>
-
-nnoremap  <silent> <F11>      :YRShow<CR>
-
-nnoremap  <silent> <leader>l  :set list!<CR>
+nmap <silent> <F5>  :nohls<CR>
+nmap <silent> <F6>  :TlistToggle<CR>
+nmap <silent> <F7>  :NERDTreeToggle<CR>
+nmap <silent> <F11> :YRShow<CR>
+nmap <silent> <C-PageUp> gt
+nmap <silent> <C-PageDown> gT
+nmap <silent> <leader>l :set list!<CR>
 " }}}
 
 " Functions {{{
