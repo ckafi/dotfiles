@@ -1,7 +1,7 @@
 #Filename: zshrc
 
 #Created: 2008-05-22
-#Changed: 2011-04-26
+#Changed: 2011-07-05
 
 #DESCRIPTION: Zsh startup file.
 #Feel free to use any line you want.
@@ -63,6 +63,7 @@ setopt \
 	hist_ignore_all_dups \
 	hist_ignore_space \
 	list_packed \
+	list_types \
 	mail_warning  \
 	no_hup \
 	share_history \
@@ -117,8 +118,8 @@ alias -g grep="egrep --color=auto"
 alias cp="cp -iv"
 alias dirs="dirs -v"
 alias inst="yaourt -S"
-alias ll="ls -Ahl"
-alias ls="ls --color=auto"
+alias ll="ls -AFhl"
+alias ls="ls -F --color=auto"
 alias mpdplay="mplayer -nocache -prefer-ipv4 http://maschinenraum:8000"
 alias mv="mv -iv"
 alias psgrep="ps -ef | grep"
