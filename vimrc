@@ -22,20 +22,20 @@ set undodir=~/.backups
 set modeline
 set visualbell
 "set list
-set listchars=tab:→\ ,eol:¬
+set listchars=tab:\|\ ,eol:¬
 set number
 set foldmethod=marker
 set foldcolumn=1
 set spelllang=de
 set backup
 set backupdir=~/.backups
-set shiftwidth=4
-set tabstop=4
+set shiftwidth=2
+set tabstop=2
 set textwidth=70
 set formatoptions=croql
-"set guifont=Envy\ Code\ R\ 11
+set guifont=Envy\ Code\ R\ 11
 "set guifont=DejaVu\ Sans\ Mono\ 9
-set guifont=Inconsolata\ 12
+"set guifont=Inconsolata\ 12
 set guioptions+=f
 set completeopt=menu,menuone,longest,preview
 "}}}
