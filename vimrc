@@ -1,10 +1,6 @@
 " System-Stuff {{{
 syntax on
 filetype plugin indent on
-
-" Uncomment the following to have Vim jump to the last position when
-" reopening a file
-au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 " }}}
 
 " sets {{{
@@ -16,23 +12,25 @@ set incsearch       " Incremental search
 set hidden          " Hide buffers when they are abandoned
 set hlsearch        " Hightlight matching strings
 set mouse=a         " Enable mouse usage (all modes)
+set linebreak
+set showbreak=…
 set scrolloff=3
 set undofile
 set undodir=~/.backups
 set modeline
 set visualbell
 "set list
-set listchars=tab:\|\ ,eol:¬
+set listchars=tab:⋮\ ,eol:⌐
 set number
 set foldmethod=marker
-set foldcolumn=1
+set foldcolumn=2
 set spelllang=de
 set backup
 set backupdir=~/.backups
 set shiftwidth=2
 set tabstop=2
 set textwidth=70
-set formatoptions=croql
+set formatoptions=crqaw
 set guifont=Envy\ Code\ R\ 11
 "set guifont=DejaVu\ Sans\ Mono\ 9
 "set guifont=Inconsolata\ 12
@@ -43,9 +41,8 @@ set completeopt=menu,menuone,longest,preview
 " Autocmds {{{
 autocmd FileType perl   setlocal makeprg=perl\ %
 autocmd FileType python setlocal comments=:# makeprg=python3\ %
-autocmd FileType scala  setlocal ts=2 sts=2 sw=2
-autocmd FileType tex    setlocal fo+=aw
 autocmd FileType zsh    setlocal makeprg=chmod\ +x\ %;./%
+autocmd FileType tex    setlocal formatoptions+=t
 
 autocmd BufEnter *.go    setfiletype go
 autocmd BufEnter *.pde   setfiletype arduino
@@ -81,14 +78,20 @@ let g:Tex_ViewRule_pdf = "evince"
 let g:Tex_ViewRule_dvi = "xdvi"
 "}}}
 
-" Keymaps {{{
-nmap <silent> <F5>  :nohls<CR>
-nmap <silent> <F6>  :TlistToggle<CR>
-nmap <silent> <F7>  :NERDTreeToggle<CR>
-nmap <silent> <F11> :YRShow<CR>
-nmap <silent> <C-PageUp> gt
-nmap <silent> <C-PageDown> gT
-nmap <silent> <leader>l :set list!<CR>
+" Keymaps and Abbrevs {{{
+nmap <F5>  :nohls<CR>
+nmap <F6>  :TlistToggle<CR>
+nmap <F7>  :NERDTreeToggle<CR>
+nmap <F11> :YRShow<CR>
+nmap <C-PageUp> :bnext<CR>
+nmap <C-PageDown> :bprevious<CR>
+nmap <C-Down> :cnext<CR>
+nmap <C-Up> :cprevious<CR>
+nmap <leader>l :set list!<CR>
+vmap < <gv
+vmap > >gv
+
+cabbrev bkm NERDTreeFromBookmark
 " }}}
 
 " Functions {{{
