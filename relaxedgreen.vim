@@ -22,7 +22,7 @@ highlight Cursor        term=reverse      ctermfg=green ctermbg=blue            
 highlight CursorIM      term=reverse      ctermfg=black ctermbg=darkgreen                 guifg=#000000 guibg=#336633
 highlight CursorColumn  term=none         ctermbg=darkred                                               guibg=#663333
 highlight CursorLine    term=none         cterm=none ctermbg=233                                        guibg=#222222
-highlight Comment       term=italic       ctermfg=darkcyan ctermbg=black                  guifg=#222222 gui=italic
+highlight Comment       term=italic       ctermfg=darkgray ctermbg=black                  guifg=#222222 gui=italic
 highlight Constant      term=underline    ctermfg=blue                                    guifg=#0099dd
 highlight Debug         term=bold         ctermfg=red ctermbg=black                       guifg=#dc0000 guibg=#000000
 highlight DiffAdd       term=reverse      ctermfg=black ctermbg=cyan                      guifg=#000000 guibg=#007200
