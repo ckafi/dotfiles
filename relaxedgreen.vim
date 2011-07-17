@@ -21,8 +21,8 @@ let g:colors_name = "relaxedgreen"
 highlight Cursor        term=reverse      ctermfg=green ctermbg=blue                      guifg=#000000 guibg=#559955
 highlight CursorIM      term=reverse      ctermfg=black ctermbg=darkgreen                 guifg=#000000 guibg=#336633
 highlight CursorColumn  term=none         ctermbg=darkred                                               guibg=#663333
-highlight CursorLine    term=none                                                                       guibg=#333366
-highlight Comment       term=italic       ctermfg=darkcyan ctermbg=black                  guifg=#00a594
+highlight CursorLine    term=none         cterm=none ctermbg=233                                        guibg=#222222
+highlight Comment       term=italic       ctermfg=darkcyan ctermbg=black                  guifg=#222222 gui=italic
 highlight Constant      term=underline    ctermfg=blue                                    guifg=#0099dd
 highlight Debug         term=bold         ctermfg=red ctermbg=black                       guifg=#dc0000 guibg=#000000
 highlight DiffAdd       term=reverse      ctermfg=black ctermbg=cyan                      guifg=#000000 guibg=#007200
@@ -33,19 +33,19 @@ highlight Directory     term=underline    ctermfg=green ctermbg=black           
 highlight Error         term=reverse,bold ctermfg=black ctermbg=red                       guifg=#000000 guibg=#dc0000
 highlight ErrorMsg      term=reverse,bold ctermfg=white ctermbg=red                       guifg=#ffffff guibg=#dc0000
 highlight Folded                          ctermfg=darkgreen ctermbg=black                 guifg=#20de20 guibg=#000000
-highlight FoldColumn                      ctermfg=darkgreen ctermbg=black                 guifg=#20de20 guibg=#000000
+highlight FoldColumn                      ctermfg=22 ctermbg=black                        guifg=#006600 guibg=#000000
 highlight Function      term=standout     ctermfg=darkgreen                               guifg=#22bb22
 highlight Identifier    term=underline    ctermfg=darkcyan                                gui=underline guifg=#008800
 highlight Ignore                          ctermfg=lightgreen                              guifg=#33bb33
 highlight IncSearch     term=reverse      ctermfg=black ctermbg=darkgreen                 guifg=#000000 guibg=#336633
-highlight LineNr        term=bold         ctermfg=green                                   guifg=#00ff00
+highlight LineNr        term=bold         ctermfg=22                                      guifg=#006600
 highlight MatchParen    term=bold         ctermbg=green                                   guifg=#009900
 highlight ModeMsg       term=bold         cterm=bold                                      gui=bold
 highlight MoreMsg       term=bold         cterm=bold                                      gui=bold
 highlight NonText                         ctermfg=brown                                   guifg=#b26818
-highlight Normal                          ctermfg=gray ctermbg=black                      guifg=#aaaaaa guibg=#000000
+highlight Normal                          ctermfg=lightgray ctermbg=black                 guifg=#cccccc guibg=#000000
 highlight Pmenu         term=reverse      ctermfg=black ctermbg=green                     guifg=#000000 guibg=#337733 
-highlight PmenuSel      term=bold         ctermfg=black  ctermbg=gray                     guifg=#000000 guibg=#999999 
+highlight PmenuSel      term=bold         ctermfg=black ctermbg=gray                      guifg=#000000 guibg=#999999 
 highlight PmenuSbar     term=reverse      ctermfg=black ctermbg=green                     guifg=#000000 guibg=#337733 
 highlight PmenuThumb    term=reverse      ctermfg=gray ctermbg=black                      guifg=#999999 guibg=#000000 
 highlight PreProc       term=standout     ctermfg=darkgreen                               guifg=#22bb22

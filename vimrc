@@ -88,6 +88,7 @@ nmap <C-PageDown> :bprevious<CR>
 nmap <C-Down> :cnext<CR>
 nmap <C-Up> :cprevious<CR>
 nmap <leader>l :set list!<CR>
+nmap <leader>s :set spell!<CR>
 vmap < <gv
 vmap > >gv
 
