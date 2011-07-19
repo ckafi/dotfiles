@@ -82,10 +82,15 @@ let g:Tex_ViewRule_dvi = "xdvi"
 
 " Keymaps and Abbrevs {{{
 " Disable arrow keys
-map <Up> ""
-map <Down> ""
-map <Left> ""
-map <Right> ""
+imap <Up> <NOP>
+imap <Down> <NOP>
+imap <Left> <NOP>
+imap <Right> <NOP>
+map <Up> <NOP>
+map <Down> <NOP>
+map <Left> <NOP>
+map <Right> <NOP>
+
 nmap <F5>  :nohls<CR>
 nmap <F6>  :TlistToggle<CR>
 nmap <F7>  :NERDTreeToggle<CR>
