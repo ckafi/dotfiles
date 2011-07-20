@@ -1,7 +1,7 @@
 #Filename: zshrc
 
 #Created: 2008-05-22
-#Changed: 2011-07-05
+#Changed: 2011-07-20
 
 #DESCRIPTION: Zsh startup file.
 #Feel free to use any line you want.
@@ -228,7 +228,7 @@ preexec () {
 }
 
 precmd () {
-	title zsh
+	title 'zsh %2~'
 	if [[ -d .hg || -n $HGDIR ]]; then
 		if hgid=$(hg identify -bnt 2>/dev/null); then
 			RPROMPT=$hgid
@@ -241,20 +241,17 @@ precmd () {
 }
 
 title () {
+	1=${(%)1}
 	1=${(V)1}
 	1=${(q)1}
 
-	local titleprompt='%m:%2~ '
-	titleprompt=${(%)titleprompt}
-	titleprompt=""
-	
 	case $TERM in
 		screen*)
-			print -n "\ek$titleprompt$1\e\\" ;;
+			print -n "\ek$1\e\\" ;;
 		linux)
 			;;
 		*)
-			print -n "\e]2;$titleprompt$1\a" ;;
+			print -n "\e]2;$1\a" ;;
 	esac
 }
 
