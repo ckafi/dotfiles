@@ -31,10 +31,10 @@ set shiftwidth=2
 set tabstop=2
 set textwidth=70
 set formatoptions=crqaw
-set guifont=Verily\ Serif\ Mono\ 11
+"set guifont=Verily\ Serif\ Mono\ 10
 "set guifont=Anonymous\ Pro\ 12
 "set guifont=Envy\ Code\ R\ 11
-"set guifont=DejaVu\ Sans\ Mono\ 9
+set guifont=DejaVu\ Sans\ Mono\ 10
 "set guifont=Inconsolata\ 12
 set guioptions+=f
 set completeopt=menu,menuone,longest,preview
@@ -53,7 +53,11 @@ autocmd BufEnter *.scala setfiletype scala
 
 " color {{{
 set background=dark
-colorscheme relaxedgreen
+if !has('gui_running')
+	let g:solarized_termcolors=256
+	let g:solarized_termtrans=1
+endif
+colorscheme solarized
 set cursorline
 highlight col79 ctermbg=red guibg=red
 match col79 /\%<80v.\%>79v/
