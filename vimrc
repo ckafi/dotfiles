@@ -106,8 +106,9 @@ nmap <C-Down> :cnext<CR>
 nmap <C-Up> :cprevious<CR>
 nmap <leader>l :set list!<CR>
 nmap <leader>s :set spell!<CR>
-vmap < <gv
-vmap > >gv
+" indent more or less in visual mode with < and >
+vnoremap < <gv
+vnoremap > >gv
 
 cabbrev bkm NERDTreeFromBookmark
 " }}}
