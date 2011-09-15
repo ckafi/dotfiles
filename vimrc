@@ -39,7 +39,6 @@ set formatoptions=crqaw
 "set guifont=Envy\ Code\ R\ 11
 set guifont=DejaVu\ Sans\ Mono\ 10
 "set guifont=Inconsolata\ 12
-set guioptions+=f
 set completeopt=menu,menuone,longest,preview
 "}}}
 
