@@ -23,7 +23,7 @@ set undofile
 set undodir=~/.backups
 set modeline
 set visualbell
-set listchars=tab:⋮\ ,eol:⌐
+set listchars=tab:⋮\ ,eol:⌐,trail:×
 set number
 set foldmethod=marker
 set foldcolumn=2
@@ -160,14 +160,4 @@ function! SummarizeTabs()
 		echohl None
 	endtry
 endfunction
-
-" from vimcast.org
-" Show syntax highlighting groups for word under cursor
-nmap <C-S-P> :call <SID>SynStack()<CR>
-function! <SID>SynStack()
-  if !exists("*synstack")
-    return
-  endif
-  echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
-endfunc
 " }}}
