@@ -20,7 +20,7 @@ set linebreak     " (Soft)wrap long lines
 set showbreak=…   " Char to show at beginning of wraped lines
 set scrolloff=3   " Number of lines above/below cursor
 set undofile
-set undodir=~/.backups
+set undodir=~/.vim/undo/
 set modeline
 set visualbell
 set listchars=tab:⋮\ ,eol:⌐,trail:×
@@ -29,7 +29,7 @@ set foldmethod=marker
 set foldcolumn=2
 set spelllang=de
 set backup
-set backupdir=~/.backups
+set backupdir=~/.vim/backups/
 set shiftwidth=2
 set tabstop=2
 set textwidth=70
