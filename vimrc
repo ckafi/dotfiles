@@ -107,6 +107,8 @@ nmap <C-Down> :cnext<CR>
 nmap <C-Up> :cprevious<CR>
 nmap <leader>l :set list!<CR>
 nmap <leader>s :set spell!<CR>
+" Make 'Y' follow 'D' and 'C' conventions
+nnoremap Y y$
 " sudo and write (if you forgot to sudo first)
 cmap w!! w !sudo tee % >/dev/null
 " indent more or less in visual mode with < and >
