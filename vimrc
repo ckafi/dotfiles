@@ -15,6 +15,7 @@ set mouse=a         " Enable mouse usage (all modes)
 set splitbelow      " For split: new window below old one
 set splitright      " For vsplit: new window right of old one
 set lazyredraw      " Do not redraw the screen during macros
+set laststatus=2    " Always show status-line
 set linebreak "
 set showbreak=…
 set scrolloff=3
