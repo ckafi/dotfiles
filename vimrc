@@ -4,21 +4,21 @@ filetype plugin indent on
 " }}}
 
 " sets {{{
-set showcmd         " Show (partial) command in status line.
-set showmatch       " Show matching brackets.
-set ignorecase      " Do case insensitive matching
-set smartcase       " Do smart case matching
-set incsearch       " Incremental search
-set hidden          " Hide buffers when they are abandoned
-set hlsearch        " Hightlight matching strings
-set mouse=a         " Enable mouse usage (all modes)
-set splitbelow      " For split: new window below old one
-set splitright      " For vsplit: new window right of old one
-set lazyredraw      " Do not redraw the screen during macros
-set laststatus=2    " Always show status-line
-set linebreak "
-set showbreak=…
-set scrolloff=3
+set showcmd       " Show (partial) command in status line.
+set showmatch     " Show matching brackets.
+set ignorecase    " Do case insensitive matching
+set smartcase     " Do smart case matching
+set incsearch     " Incremental search
+set hidden        " Hide buffers when they are abandoned
+set hlsearch      " Hightlight matching strings
+set mouse=a       " Enable mouse usage (all modes)
+set splitbelow    " For split: new window below old one
+set splitright    " For vsplit: new window right of old one
+set lazyredraw    " Do not redraw the screen during macros
+set laststatus=2  " Always show status-line
+set linebreak     " (Soft)wrap long lines
+set showbreak=…   " Char to show at beginning of wraped lines
+set scrolloff=3   " Number of lines above/below cursor
 set undofile
 set undodir=~/.backups
 set modeline
