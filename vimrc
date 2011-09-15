@@ -87,7 +87,7 @@ let g:Tex_ViewRule_dvi = "xdvi"
 
 " Keymaps and Abbrevs {{{
 " Disable arrow keys
-imap <Up> <NOP>
+imap <up> <nop>
 imap <Down> <NOP>
 imap <Left> <NOP>
 imap <Right> <NOP>
@@ -109,8 +109,11 @@ nmap <leader>s :set spell!<CR>
 " indent more or less in visual mode with < and >
 vnoremap < <gv
 vnoremap > >gv
-
-cabbrev bkm NERDTreeFromBookmark
+" center matching line from n and N
+nnoremap n nzz
+nnoremap N Nzz
+"open NERDTree bookmark with :bkm <name>
+cabbrev bkm NERDTreeFromBookmark 
 " }}}
 
 " Functions {{{
