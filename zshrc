@@ -1,7 +1,7 @@
 #Filename: zshrc
 
 #Created: 2008-05-22
-#Changed: 2011-07-20
+#Changed: 2011-09-15
 
 #DESCRIPTION: Zsh startup file.
 #Feel free to use any line you want.
@@ -31,8 +31,6 @@ eval $(dircolors)
 PATH="$HOME/bin:$PATH"
 # gcc coloring
 [[ -d /usr/lib/colorgcc/bin ]] && PATH="/usr/lib/colorgcc/bin:$PATH"
-# for remind
-DontQueue=1
 HISTFILE=$HOME/.zsh/zhistory
 HISTSIZE=10000
 SAVEHIST=10000
@@ -120,6 +118,7 @@ alias dirs="dirs -v"
 alias inst="yaourt -S"
 alias ll="ls -AFhl"
 alias ls="ls -F --color=auto"
+alias mc="mc -x"
 alias mpdplay="mplayer -nocache -prefer-ipv4 http://maschinenraum:8000"
 alias mv="mv -iv"
 alias psgrep="ps -ef | grep"
@@ -175,6 +174,8 @@ esac
 # {{{ completion
 loading completion
 # based on jdongs .zshrc v0.2.1
+# TODO: Figure our what exactly this all does.
+# No more cargo-culting.
 zstyle ':completion::complete:*' use-cache on
 zstyle ':completion::complete:*' cache-path ~/.zsh/cache
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
@@ -228,6 +229,8 @@ preexec () {
 }
 
 precmd () {
+	#for z
+	_z --add "$(pwd -P)"
 	title 'zsh %2~'
 	if [[ -d .hg || -n $HGDIR ]]; then
 		if hgid=$(hg identify -bnt 2>/dev/null); then
