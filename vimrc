@@ -19,6 +19,7 @@ set laststatus=2  " Always show status-line
 set linebreak     " (Soft)wrap long lines
 set showbreak=…   " Char to show at beginning of wraped lines
 set scrolloff=3   " Number of lines above/below cursor
+set statusline=(%n)%t%m%r%h%w%=%l\/%L,%c
 set undofile
 set undodir=~/.vim/undo/
 set modeline
