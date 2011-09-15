@@ -12,14 +12,15 @@ set incsearch       " Incremental search
 set hidden          " Hide buffers when they are abandoned
 set hlsearch        " Hightlight matching strings
 set mouse=a         " Enable mouse usage (all modes)
-set linebreak
+set splitbelow      " For split: new window below old one
+set splitright      " For vsplit: new window right of old one
+set linebreak "
 set showbreak=…
 set scrolloff=3
 set undofile
 set undodir=~/.backups
 set modeline
 set visualbell
-"set list
 set listchars=tab:⋮\ ,eol:⌐
 set number
 set foldmethod=marker
