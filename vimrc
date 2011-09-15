@@ -60,6 +60,8 @@ if !has('gui_running')
 	let g:solarized_termtrans=1
 endif
 colorscheme solarized
+highlight Folded cterm=None, gui=None
+highlight! link SpecialKey Normal
 set cursorline
 highlight col79 ctermbg=red guibg=red
 match col79 /\%<80v.\%>79v/
