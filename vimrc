@@ -93,12 +93,14 @@ let g:Tex_ViewRule_dvi = "xdvi"
 " Disable arrow keys
 imap <up> <nop>
 imap <Down> <NOP>
-imap <Left> <NOP>
-imap <Right> <NOP>
-map <Up> <NOP>
-map <Down> <NOP>
-map <Left> <NOP>
-map <Right> <NOP>
+"imap <Left> <NOP>
+"imap <Right> <NOP>
+" Move the screen up
+nnoremap <Up> <C-Y>
+" Move the screen down
+nnoremap <Down> <C-E>
+nmap <Left> <NOP>
+nmap <Right> <NOP>
 
 nmap <F5>  :nohls<CR>
 nmap <F6>  :TlistToggle<CR>
