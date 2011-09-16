@@ -110,6 +110,8 @@ nmap <C-Down> :cnext<CR>
 nmap <C-Up> :cprevious<CR>
 nmap <leader>l :set list!<CR>
 nmap <leader>s :set spell!<CR>
+" 'Focus' the current fold by folding all the others
+nnoremap <leader>z zMzv<esc>
 " Make 'Y' follow 'D' and 'C' conventions
 nnoremap Y y$
 " sudo and write (if you forgot to sudo first)
