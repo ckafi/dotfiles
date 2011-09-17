@@ -95,9 +95,8 @@ imap <up> <nop>
 imap <Down> <NOP>
 "imap <Left> <NOP>
 "imap <Right> <NOP>
-" Move the screen up
+" Move the screen up or down
 nnoremap <Up> <C-Y>
-" Move the screen down
 nnoremap <Down> <C-E>
 nmap <Left> <NOP>
 nmap <Right> <NOP>
