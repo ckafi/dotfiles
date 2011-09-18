@@ -36,7 +36,7 @@ set undofile
 set undodir=~/.vim/undo/
 set modeline
 set visualbell
-set listchars=tab:⋮\ ,eol:⌐,trail:×
+set listchars=tab:⋮\ ,eol:⌐,trail:×,extends:…,precedes:…
 set number
 set foldmethod=marker
 set foldcolumn=2
