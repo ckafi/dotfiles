@@ -31,6 +31,8 @@ set guioptions-=mrLtT
 " do smart autoindenting
 set autoindent
 set smartindent
+" toggle (no)paste with F8
+set pastetoggle=<F8>
 set statusline=(%n)%t%m%r%h%w%=%l\/%L,%c
 set undofile
 set undodir=~/.vim/undo/
@@ -121,6 +123,7 @@ nmap <Right> <NOP>
 nmap <F5>  :nohls<CR>
 nmap <F6>  :TlistToggle<CR>
 nmap <F7>  :NERDTreeToggle<CR>
+" <F8> reserved for pastetoggle
 nmap <F11> :YRShow<CR>
 nmap <C-PageUp> :bnext<CR>
 nmap <C-PageDown> :bprevious<CR>
