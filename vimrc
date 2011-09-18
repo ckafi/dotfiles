@@ -84,6 +84,8 @@ let showmarks_enable = "0"
 let tlist_scala_settings = 'scala;c:classes;o:objects;t:traits;T:types;m:methods;p:packages'
 " let VCSCommand delete hidden temporaray buffers
 let g:VCSCommanDeleteOnHide=1
+" NERDTree shows bookmars in tree
+let g:NERDTreeShowBookmarks=1
 
 " für vim-latexsuite
 set grepprg=grep\ -nH\ $*
