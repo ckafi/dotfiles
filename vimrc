@@ -24,6 +24,10 @@ set wildmenu      " Use a menu ind cmdcompl.
 " complete longest common string and start wildmenu,
 " then go to next matches
 set wildmode=longest:full,full
+" console dialogs for simple choices
+set guioptions+=c
+" remove menu-,scroll- and toolbar
+set guioptions-=mrLtT
 set statusline=(%n)%t%m%r%h%w%=%l\/%L,%c
 set undofile
 set undodir=~/.vim/undo/
