@@ -28,6 +28,9 @@ set wildmode=longest:full,full
 set guioptions+=c
 " remove menu-,scroll- and toolbar
 set guioptions-=mrLtT
+" do smart autoindenting
+set autoindent
+set smartindent
 set statusline=(%n)%t%m%r%h%w%=%l\/%L,%c
 set undofile
 set undodir=~/.vim/undo/
