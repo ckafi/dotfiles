@@ -132,6 +132,9 @@ nmap <C-Up> :cprevious<CR>
 nmap <leader>l :set list!<CR>
 nmap <leader>s :set spell!<CR>
 nmap , <leader>
+" Move up and down in the changelist
+nnoremap <C-Up> g;
+nnoremap <C-Down> g,
 " 'Focus' the current fold by folding all the others
 nnoremap <leader>z zMzv<esc>
 " Make 'Y' follow 'D' and 'C' conventions
