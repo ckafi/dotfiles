@@ -33,6 +33,7 @@ set autoindent
 set smartindent
 " toggle (no)paste with F8
 set pastetoggle=<F8>
+set dictionary=/usr/share/dict/ngerman
 set statusline=(%n)%t%m%r%h%w%=%l\/%L,%c
 set undofile
 set undodir=~/.vim/undo/
