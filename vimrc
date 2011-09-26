@@ -33,6 +33,7 @@ set autoindent
 set smartindent
 " toggle (no)paste with F8
 set pastetoggle=<F8>
+" dictionary for <C-X><C-K>
 set dictionary=/usr/share/dict/ngerman
 set statusline=(%n)%t%m%r%h%w%=%l\/%L,%c
 set undofile
@@ -87,16 +88,23 @@ match col79 /\%<80v.\%>79v/
 
 " Lets {{{
 "let NERDCompactSexyComs = 1
-let g:vimwiki_camel_case = "0"
+let g:vimwiki_camel_case = 0
 let g:timestamp_rep = "%F"
 let g:timestamp_regexp = '\v%(Changed\s*:\s*)@<=\d{4}-\d{2}-\d{2}|TIMESTAMP'
-let Tlist_Inc_Winwidth = "0"
-let Tlist_Show_Menu = "1"
-let Tlist_Use_Right_Window = "1"
-let g:acp_completeoptPreview = 1
-let g:yankring_history_dir = "$HOME/.vim"
-let showmarks_enable = "0"
+" Disable fold colmn in taglist
+let Tlist_Enable_Fold_Column = 0
+" Do not adjust window width when toggling taglist
+let Tlist_Inc_Winwidth = 0
+" Sort tags by name
+let Tlist_Sort_Type = "name"
+" Use right window for taglist
+let Tlist_Use_Right_Window = 1
+" Only show tags from current buffer
+let Tlist_Show_One_File = 1
+" Taglist settings for scala
 let tlist_scala_settings = 'scala;c:classes;o:objects;t:traits;T:types;m:methods;p:packages'
+let g:yankring_history_dir = "$HOME/.vim"
+let showmarks_enable = 0
 " let VCSCommand delete hidden temporary buffers
 let g:VCSCommandDeleteOnHide=1
 " NERDTree shows bookmars in tree
