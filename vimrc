@@ -51,11 +51,7 @@ set shiftwidth=2
 set tabstop=2
 set textwidth=70
 set formatoptions=crqaw
-"set guifont=Verily\ Serif\ Mono\ 10
-"set guifont=Anonymous\ Pro\ 12
-"set guifont=Envy\ Code\ R\ 11
-set guifont=DejaVu\ Sans\ Mono\ 10
-"set guifont=Inconsolata\ 12
+set guifont=Foo\ Mono\ 10
 set completeopt=menu,menuone,longest,preview
 "}}}
 
