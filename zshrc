@@ -30,6 +30,8 @@ eval $(dircolors)
 PATH="$HOME/bin:$PATH"
 # gcc coloring
 [[ -d /usr/lib/colorgcc/bin ]] && PATH="/usr/lib/colorgcc/bin:$PATH"
+# for z
+. /etc/profile.d/z.sh
 HISTFILE=$HOME/.zsh/zhistory
 HISTSIZE=10000
 SAVEHIST=10000
