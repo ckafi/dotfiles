@@ -31,7 +31,7 @@ PATH="$HOME/bin:$PATH"
 # gcc coloring
 [[ -d /usr/lib/colorgcc/bin ]] && PATH="/usr/lib/colorgcc/bin:$PATH"
 # for z
-. /etc/profile.d/z.sh
+[[ -e /etc/profile.d/z.sh ]] && source /etc/profile.d/z.sh
 HISTFILE=$HOME/.zsh/zhistory
 HISTSIZE=10000
 SAVEHIST=10000
@@ -215,7 +215,7 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 
 # {{{ functions
 loading functions
-[[ -e /etc/zsh_command_not_found ]] && . /etc/zsh_command_not_found
+[[ -e /etc/zsh_command_not_found ]] && source /etc/zsh_command_not_found
 
 warn () {
 	beep -r 3
