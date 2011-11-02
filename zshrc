@@ -1,14 +1,12 @@
 #Filename: zshrc
 
-#Created: 2008-05-22
-#Changed: 2011-09-15
-
 #DESCRIPTION: Zsh startup file.
 #Feel free to use any line you want.
 #First time: run mkdir ~/.zsh
 
 #Contact: tobias@frilling-online.de
 
+# {{{ tmux
 if [[ -e /usr/bin/tmux \
 	&& -z $TMUX ]]; then
 		if [[ $TERM == 'linux' ]]; then
@@ -17,6 +15,7 @@ if [[ -e /usr/bin/tmux \
 			exec tmux -2 new
 		fi
 fi
+# }}}
 
 loading() {
 	1="loading $1..."
