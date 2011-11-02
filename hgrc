@@ -1,0 +1,26 @@
+[ui]
+username = Tobias Frilling <tobias@frilling-online.de>
+merge = vimdiff
+
+[extensions]
+color =
+hgext.graphlog =
+progress =
+hgk =
+
+[alias]
+nudge = push --rev .
+slog = log --template '{rev}:{node|short} {desc|firstline}\n'
+
+[defaults]
+glog = --template 'changeset:   {rev}:{node|short} {tags}\nsummary:     {desc|firstline|fill68|tabindent|tabindent}\n\n'
+
+[diff]
+git = True
+
+[web]
+cacerts = /etc/ssl/certs/ca-certificates.crt
+
+[auth]
+bb.prefix = https://bitbucket.org/Johnny_Five/
+bb.username = Johnny_Five
