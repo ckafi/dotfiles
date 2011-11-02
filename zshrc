@@ -31,7 +31,9 @@ PATH="$HOME/bin:$PATH"
 # gcc coloring
 [[ -d /usr/lib/colorgcc/bin ]] && PATH="/usr/lib/colorgcc/bin:$PATH"
 # for z
-[[ -e /etc/profile.d/z.sh ]] && source /etc/profile.d/z.sh
+[[ -e /etc/profile.d/z.sh ]] && \
+	source /etc/profile.d/z.sh && \
+	Z=true
 HISTFILE=$HOME/.zsh/zhistory
 HISTSIZE=10000
 SAVEHIST=10000
@@ -232,7 +234,7 @@ preexec () {
 
 precmd () {
 	#for z
-	_z --add "$(pwd -P)"
+	[[ -n $Z ]] && _z --add "$(pwd -P)"
 	title 'zsh %2~'
 	if [[ -d .hg || -n $HGDIR ]]; then
 		if hgid=$(hg identify -bnt 2>/dev/null); then
