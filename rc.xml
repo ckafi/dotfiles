@@ -90,7 +90,7 @@
     </font>
     <font place="MenuItem">
       <name>sans</name>
-      <size>0</size>
+      <size>8</size>
       <!-- font size in points -->
       <weight>normal</weight>
       <!-- 'bold' or 'normal' -->
@@ -98,13 +98,16 @@
       <!-- 'italic' or 'normal' -->
     </font>
     <font place="ActiveOnScreenDisplay">
-      <name/>
+      <name>sans</name>
+      <size>8</size>
+      <weight>normal</weight>
+      <slant>normal</slant>
     </font>
     <font place="InactiveOnScreenDisplay">
       <name>Sans</name>
       <size>8</size>
-      <weight></weight>
-      <slant></slant>
+      <weight>normal</weight>
+      <slant>normal</slant>
     </font>
   </theme>
   <!--}}}-->
@@ -132,7 +135,6 @@
     <popupTime>400</popupTime>
     <!-- The number of milliseconds to show the popup for when switching
        desktops.  Set this to 0 to disable the popup. -->
-		<greedy>yes</greedy>
   </desktops>
   <!--}}}-->
   <resize>
