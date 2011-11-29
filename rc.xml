@@ -270,11 +270,13 @@
     <keybind key="W-d">
       <action name="ToggleShowDesktop"/>
     </keybind>
+		<keybind key="W-Escape">
+			<action name="GoToDesktop">
+				<to>last</to>
+			</action>
+		</keybind>
     <!--}}}-->
     <!-- {{{ Keybindings for windows -->
-    <keybind key="A-F4">
-      <action name="Close"/>
-    </keybind>
     <keybind key="A-Escape">
       <action name="Lower"/>
       <action name="FocusToBottom"/>
