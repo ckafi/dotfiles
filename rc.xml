@@ -298,16 +298,11 @@
     <keybind key="W-Tab">
       <action name="NextWindow"/>
     </keybind>
-    <keybind key="W-S-Tab">
-      <action name="PreviousWindow"/>
-    </keybind>
     <keybind key="C-W-Tab">
-      <action name="NextWindow">
-        <panels>yes</panels>
-        <desktop>yes</desktop>
-      </action>
+      <action name="NextWindow"/>
+        <allDesktops>yes</allDesktops>
     </keybind>
-    <!--}}}-->
+		<!--}}}-->
     <!-- {{{ Keybindings for running applications -->
     <keybind key="W-e">
       <action name="Execute">
