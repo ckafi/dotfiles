@@ -1,14 +1,12 @@
 #Filename: zshrc
 
-#Created: 2008-05-22
-#Changed: 2011-09-15
-
 #DESCRIPTION: Zsh startup file.
 #Feel free to use any line you want.
 #First time: run mkdir ~/.zsh
 
 #Contact: tobias@frilling-online.de
 
+# {{{ tmux
 if [[ -e /usr/bin/tmux \
 	&& -z $TMUX ]]; then
 		if [[ $TERM == 'linux' ]]; then
@@ -17,6 +15,7 @@ if [[ -e /usr/bin/tmux \
 			exec tmux -2 new
 		fi
 fi
+# }}}
 
 loading() {
 	1="loading $1..."
@@ -31,13 +30,17 @@ eval $(dircolors)
 PATH="$HOME/bin:$PATH"
 # gcc coloring
 [[ -d /usr/lib/colorgcc/bin ]] && PATH="/usr/lib/colorgcc/bin:$PATH"
+# for z
+[[ -e /etc/profile.d/z.sh ]] && \
+	source /etc/profile.d/z.sh && \
+	Z=true
 HISTFILE=$HOME/.zsh/zhistory
 HISTSIZE=10000
 SAVEHIST=10000
 PAGER="less"
 LESS="-iJM"
 VIEWER=$PAGER
-EDITOR="vi"
+EDITOR="vim"
 VISUAL=$EDITOR
 MAILPATH="/var/mail/${USER};/var/spool/mail/${USER}"
 NULLCMD="cat"
@@ -214,7 +217,7 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 
 # {{{ functions
 loading functions
-[[ -e /etc/zsh_command_not_found ]] && . /etc/zsh_command_not_found
+[[ -e /etc/zsh_command_not_found ]] && source /etc/zsh_command_not_found
 
 warn () {
 	beep -r 3
@@ -231,7 +234,7 @@ preexec () {
 
 precmd () {
 	#for z
-	_z --add "$(pwd -P)"
+	[[ -n $Z ]] && _z --add "$(pwd -P)"
 	title 'zsh %2~'
 	if [[ -d .hg || -n $HGDIR ]]; then
 		if hgid=$(hg identify -bnt 2>/dev/null); then
@@ -305,103 +308,4 @@ scalecpu () {
 	fi
 }
 
-# }}}
-
-# {{{ help
-loading help
-# Idea stolen from grml
-
-helpglob () {
-	echo -e "
-	  *      Any string
-	  ?      Any Charakter
-	  [...]  Set or Range of characters
-			 Negotiate with [^...]
-	  (...)  grouping
-	  x|y    x or y
-	  ^x     not x
-	  x~y    x, but not y
-	  x#     zero or more x
-	  x##    one or more x
-	  **/x   like (*/)#x
-
-	  Flags with (#X)PATTERN:
-	  i      case insensitive
-	  cN,M   like {N,M} in regex
-	  aN     N errors allowed"
-}
-
-helpqual () {
-	echo -e "
-	Form: (XY) at the end of glob pattern
-	/    directories
-	.    plain files
-	@    symbolic links
-	=    sockets
-	p    named pipes (FIFOs)
-	*    executable plain files (0100)
-	%    device files (character or block special)
-	%b   block special files
-	%c   character special files
-	r    owner-readable files (0400)
-	w    owner-writable files (0200)
-	x    owner-executable files (0100)
-	A    group-readable files (0040)
-	I    group-writable files (0020)
-	E    group-executable files (0010)
-	R    world-readable files (0004)
-	W    world-writable files (0002)
-	X    world-executable files (0001)
-	s    setuid files (04000)
-	S    setgid files (02000)
-	t    files with the sticky bit (01000)
-	f{spec} files with access rights matching spec
-	u<id>   owned by user <id> (number or name)
-	g<id>   owned by group <id> (number or name)
-	a<n>    file accessed exactly (n) within (-n)
-			or more then (+n) TIME [Mwhms]
-	m<n>    like a, but mod time
-	L<n>    more (+) or less (-) than <n> bytes
-			kn for kb, mn for mb
-	^    negate all following qualifiers
-	D    setopt GLOB_DOTS for current pattern"
-}
-
-helpmodi () {
-	echo -e "
-	Form (:X:Y)
-	a   file name -> absolute path
-	c   command name -> absolute path
-	e   Remove all but the extension
-	h   dirname
-	l   lowercase
-	p   print, dont execute (histexpn only)
-	r   remove file extension
-	s/l/r   Substitute r for l (global: s/l/r/:G)
-	t   basename
-	u   uppercase"
-}
-
-helphist () {
-	echo -e "
-	!   Start a history expansion
-	!!  previous command
-	!n  command-line n
-	!-n command-line minus n
-	!str    most recent command starting with str
-	!?str?  most recent command containing str
-	!#  current command line
-
-	0   The first input word (command).
-	n   The nth argument.
-	^   The first argument.  That is, 1.
-	$   The last argument.
-	%   The word matched by (the most recent) ?str search.
-	x-y A range of words; x defaults to 0.
-	*   All the arguments, or a null value if there are none.
-	x*  Abbreviates 'x-$'.
-	x-  Like 'x*' but omitting word $.
-
-	^foo^bar    like !!:s^foo^bar"
-}
 # }}}

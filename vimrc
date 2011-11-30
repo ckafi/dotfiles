@@ -35,7 +35,7 @@ set smartindent
 set pastetoggle=<F8>
 " dictionary for <C-X><C-K>
 set dictionary=/usr/share/dict/ngerman
-set statusline=(%n)%t%m%r%h%w%=%l\/%L,%c
+set statusline=(%n)%t\ %y%h%w%q[%{&fenc}]%m%r%=%l\/%L(%p),%c
 set undofile
 set undodir=~/.vim/undo/
 set modeline
