@@ -308,4 +308,21 @@ scalecpu () {
 	fi
 }
 
+cd () {
+	if [[ $# -ge 3 ]]; then
+		echo cd: too many arguments >&2
+		return 1
+	elif [[ $# -eq 2 ]]; then
+		builtin cd $1 $2
+	elif [[ $# -eq 1 ]]; then
+		if [[ -f $1 ]]; then
+			builtin cd $1:h
+		else
+			builtin cd $1
+		fi
+	else
+		builtin cd
+	fi
+}
+
 # }}}
