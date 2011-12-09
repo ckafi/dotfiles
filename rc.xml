@@ -161,7 +161,7 @@
 				 not cover when they are maximized, or when they are initially
 				 placed.  Many programs reserve space automatically, but you
 				 can use this in other cases. -->
-		<top>25</top>
+		<top>20</top>
 		<bottom>0</bottom>
 		<left>0</left>
 		<right>0</right>
