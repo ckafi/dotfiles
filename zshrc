@@ -75,6 +75,7 @@ ZOPTS=(
 )
 
 setopt $ZOPTS
+unset ZOPTS
 
 zmodload zsh/mathfunc
 zmodload zsh/complist
