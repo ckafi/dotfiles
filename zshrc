@@ -54,27 +54,28 @@ unsetopt all_export
 
 # {{{ options, modloads
 loading "options and modules"
-setopt \
-	auto_pushd \
-	correct \
-	correct_all \
-	extended_glob \
-	extended_history \
-	glob_complete \
-	hist_ignore_all_dups \
-	hist_ignore_space \
-	list_packed \
-	list_types \
-	mail_warning  \
-	no_hup \
-	share_history \
-	transient_rprompt \
 
+ZOPTS=(
+	'auto_pushd'
+	'no_beep'
+	'no_clobber'
+	'correct'
+	'correct_all'
+	'extended_glob'
+	'extended_history'
+	'glob_complete'
+	'hist_ignore_all_dups'
+	'hist_ignore_space'
+	'list_packed'
+	'list_types'
+	'mail_warning'
+	'no_hup'
+	'share_history'
+	'transient_rprompt'
+)
 
-unsetopt \
-	beep \
-	clobber \
-
+setopt $ZOPTS
+unset ZOPTS
 
 zmodload zsh/mathfunc
 zmodload zsh/complist
@@ -305,6 +306,23 @@ scalecpu () {
 			echo "$1 is not a governor"
 			return 1
 		fi
+	fi
+}
+
+cd () {
+	if [[ $# -ge 3 ]]; then
+		echo cd: too many arguments >&2
+		return 1
+	elif [[ $# -eq 2 ]]; then
+		builtin cd $1 $2
+	elif [[ $# -eq 1 ]]; then
+		if [[ -f $1 ]]; then
+			builtin cd $1:h
+		else
+			builtin cd $1
+		fi
+	else
+		builtin cd
 	fi
 }
 

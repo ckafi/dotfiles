@@ -60,6 +60,7 @@ autocmd FileType perl   setlocal makeprg=perl\ %
 autocmd FileType python setlocal comments=:# makeprg=python3\ %
 autocmd FileType zsh    setlocal makeprg=chmod\ +x\ %;./%
 autocmd FileType tex    setlocal formatoptions+=t
+autocmd FileType java   setlocal makeprg=javac\ %
 
 autocmd BufEnter *.go    setfiletype go
 autocmd BufEnter *.pde   setfiletype arduino
