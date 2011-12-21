@@ -69,11 +69,12 @@ autocmd BufEnter *.scala setfiletype scala
 
 " color {{{
 set background=dark
-if !has('gui_running')
-	let g:solarized_termcolors=256
-	let g:solarized_termtrans=1
-endif
-colorscheme solarized
+"if !has('gui_running')
+	"let g:solarized_termcolors=256
+	"let g:solarized_termtrans=1
+"endif
+"colorscheme solarized
+colorscheme molokai
 highlight Folded cterm=None, gui=None
 highlight! link SpecialKey Normal
 set cursorline
