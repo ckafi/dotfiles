@@ -204,3 +204,10 @@ function! SummarizeTabs()
 	endtry
 endfunction
 " }}}
+
+" Local config {{{
+" Source a file for local configurations
+if filereadable($HOME."/.vim/local.vim")
+	source $HOME/.vim/local.vim
+endif
+" }}}
