@@ -1,25 +1,26 @@
-Xft.lcdfilter:  lcddefault
-Xft.rgba: rgb
-Xft.hinting: true
-Xft.hintstyle:  hintfull
-Xft.antialias: true
+Xft.lcdfilter : lcddefault
+Xft.rgba      : rgb
+Xft.hinting   : true
+Xft.hintstyle : hintfull
+Xft.antialias : true
 
 Xcursor.theme: Openzone-Black-Slim
 
-URxvt.skipScroll: true
-URxvt.urgentOnBell: true
-URxvt.visualBell: true
-URxvt.scrollBar: false
-URxvt.cursorBlink: true
-!URxvt.cursorUnderline: true
-URxvt.font: xft:Foo Mono:pixelsize=13
-URxvt.pointerBlank: true
-!URxvt.transparent: true
-!URxvt.tintColor: darkblue
-URxvt.shading: 15
-URxvt.perl-ext-common: default,matcher,clipboard
-URxvt.urlLauncher: /usr/bin/firefox
-URxvt.matcher.button: 1 
+URxvt.skipScroll       : true
+URxvt.urgentOnBell     : true
+URxvt.visualBell       : true
+URxvt.scrollBar        : false
+URxvt.cursorBlink      : true
+!URxvt.cursorUnderline : true
+URxvt.font             : xft:Foo Mono:pixelsize=13
+URxvt.pointerBlank     : true
+!URxvt.transparent     : true
+!URxvt.tintColor       : darkblue
+URxvt.shading          : 15
+URxvt.perl-ext-common  : default,url-select,clipboard
+URxvt.keysym.M-u       : perl:url-select:select_next
+URxvt.underlineURLs    : false
+URxvt.urlLauncher      : /usr/bin/firefox
 
 
 XTerm*faceName: Terminus
@@ -53,5 +54,5 @@ XTerm*faceSize: 10
 *cursorColor : #8F8F8F
 *background  : #1B1D1E
 *foreground  : #F8F8F2
-*fadeColor   : black
-*fading: 40
+*fadeColor   : #000000
+*fading      : 40
