@@ -8,7 +8,8 @@
 
 # {{{ tmux
 if [[ -e /usr/bin/tmux \
-	&& -z $TMUX ]]; then
+	&& -z $TMUX \
+	&& -z $SUDO_UID ]]; then
 		if [[ $TERM == 'linux' ]]; then
 			exec tmux
 		else
