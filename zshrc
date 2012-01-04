@@ -223,10 +223,6 @@ warn () {
 	echo "$bg[red]$fg_bold[white] !!! Warning !!! \a"     
 }
 
-start stop restart() {
-	sudo /etc/rc.d/$1 $0
-}
-
 preexec () {
 	title $1
 }
