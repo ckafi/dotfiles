@@ -131,10 +131,8 @@ alias rm="rm -v"
 alias rscp="rsync -ahP --no-whole-file --inplace"
 alias rsmv="rscp --remove-source-files"
 alias rvim="gvim --remote-silent"
-alias se="sudoedit"
 alias sudo="sudo "
 alias vimwiki="vim +VimwikiIndex"
-alias xext="file-roller"
 # }}}
 
 # {{{ key-bindings
