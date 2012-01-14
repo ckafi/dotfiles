@@ -21,7 +21,7 @@ URxvt.perl-ext-common  : default,url-select,clipboard
 URxvt.keysym.M-u       : perl:url-select:select_next
 URxvt.underlineURLs    : false
 URxvt.urlLauncher      : /usr/bin/firefox
-URxvt.termName         : xterm-256color
+URxvt.termName         : rxvt-256color
 
 
 XTerm*faceName: Terminus
