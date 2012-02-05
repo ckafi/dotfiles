@@ -8,7 +8,8 @@
 
 # {{{ tmux
 if [[ -e /usr/bin/tmux \
-	&& -z $TMUX ]]; then
+	&& -z $TMUX \
+	&& -z $SUDO_UID ]]; then
 		if [[ $TERM == 'linux' ]]; then
 			exec tmux
 		else
@@ -119,7 +120,6 @@ loading alias
 alias -g grep="egrep --color=auto"
 alias cp="cp -iv"
 alias dirs="dirs -v"
-alias inst="yaourt -S"
 alias ll="ls -AFhl"
 alias ls="ls -F --color=auto"
 alias mc="mc -x"
@@ -127,17 +127,13 @@ alias mpdplay="mplayer -nocache -prefer-ipv4 http://maschinenraum:8000"
 alias mv="mv -iv"
 alias pacman="pacman-color "
 alias psgrep="ps -ef | grep"
-alias remove="yaourt -Rcs"
 alias rm="rm -v"
 alias rscp="rsync -ahP --no-whole-file --inplace"
 alias rsmv="rscp --remove-source-files"
 alias rvim="gvim --remote-silent"
-alias se="sudoedit"
-alias search="yaourt -Ss"
+alias sctl="systemctl"
 alias sudo="sudo "
-alias update="yaourt -Syua"
 alias vimwiki="vim +VimwikiIndex"
-alias xext="file-roller"
 # }}}
 
 # {{{ key-bindings
@@ -224,10 +220,6 @@ loading functions
 warn () {
 	beep -r 3
 	echo "$bg[red]$fg_bold[white] !!! Warning !!! \a"     
-}
-
-start stop restart() {
-	sudo /etc/rc.d/$1 $0
 }
 
 preexec () {
