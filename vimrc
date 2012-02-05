@@ -78,8 +78,8 @@ colorscheme molokai
 highlight Folded cterm=None, gui=None
 highlight! link SpecialKey Normal
 set cursorline
-highlight col79 ctermbg=red guibg=red
-match col79 /\%<80v.\%>79v/
+highlight col80 ctermbg=red guibg=red
+match col80 /\%<81v.\%>80v/
 "highlight SpecialKey cterm=none guifg=#202020
 "highlight NonText guifg=#202020
 "}}}
