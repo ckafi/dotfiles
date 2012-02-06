@@ -50,7 +50,7 @@ set backupdir=~/.vim/backups/
 set shiftwidth=2
 set tabstop=2
 set textwidth=70
-set formatoptions=crqaw
+set formatoptions=crqnl
 set guifont=Foo\ Mono\ 10
 set completeopt=menu,menuone,longest,preview
 "}}}

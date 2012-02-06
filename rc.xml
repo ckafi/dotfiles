@@ -130,11 +130,13 @@
 			<name>4</name>
 			<name>5</name>
 			<name>6</name>
-			<name>4</name>
+			<name>7</name>
 		</names>
 		<popupTime>400</popupTime>
 		<!-- The number of milliseconds to show the popup for when switching
 			 desktops.  Set this to 0 to disable the popup. -->
+		<!-- For openbox-multihead: make desktop switching "greedy" -->
+		<greedy>yes</greedy>
 	</desktops>
 	<!--}}}-->
 	<resize>
