@@ -1,0 +1,59 @@
+Xft.lcdfilter : lcddefault
+Xft.rgba      : rgb
+Xft.hinting   : true
+Xft.hintstyle : hintfull
+Xft.antialias : true
+
+Xcursor.theme: Openzone-Black-Slim
+
+URxvt.skipScroll       : true
+URxvt.urgentOnBell     : true
+URxvt.visualBell       : true
+URxvt.scrollBar        : false
+URxvt.cursorBlink      : true
+!URxvt.cursorUnderline : true
+URxvt.font             : xft:Foo Mono:pixelsize=13
+URxvt.pointerBlank     : true
+!URxvt.transparent     : true
+!URxvt.tintColor       : darkblue
+URxvt.shading          : 15
+URxvt.perl-ext-common  : default,url-select,clipboard
+URxvt.keysym.M-u       : perl:url-select:select_next
+URxvt.underlineURLs    : false
+URxvt.urlLauncher      : /usr/bin/firefox
+URxvt.termName         : rxvt-256color
+
+
+XTerm*faceName: Terminus
+XTerm*faceSize: 10
+
+!black
+*color0      : #1B1D1E
+*color8      : #293729
+!red
+*color1      : #EF5939
+*color9      : #EF2A00
+!green
+*color2      : #A6E22E
+*color10     : #55E22E
+!yellow
+*color3      : #E6DB74
+*color11     : #FDD41F
+!blue
+*color4      : #9A9AF5
+*color12     : #7070F0
+!magenta
+*color5      : #F92672
+*color13     : #960050
+!cyan
+*color6      : #28F5F5
+*color14     : #00FFFF
+!white
+*color7      : #F8F8F2
+*color15     : #FFFFFF
+
+*cursorColor : #8F8F8F
+*background  : #1B1D1E
+*foreground  : #F8F8F2
+*fadeColor   : #000000
+*fading      : 40

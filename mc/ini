@@ -3,7 +3,7 @@
 verbose=1
 pause_after_run=2
 shell_patterns=0
-auto_save_setup=1
+auto_save_setup=0
 auto_menu=0
 use_internal_view=0
 use_internal_edit=0
