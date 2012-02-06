@@ -111,8 +111,12 @@ let g:NERDTreeShowBookmarks=1
 " für vim-latexsuite
 set grepprg=grep\ -nH\ $*
 let g:tex_flavor = "latex"
-let g:Tex_ViewRule_pdf = "evince"
+let g:Tex_ViewRule_pdf = "zathura"
 let g:Tex_ViewRule_dvi = "xdvi"
+let g:Tex_DefaultTargetFormat = "pdf"
+let g:Tex_CompileRule_dvi = 'rubber $*'
+let g:Tex_CompileRule_ps = 'rubber -p $*'
+let g:Tex_CompileRule_pdf = 'rubber -d $*'
 "}}}
 
 " Keymaps and Abbrevs {{{
