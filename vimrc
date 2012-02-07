@@ -130,6 +130,9 @@ nnoremap <Up> <C-Y>
 nnoremap <Down> <C-E>
 nmap <Left> <NOP>
 nmap <Right> <NOP>
+" Esc is so far away. There aren't that many word with two j's, are
+" there?
+inoremap jj <Esc>
 
 nmap <F5>  :nohls<CR>
 nmap <F6>  :TlistToggle<CR>
