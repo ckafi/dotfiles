@@ -177,16 +177,6 @@ cabbrev vdiff  VCSVimDiff
 " }}}
 
 " Functions {{{
-function! Header()
-	let header = readfile($HOME . "/.vim/header-template")
-	call append(line(".")-1, header)
-	execute ":%s_<<file>>_" . bufname("%")
-	execute ":%s_<<date>>_" . strftime("%F")
-	execute ":%s_<<year>>_" . strftime("%Y")
-	.-11,.+12call NERDComment(0, 'sexy')
-endfunction
-ca header call Header()
-
 " from vimcast.org
 " Set tabstop, softtabstop and shiftwidth to the same value
 command! -nargs=* Stab call Stab()
