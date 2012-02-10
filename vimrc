@@ -49,7 +49,7 @@ set backup
 set backupdir=~/.vim/backups/
 set shiftwidth=2
 set tabstop=2
-set textwidth=70
+set textwidth=80
 set formatoptions=crqnl
 set guifont=Foo\ Mono\ 10
 set completeopt=menu,menuone,longest,preview
@@ -78,8 +78,8 @@ colorscheme molokai
 highlight Folded cterm=None, gui=None
 highlight! link SpecialKey Normal
 set cursorline
-highlight col80 ctermbg=red guibg=red
-match col80 /\%<81v.\%>80v/
+highlight col81 ctermbg=red guibg=red
+match col81 /\%<82v.\%>81v/
 "highlight SpecialKey cterm=none guifg=#202020
 "highlight NonText guifg=#202020
 "}}}
@@ -131,8 +131,11 @@ nnoremap <Down> <C-E>
 nmap <Left> <NOP>
 nmap <Right> <NOP>
 " Esc is so far away. There aren't that many word with two j's, are
-" there?
+" there? Alternativ: CTRL-c
 inoremap jj <Esc>
+
+let g:LustyJugglerDefaultMappings = 0
+nnoremap ö :LustyJuggler<CR>
 
 nmap <F5>  :nohls<CR>
 nmap <F6>  :TlistToggle<CR>
