@@ -41,6 +41,8 @@ set undodir=~/.vim/undo/
 set modeline
 set visualbell
 set listchars=tab:⋮\ ,eol:⌐,trail:×,extends:…,precedes:…
+" this disables chars for stl, diff, fold etc.
+set fillchars=vert:\|,diff:\ 
 set number
 set foldmethod=marker
 set foldcolumn=2
