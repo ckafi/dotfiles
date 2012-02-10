@@ -46,6 +46,8 @@ set fillchars=vert:\|,diff:\
 set number
 set foldmethod=marker
 set foldcolumn=2
+" text for the folded code
+set foldtext=MyFoldText()
 set spelllang=de
 set backup
 set backupdir=~/.vim/backups/
@@ -177,6 +179,23 @@ cabbrev vdiff  VCSVimDiff
 " }}}
 
 " Functions {{{
+" get the text for 'foldtext'
+function! MyFoldText ()
+	" number of lines of the fold
+	let flength = 1 + v:foldend - v:foldstart
+	let flstring = "(" . flength . " lines)"
+	" deletes fold markers
+	let fname = substitute(getline(v:foldstart), "{*", "", "g")
+	" change tabs to spaces, so that the foltext is correctly indented
+	let fname = substitute(fname, "\t", repeat(" ",&tabstop), "g")
+	" the length of a windowline
+	let lwidth = winwidth(0) - &foldcolumn - (&number ? &numberwidth : 0)
+	" calculate number of spaces (flstring right aligned)
+	let fillwidth = lwidth - strdisplaywidth(fname) - strdisplaywidth(flstring)
+	let ftext = fname . repeat(" ",fillwidth) . flstring
+	return ftext
+endfunction
+
 " from vimcast.org
 " Set tabstop, softtabstop and shiftwidth to the same value
 command! -nargs=* Stab call Stab()
