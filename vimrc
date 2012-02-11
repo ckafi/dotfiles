@@ -21,8 +21,7 @@ set linebreak     " (Soft)wrap long lines
 set showbreak=…   " Char to show at beginning of wraped lines
 set scrolloff=3   " Number of lines above/below cursor
 set wildmenu      " Use a menu ind cmdcompl.
-" complete longest common string and start wildmenu,
-" then go to next matches
+" complete longest common string and start wildmenu, then go to next matches
 set wildmode=longest:full,full
 " console dialogs for simple choices
 set guioptions+=c
@@ -181,18 +180,29 @@ cabbrev vdiff  VCSVimDiff
 " Functions {{{
 " get the text for 'foldtext'
 function! MyFoldText ()
+	let ftextmarker = ''
 	" number of lines of the fold
 	let flength = 1 + v:foldend - v:foldstart
-	let flstring = "(" . flength . " lines)"
-	" deletes fold markers
-	let fname = substitute(getline(v:foldstart), "{*", "", "g")
-	" change tabs to spaces, so that the foltext is correctly indented
-	let fname = substitute(fname, "\t", repeat(" ",&tabstop), "g")
+	let flstring = '(' . flength . ' lines)'
+	" get the first folded line
+	let fname = getline(v:foldstart)
+	" delete fold markers
+	let fname = substitute(fname, '{\{3}\d\?', '', 'g')
+	" delete leading comment marker
+	let fname = substitute(fname, '^\s*[#"%!;]\|\/\/\|--', '', '')
+	" delete leading whitespace
+	let fname = substitute(fname, '^\s*', '', '')
+	" append ftextmarker and indentation
+	" this uses the correct amount of spaces even if you use tabs
+	let fname = repeat(' ', indent(v:foldstart)) . ftextmarker . fname
 	" the length of a windowline
-	let lwidth = winwidth(0) - &foldcolumn - (&number ? &numberwidth : 0)
-	" calculate number of spaces (flstring right aligned)
-	let fillwidth = lwidth - strdisplaywidth(fname) - strdisplaywidth(flstring)
-	let ftext = fname . repeat(" ",fillwidth) . flstring
+	let lwidth = winwidth(0) - &foldcolumn
+		\ - (&number || &relativenumber ? &numberwidth : 0)
+	" calculate number of spaces for filling (flstring right aligned)
+	let fillwidth = lwidth - strdisplaywidth(fname)
+		\ - strdisplaywidth(flstring)
+
+	let ftext = fname . repeat(' ',fillwidth) . flstring
 	return ftext
 endfunction
 
