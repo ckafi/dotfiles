@@ -133,6 +133,8 @@ alias rsmv="rscp --remove-source-files"
 alias rvim="gvim --remote-silent"
 alias sctl="systemctl"
 alias sudo="sudo "
+alias t="task"
+alias ts="rlwrap -i -r -C task task shell"
 alias vimwiki="vim +VimwikiIndex"
 # }}}
 
