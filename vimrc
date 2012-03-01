@@ -106,6 +106,8 @@ let Tlist_Show_One_File = 1
 let tlist_scala_settings = 'scala;c:classes;o:objects;t:traits;T:types;m:methods;p:packages'
 let g:yankring_history_dir = "$HOME/.vim"
 let showmarks_enable = 0
+" use user, omni or file compl depending on context
+let g:SuperTabDefaultCompletionType = "context"
 " let VCSCommand delete hidden temporary buffers
 let g:VCSCommandDeleteOnHide=1
 " NERDTree shows bookmars in tree

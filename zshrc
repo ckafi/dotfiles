@@ -133,6 +133,8 @@ alias rsmv="rscp --remove-source-files"
 alias rvim="gvim --remote-silent"
 alias sctl="systemctl"
 alias sudo="sudo "
+alias t="task"
+alias ts="rlwrap -i -r -C task task shell"
 alias vimwiki="vim +VimwikiIndex"
 # }}}
 
@@ -231,8 +233,9 @@ precmd () {
 	[[ -n $Z ]] && _z --add "$(pwd -P)"
 	title 'zsh %2~'
 	if [[ -d .hg || -n $HGDIR ]]; then
-		if hgid=$(hg identify -bnt 2>/dev/null); then
-			RPROMPT=$hgid
+		if hgid=$(hg identify -nbB 2>/dev/null); then
+			qtop=" $(hg qtop 2>/dev/null)" || qtop=''
+			RPROMPT="$hgid$qtop"
 			HGDIR=true
 		else
 			unset RPROMPT
