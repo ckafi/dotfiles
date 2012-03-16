@@ -56,6 +56,7 @@ set textwidth=80
 set formatoptions=crqnl
 set guifont=Foo\ Mono\ 10
 set completeopt=menu,menuone,longest,preview
+set cryptmethod=blowfish  " default cipher for encryted files
 "}}}
 
 " Autocmds {{{
