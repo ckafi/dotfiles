@@ -145,6 +145,8 @@ inoremap jj <Esc>
 let g:LustyJugglerDefaultMappings = 0
 nnoremap ö :LustyJuggler<CR>
 
+" Toggle graphical undo window
+nmap <F4>  :GundoToggle<CR>
 nmap <F5>  :nohls<CR>
 nmap <F6>  :TlistToggle<CR>
 nmap <F7>  :NERDTreeToggle<CR>
