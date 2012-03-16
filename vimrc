@@ -1,94 +1,95 @@
-" System-Stuff {{{
-set nocompatible
-syntax on
-filetype plugin indent on
+" Prologue {{{
+set nocompatible          " Don't make Vim vi-compatible
+syntax enable             " Enable syntax highlighting
+filetype plugin indent on " Load filetype specific plugin and indent files
 " }}}
 
-" sets {{{
-set showcmd       " Show (partial) command in status line.
-set showmatch     " Show matching brackets.
-set ignorecase    " Do case insensitive matching
-set smartcase     " Do smart case matching
-set incsearch     " Incremental search
-set hidden        " Hide buffers when they are abandoned
-set hlsearch      " Hightlight matching strings
-set mouse=a       " Enable mouse usage (all modes)
-set splitbelow    " For split: new window below old one
-set splitright    " For vsplit: new window right of old one
-set lazyredraw    " Do not redraw the screen during macros
-set laststatus=2  " Always show status-line
-set linebreak     " (Soft)wrap long lines
-set showbreak=…   " Char to show at beginning of wraped lines
-set scrolloff=3   " Number of lines above/below cursor
-set wildmenu      " Use a menu ind cmdcompl.
-" complete longest common string and start wildmenu, then go to next matches
-set wildmode=longest:full,full
-" console dialogs for simple choices
-set guioptions+=c
-" remove menu-,scroll- and toolbar
-set guioptions-=mrLtT
-" do smart autoindenting
-set autoindent
-set smartindent
-" toggle (no)paste with F8
-set pastetoggle=<F8>
-" dictionary for <C-X><C-K>
-set dictionary=/usr/share/dict/ngerman
+" Settings {{{
+set showcmd               " Show (partial) command in status line.
+set showmatch             " Show matching brackets.
+set ignorecase            " Do case insensitive matching
+set smartcase             " Do smart case matching
+set incsearch             " Do an incremental search
+set hlsearch              " Highlight matching strings when searching
+set hidden                " Hide buffers when they are abandoned
+set mouse=a               " Enable mouse usage (all modes)
+set splitbelow            " For split: new window below old one
+set splitright            " For vsplit: new window right of old one
+set lazyredraw            " Do not redraw the screen during macros
+set scrolloff=3           " Number of lines always above/below cursor
+set wildmenu              " Use a menu in command completion
+set wildmode=longest:full " Complete longest common string and start wildmenu
+set wildmode+=full        " ... then go to next full match
+set autoindent            " Use auto indenting
+set smartindent           " ... and smart-indenting
+set pastetoggle=<F8>      " Toggle (no)paste with F8
+set undofile              " Save undo history
+set undodir=~/.vim/undo/  " Directory for undo files
+set backup                " Save backups
+set backupdir=~/.vim/backups/ " Directory for backup files
+set modeline              " Enable modelines
+set visualbell            " Visual bell instead of beeping
+set listchars=tab:⋮\      " Character in list mode for tab
+set listchars+=eol:⌐      " ... end of line
+set listchars+=trail:×    " ... trailing whitespace
+set listchars+=precedes:… " ... start and 
+set listchars+=extends:…  " ... end of a truncated display line
+set fillchars=vert:\|     " Disable annoying chars for stl, diff, fold etc.
+set fillchars+=diff:\     " ...
+set number                " Show line numbers
+set cursorline            " Highlight the screen line of the cursor
+set foldmethod=marker     " Use markers for folding
+set foldcolumn=2          " Width of the fold column
+set foldtext=MyFoldText() " Function for the text on closed folds
+set spelllang=de          " Language for spell checking
+set shiftwidth=2          " Number of spaces for each (auto)indent
+set tabstop=2             " Number of spaces a Tab counts for in file
+set linebreak             " (Soft)wrap long lines
+set showbreak=…           " Char to show at beginning of wrapped lines
+set textwidth=80          " Max. length of line for auto-formatting
+set formatoptions=c       " Auto-wrap comments
+set formatoptions+=r      " Inset comment leader after <Enter>
+set formatoptions+=q      " Allow formatting of comments with 'gq'
+set formatoptions+=n      " Recognize numbered lists
+set formatoptions+=l      " Don't break already too long lines
+set guifont=Foo\ Mono\ 10 " Font for GVim
+set guioptions+=c         " Use console for simple dialogues in GVim
+set guioptions-=mrLtT     " Remove menu-,scroll- and toolbar from GUI
+set completeopt=menu      " Use a popup menu for completion
+set completeopt+=menuone  " ... also when there is only one match
+set completeopt+=longest  " Only insert the longest common text
+set completeopt+=preview  " Show information about current item in preview
+set cryptmethod=blowfish  " Default cipher for encryted files
+set laststatus=2          " Always show status line
 set statusline=(%n)%f\ %<%y%h%w%q[%{&fenc}][%{&ff}]%m%r%=%c,%l\/%L(%P)
-set undofile
-set undodir=~/.vim/undo/
-set modeline
-set visualbell
-set listchars=tab:⋮\ ,eol:⌐,trail:×,extends:…,precedes:…
-" this disables chars for stl, diff, fold etc.
-set fillchars=vert:\|,diff:\ 
-set number
-set foldmethod=marker
-set foldcolumn=2
-" text for the folded code
-set foldtext=MyFoldText()
-set spelllang=de
-set backup
-set backupdir=~/.vim/backups/
-set shiftwidth=2
-set tabstop=2
-set textwidth=80
-set formatoptions=crqnl
-set guifont=Foo\ Mono\ 10
-set completeopt=menu,menuone,longest,preview
-set cryptmethod=blowfish  " default cipher for encryted files
+set dictionary=/usr/share/dict/ngerman " Dictionary for <C-X><C-K>
 "}}}
 
 " Autocmds {{{
-autocmd FileType perl   setlocal makeprg=perl\ %
-autocmd FileType python setlocal comments=:# makeprg=python3\ %
-autocmd FileType zsh    setlocal makeprg=chmod\ +x\ %;./%
-autocmd FileType tex    setlocal formatoptions+=t
-autocmd FileType java   setlocal makeprg=javac\ %
+autocmd FileType perl    setlocal makeprg=perl\ %
+autocmd FileType python  setlocal comments=:# makeprg=python3\ %
+autocmd FileType zsh     setlocal makeprg=chmod\ +x\ %;./%
+autocmd FileType tex     setlocal formatoptions+=t
+autocmd FileType java    setlocal makeprg=javac\ %
 
 autocmd BufEnter *.go    setfiletype go
 autocmd BufEnter *.pde   setfiletype arduino
 autocmd BufEnter *.scala setfiletype scala
 "}}}
 
-" color {{{
+" Color-Settings {{{
+" Use colors for a dark background
 set background=dark
-"if !has('gui_running')
-	"let g:solarized_termcolors=256
-	"let g:solarized_termtrans=1
-"endif
-"colorscheme solarized
+" Load color scheme
 colorscheme molokai
+" Don't highlight closed folds
 highlight Folded cterm=None, gui=None
-highlight! link SpecialKey Normal
-set cursorline
+" Highlight the 81st column if there is a character
 highlight col81 ctermbg=red guibg=red
 match col81 /\%<82v.\%>81v/
-"highlight SpecialKey cterm=none guifg=#202020
-"highlight NonText guifg=#202020
 "}}}
 
-" Lets {{{
+" Variable Settings {{{
 "let NERDCompactSexyComs = 1
 let g:vimwiki_camel_case = 0
 let g:timestamp_rep = "%F"
@@ -114,7 +115,7 @@ let g:VCSCommandDeleteOnHide=1
 " NERDTree shows bookmars in tree
 let g:NERDTreeShowBookmarks=1
 
-" für vim-latexsuite
+" for Vim-Latexsuite
 set grepprg=grep\ -nH\ $*
 let g:tex_flavor = "latex"
 let g:Tex_ViewRule_pdf = "zathura"
@@ -163,7 +164,7 @@ nnoremap <leader>z zMzv<esc>
 " Make 'Y' follow 'D' and 'C' conventions
 nnoremap Y y$
 " sudo and write (if you forgot to sudo first)
-cmap w!! w !sudo tee % >/dev/null
+cmap w!! w <esc>!sudo tee % >/dev/null
 " indent more or less in visual mode with < and >
 vnoremap < <gv
 vnoremap > >gv
@@ -239,7 +240,7 @@ function! SummarizeTabs()
 endfunction
 " }}}
 
-" Local config {{{
+" Local config Files {{{
 " Source a file for local configurations
 if filereadable($HOME."/.vim/local.vim")
 	source $HOME/.vim/local.vim
