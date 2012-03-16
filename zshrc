@@ -167,7 +167,8 @@ case $TERM in
 	
 	xterm* )
 		bindkey "^[[H"  beginning-of-line
-		bindkey "^[[F"  end-of-line ;;
+		bindkey "^[[F"  end-of-line
+		bindkey "^H"    vi-backward-delete-char ;;
 	
 	*rxvt* )
 		bindkey "^[[7~" beginning-of-line
