@@ -92,23 +92,23 @@ loading prompt
 
 # add red background if running with privileges
 PS1="%(!.%K{red}.)"
-# (blue) username@
-PS1+="%F{blue}%n%f@"
-# (green) hostname:
-PS1+="%F{green}%m%k%f:"
-# (cyan) path with prefix, truncated to 55 characters
-PS1+="%F{cyan}%55<..<%~%<<%f"
+# username@
+PS1+="%F{161}%n%f@"
+# hostname:
+PS1+="%F{208}%m%k%f:"
+# path with prefix, truncated to 55 characters
+PS1+="%F{118}%55<..<%~%<<%f"
 # newline if length(prompt)>70
 #PS1+="%70(l.
 #.)"
-# (cyan) :jobs (if any)
-PS1+="%1(j.:%F{cyan}%j%f.)"
-# (red) :exit code (if >0)
-PS1+="%(?..:%F{red}%?%f)"
+# :jobs (if any)
+PS1+="%1(j.:%F{118}%j%f.)"
+# :exit code (if >0)
+PS1+="%(?..:%F{196}%?%f)"
 # % or # based on privileges
 PS1+="%# "
 
-PS2="%F{cyan}(%_)%f "
+PS2="%F{118}(%_)%f "
 # }}}
 
 # {{{ alias
@@ -236,7 +236,7 @@ precmd () {
 	if [[ -d .hg || -n $HGDIR ]]; then
 		if hgid=$(hg identify -nbB 2>/dev/null); then
 			qtop=" $(hg qtop 2>/dev/null)" || qtop=''
-			RPROMPT="$hgid$qtop"
+			RPROMPT="%F{118}$hgid$qtop%f"
 			HGDIR=true
 		else
 			unset RPROMPT
