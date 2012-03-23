@@ -93,9 +93,9 @@ loading prompt
 # add red background if running with privileges
 PS1="%(!.%K{red}.)"
 # username@
-PS1+="%F{161}%n%f@"
+PS1+="%F{161}%n%k%f@"
 # hostname:
-PS1+="%F{208}%m%k%f:"
+PS1+="%F{208}%m%f:"
 # path with prefix, truncated to 55 characters
 PS1+="%F{118}%55<..<%~%<<%f"
 # newline if length(prompt)>70
