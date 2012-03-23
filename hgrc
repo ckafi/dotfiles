@@ -2,6 +2,10 @@
 username = Tobias Frilling <tobias@frilling-online.de>
 merge = vimdiff
 
+[merge-tools]
+vimdiff.executable = vim
+vimdiff.args = -f -d -c "wincmd J" "$output" "$local" "$base" "$other"
+
 [extensions]
 color =
 hgext.graphlog =
