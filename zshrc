@@ -120,6 +120,7 @@ loading alias
 	#eval "alias $i=' $i'"
 #done
 
+alias g="git status -sb"
 alias -g grep="egrep --color=auto"
 alias cp="cp -iv"
 alias dirs="dirs -v"
