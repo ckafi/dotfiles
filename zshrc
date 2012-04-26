@@ -236,16 +236,6 @@ precmd () {
 	#for z
 	[[ -n $Z ]] && _z --add "$(pwd -P)"
 	title 'zsh %2~'
-	if [[ -d .hg || -n $HGDIR ]]; then
-		if hgid=$(hg identify -nbB 2>/dev/null); then
-			qtop=" $(hg qtop 2>/dev/null)" || qtop=''
-			RPROMPT="%F{118}$hgid$qtop%f"
-			HGDIR=true
-		else
-			unset RPROMPT
-			unset HGDIR
-		fi
-	fi
 }
 
 title () {
