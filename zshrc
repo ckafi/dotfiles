@@ -285,20 +285,6 @@ up () {
 	cd $ups
 }
 
-scalecpu () {
-	if [[ -z $1 ]]; then
-		cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_cur_freq
-		cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
-	else
-		if [[ $1 == "ondemand" || $1 == "powersave" || $1 == "performance" ]]; then
-			echo $1 | sudo tee /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
-		else
-			echo "$1 is not a governor"
-			return 1
-		fi
-	fi
-}
-
 cd () {
 	if [[ $# -ge 3 ]]; then
 		echo cd: too many arguments >&2
