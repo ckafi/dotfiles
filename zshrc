@@ -29,6 +29,9 @@ loading env
 setopt all_export
 eval $(dircolors)
 PATH="$HOME/bin:$PATH"
+# syntax highlightung
+[[ -e /usr/share/zsh/plugins/zsh-syntax-highlight/zsh-syntax-highlighting.zsh ]] && \
+	source /usr/share/zsh/plugins/zsh-syntax-highlight/zsh-syntax-highlighting.zsh
 # gcc coloring
 [[ -d /usr/lib/colorgcc/bin ]] && PATH="/usr/lib/colorgcc/bin:$PATH"
 # for z
