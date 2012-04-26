@@ -237,6 +237,12 @@ precmd () {
 	#for z
 	[[ -n $Z ]] && _z --add "$(pwd -P)"
 	title 'zsh %2~'
+	if git branch &>/dev/null; then
+		update_git_prompt
+		RPROMPT=$git_prompt
+	else
+		unset RPROMPT
+	fi
 }
 
 title () {
@@ -252,6 +258,34 @@ title () {
 		*)
 			print -n "\e]2;$1\a" ;;
 	esac
+}
+
+update_git_prompt () {
+	local git_status
+	local git_branch_name
+	local git_commit_hash
+	local git_tlights
+
+	git_status=$(git status)
+
+	if [[ git_status =~ '# Initial commit' ]]; then
+		git_prompt="$fg[green]Initial$fg[default]"
+		return
+	fi
+
+	git_branch_name=$(git branch | grep '^\*' | sed 's/* //')
+	git_commit_hash=$(git rev-parse --short HEAD)
+
+	[[ $git_status =~ "# Changes to be committed:" ]] && \
+		git_tlights+="%F{green}●"
+	[[ $git_status =~ "# Changes not staged for commit:" ]] && \
+		git_tlights+="%F{yellow}●"
+	[[ $git_status =~ "# Untracked files:" ]] && \
+		git_tlights+="%F{red}●"
+
+	git_prompt="%F{green}$git_branch_name "
+	git_prompt+="%F{yellow}$git_commit_hash"
+	git_prompt+="${git_tlights:+ }$git_tlights%f"
 }
 
 ext () {
