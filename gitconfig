@@ -11,3 +11,4 @@
 	pager = true
 [core]
 	pager = less -R
+	excludesfile = /home/tobias/.gitignore_global
