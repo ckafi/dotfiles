@@ -268,8 +268,8 @@ update_git_prompt () {
 
 	git_status=$(git status)
 
-	if [[ git_status =~ '# Initial commit' ]]; then
-		git_prompt="$fg[green]Initial$fg[default]"
+	if [[ $git_status =~ '# Initial commit' ]]; then
+		git_prompt="%F{green}Initial%f"
 		return
 	fi
 
