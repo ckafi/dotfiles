@@ -268,13 +268,13 @@ update_git_prompt () {
 
 	git_status=$(git status)
 
-	if [[ $git_status =~ '# Initial commit' ]]; then
-		git_prompt="%F{green}Initial%f"
-		return
-	fi
+	[[ $git_status =~ '# Initial commit' ]] && \
+		git_branch_name="Initial"
 
-	git_branch_name=$(git branch | grep '^\*' | sed 's/* //')
-	git_commit_hash=$(git rev-parse --short HEAD)
+	if [[ -z $git_branch_name ]]; then
+		git_branch_name=$(git branch | grep '^\*' | sed 's/* //')
+		git_commit_hash=$(git rev-parse --short HEAD)
+	fi
 
 	[[ $git_status =~ "# Changes to be committed:" ]] && \
 		git_tlights+="%F{green}●"
