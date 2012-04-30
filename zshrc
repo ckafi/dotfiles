@@ -286,11 +286,11 @@ update_git_prompt () {
 	fi
 
 	[[ $git_status =~ "# Changes to be committed:" ]] && \
-		git_tlights+="%F{green}●"
+		git_tlights+="%F{green}s"
 	[[ $git_status =~ "# Changes not staged for commit:" ]] && \
-		git_tlights+="%F{yellow}●"
+		git_tlights+="%F{yellow}m"
 	[[ $git_status =~ "# Untracked files:" ]] && \
-		git_tlights+="%F{red}●"
+		git_tlights+="%F{red}u"
 
 	git_prompt="%F{green}$git_branch_name"
 	git_prompt+="%F{red}${git_branch_status:+ $git_branch_status}"
