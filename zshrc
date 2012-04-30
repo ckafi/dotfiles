@@ -263,6 +263,7 @@ title () {
 update_git_prompt () {
 	local git_status
 	local git_branch_name
+	local git_branch_status
 	local git_commit_hash
 	local git_tlights
 
@@ -276,6 +277,14 @@ update_git_prompt () {
 		git_commit_hash=$(git rev-parse --short HEAD)
 	fi
 
+	if [[ $git_status =~ '# Your branch and .* have diverged' ]]; then
+		git_branch_status='d'
+	elif [[ $git_status =~ '# Your branch is ahead of ' ]]; then
+		git_branch_status='a'
+	elif [[ $git_status =~ '# Your branch is behind ' ]]; then
+		git_branch_status='b'
+	fi
+
 	[[ $git_status =~ "# Changes to be committed:" ]] && \
 		git_tlights+="%F{green}●"
 	[[ $git_status =~ "# Changes not staged for commit:" ]] && \
@@ -284,6 +293,7 @@ update_git_prompt () {
 		git_tlights+="%F{red}●"
 
 	git_prompt="%F{green}$git_branch_name"
+	git_prompt+="%F{red}${git_branch_status:+ $git_branch_status}"
 	git_prompt+="%F{yellow}${git_commit_hash:+ $git_commit_hash}"
 	git_prompt+="${git_tlights:+ }$git_tlights%f"
 }
