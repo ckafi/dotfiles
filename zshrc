@@ -283,8 +283,8 @@ update_git_prompt () {
 	[[ $git_status =~ "# Untracked files:" ]] && \
 		git_tlights+="%F{red}●"
 
-	git_prompt="%F{green}$git_branch_name "
-	git_prompt+="%F{yellow}$git_commit_hash"
+	git_prompt="%F{green}$git_branch_name"
+	git_prompt+="%F{yellow}${git_commit_hash:+ $git_commit_hash}"
 	git_prompt+="${git_tlights:+ }$git_tlights%f"
 }
 
