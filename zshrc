@@ -1,10 +1,9 @@
-#Filename: zshrc
-
-#DESCRIPTION: Zsh startup file.
-#Feel free to use any line you want.
-#First time: run mkdir ~/.zsh
-
-#Contact: tobias@frilling-online.de
+# A zsh start-up file
+# Written by Tobias Frilling (tobias@frilling-online.de)
+# Released under CC0 (Public Domain)
+# http://creativecommons.org/publicdomain/zero/1.0/
+# So feel free to use any line you want.
+# First time: run mkdir ~/.zsh
 
 # {{{ tmux
 if [[ -e /usr/bin/tmux \
