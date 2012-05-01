@@ -5,7 +5,7 @@
 # So feel free to use any line you want.
 # First time: run mkdir ~/.zsh
 
-# {{{ tmux
+# Start tmux {{{
 if [[ -e /usr/bin/tmux \
 	&& -z $TMUX \
 	&& -z $SUDO_UID ]]; then
@@ -29,13 +29,13 @@ loading Miscellaneous
 [[ -e /etc/profile.d/z.sh ]] && \
 	source /etc/profile.d/z.sh && \
 	Z=true
-# syntax highlightung
+# syntax highlighting
 [[ -e /usr/share/zsh/plugins/zsh-syntax-highlight/zsh-syntax-highlighting.zsh ]] && \
 	source /usr/share/zsh/plugins/zsh-syntax-highlight/zsh-syntax-highlighting.zsh
 # }}}
 
-# {{{ env
-loading env
+# Environment {{{
+loading environment
 setopt all_export
 eval $(dircolors)
 PATH="$HOME/bin:$PATH"
@@ -59,8 +59,8 @@ WORDCHARS+=":"
 unsetopt all_export
 # }}}
 
-# {{{ options, modloads
-loading "options and modules"
+# Options and modules {{{
+loading 'options and modules'
 
 ZOPTS=(
 	'auto_pushd'
@@ -91,7 +91,7 @@ autoload -U compinit && compinit
 autoload colors && colors
 # }}}
 
-# {{{ prompt
+# Prompt {{{
 # All prompt and no work makes Tobias a poor boy
 # All prompt and no work makes Tobias a poor boy
 loading prompt
@@ -117,8 +117,8 @@ PS1+="%# "
 PS2="%F{118}(%_)%f "
 # }}}
 
-# {{{ alias
-loading alias
+# Aliases {{{
+loading aliases
 #for i in cd ls; do
 	#eval "alias $i=' $i'"
 #done
@@ -145,7 +145,7 @@ alias ts="rlwrap -i -r -C task task shell"
 alias vimwiki="vim +VimwikiIndex"
 # }}}
 
-# {{{ key-bindings
+# Key-bindings {{{
 loading key-bindings
 
 bindkey -v    # Vi-Keymap
@@ -183,8 +183,8 @@ case $TERM in
 esac
 # }}}
 
-# {{{ completion
-loading completion
+# Completions {{{
+loading completions
 # based on jdongs .zshrc v0.2.1
 # TODO: Figure our what exactly this all does.
 # No more cargo-culting.
@@ -223,7 +223,7 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 	#proxy syslog www-data mldonkey sys snort
 # }}}
 
-# {{{ functions
+# Functions {{{
 loading functions
 [[ -e /etc/zsh_command_not_found ]] && source /etc/zsh_command_not_found
 
@@ -349,5 +349,4 @@ cd () {
 		builtin cd
 	fi
 }
-
 # }}}
