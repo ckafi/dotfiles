@@ -330,13 +330,13 @@ ext () {
 }
 
 up () {
-	local ups=""
+	local ups
 	if [[ -z $1 ]]; then
 		1=1
 	fi
 
 	for i in {1..$1}; do
-		ups=$ups"../"
+		ups+='../'
 	done
 	cd $ups
 }
