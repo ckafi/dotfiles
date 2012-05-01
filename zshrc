@@ -18,26 +18,30 @@ if [[ -e /usr/bin/tmux \
 fi
 # }}}
 
+# Miscellaneous {{{
+# print a 'loading foo' message
 loading() {
 	1="loading $1..."
 	1=${(r:$COLUMNS:)1}
 	print -n $1'\r'
 }
+loading Miscellaneous
+# for z
+[[ -e /etc/profile.d/z.sh ]] && \
+	source /etc/profile.d/z.sh && \
+	Z=true
+# syntax highlightung
+[[ -e /usr/share/zsh/plugins/zsh-syntax-highlight/zsh-syntax-highlighting.zsh ]] && \
+	source /usr/share/zsh/plugins/zsh-syntax-highlight/zsh-syntax-highlighting.zsh
+# }}}
 
 # {{{ env
 loading env
 setopt all_export
 eval $(dircolors)
 PATH="$HOME/bin:$PATH"
-# syntax highlightung
-[[ -e /usr/share/zsh/plugins/zsh-syntax-highlight/zsh-syntax-highlighting.zsh ]] && \
-	source /usr/share/zsh/plugins/zsh-syntax-highlight/zsh-syntax-highlighting.zsh
 # gcc coloring
 [[ -d /usr/lib/colorgcc/bin ]] && PATH="/usr/lib/colorgcc/bin:$PATH"
-# for z
-[[ -e /etc/profile.d/z.sh ]] && \
-	source /etc/profile.d/z.sh && \
-	Z=true
 HISTFILE=$HOME/.zsh/zhistory
 HISTSIZE=10000
 SAVEHIST=10000
