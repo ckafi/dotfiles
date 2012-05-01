@@ -3,7 +3,6 @@
 # Released under CC0 (Public Domain)
 # http://creativecommons.org/publicdomain/zero/1.0/
 # So feel free to use any line you want.
-# First time: run mkdir ~/.zsh
 
 # Start tmux {{{
 if [[ -e /usr/bin/tmux \
@@ -24,7 +23,17 @@ loading() {
 	1=${(r:$COLUMNS:)1}
 	print -n $1'\r'
 }
-loading Miscellaneous
+
+loading miscellaneous
+
+# compile .zshrc if necessary
+[[ ~/.zshrc -nt ~/.zshrc.zwc || ! -e ~/.zshrc.zwc ]] && \
+	zcompile ~/.zshrc
+# create a .zsh folder if none exists
+[[ ! -d ~/.zsh ]] && mkdir ~/.zsh
+# load a 'command not found' function with suggestions
+[[ -e /etc/zsh_command_not_found ]] && \
+	source /etc/zsh_command_not_found
 # for z
 [[ -e /etc/profile.d/z.sh ]] && \
 	source /etc/profile.d/z.sh && \
@@ -225,7 +234,6 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 
 # Functions {{{
 loading functions
-[[ -e /etc/zsh_command_not_found ]] && source /etc/zsh_command_not_found
 
 warn () {
 	beep -r 3
