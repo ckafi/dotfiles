@@ -82,7 +82,7 @@ autocmd BufEnter *.scala setfiletype scala
 " Use colors for a dark background
 set background=dark
 " Load color scheme
-colorscheme molokai
+colorscheme relaxedgreen
 " Don't highlight closed folds
 highlight Folded cterm=None, gui=None
 " Highlight the 81st column if there is a character
