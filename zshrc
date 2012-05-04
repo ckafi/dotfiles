@@ -1,12 +1,10 @@
-#Filename: zshrc
+# A zsh start-up file
+# Written by Tobias Frilling (tobias@frilling-online.de)
+# Released under CC0 (Public Domain)
+# http://creativecommons.org/publicdomain/zero/1.0/
+# So feel free to use any line you want.
 
-#DESCRIPTION: Zsh startup file.
-#Feel free to use any line you want.
-#First time: run mkdir ~/.zsh
-
-#Contact: tobias@frilling-online.de
-
-# {{{ tmux
+# Start tmux {{{
 if [[ -e /usr/bin/tmux \
 	&& -z $TMUX \
 	&& -z $SUDO_UID ]]; then
@@ -18,23 +16,40 @@ if [[ -e /usr/bin/tmux \
 fi
 # }}}
 
+# Miscellaneous {{{
+# print a 'loading foo' message
 loading() {
 	1="loading $1..."
 	1=${(r:$COLUMNS:)1}
 	print -n $1'\r'
 }
 
-# {{{ env
-loading env
+loading miscellaneous
+
+# compile .zshrc if necessary
+[[ ~/.zshrc -nt ~/.zshrc.zwc || ! -e ~/.zshrc.zwc ]] && \
+	zcompile ~/.zshrc
+# create a .zsh folder if none exists
+[[ ! -d ~/.zsh ]] && mkdir ~/.zsh
+# load a 'command not found' function with suggestions
+[[ -e /etc/zsh_command_not_found ]] && \
+	source /etc/zsh_command_not_found
+# for z
+[[ -e /etc/profile.d/z.sh ]] && \
+	source /etc/profile.d/z.sh && \
+	Z=true
+# syntax highlighting
+[[ -e /usr/share/zsh/plugins/zsh-syntax-highlight/zsh-syntax-highlighting.zsh ]] && \
+	source /usr/share/zsh/plugins/zsh-syntax-highlight/zsh-syntax-highlighting.zsh
+# }}}
+
+# Environment {{{
+loading environment
 setopt all_export
 eval $(dircolors)
 PATH="$HOME/bin:$PATH"
 # gcc coloring
 [[ -d /usr/lib/colorgcc/bin ]] && PATH="/usr/lib/colorgcc/bin:$PATH"
-# for z
-[[ -e /etc/profile.d/z.sh ]] && \
-	source /etc/profile.d/z.sh && \
-	Z=true
 HISTFILE=$HOME/.zsh/zhistory
 HISTSIZE=10000
 SAVEHIST=10000
@@ -53,8 +68,8 @@ WORDCHARS+=":"
 unsetopt all_export
 # }}}
 
-# {{{ options, modloads
-loading "options and modules"
+# Options and modules {{{
+loading 'options and modules'
 
 ZOPTS=(
 	'auto_pushd'
@@ -85,7 +100,7 @@ autoload -U compinit && compinit
 autoload colors && colors
 # }}}
 
-# {{{ prompt
+# Prompt {{{
 # All prompt and no work makes Tobias a poor boy
 # All prompt and no work makes Tobias a poor boy
 loading prompt
@@ -93,9 +108,9 @@ loading prompt
 # add red background if running with privileges
 PS1="%(!.%K{red}.)"
 # username@
-PS1+="%F{161}%n%f@"
+PS1+="%F{161}%n%k%f@"
 # hostname:
-PS1+="%F{208}%m%k%f:"
+PS1+="%F{208}%m%f:"
 # path with prefix, truncated to 55 characters
 PS1+="%F{118}%55<..<%~%<<%f"
 # newline if length(prompt)>70
@@ -111,12 +126,13 @@ PS1+="%# "
 PS2="%F{118}(%_)%f "
 # }}}
 
-# {{{ alias
-loading alias
+# Aliases {{{
+loading aliases
 #for i in cd ls; do
 	#eval "alias $i=' $i'"
 #done
 
+alias g="git status -sb"
 alias -g grep="egrep --color=auto"
 alias cp="cp -iv"
 alias dirs="dirs -v"
@@ -138,7 +154,7 @@ alias ts="rlwrap -i -r -C task task shell"
 alias vimwiki="vim +VimwikiIndex"
 # }}}
 
-# {{{ key-bindings
+# Key-bindings {{{
 loading key-bindings
 
 bindkey -v    # Vi-Keymap
@@ -176,8 +192,8 @@ case $TERM in
 esac
 # }}}
 
-# {{{ completion
-loading completion
+# Completions {{{
+loading completions
 # based on jdongs .zshrc v0.2.1
 # TODO: Figure our what exactly this all does.
 # No more cargo-culting.
@@ -216,9 +232,8 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 	#proxy syslog www-data mldonkey sys snort
 # }}}
 
-# {{{ functions
+# Functions {{{
 loading functions
-[[ -e /etc/zsh_command_not_found ]] && source /etc/zsh_command_not_found
 
 warn () {
 	beep -r 3
@@ -233,15 +248,11 @@ precmd () {
 	#for z
 	[[ -n $Z ]] && _z --add "$(pwd -P)"
 	title 'zsh %2~'
-	if [[ -d .hg || -n $HGDIR ]]; then
-		if hgid=$(hg identify -nbB 2>/dev/null); then
-			qtop=" $(hg qtop 2>/dev/null)" || qtop=''
-			RPROMPT="%F{118}$hgid$qtop%f"
-			HGDIR=true
-		else
-			unset RPROMPT
-			unset HGDIR
-		fi
+	if git branch &>/dev/null; then
+		update_git_prompt
+		RPROMPT=$git_prompt
+	else
+		unset RPROMPT
 	fi
 }
 
@@ -258,6 +269,44 @@ title () {
 		*)
 			print -n "\e]2;$1\a" ;;
 	esac
+}
+
+update_git_prompt () {
+	local git_status
+	local git_branch_name
+	local git_branch_status
+	local git_commit_hash
+	local git_tlights
+
+	git_status=$(git status)
+
+	[[ $git_status =~ '# Initial commit' ]] && \
+		git_branch_name="Initial"
+
+	if [[ -z $git_branch_name ]]; then
+		git_branch_name=$(git branch | grep '^\*' | sed 's/* //')
+		git_commit_hash=$(git rev-parse --short HEAD)
+	fi
+
+	if [[ $git_status =~ '# Your branch and .* have diverged' ]]; then
+		git_branch_status='d'
+	elif [[ $git_status =~ '# Your branch is ahead of ' ]]; then
+		git_branch_status='a'
+	elif [[ $git_status =~ '# Your branch is behind ' ]]; then
+		git_branch_status='b'
+	fi
+
+	[[ $git_status =~ "# Changes to be committed:" ]] && \
+		git_tlights+="%F{green}s"
+	[[ $git_status =~ "# Changes not staged for commit:" ]] && \
+		git_tlights+="%F{yellow}m"
+	[[ $git_status =~ "# Untracked files:" ]] && \
+		git_tlights+="%F{red}u"
+
+	git_prompt="%F{green}$git_branch_name"
+	git_prompt+="%F{red}${git_branch_status:+ $git_branch_status}"
+	git_prompt+="%F{yellow}${git_commit_hash:+ $git_commit_hash}"
+	git_prompt+="${git_tlights:+ }$git_tlights%f"
 }
 
 ext () {
@@ -281,29 +330,15 @@ ext () {
 }
 
 up () {
-	local ups=""
+	local ups
 	if [[ -z $1 ]]; then
 		1=1
 	fi
 
 	for i in {1..$1}; do
-		ups=$ups"../"
+		ups+='../'
 	done
 	cd $ups
-}
-
-scalecpu () {
-	if [[ -z $1 ]]; then
-		cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_cur_freq
-		cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
-	else
-		if [[ $1 == "ondemand" || $1 == "powersave" || $1 == "performance" ]]; then
-			echo $1 | sudo tee /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
-		else
-			echo "$1 is not a governor"
-			return 1
-		fi
-	fi
 }
 
 cd () {
@@ -322,5 +357,4 @@ cd () {
 		builtin cd
 	fi
 }
-
 # }}}

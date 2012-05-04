@@ -1,0 +1,14 @@
+[user]
+	name = Tobias Frilling
+	email = tobias@frilling-online.de
+
+[color]
+	status = auto
+	branch = auto
+	interactive = auto
+	diff = auto
+	log = auto
+	pager = true
+[core]
+	pager = less -R
+	excludesfile = /home/tobias/.gitignore_global
