@@ -187,7 +187,7 @@ cabbrev vdiff  VCSVimDiff
 " Functions {{{
 " get the text for 'foldtext'
 function! MyFoldText ()
-	let ftextmarker = ''
+	let ftextmarker = '+> '
 	" number of lines of the fold
 	let flength = 1 + v:foldend - v:foldstart
 	let flstring = '(' . flength . ' lines)'
