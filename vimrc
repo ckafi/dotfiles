@@ -32,7 +32,7 @@ set visualbell            " Visual bell instead of beeping
 set listchars=tab:⋮\      " Character in list mode for tab
 set listchars+=eol:⌐      " ... end of line
 set listchars+=trail:×    " ... trailing whitespace
-set listchars+=precedes:… " ... start and 
+set listchars+=precedes:… " ... start and
 set listchars+=extends:…  " ... end of a truncated display line
 set fillchars=vert:\|     " Disable annoying chars for stl, diff, fold etc.
 set fillchars+=diff:\     " ...
@@ -176,7 +176,7 @@ vnoremap > >gv
 nnoremap n nzz
 nnoremap N Nzz
 "open NERDTree bookmark with :bkm <name>
-cabbrev bkm NERDTreeFromBookmark 
+cabbrev bkm NERDTreeFromBookmark
 " shortcuts for often used VCSCommands
 cabbrev commit VCSCommit
 cabbrev info   VCSInfo
@@ -188,65 +188,65 @@ cabbrev vdiff  VCSVimDiff
 " Functions {{{
 " get the text for 'foldtext'
 function! MyFoldText ()
-	let ftextmarker = '+> '
-	" number of lines of the fold
-	let flength = 1 + v:foldend - v:foldstart
-	let flstring = '(' . flength . ' lines)'
-	" get the first folded line
-	let fname = getline(v:foldstart)
-	" delete fold markers
-	let fname = substitute(fname, '{\{3}\d\?', '', 'g')
-	" delete leading comment marker
-	let fname = substitute(fname, '^\s*[#"%!;]\|\/\/\|--', '', '')
-	" delete leading whitespace
-	let fname = substitute(fname, '^\s*', '', '')
-	" append ftextmarker and indentation
-	" this uses the correct amount of spaces even if you use tabs
-	let fname = repeat(' ', indent(v:foldstart)) . ftextmarker . fname
-	" the length of a windowline
-	let lwidth = winwidth(0) - &foldcolumn
-		\ - (&number || &relativenumber ? &numberwidth : 0)
-	" calculate number of spaces for filling (flstring right aligned)
-	let fillwidth = lwidth - strdisplaywidth(fname)
-		\ - strdisplaywidth(flstring)
+  let ftextmarker = '+> '
+  " number of lines of the fold
+  let flength = 1 + v:foldend - v:foldstart
+  let flstring = '(' . flength . ' lines)'
+  " get the first folded line
+  let fname = getline(v:foldstart)
+  " delete fold markers
+  let fname = substitute(fname, '{\{3}\d\?', '', 'g')
+  " delete leading comment marker
+  let fname = substitute(fname, '^\s*[#"%!;]\|\/\/\|--', '', '')
+  " delete leading whitespace
+  let fname = substitute(fname, '^\s*', '', '')
+  " append ftextmarker and indentation
+  " this uses the correct amount of spaces even if you use tabs
+  let fname = repeat(' ', indent(v:foldstart)) . ftextmarker . fname
+  " the length of a windowline
+  let lwidth = winwidth(0) - &foldcolumn
+    \ - (&number || &relativenumber ? &numberwidth : 0)
+  " calculate number of spaces for filling (flstring right aligned)
+  let fillwidth = lwidth - strdisplaywidth(fname)
+    \ - strdisplaywidth(flstring)
 
-	let ftext = fname . repeat(' ',fillwidth) . flstring
-	return ftext
+  let ftext = fname . repeat(' ',fillwidth) . flstring
+  return ftext
 endfunction
 
 " from vimcast.org
 " Set tabstop, softtabstop and shiftwidth to the same value
 command! -nargs=* Stab call Stab()
 function! Stab()
-	let l:tabstop = 1 * input('set tabstop = softtabstop = shiftwidth = ')
-	if l:tabstop > 0
-		let &l:sts = l:tabstop
-		let &l:ts = l:tabstop
-		let &l:sw = l:tabstop
-	endif
-	call SummarizeTabs()
+  let l:tabstop = 1 * input('set tabstop = softtabstop = shiftwidth = ')
+  if l:tabstop > 0
+    let &l:sts = l:tabstop
+    let &l:ts = l:tabstop
+    let &l:sw = l:tabstop
+  endif
+  call SummarizeTabs()
 endfunction
 
 function! SummarizeTabs()
-	try
-		echohl ModeMsg
-		echon 'tabstop='.&l:ts
-		echon ' shiftwidth='.&l:sw
-		echon ' softtabstop='.&l:sts
-		if &l:et
-			echon ' expandtab'
-		else
-			echon ' noexpandtab'
-		endif
-	finally
-		echohl None
-	endtry
+  try
+    echohl ModeMsg
+    echon 'tabstop='.&l:ts
+    echon ' shiftwidth='.&l:sw
+    echon ' softtabstop='.&l:sts
+    if &l:et
+      echon ' expandtab'
+    else
+      echon ' noexpandtab'
+    endif
+  finally
+    echohl None
+  endtry
 endfunction
 " }}}
 
 " Local config Files {{{
 " Source a file for local configurations
 if filereadable($HOME."/.vim/local.vim")
-	source $HOME/.vim/local.vim
+  source $HOME/.vim/local.vim
 endif
 " }}}
