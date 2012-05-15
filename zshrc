@@ -6,41 +6,41 @@
 
 # Start tmux {{{
 if [[ -e /usr/bin/tmux \
-	&& -z $TMUX \
-	&& -z $SUDO_UID ]]; then
-		if [[ $TERM == 'linux' ]]; then
-			exec tmux
-		else
-			exec tmux -2 new
-		fi
+  && -z $TMUX \
+  && -z $SUDO_UID ]]; then
+    if [[ $TERM == 'linux' ]]; then
+      exec tmux
+    else
+      exec tmux -2 new
+    fi
 fi
 # }}}
 
 # Miscellaneous {{{
 # print a 'loading foo' message
 loading() {
-	1="loading $1..."
-	1=${(r:$COLUMNS:)1}
-	print -n $1'\r'
+  1="loading $1..."
+  1=${(r:$COLUMNS:)1}
+  print -n $1'\r'
 }
 
 loading miscellaneous
 
 # compile .zshrc if necessary
 [[ ~/.zshrc -nt ~/.zshrc.zwc || ! -e ~/.zshrc.zwc ]] && \
-	zcompile ~/.zshrc
+  zcompile ~/.zshrc
 # create a .zsh folder if none exists
 [[ ! -d ~/.zsh ]] && mkdir ~/.zsh
 # load a 'command not found' function with suggestions
 [[ -e /etc/zsh_command_not_found ]] && \
-	source /etc/zsh_command_not_found
+  source /etc/zsh_command_not_found
 # for z
 [[ -e /etc/profile.d/z.sh ]] && \
-	source /etc/profile.d/z.sh && \
-	Z=true
+  source /etc/profile.d/z.sh && \
+  Z=true
 # syntax highlighting
 [[ -e /usr/share/zsh/plugins/zsh-syntax-highlight/zsh-syntax-highlighting.zsh ]] && \
-	source /usr/share/zsh/plugins/zsh-syntax-highlight/zsh-syntax-highlighting.zsh
+  source /usr/share/zsh/plugins/zsh-syntax-highlight/zsh-syntax-highlighting.zsh
 # }}}
 
 # Environment {{{
@@ -72,22 +72,22 @@ unsetopt all_export
 loading 'options and modules'
 
 ZOPTS=(
-	'auto_pushd'
-	'no_beep'
-	'no_clobber'
-	'correct'
-	'correct_all'
-	'extended_glob'
-	'extended_history'
-	'glob_complete'
-	'hist_ignore_all_dups'
-	'hist_ignore_space'
-	'list_packed'
-	'list_types'
-	'mail_warning'
-	'no_hup'
-	'share_history'
-	'transient_rprompt'
+  'auto_pushd'
+  'no_beep'
+  'no_clobber'
+  'correct'
+  'correct_all'
+  'extended_glob'
+  'extended_history'
+  'glob_complete'
+  'hist_ignore_all_dups'
+  'hist_ignore_space'
+  'list_packed'
+  'list_types'
+  'mail_warning'
+  'no_hup'
+  'share_history'
+  'transient_rprompt'
 )
 
 setopt $ZOPTS
@@ -129,7 +129,7 @@ PS2="%F{118}(%_)%f "
 # Aliases {{{
 loading aliases
 #for i in cd ls; do
-	#eval "alias $i=' $i'"
+  #eval "alias $i=' $i'"
 #done
 
 alias g="git status -sb"
@@ -177,18 +177,18 @@ bindkey -a "u"  undo
 bindkey -a "^R" redo
 
 case $TERM in
-	linux | screen* )
-		bindkey "^[[1~" beginning-of-line
-		bindkey "^[[4~" end-of-line ;;
-	
-	xterm* )
-		bindkey "^[[H"  beginning-of-line
-		bindkey "^[[F"  end-of-line
-		bindkey "^H"    vi-backward-delete-char ;;
-	
-	*rxvt* )
-		bindkey "^[[7~" beginning-of-line
-		bindkey "^[[8~" end-of-line ;;
+  linux | screen* )
+    bindkey "^[[1~" beginning-of-line
+    bindkey "^[[4~" end-of-line ;;
+
+  xterm* )
+    bindkey "^[[H"  beginning-of-line
+    bindkey "^[[F"  end-of-line
+    bindkey "^H"    vi-backward-delete-char ;;
+
+  *rxvt* )
+    bindkey "^[[7~" beginning-of-line
+    bindkey "^[[8~" end-of-line ;;
 esac
 # }}}
 
@@ -224,137 +224,137 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 ## ignore completion functions (until the _ignored completer)
 #zstyle ':completion:*:functions' ignored-patterns '_*'
 #zstyle ':completion:*:*:*:users' ignored-patterns \
-	#adm apache bin daemon games gdm halt ident junkbust lp mail mailnull \
-	#named news nfsnobody nobody nscd ntp operator pcap postgres radvd \
-	#rpc rpcuser rpm shutdown squid sshd sync uucp vcsa xfs avahi-autoipd\
-	#avahi backup messagebus beagleindex debian-tor dhcp dnsmasq fetchmail\
-	#firebird gnats haldaemon hplip irc klog list man cupsys postfix\
-	#proxy syslog www-data mldonkey sys snort
+  #adm apache bin daemon games gdm halt ident junkbust lp mail mailnull \
+  #named news nfsnobody nobody nscd ntp operator pcap postgres radvd \
+  #rpc rpcuser rpm shutdown squid sshd sync uucp vcsa xfs avahi-autoipd\
+  #avahi backup messagebus beagleindex debian-tor dhcp dnsmasq fetchmail\
+  #firebird gnats haldaemon hplip irc klog list man cupsys postfix\
+  #proxy syslog www-data mldonkey sys snort
 # }}}
 
 # Functions {{{
 loading functions
 
 warn () {
-	beep -r 3
-	echo "$bg[red]$fg_bold[white] !!! Warning !!! \a"     
+  beep -r 3
+  echo "$bg[red]$fg_bold[white] !!! Warning !!! \a"
 }
 
 preexec () {
-	title $1
+  title $1
 }
 
 precmd () {
-	#for z
-	[[ -n $Z ]] && _z --add "$(pwd -P)"
-	title 'zsh %2~'
-	if git branch &>/dev/null; then
-		update_git_prompt
-		RPROMPT=$git_prompt
-	else
-		unset RPROMPT
-	fi
+  #for z
+  [[ -n $Z ]] && _z --add "$(pwd -P)"
+  title 'zsh %2~'
+  if git branch &>/dev/null; then
+    update_git_prompt
+    RPROMPT=$git_prompt
+  else
+    unset RPROMPT
+  fi
 }
 
 title () {
-	1=${(%)1}
-	1=${(V)1}
-	1=${(q)1}
+  1=${(%)1}
+  1=${(V)1}
+  1=${(q)1}
 
-	case $TERM in
-		screen*)
-			print -n "\ek$1\e\\" ;;
-		linux)
-			;;
-		*)
-			print -n "\e]2;$1\a" ;;
-	esac
+  case $TERM in
+    screen*)
+      print -n "\ek$1\e\\" ;;
+    linux)
+      ;;
+    *)
+      print -n "\e]2;$1\a" ;;
+  esac
 }
 
 update_git_prompt () {
-	local git_status
-	local git_branch_name
-	local git_branch_status
-	local git_commit_hash
-	local git_tlights
+  local git_status
+  local git_branch_name
+  local git_branch_status
+  local git_commit_hash
+  local git_tlights
 
-	git_status=$(git status)
+  git_status=$(git status)
 
-	[[ $git_status =~ '# Initial commit' ]] && \
-		git_branch_name="Initial"
+  [[ $git_status =~ '# Initial commit' ]] && \
+    git_branch_name="Initial"
 
-	if [[ -z $git_branch_name ]]; then
-		git_branch_name=$(git branch | grep '^\*' | sed 's/* //')
-		git_commit_hash=$(git rev-parse --short HEAD)
-	fi
+  if [[ -z $git_branch_name ]]; then
+    git_branch_name=$(git branch | grep '^\*' | sed 's/* //')
+    git_commit_hash=$(git rev-parse --short HEAD)
+  fi
 
-	if [[ $git_status =~ '# Your branch and .* have diverged' ]]; then
-		git_branch_status='d'
-	elif [[ $git_status =~ '# Your branch is ahead of ' ]]; then
-		git_branch_status='a'
-	elif [[ $git_status =~ '# Your branch is behind ' ]]; then
-		git_branch_status='b'
-	fi
+  if [[ $git_status =~ '# Your branch and .* have diverged' ]]; then
+    git_branch_status='d'
+  elif [[ $git_status =~ '# Your branch is ahead of ' ]]; then
+    git_branch_status='a'
+  elif [[ $git_status =~ '# Your branch is behind ' ]]; then
+    git_branch_status='b'
+  fi
 
-	[[ $git_status =~ "# Changes to be committed:" ]] && \
-		git_tlights+="%F{green}s"
-	[[ $git_status =~ "# Changes not staged for commit:" ]] && \
-		git_tlights+="%F{yellow}m"
-	[[ $git_status =~ "# Untracked files:" ]] && \
-		git_tlights+="%F{red}u"
+  [[ $git_status =~ "# Changes to be committed:" ]] && \
+    git_tlights+="%F{green}s"
+  [[ $git_status =~ "# Changes not staged for commit:" ]] && \
+    git_tlights+="%F{yellow}m"
+  [[ $git_status =~ "# Untracked files:" ]] && \
+    git_tlights+="%F{red}u"
 
-	git_prompt="%F{green}$git_branch_name"
-	git_prompt+="%F{red}${git_branch_status:+ $git_branch_status}"
-	git_prompt+="%F{yellow}${git_commit_hash:+ $git_commit_hash}"
-	git_prompt+="${git_tlights:+ }$git_tlights%f"
+  git_prompt="%F{green}$git_branch_name"
+  git_prompt+="%F{red}${git_branch_status:+ $git_branch_status}"
+  git_prompt+="%F{yellow}${git_commit_hash:+ $git_commit_hash}"
+  git_prompt+="${git_tlights:+ }$git_tlights%f"
 }
 
 ext () {
-	for file in $@; do
-		if [[ -f $file ]]; then
-			case ${(L)file} in
-				*.tar.lrz)           lrzuntar $file ;;
-				*.lrz)               lrzip -d $file ;;
-				*.tar*|*.tgz|*.tbz)  tar -xvf $file ;;
-				*.bz2)               bunzip2 $file ;;
-				*.gz|*.z)            gunzip $file ;;
-				*.zip|*.cbz)         unzip $file ;;
-				*.rar|*.cbr)         unrar x $file ;;
-				*.xz)                unxz $file ;;
-				*) echo "'$file' Error. Please go away" ;;
-			esac
-		else
-			echo "'$file' is not a valid file"
-		fi
-	done
+  for file in $@; do
+    if [[ -f $file ]]; then
+      case ${(L)file} in
+        *.tar.lrz)           lrzuntar $file ;;
+        *.lrz)               lrzip -d $file ;;
+        *.tar*|*.tgz|*.tbz)  tar -xvf $file ;;
+        *.bz2)               bunzip2 $file ;;
+        *.gz|*.z)            gunzip $file ;;
+        *.zip|*.cbz)         unzip $file ;;
+        *.rar|*.cbr)         unrar x $file ;;
+        *.xz)                unxz $file ;;
+        *) echo "'$file' Error. Please go away" ;;
+      esac
+    else
+      echo "'$file' is not a valid file"
+    fi
+  done
 }
 
 up () {
-	local ups
-	if [[ -z $1 ]]; then
-		1=1
-	fi
+  local ups
+  if [[ -z $1 ]]; then
+    1=1
+  fi
 
-	for i in {1..$1}; do
-		ups+='../'
-	done
-	cd $ups
+  for i in {1..$1}; do
+    ups+='../'
+  done
+  cd $ups
 }
 
 cd () {
-	if [[ $# -ge 3 ]]; then
-		echo cd: too many arguments >&2
-		return 1
-	elif [[ $# -eq 2 ]]; then
-		builtin cd $1 $2
-	elif [[ $# -eq 1 ]]; then
-		if [[ -f $1 ]]; then
-			builtin cd $1:h
-		else
-			builtin cd $1
-		fi
-	else
-		builtin cd
-	fi
+  if [[ $# -ge 3 ]]; then
+    echo cd: too many arguments >&2
+    return 1
+  elif [[ $# -eq 2 ]]; then
+    builtin cd $1 $2
+  elif [[ $# -eq 1 ]]; then
+    if [[ -f $1 ]]; then
+      builtin cd $1:h
+    else
+      builtin cd $1
+    fi
+  else
+    builtin cd
+  fi
 }
 # }}}
