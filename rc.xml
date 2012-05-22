@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <openbox_config xmlns="http://openbox.org/3.4/rc">
-  <resistance>
-    <!--{{{-->
+  <resistance> <!--{{{-->
     <strength>10</strength>
     <screen_edge_strength>20</screen_edge_strength>
   </resistance>
   <!--}}}-->
-  <focus>
-    <!--{{{-->
+  <focus> <!--{{{-->
     <focusNew>yes</focusNew>
     <!-- always try to focus new windows when they appear. other rules do
          apply -->
@@ -26,8 +24,7 @@
          mouse into it, also raise the window -->
   </focus>
   <!--}}}-->
-  <placement>
-    <!--{{{-->
+  <placement> <!--{{{-->
     <policy>Smart</policy>
     <!-- 'Smart' or 'UnderMouse' -->
     <center>yes</center>
@@ -45,8 +42,7 @@
                     'Active' - where the active window is -->
   </placement>
   <!--}}}-->
-  <theme>
-    <!--{{{-->
+  <theme> <!--{{{-->
     <name>Elegant Mod</name>
     <titleLayout>NDLISMC</titleLayout>
     <!-- available characters are NDSLIMC, each can occur at most once.
@@ -109,8 +105,7 @@
     </font>
   </theme>
   <!--}}}-->
-  <desktops>
-    <!--{{{-->
+  <desktops> <!--{{{-->
     <!-- this stuff is only used at startup, pagers allow you to change them
          during a session
 
@@ -137,8 +132,7 @@
     <greedy>yes</greedy>
   </desktops>
   <!--}}}-->
-  <resize>
-    <!--{{{-->
+  <resize> <!--{{{-->
     <drawContents>no</drawContents>
     <popupShow>Always</popupShow>
     <!-- 'Always', 'Never', or 'Nonpixel' (xterms and such) -->
@@ -155,8 +149,7 @@
     </popupFixedPosition>
   </resize>
   <!--}}}-->
-  <margins>
-    <!--{{{-->
+  <margins> <!--{{{-->
     <!-- You can reserve a portion of your screen where windows will
          not cover when they are maximized, or when they are initially
          placed.  Many programs reserve space automatically, but you
@@ -167,8 +160,7 @@
     <right>0</right>
   </margins>
   <!--}}}-->
-  <dock>
-    <!--{{{-->
+  <dock> <!--{{{-->
     <position>Left</position>
     <!-- (Top|Bottom)(Left|Right|)|Top|Bottom|Left|Right|Floating -->
     <floatingX>0</floatingX>
@@ -187,10 +179,9 @@
     <!-- 'Left', 'Middle', 'Right' -->
   </dock>
   <!--}}}-->
-  <keyboard>
-    <!--{{{-->
+  <keyboard> <!--{{{-->
     <chainQuitKey>C-g</chainQuitKey>
-    <!-- {{{ Keybindings for desktop switching -->
+    <!-- Keybindings for desktop switching {{{-->
     <keybind key="W-Left">
       <action name="DesktopLeft">
         <dialog>no</dialog>
@@ -278,7 +269,7 @@
       </action>
     </keybind>
     <!--}}}-->
-    <!-- {{{ Keybindings for windows -->
+    <!-- Keybindings for windows {{{-->
     <keybind key="A-Escape">
       <action name="Lower"/>
       <action name="FocusToBottom"/>
@@ -296,7 +287,7 @@
       <action name="ToggleFullscreen"/>
     </keybind>
     <!--}}}-->
-    <!-- {{{ Keybindings for window switching -->
+    <!-- Keybindings for window switching {{{-->
     <keybind key="W-Tab">
       <action name="NextWindow"/>
     </keybind>
@@ -305,7 +296,7 @@
       <allDesktops>yes</allDesktops>
     </keybind>
     <!--}}}-->
-    <!-- {{{ Keybindings for running applications -->
+    <!-- Keybindings for running applications {{{-->
     <keybind key="W-e">
       <action name="Execute">
         <command>gmrun</command>
@@ -334,7 +325,7 @@
     </keybind>
     <!--}}}-->
     <!--}}}-->
-    <!--{{{Other Stuff-->
+    <!-- Other Stuff {{{-->
     <keybind key="W-w">
       <action name="ShowMenu">
         <menu>root-menu</menu>
@@ -351,8 +342,7 @@
     <!--}}}-->
   </keyboard>
   <!--}}}-->
-  <mouse>
-    <!--{{{-->
+  <mouse> <!--{{{-->
     <dragThreshold>8</dragThreshold>
     <!-- number of pixels the mouse must move before a drag begins -->
     <doubleClickTime>200</doubleClickTime>
@@ -361,7 +351,7 @@
     <!-- Time before changing desktops when the pointer touches the edge of the
          screen while moving a window, in milliseconds (1000 = 1 second).
          Set this to 0 to disable warping -->
-    <context name="Frame">
+    <context name="Frame"> <!--{{{-->
       <mousebind button="W-Left" action="Click">
         <action name="Raise"/>
       </mousebind>
@@ -395,7 +385,8 @@
         <action name="SendToDesktopNext"/>
       </mousebind>
     </context>
-    <context name="Titlebar">
+    <!--}}}-->
+    <context name="Titlebar"> <!--{{{-->
       <mousebind button="Left" action="Click">
         <action name="Raise"/>
         <action name="Focus"/>
@@ -423,6 +414,37 @@
         </action>
       </mousebind>
     </context>
+    <!--}}}-->
+    <context name="Desktop"> <!--{{{-->
+      <mousebind button="Up" action="Click">
+        <action name="DesktopPrevious"/>
+      </mousebind>
+      <mousebind button="Down" action="Click">
+        <action name="DesktopNext"/>
+      </mousebind>
+      <mousebind button="A-Up" action="Click">
+        <action name="DesktopPrevious"/>
+      </mousebind>
+      <mousebind button="A-Down" action="Click">
+        <action name="DesktopNext"/>
+      </mousebind>
+      <mousebind button="C-A-Up" action="Click">
+        <action name="DesktopPrevious"/>
+      </mousebind>
+      <mousebind button="C-A-Down" action="Click">
+        <action name="DesktopNext"/>
+      </mousebind>
+      <mousebind button="Left" action="Press">
+        <action name="Focus"/>
+        <action name="Raise"/>
+      </mousebind>
+      <mousebind button="Right" action="Press">
+        <action name="Focus"/>
+        <action name="Raise"/>
+      </mousebind>
+    </context>
+    <!--}}}-->
+    <!-- rest {{{-->
     <context name="Top">
       <mousebind button="Left" action="Drag">
         <action name="Resize">
@@ -525,34 +547,6 @@
         <action name="Close"/>
       </mousebind>
     </context>
-    <context name="Desktop">
-      <mousebind button="Up" action="Click">
-        <action name="DesktopPrevious"/>
-      </mousebind>
-      <mousebind button="Down" action="Click">
-        <action name="DesktopNext"/>
-      </mousebind>
-      <mousebind button="A-Up" action="Click">
-        <action name="DesktopPrevious"/>
-      </mousebind>
-      <mousebind button="A-Down" action="Click">
-        <action name="DesktopNext"/>
-      </mousebind>
-      <mousebind button="C-A-Up" action="Click">
-        <action name="DesktopPrevious"/>
-      </mousebind>
-      <mousebind button="C-A-Down" action="Click">
-        <action name="DesktopNext"/>
-      </mousebind>
-      <mousebind button="Left" action="Press">
-        <action name="Focus"/>
-        <action name="Raise"/>
-      </mousebind>
-      <mousebind button="Right" action="Press">
-        <action name="Focus"/>
-        <action name="Raise"/>
-      </mousebind>
-    </context>
     <context name="Root">
       <!-- Menus -->
       <mousebind button="Middle" action="Press">
@@ -580,10 +574,10 @@
         <action name="DesktopNext"/>
       </mousebind>
     </context>
+    <!--}}}-->
   </mouse>
   <!--}}}-->
-  <menu>
-    <!--{{{-->
+  <menu> <!--{{{-->
     <!-- You can specify more than one menu file in here and they are
          all loaded, just don't make menu ids clash or, well, it'll be
          kind of pointless -->
@@ -610,8 +604,7 @@
     <!-- show the manage desktops section in the client-list-(combined-)menu -->
   </menu>
   <!--}}}-->
-  <applications>
-    <!--{{{-->
+  <applications> <!--{{{-->
     <!--
   # this is an example with comments through out. use these to make your
   # own rules, but without the comments of course.
