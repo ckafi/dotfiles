@@ -1,3 +1,9 @@
+" A vim configuration file
+" Written by Tobias Frilling (tobias@frilling-online.de)
+" Released under CC0 (Public Domain)
+" http://creativecommons.org/publicdomain/zero/1.0/
+" So feel free to use any line you want.
+
 " Prologue {{{
 set nocompatible          " Don't make Vim vi-compatible
 syntax enable             " Enable syntax highlighting
