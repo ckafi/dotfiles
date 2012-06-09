@@ -182,91 +182,45 @@
   <keyboard> <!--{{{-->
     <chainQuitKey>C-g</chainQuitKey>
     <!-- Keybindings for desktop switching {{{-->
-    <keybind key="W-Left">
-      <action name="DesktopLeft">
-        <dialog>no</dialog>
-        <wrap>yes</wrap>
-      </action>
-    </keybind>
-    <keybind key="W-Right">
-      <action name="DesktopRight">
-        <dialog>no</dialog>
-        <wrap>yes</wrap>
-      </action>
-    </keybind>
-    <keybind key="W-Up">
-      <action name="DesktopUp">
-        <dialog>no</dialog>
-        <wrap>yes</wrap>
-      </action>
-    </keybind>
-    <keybind key="W-Down">
-      <action name="DesktopDown">
-        <dialog>no</dialog>
-        <wrap>yes</wrap>
-      </action>
-    </keybind>
-    <keybind key="S-W-Left">
-      <action name="SendToDesktopLeft">
-        <dialog>no</dialog>
-        <wrap>yes</wrap>
-      </action>
-    </keybind>
-    <keybind key="S-W-Right">
-      <action name="SendToDesktopRight">
-        <dialog>no</dialog>
-        <wrap>yes</wrap>
-      </action>
-    </keybind>
-    <keybind key="S-W-Up">
-      <action name="SendToDesktopUp">
-        <dialog>no</dialog>
-        <wrap>yes</wrap>
-      </action>
-    </keybind>
-    <keybind key="S-W-Down">
-      <action name="SendToDesktopDown">
-        <dialog>no</dialog>
-        <wrap>yes</wrap>
-      </action>
-    </keybind>
     <keybind key="W-1">
-      <action name="Desktop">
-        <desktop>1</desktop>
-      </action>
+      <action name="Desktop"><desktop>1</desktop></action>
     </keybind>
     <keybind key="W-2">
-      <action name="Desktop">
-        <desktop>2</desktop>
-      </action>
+      <action name="Desktop"><desktop>2</desktop></action>
     </keybind>
     <keybind key="W-3">
-      <action name="Desktop">
-        <desktop>3</desktop>
-      </action>
+      <action name="Desktop"><desktop>3</desktop></action>
     </keybind>
     <keybind key="W-4">
-      <action name="Desktop">
-        <desktop>4</desktop>
-      </action>
+      <action name="Desktop"><desktop>4</desktop></action>
     </keybind>
     <keybind key="W-5">
-      <action name="Desktop">
-        <desktop>5</desktop>
-      </action>
+      <action name="Desktop"><desktop>5</desktop></action>
     </keybind>
     <keybind key="W-6">
-      <action name="Desktop">
-        <desktop>6</desktop>
-      </action>
+      <action name="Desktop"><desktop>6</desktop></action>
     </keybind>
-    <keybind key="W-d">
-      <action name="ToggleShowDesktop"/>
+    <keybind key="W-S-1">
+      <action name="SendToDesktop"><to>1</to></action>
     </keybind>
+    <keybind key="W-S-2">
+      <action name="SendToDesktop"><to>2</to></action>
+    </keybind>
+    <keybind key="W-S-3">
+      <action name="SendToDesktop"><to>3</to></action>
+    </keybind>
+    <keybind key="W-S-4">
+      <action name="SendToDesktop"><to>4</to></action>
+    </keybind>
+    <keybind key="W-S-5">
+      <action name="SendToDesktop"><to>5</to></action>
+    </keybind>
+    <keybind key="W-S-6">
+      <action name="SendToDesktop"><to>6</to></action>
+    </keybind>
+    <keybind key="W-d"><action name="ToggleShowDesktop"/></keybind>
     <keybind key="W-Escape">
-      <action name="GoToDesktop">
-        <to>last</to>
-      </action>
+      <action name="GoToDesktop"><to>last</to></action>
     </keybind>
     <!--}}}-->
     <!-- Keybindings for windows {{{-->
@@ -280,12 +234,22 @@
         <menu>client-menu</menu>
       </action>
     </keybind>
-    <keybind key="W-m">
-      <action name="ToggleMaximizeFull"/>
-    </keybind>
-    <keybind key="W-f">
-      <action name="ToggleFullscreen"/>
-    </keybind>
+    <keybind key="W-m"><action name="ToggleMaximizeFull"/></keybind>
+    <keybind key="W-f"><action name="ToggleFullscreen"/></keybind>
+
+    <keybind key="W-Left"><action name="Move"/></keybind>
+    <keybind key="W-Right"><action name="Move"/></keybind>
+    <keybind key="W-Up"><action name="Move"/></keybind>
+    <keybind key="W-Down"><action name="Move"/></keybind>
+
+    <keybind key="W-A-Left"><action name="Resize"/>
+      <edge>bottomright</edge></keybind>
+    <keybind key="W-A-Right"><action name="Resize"/>
+      <edge>bottomright</edge></keybind>
+    <keybind key="W-A-Up"><action name="Resize"/>
+      <edge>bottomright</edge></keybind>
+    <keybind key="W-A-Down"><action name="Resize"/>
+      <edge>bottomright</edge></keybind>
     <!--}}}-->
     <!-- Keybindings for window switching {{{-->
     <keybind key="W-Tab">
