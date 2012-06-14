@@ -314,14 +314,15 @@ ext () {
     if [[ -f $file ]]; then
       case ${(L)file} in
         *.tar.lrz)           lrzuntar $file ;;
-        *.lrz)               lrzip -d $file ;;
+        *.lrz)               lrunzip $file ;;
         *.tar*|*.tgz|*.tbz)  tar -xvf $file ;;
         *.bz2)               bunzip2 $file ;;
         *.gz|*.z)            gunzip $file ;;
         *.zip|*.cbz)         unzip $file ;;
         *.rar|*.cbr)         unrar x $file ;;
         *.xz)                unxz $file ;;
-        *) echo "'$file' Error. Please go away" ;;
+        *.7z)                7z x $file ;;
+        *) echo "'$file' is not a recognized archive format." ;;
       esac
     else
       echo "'$file' is not a valid file"

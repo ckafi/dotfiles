@@ -141,10 +141,11 @@ imap <Down> <NOP>
 "imap <Left> <NOP>
 "imap <Right> <NOP>
 " Move the screen up or down
-nnoremap <Up> <C-Y>
-nnoremap <Down> <C-E>
+nnoremap <Up> k<C-Y>
+nnoremap <Down> j<C-E>
 nmap <Left> <NOP>
 nmap <Right> <NOP>
+nnoremap <Space> <PageDown>
 " Esc is so far away. There aren't that many word with two j's, are
 " there? Alternativ: CTRL-c
 inoremap jj <Esc>
