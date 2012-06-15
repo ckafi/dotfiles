@@ -77,7 +77,7 @@ set dictionary=/usr/share/dict/ngerman " Dictionary for <C-X><C-K>
 autocmd FileType perl    setlocal makeprg=perl\ %
 autocmd FileType python  setlocal comments=:# makeprg=python3\ %
 autocmd FileType zsh     setlocal makeprg=chmod\ +x\ %;./%
-autocmd FileType tex     setlocal formatoptions+=t
+autocmd FileType tex     setlocal formatoptions+=t makeprg=lualatex\ --interaction=nonstopmode\ % errorformat=%C!\ %.%#,%E!\ %m,%Zl.%l%.%#,%-G%.%#
 autocmd FileType java    setlocal makeprg=javac\ %
 
 autocmd BufEnter *.go    setfiletype go
