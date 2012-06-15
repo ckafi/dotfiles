@@ -184,12 +184,6 @@ nnoremap n nzz
 nnoremap N Nzz
 "open NERDTree bookmark with :bkm <name>
 cabbrev bkm NERDTreeFromBookmark
-" shortcuts for often used VCSCommands
-cabbrev commit VCSCommit
-cabbrev info   VCSInfo
-cabbrev status VCSStatus
-cabbrev diff   VCSDiff
-cabbrev vdiff  VCSVimDiff
 " }}}
 
 " Functions {{{
