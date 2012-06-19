@@ -162,7 +162,9 @@ bindkey -v    # Vi-Keymap
 insert-last-typed-word() { zle insert-last-word -- 0 -1 }
 zle -N insert-last-typed-word
 bindkey "^P"    insert-last-typed-word
-bindkey "^B"    insert-last-word
+bindkey "^K"    insert-last-word
+bindkey "^B"    history-beginning-search-backward
+bindkey "^F"    history-beginning-search-forward
 bindkey "^[[5~" history-beginning-search-backward       # PgUp
 bindkey "^[[6~" history-beginning-search-forward        # PgDown
 bindkey "^E"    push-input
