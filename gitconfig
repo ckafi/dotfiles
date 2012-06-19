@@ -13,6 +13,5 @@
   pager = less -R
   excludesfile = /home/tobias/.gitignore_global
 [alias]
-  lol = log --graph --decorate --pretty=oneline --abbrev-commit
-  lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
+  lg = git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
   s = status -sb
