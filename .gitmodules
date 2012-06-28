@@ -10,3 +10,6 @@
 [submodule "bundle/Command-T"]
 	path = bundle/Command-T
 	url = git://git.wincent.com/command-t.git
+[submodule "bundle/SuperTab"]
+	path = bundle/SuperTab
+	url = https://github.com/ervandew/supertab.git
