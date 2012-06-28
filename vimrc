@@ -6,9 +6,9 @@
 
 " Prologue {{{
 set nocompatible          " Don't make Vim vi-compatible
+call pathogen#infect()    " Enable pathogen plugin
 syntax enable             " Enable syntax highlighting
 filetype plugin indent on " Load filetype specific plugin and indent files
-call pathogen#infect()    " Enable pathogen plugin
 " }}}
 
 " Settings {{{
