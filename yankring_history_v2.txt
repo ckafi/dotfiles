@@ -1,0 +1,100 @@
+    System.out.println(g);,V
+mkdir -p ~/.vim/autoload ~/.vim/bundlecurl 'www.vim.org/scripts/download_script.php?src_id=16224' \  > ~/.vim/autoload/pathogen.vim,v
+http://wooga.github.com/Pocket-Island/ipad.html,v
+i686,v
+class Saeugetier {    void steckbrief() {      System.out.println("Ich bin ein Säugetier.");    }  }   class Gepard extends Saeugetier {    void steckbrief() {      System.out.println("Ich bin ein Gepard.");    }  },v
+i,v
+Doujinshi ,v
+o,v
+umfasst,v
+der ,v
+ ,v
+\,v
+	Struktur \(a^ l b^ m a^ k b^ k\) und ist ,V
+	\item[a)] Angenomme, \(L\) ist kontextfrei. D.h. \(\exists k \in \mathbb{N}\) gemäß dem Pumping-Lemma.	Sei \(w = a^ k b^ k a^ k b^ k \), \(w \in L\). Da \(|w| > k\) lässt \(w\)	sich zerlegen in \(w = xuyvz\), \(|uyv| \leq k\). Da \(uyv\) max. der 2	¿Blöcke¿ von \(w\) umfasst, folgt: \(xyz\) hat o.B.d.A. die Struktur \(a^ l b^	m a^ k b^ k\) \Rightarrow \(xyz \notin L\). Widerspruch zum PL.,v
+	„berührt“ \(uyv\) maximal 2 der Blöcke, d.h. das Wort \(xyz\) hat o.B.d.A. die,V
+sich ,v
+\\,v
+Da ,v
+PL ,v
+dem ,v
+Nach ,v
+; dieses Wort besteht aus 4 k-langen Blöcken aus a's bzw. b's.,v
+aus,v
+für kontextfreie Sprachen. Wir betrachten nun das Wort,v
+	(o.B.d.A.) die Anzahl der a's des ersten Blocks nicht mehr mit der Anzahl der ,V
+dem,v
+bei ,v
+ mit \(m = k-1\),v
+mit ,v
+n,v
+k b^ k a^ k b^ k,v
+da ,v
+\(aabba \notin L(G)\) ,v
+\(baaab \in L(G)\),v
+\vspace{2mm},V
+},V
+{\centering,V
+\hfill,V
+fill,v
+		5 &     &     &   &     & \\		4 &     &     &   &     & \\		3 &B     & -    & A  &     & \\		2 & B   & S,C & - & S,A & \\		1 & A,C & A,C & B & B   & A,C \\\hline		  & a   & a   & b & b   & a,v
+		5 &     &     &   &   & \\		4 &     &     &   &   & \\		3 &     &     &   &   & \\		2 & B    & S,C    &  - & S,A  & \\		1 & A,C & A,C & B & B & A,C \\\hline		  & a   & a   & b & b & a,v
+		5 &   &   &   &   & \\		4 &   &   &   &   & \\		3 &   &   &   &   & \\		2 &   &   &   &   & \\		1 & A,C  & A,C  & B & B  &A,C \\\hline		  & a & a & b & b & a,v
+\paragraph{Aufgabe 2}\ ,v
+\vspace{5mm},v
+ \\,v
+\end{tabular},V
+CYK Tabelle zu aabba:\\\begin{tabular}{c|ccccc}	5 &   &   &   &   & \\	4 &   &   &   &   & \\	3 &   &   &   &   & \\	2 &   &   &   &   & \\	1 &   &   &   &   & \\\hline	  & a & a & b & b & a\end{tabular},v
+	5&&&&&\\	4&&&&&\\	3&&&&&\\	2&&&&&\\	1&&&&&\\\hline	 &a&a&b&b&a,v
+\begin{tabular}{cc},V
+  6 &       &       &     &     & \\,V
+\(baaab \in L(G)\):\\,V
+  \hline,V
+&&&&,v
+  1&B&A,C&A,C&A,C&B& \\   &b&a&a&a&b,v
+&,v
+O,v
+<edge>bottomright</edge>,v
+http://questionablecontent.net/comics/2211.gif,v
+; MovingShape -> MovingShape; returns the mshape with a new vector if the mshape touches a vertical wall(check-expect (bounce-moving-shape-x (make-moving-shape (make-posn -1 -1) (make-gcircle (make-posn 0 4) 2)))              (make-moving-shape (make-posn 1 -1) (make-gcircle (make-posn 0 4) 2)))(check-expect (bounce-moving-shape-x (make-moving-shape (make-posn 1 1) (make-gcircle (make-posn WIDTH 4) 2)))              (make-moving-shape (make-posn -1 1) (make-gcircle (make-posn WIDTH 4) 2)))(check-expect (bounce-moving-shape-x (make-moving-shape (make-posn 1 1) (make-gcircle (make-posn 3 4) 2)))              (make-moving-shape (make-posn 1 1) (make-gcircle (make-posn 3 4) 2)))(define (bounce-moving-shape-x mshape)  (cond [(shape-touches-x (moving-shape-shape mshape) 0)         (make-moving-shape (bounce-posn-rightwards (moving-shape-vector mshape)) (moving-shape-shape mshape))]        [(shape-touches-x (moving-shape-shape mshape) WIDTH)         (make-moving-shape (bounce-posn-leftwards (moving-shape-vector mshape)) (moving-shape-shape mshape))]        [else mshape])); MovingShape -> MovingShape; returns the mshape with a new vector if the mshape touches a horizontal wall(check-expect (bounce-moving-shape-y (make-moving-shape (make-posn -1 -1) (make-gcircle (make-posn 3 0) 2)))              (make-moving-shape (make-posn -1 1) (make-gcircle (make-posn 3 0) 2)))(check-expect (bounce-moving-shape-y (make-moving-shape (make-posn 1 1) (make-gcircle (make-posn 3 HEIGHT) 2)))              (make-moving-shape (make-posn 1 -1) (make-gcircle (make-posn 3 HEIGHT) 2)))(check-expect (bounce-moving-shape-y (make-moving-shape (make-posn 1 1) (make-gcircle (make-posn 3 4) 2)))              (make-moving-shape (make-posn 1 1) (make-gcircle (make-posn 3 4) 2)))(define (bounce-moving-shape-y mshape)  (cond [(shape-touches-y (moving-shape-shape mshape) 0)         (make-moving-shape (bounce-posn-downwards (moving-shape-vector mshape)) (moving-shape-shape mshape))]        [(shape-touches-y (moving-shape-shape mshape) HEIGHT)         (make-moving-shape (bounce-posn-upwards (moving-shape-vector mshape)) (moving-shape-shape mshape))]        [else mshape])); MovingShape -> MovingShape; returns the mshape with a new vector if the mshape touches a wall(check-expect (bounce-moving-shape (make-moving-shape (make-posn -1 -1) (make-gcircle (make-posn 0 4) 2)))              (make-moving-shape (make-posn 1 -1) (make-gcircle (make-posn 0 4) 2)))(check-expect (bounce-moving-shape (make-moving-shape (make-posn 1 1) (make-gcircle (make-posn WIDTH 4) 2)))              (make-moving-shape (make-posn -1 1) (make-gcircle (make-posn WIDTH 4) 2)))(check-expect (bounce-moving-shape (make-moving-shape (make-posn -1 -1) (make-gcircle (make-posn 3 0) 2)))              (make-moving-shape (make-posn -1 1) (make-gcircle (make-posn 3 0) 2)))(check-expect (bounce-moving-shape (make-moving-shape (make-posn 1 1) (make-gcircle (make-posn 3 HEIGHT) 2)))              (make-moving-shape (make-posn 1 -1) (make-gcircle (make-posn 3 HEIGHT) 2)))(check-expect (bounce-moving-shape (make-moving-shape (make-posn 1 1) (make-gcircle (make-posn 3 4) 2)))              (make-moving-shape (make-posn 1 1) (make-gcircle (make-posn 3 4) 2)))(define (bounce-moving-shape mshape)  (bounce-moving-shape-x (bounce-moving-shape-y mshape))),V
+git ,v
+,V
+  lol = log --graph --decorate --pretty=oneline --abbrev-commit  lola = log --graph --decorate --pretty=oneline --abbrev-commit --all,V
+git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --,v
+#,v
+(define WIDTH 200)(define HEIGHT 200),V
+<action name="Move"/>,v
+",v
+    <keybind key="W-Left"><action name="Move"/></keybind>    <keybind key="W-Right"><action name="Move"/></keybind>    <keybind key="W-Up"><action name="Move"/></keybind>    <keybind key="W-Down"><action name="Move"/></keybind>,V
+    <keybind>      <action name="Move"/>    </keybind>,V
+      <action name=",V
+<,v
+    <keybind key="W-S-1">      <action name="SendToDesktop"><to>1</to></action>    </keybind>,V
+F,v
+    <keybind key="W-Left">      <action name="DesktopLeft">        <dialog>no</dialog>        <wrap>yes</wrap>      </action>    </keybind>    <keybind key="W-Right">      <action name="DesktopRight">        <dialog>no</dialog>        <wrap>yes</wrap>      </action>    </keybind>    <keybind key="W-Up">      <action name="DesktopUp">        <dialog>no</dialog>        <wrap>yes</wrap>      </action>    </keybind>    <keybind key="W-Down">      <action name="DesktopDown">        <dialog>no</dialog>        <wrap>yes</wrap>      </action>    </keybind>    <keybind key="S-W-Left">      <action name="SendToDesktopLeft">        <dialog>no</dialog>        <wrap>yes</wrap>      </action>    </keybind>    <keybind key="S-W-Right">      <action name="SendToDesktopRight">        <dialog>no</dialog>        <wrap>yes</wrap>      </action>    </keybind>    <keybind key="S-W-Up">      <action name="SendToDesktopUp">        <dialog>no</dialog>        <wrap>yes</wrap>      </action>    </keybind>    <keybind key="S-W-Down">      <action name="SendToDesktopDown">        <dialog>no</dialog>        <wrap>yes</wrap>      </action>    </keybind>,V
+ und \(L(\mathcal{B}) = K\),v
+e,v
+B,v
+,,v
+x,v
+\(e \in \Sigma^ *,v
+mit,v
+    \(\mathcal{B}\) ist ein endlicher Automat \Rightarrow \(L_1\) ist regulär.,V
+erkennt,v
+    Der einzige nicht finale Zustand dieses Automaten ist \(\tilde{q}\) und    dieser wird erst erreicht, wenn ein Wort aus \(L\) plus ein beliebiges    Zeichen eingegeben wird.,V
+\paragraph{Aufgabe 1}\begin{itemize}  \item[a)] Ausgehend von einem endlichen Automaten \(\mathcal{A}\) mit    \(L(\mathcal{A}) = L\) definieren wir einen neuen Automaten    \({\mathcal{B}}\), sodass gilt: \\    \(Q = Q_{\mathcal{A}}\cup \{\tilde{q}\} \\    \delta(q,e) = \tilde{q}\) mit \(q \in F_\mathcal{A}, e\in \Sigma^ *.\\    \delta(\tilde{q},e) = \tilde{q}\) mit \(e \in \Sigma^ * \\    F = \{\tilde{q}\} \) \\    Der einzige nicht finale Zustand dieses Automaten ist \(\tilde{q}\) und    dieser wird erst erreicht, wenn ein Wort aus \(L\) plus ein beliebiges    Zeichen eingegeben wird.,V
+mathcal,v
+_,v
+Q,v
+1,v
+:,v
+mit einem neuen Zustand \(\tilde{q}\),v
+=,v
+der die    Sprache L erkennt,v
+    Dieser neue ,V
+a,v
+l,v
+r,v
+f,v
+\forall q \in F_\mathcal{A}.\forall e\in \Sigma^ *.,v
+\in \Sigama^ *.,v
