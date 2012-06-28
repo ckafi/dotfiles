@@ -7,3 +7,6 @@
 [submodule "bundle/NERDTree"]
 	path = bundle/NERDTree
 	url = https://github.com/scrooloose/nerdtree.git
+[submodule "bundle/Command-T"]
+	path = bundle/Command-T
+	url = git://git.wincent.com/command-t.git
