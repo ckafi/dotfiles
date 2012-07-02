@@ -2,3 +2,4 @@ local.vim
 undo
 backups
 yankring_history_v2.txt
+.netrwhist
