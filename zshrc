@@ -108,22 +108,22 @@ loading prompt
 # add red background if running with privileges
 PS1="%(!.%K{red}.)"
 # username@
-PS1+="%F{161}%n%k%f@"
+PS1+="%F{111}%n%k%f@"
 # hostname:
-PS1+="%F{208}%m%f:"
+PS1+="%F{173}%m%f:"
 # path with prefix, truncated to 55 characters
-PS1+="%F{118}%55<..<%~%<<%f"
+PS1+="%F{192}%55<..<%~%<<%f"
 # newline if length(prompt)>70
 #PS1+="%70(l.
 #.)"
 # :jobs (if any)
-PS1+="%1(j.:%F{118}%j%f.)"
+PS1+="%1(j.:%F{113}%j%f.)"
 # :exit code (if >0)
-PS1+="%(?..:%F{196}%?%f)"
+PS1+="%(?..:%F{173}%?%f)"
 # % or # based on privileges
 PS1+="%# "
 
-PS2="%F{118}(%_)%f "
+PS2="%F{173}(%_)%f "
 # }}}
 
 # Aliases {{{
