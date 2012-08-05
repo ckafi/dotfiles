@@ -1,0 +1,31 @@
+\documentclass[paper=a4]{scrartcl}
+
+\usepackage[ngerman]{babel}
+\usepackage{fontspec}
+\usepackage{graphicx}
+\usepackage{amsmath,amssymb}
+%\usepackage[iso,ngerman]{isodate}
+
+\setmainfont[Scale=MatchLowercase]{Linux Libertine O}
+\setsansfont[Scale=MatchLowercase]{Linux Biolinum O}
+\setmonofont[Scale=MatchLowercase]{ckafi}
+%\renewcommand{\familydefault}{\sfdefault}
+%\setkomafont{sectioning}{\bfseries}
+
+\titlehead{}
+
+\subject{}
+\title{}
+\subtitle{}
+
+\author{Tobias Frilling}
+\publishers{}
+
+\date{\today}
+\dedication{}
+
+\begin{document}
+
+
+
+\end{document}

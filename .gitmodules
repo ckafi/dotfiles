@@ -16,3 +16,6 @@
 [submodule "bundle/UltiSnips"]
 	path = bundle/UltiSnips
 	url = https://github.com/SirVer/ultisnips
+[submodule "bundle/Template"]
+	path = bundle/Template
+	url = https://github.com/ckafi/vim-template
