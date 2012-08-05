@@ -1,5 +1,6 @@
 # A zsh start-up file
 # Written by Tobias Frilling (tobias@frilling-online.de)
+# but heavily influenced by grmls zshrc
 # Any copyright is dedicated to the Public Domain.
 # http://creativecommons.org/publicdomain/zero/1.0/
 # So feel free to use any line you want.
@@ -159,7 +160,6 @@ loading key-bindings
 
 bindkey -v    # Vi-Keymap
 
-#From the GRML-Zshrc: ^P inserts last typed word.
 insert-last-typed-word() { zle insert-last-word -- 0 -1 }
 zle -N insert-last-typed-word
 bindkey "^P"    insert-last-typed-word
