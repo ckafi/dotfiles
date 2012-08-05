@@ -39,8 +39,8 @@ loading miscellaneous
   source /etc/profile.d/z.sh && \
   Z=true
 # syntax highlighting
-[[ -e /usr/share/zsh/plugins/zsh-syntax-highlight/zsh-syntax-highlighting.zsh ]] && \
-  source /usr/share/zsh/plugins/zsh-syntax-highlight/zsh-syntax-highlighting.zsh
+#[[ -e /usr/share/zsh/plugins/zsh-syntax-highlight/zsh-syntax-highlighting.zsh ]] && \
+  #source /usr/share/zsh/plugins/zsh-syntax-highlight/zsh-syntax-highlighting.zsh
 # }}}
 
 # Environment {{{
