@@ -86,6 +86,7 @@ ZOPTS=(
   'list_types'
   'mail_warning'
   'no_hup'
+  'pushd_ignore_dups'
   'share_history'
   'transient_rprompt'
 )
