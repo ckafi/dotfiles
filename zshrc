@@ -192,6 +192,8 @@ case $TERM in
     bindkey "^[[7~" beginning-of-line
     bindkey "^[[8~" end-of-line ;;
 esac
+bindkey -M menuselect '+' accept-and-menu-complete
+bindkey -M menuselect '#' accept-and-infer-next-history
 # }}}
 
 # Completions {{{
@@ -359,5 +361,14 @@ cd () {
   else
     builtin cd
   fi
+}
+
+mkcd () {
+  if [[ -d $1 ]]; then
+    "\'$1\' already exists."
+  else
+    mkdir -p $1
+  fi
+  cd $1
 }
 # }}}
