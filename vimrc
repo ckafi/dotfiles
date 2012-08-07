@@ -123,6 +123,8 @@ let g:SuperTabDefaultCompletionType = "context"
 let g:VCSCommandDeleteOnHide=1
 " NERDTree shows bookmars in tree
 let g:NERDTreeShowBookmarks=1
+" UltiSnips: Avoid map collision with Supertab
+let g:UltiSnipsExpandTrigger="<c-j>"
 
 " for Vim-Latexsuite
 set grepprg=grep\ -nH\ $*
