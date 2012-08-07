@@ -99,10 +99,6 @@ match col81 /\%<82v.\%>81v/
 "}}}
 
 " Variable Settings {{{
-"let NERDCompactSexyComs = 1
-let g:vimwiki_camel_case = 0
-let g:timestamp_rep = "%F"
-let g:timestamp_regexp = '\v%(Changed\s*:\s*)@<=\d{4}-\d{2}-\d{2}|TIMESTAMP'
 " Disable fold colmn in taglist
 let Tlist_Enable_Fold_Column = 0
 " Do not adjust window width when toggling taglist
@@ -119,22 +115,10 @@ let g:yankring_history_dir = "$HOME/.vim"
 let showmarks_enable = 0
 " use user, omni or file compl depending on context
 let g:SuperTabDefaultCompletionType = "context"
-" let VCSCommand delete hidden temporary buffers
-let g:VCSCommandDeleteOnHide=1
 " NERDTree shows bookmars in tree
 let g:NERDTreeShowBookmarks=1
 " UltiSnips: Avoid map collision with Supertab
 let g:UltiSnipsExpandTrigger="<c-j>"
-
-" for Vim-Latexsuite
-set grepprg=grep\ -nH\ $*
-let g:tex_flavor = "latex"
-let g:Tex_ViewRule_pdf = "zathura"
-let g:Tex_ViewRule_dvi = "xdvi"
-let g:Tex_DefaultTargetFormat = "pdf"
-let g:Tex_CompileRule_dvi = 'rubber $*'
-let g:Tex_CompileRule_ps = 'rubber -p $*'
-let g:Tex_CompileRule_pdf = 'rubber -d $*'
 "}}}
 
 " Keymaps and Abbrevs {{{
