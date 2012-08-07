@@ -1,9 +1,6 @@
 [submodule "bundle/fugitive"]
 	path = bundle/fugitive
 	url = https://github.com/tpope/vim-fugitive.git
-[submodule "bundle/NERDCommenter"]
-	path = bundle/NERDCommenter
-	url = https://github.com/scrooloose/nerdcommenter.git
 [submodule "bundle/NERDTree"]
 	path = bundle/NERDTree
 	url = https://github.com/scrooloose/nerdtree.git
@@ -19,3 +16,6 @@
 [submodule "bundle/Template"]
 	path = bundle/Template
 	url = https://github.com/ckafi/vim-template
+[submodule "bundle/Commentary"]
+	path = bundle/Commentary
+	url = git://github.com/tpope/vim-commentary.git
