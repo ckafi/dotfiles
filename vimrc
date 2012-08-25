@@ -70,6 +70,7 @@ set completeopt+=longest  " Only insert the longest common text
 set completeopt+=preview  " Show information about current item in preview
 set cryptmethod=blowfish  " Default cipher for encryted files
 set laststatus=2          " Always show status line
+set shortmess+=I          " Don't show intro message
 set statusline=(%n)%f\ %<%y%h%w%q[%{&fenc}][%{&ff}]%m%r%=%c,%l\/%L(%P)
 set dictionary=/usr/share/dict/ngerman " Dictionary for <C-X><C-K>
 "}}}
