@@ -19,3 +19,6 @@
 [submodule "bundle/Commentary"]
 	path = bundle/Commentary
 	url = git://github.com/tpope/vim-commentary.git
+[submodule "bundle/TagBar"]
+	path = bundle/TagBar
+	url = git://github.com/majutsushi/tagbar

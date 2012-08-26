@@ -145,7 +145,7 @@ nnoremap ö :LustyJuggler<CR>
 " Toggle graphical undo window
 nmap <F4>  :GundoToggle<CR>
 nmap <F5>  :nohls<CR>
-nmap <F6>  :TlistToggle<CR>
+nmap <F6>  :TagbarToggle<CR>
 nmap <F7>  :NERDTreeToggle<CR>
 " <F8> reserved for pastetoggle
 nmap <F11> :YRShow<CR>
