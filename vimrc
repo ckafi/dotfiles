@@ -121,6 +121,8 @@ let g:SuperTabDefaultCompletionType = "context"
 let g:NERDTreeShowBookmarks=1
 " UltiSnips: Avoid map collision with Supertab
 let g:UltiSnipsExpandTrigger="<c-j>"
+" Rainbow parentheses' for Clojure
+let g:vimclojure#ParenRainbow=1
 "}}}
 
 " Keymaps and Abbrevs {{{
