@@ -18,6 +18,9 @@ URxvt.pointerBlank     : true
 !URxvt.tintColor       : darkblue
 URxvt.shading          : 15
 URxvt.perl-ext-common  : default,url-select,clipboard
+URxvt.keysym.M-c       : perl:clipboard:copy
+URxvt.keysym.M-v       : perl:clipboard:paste
+URxvt.keysym.M-C-v     : perl:clipboard:paste_escaped
 URxvt.keysym.M-u       : perl:url-select:select_next
 URxvt.underlineURLs    : false
 URxvt.urlLauncher      : /usr/bin/firefox
