@@ -25,6 +25,7 @@ URxvt.keysym.M-u       : perl:url-select:select_next
 URxvt.underlineURLs    : false
 URxvt.urlLauncher      : /usr/bin/firefox
 URxvt.termName         : rxvt-256color
+URxvt.geometry         : 90x25
 
 
 XTerm*faceName: Terminus
