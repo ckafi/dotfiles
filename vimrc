@@ -84,6 +84,7 @@ set dictionary=/usr/share/dict/ngerman " Dictionary for <C-X><C-K>
 autocmd BufEnter *.go    setfiletype go
 autocmd BufEnter *.pde   setfiletype arduino
 autocmd BufEnter *.scala setfiletype scala
+autocmd BufEnter *.tex   setfiletype tex
 "}}}
 
 " Color-Settings {{{
