@@ -1,16 +1,23 @@
 \documentclass[paper=a4]{scrartcl}
 
 \usepackage[ngerman]{babel}
-\usepackage{fontspec}
 \usepackage{graphicx}
 \usepackage{amsmath,amssymb}
 %\usepackage[iso,ngerman]{isodate}
 
+\usepackage{fontspec}
 \setmainfont[Scale=MatchLowercase]{Linux Libertine O}
 \setsansfont[Scale=MatchLowercase]{Linux Biolinum O}
 \setmonofont[Scale=MatchLowercase]{ckafi}
 %\renewcommand{\familydefault}{\sfdefault}
 %\setkomafont{sectioning}{\bfseries}
+
+\usepackage[math-style=ISO,bold-style=ISO]{unicode-math}
+\setmathfont{XITS Math}
+\setmathfont[range=\mathup/{latin,Latin,num,Greek,greek}]{Linux Libertine O}
+\setmathfont[range=\mathbfup/{latin,Latin,num,Greek,greek}]{Linux Libertine O Bold}
+\setmathfont[range=\mathit/{latin,Latin,num,Greek,greek}]{Linux Libertine O Italic}
+\setmathfont[range=\mathbfit/{latin,Latin,num,Greek,greek}]{Linux Libertine O Bold Italic}
 
 \titlehead{}
 
