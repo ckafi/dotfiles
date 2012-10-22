@@ -6,9 +6,9 @@
 %\usepackage[iso,ngerman]{isodate}
 
 \usepackage{fontspec}
-\setmainfont[Scale=MatchLowercase]{Linux Libertine O}
-\setsansfont[Scale=MatchLowercase]{Linux Biolinum O}
-\setmonofont[Scale=MatchLowercase]{ckafi}
+\setmainfont[Scale=MatchUppercase]{Linux Libertine O}
+\setsansfont[Scale=MatchUppercase]{Linux Biolinum O}
+\setmonofont[Scale=MatchUppercase]{ckafi}
 %\renewcommand{\familydefault}{\sfdefault}
 %\setkomafont{sectioning}{\bfseries}
 
