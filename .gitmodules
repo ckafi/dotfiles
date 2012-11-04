@@ -28,6 +28,3 @@
 [submodule "bundle/ZoomWin"]
 	path = bundle/ZoomWin
 	url = git://github.com/vim-scripts/ZoomWin.git
-[submodule "bundle/ParEdit"]
-	path = bundle/ParEdit
-	url = git://github.com/vim-scripts/paredit.vim.git
