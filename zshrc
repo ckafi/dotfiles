@@ -63,6 +63,7 @@ MAILPATH="/var/mail/${USER};/var/spool/mail/${USER}"
 NULLCMD="cat"
 READNULLCMD=$PAGER
 WORDCHARS+=":"
+SUDO_PROMPT="[sudo] $USER@$HOST's passwd: "
 #really annoying!
 #WATCH=all
 #WATCHFMT="%S%B%T: %n has %a (%M)"
@@ -373,3 +374,5 @@ mkcd () {
   cd $1
 }
 # }}}
+
+# vim: foldmethod=marker
