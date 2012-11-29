@@ -271,6 +271,11 @@
         <command>terminal</command>
       </action>
     </keybind>
+    <keybind key="W-q">
+      <action name="Execute">
+        <command>xset dpms force off</command>
+      </action>
+    </keybind>
     <!--{{{ Sound-->
     <keybind key="W-a">
       <action name="Execute">
@@ -298,7 +303,7 @@
     <keybind key="W-S-q">
       <action name="Exit"/>
     </keybind>
-    <keybind key="W-q">
+    <keybind key="W-S-a">
       <action name="ShowMenu">
         <menu>client-list-combined-menu</menu>
       </action>
