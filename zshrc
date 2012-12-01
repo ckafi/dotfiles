@@ -35,10 +35,6 @@ loading miscellaneous
 # load a 'command not found' function with suggestions
 [[ -e /etc/zsh_command_not_found ]] && \
   source /etc/zsh_command_not_found
-# for z
-[[ -e /etc/profile.d/z.sh ]] && \
-  source /etc/profile.d/z.sh && \
-  Z=true
 # syntax highlighting
 #[[ -e /usr/share/zsh/plugins/zsh-syntax-highlight/zsh-syntax-highlighting.zsh ]] && \
   #source /usr/share/zsh/plugins/zsh-syntax-highlight/zsh-syntax-highlighting.zsh
@@ -251,8 +247,6 @@ preexec () {
 }
 
 precmd () {
-  #for z
-  [[ -n $Z ]] && _z --add "$(pwd -P)"
   title 'zsh %2~'
   if git branch &>/dev/null; then
     update_git_prompt
