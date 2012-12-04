@@ -115,6 +115,8 @@ let g:yankring_history_dir = "$HOME/.vim"
 let showmarks_enable = 0
 " use user, omni or file compl depending on context
 let g:SuperTabDefaultCompletionType = "context"
+" enhance 'longest' completeopt
+let g:SuperTabLongestEnhanced = 1
 " NERDTree shows bookmars in tree
 let g:NERDTreeShowBookmarks=1
 " UltiSnips: Avoid map collision with Supertab
