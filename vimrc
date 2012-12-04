@@ -246,3 +246,5 @@ if filereadable($HOME."/.vim/local.vim")
   source $HOME/.vim/local.vim
 endif
 " }}}
+
+" vim: foldmethod=marker
