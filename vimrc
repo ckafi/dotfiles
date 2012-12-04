@@ -49,7 +49,6 @@ set fillchars=vert:│      " Disable annoying chars for stl, diff, fold etc.
 set fillchars+=diff:\     " ...
 set number                " Show line numbers
 set cursorline            " Highlight the screen line of the cursor
-set foldmethod=marker     " Use markers for folding
 set foldcolumn=2          " Width of the fold column
 set foldtext=MyFoldText() " Function for the text on closed folds
 set spelllang=de          " Language for spell checking
