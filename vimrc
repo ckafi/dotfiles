@@ -176,7 +176,7 @@ nnoremap N Nzz
 " make file and open/close quickfix window accordingly
 noremap <silent> <leader>m :silent! :write \| :make \| :botright :cwindow<cr>
 " Open a Quickfix window for the last search.
-nnoremap <silent> ,/ :execute 'vimgrep /'.@/.'/g %'<CR>:copen<CR>
+nnoremap <silent> <leader>/ :execute 'vimgrep /'.@/.'/g %'<CR>:copen<CR>
 "open NERDTree bookmark with :bkm <name>
 cabbrev bkm NERDTreeFromBookmark
 " }}}
