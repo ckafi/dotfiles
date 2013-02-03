@@ -1,7 +1,7 @@
 Xft.lcdfilter : lcddefault
 Xft.rgba      : rgb
 Xft.hinting   : true
-Xft.hintstyle : hintfull
+Xft.hintstyle : hintslight
 Xft.antialias : true
 
 Xcursor.theme: Openzone-Black-Slim
