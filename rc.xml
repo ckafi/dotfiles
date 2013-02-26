@@ -655,6 +655,10 @@
 
   # end of the example
 -->
+    <application class="Zenity">
+      <desktop>all</desktop>
+      <layer>above</layer>
+    </application>
   </applications>
   <!--}}}-->
 </openbox_config>
