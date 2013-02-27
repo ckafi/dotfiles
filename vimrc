@@ -178,7 +178,7 @@ nnoremap <silent> <leader>m :silent! :write \| :make \| :botright :cwindow<cr>
 " Open a Quickfix window for the last search.
 nnoremap <silent> <leader>/ :execute 'vimgrep /'.@/.'/g %'<CR>:copen<CR>
 " Open a directory edit for the current working directory
-nnoremap <silent> <leader>d :edit <C-R>=getcwd()<CR><CR>
+nnoremap <silent> <leader>d :edit <C-R>=escape(getcwd(), " ")<CR><CR>
 "open NERDTree bookmark with :bkm <name>
 cabbrev bkm NERDTreeFromBookmark
 " }}}
