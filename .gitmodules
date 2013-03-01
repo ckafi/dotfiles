@@ -31,3 +31,6 @@
 [submodule "bundle/VimClojure-static"]
 	path = bundle/VimClojure-static
 	url = git://github.com/guns/vim-clojure-static.git
+[submodule "bundle/RainboxParentheses"]
+	path = bundle/RainboxParentheses
+	url = git://github.com/kien/rainbow_parentheses.vim.git
