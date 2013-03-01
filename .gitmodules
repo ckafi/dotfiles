@@ -22,12 +22,12 @@
 [submodule "bundle/TagBar"]
 	path = bundle/TagBar
 	url = git://github.com/majutsushi/tagbar
-[submodule "bundle/VimClojure"]
-	path = bundle/VimClojure
-	url = git://github.com/vim-scripts/VimClojure.git
 [submodule "bundle/ZoomWin"]
 	path = bundle/ZoomWin
 	url = git://github.com/vim-scripts/ZoomWin.git
 [submodule "bundle/YankRing"]
 	path = bundle/YankRing
 	url = git://github.com/vim-scripts/YankRing.vim.git
+[submodule "bundle/VimClojure-static"]
+	path = bundle/VimClojure-static
+	url = git://github.com/guns/vim-clojure-static.git
