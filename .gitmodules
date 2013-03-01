@@ -34,3 +34,9 @@
 [submodule "bundle/RainboxParentheses"]
 	path = bundle/RainboxParentheses
 	url = git://github.com/kien/rainbow_parentheses.vim.git
+[submodule "bundle/Classpath"]
+	path = bundle/Classpath
+	url = git://github.com/tpope/vim-classpath.git
+[submodule "bundle/Foreplay"]
+	path = bundle/Foreplay
+	url = git://github.com/tpope/vim-foreplay.git
