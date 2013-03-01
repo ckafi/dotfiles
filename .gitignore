@@ -1,6 +1,7 @@
 local.vim
 undo
 backups
+swap
 yankring_history_v2.txt
 .netrwhist
 tags

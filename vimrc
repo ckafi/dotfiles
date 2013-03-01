@@ -38,6 +38,7 @@ set undofile              " Save undo history
 set undodir=~/.vim/undo/  " Directory for undo files
 set backup                " Save backups
 set backupdir=~/.vim/backups/ " Directory for backup files
+set directory=~/.vim/swap//   " Directory for swap files with complete path
 set modeline              " Enable modelines
 set visualbell            " Visual bell instead of beeping
 set listchars=tab:▹\      " Character in list mode for tab
