@@ -1,6 +1,6 @@
 local.vim
 undo
-backups
+backup
 swap
 yankring_history_v2.txt
 .netrwhist
