@@ -142,6 +142,7 @@ alias mv="mv -iv"
 alias pacman="pacman-color "
 alias p="pacaur"
 alias psgrep="ps -ef | grep"
+alias remm='rem -hqcm -b1 -w$COLUMNS'
 alias rm="rm -v"
 alias rscp="rsync -ahP --no-whole-file --inplace"
 alias rsmv="rscp --remove-source-files"
