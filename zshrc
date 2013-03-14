@@ -104,12 +104,12 @@ autoload colors && colors
 # All prompt and no work makes Tobias a poor boy
 loading prompt
 
-# add red background if running with privileges
-PS1="%(!.%K{red}.)"
-# username@
-PS1+="%F{111}%n%k%f@"
 # hostname:
-PS1+="%F{173}%m%f:"
+PS1="%F{173}%m%f:"
+# add red background if running with privileges
+PS1+="%(!.%K{red}.)"
+# username:
+PS1+="%F{111}%n%k%f:"
 # path with prefix, truncated to 55 characters
 PS1+="%F{192}%55<..<%~%<<%f"
 # newline if length(prompt)>70
