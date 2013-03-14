@@ -122,6 +122,10 @@ let g:SuperTabLongestEnhanced = 1
 let g:NERDTreeShowBookmarks=1
 " UltiSnips: Avoid map collision with Supertab
 let g:UltiSnipsExpandTrigger="<c-j>"
+" CtrlP should behave more like Command-T
+let g:ctrlp_working_path_mode = '0'
+" Stop CtrlP from interfering with YankRing"
+let g:ctrlp_map = ''
 "}}}
 
 " Keymaps and Abbrevs {{{
@@ -180,6 +184,9 @@ nnoremap <silent> <leader>/ :execute 'vimgrep /'.@/.'/g %'<CR>:copen<CR>
 nnoremap <silent> <leader>d :edit <C-R>=escape(getcwd(), " ")<CR><CR>
 "open NERDTree bookmark with :bkm <name>
 cabbrev bkm NERDTreeFromBookmark
+" CtrlP should behave more like Command-T
+nnoremap <silent> <leader>t :CtrlP<CR>
+nnoremap <silent> <leader>b :CtrlPBuffer<CR>
 " }}}
 
 " Functions {{{

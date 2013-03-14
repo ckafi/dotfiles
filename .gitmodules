@@ -4,9 +4,6 @@
 [submodule "bundle/NERDTree"]
 	path = bundle/NERDTree
 	url = https://github.com/scrooloose/nerdtree.git
-[submodule "bundle/Command-T"]
-	path = bundle/Command-T
-	url = git://git.wincent.com/command-t.git
 [submodule "bundle/SuperTab"]
 	path = bundle/SuperTab
 	url = https://github.com/ervandew/supertab.git
@@ -43,3 +40,6 @@
 [submodule "bundle/auto-pairs"]
 	path = bundle/auto-pairs
 	url = git://github.com/jiangmiao/auto-pairs.git
+[submodule "bundle/CtrlP"]
+	path = bundle/CtrlP
+	url = git://github.com/kien/ctrlp.vim.git
