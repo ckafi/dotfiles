@@ -41,9 +41,9 @@ set backupdir=~/.vim/backup/ " Directory for backup files
 set directory=~/.vim/swap//  " Directory for swap files with complete path
 set modeline              " Enable modelines
 set visualbell            " Visual bell instead of beeping
-set listchars=tab:▹\      " Character in list mode for tab
-set listchars+=eol:↲      " ... end of line
-set listchars+=trail:◦    " ... trailing whitespace
+set listchars=tab:·\      " List mode character for tab
+set listchars+=eol:⌟      " ... end of line
+set listchars+=trail:×    " ... trailing whitespace
 set listchars+=precedes:… " ... start and
 set listchars+=extends:…  " ... end of a truncated display line
 set fillchars=vert:│      " Disable annoying chars for stl, diff, fold etc.
@@ -58,7 +58,7 @@ set tabstop=2             " Number of spaces a Tab counts for in file
 set softtabstop=2         " Number of spaces a Tab counts for in insert
 set expandtab             " Use appropriate number of spaces instead of a tab
 set linebreak             " (Soft)wrap long lines
-set showbreak=↳           " Char to show at beginning of wrapped lines
+set showbreak=└\          " Char to show at beginning of wrapped lines
 set textwidth=80          " Max. length of line for auto-formatting
 set formatoptions=c       " Auto-wrap comments
 set formatoptions+=r      " Inset comment leader after <Enter>
@@ -97,6 +97,9 @@ highlight Folded cterm=None, gui=None
 " Highlight the 81st column if there is a character
 highlight col81 ctermbg=red guibg=red
 match col81 /\%<82v.\%>81v/
+" make non text chars less visible
+highlight NonText gui=None
+highlight SpecialKey gui=None
 "}}}
 
 " Variable Settings {{{
