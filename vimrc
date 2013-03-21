@@ -6,9 +6,35 @@
 
 " Prologue {{{
 set nocompatible          " Don't make Vim vi-compatible
-call pathogen#infect()    " Enable pathogen plugin
 syntax enable             " Enable syntax highlighting
-filetype plugin indent on " Load filetype specific plugin and indent files
+" }}}
+
+" Vundle {{{
+filetype off              " required!
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+" let Vundle manage Vundle
+" required! 
+Bundle 'gmarik/vundle'
+" github repos
+Bundle 'ckafi/vim-template'
+Bundle 'ervandew/supertab'
+Bundle 'guns/vim-clojure-static'
+Bundle 'jiangmiao/auto-pairs'
+Bundle 'kien/ctrlp.vim'
+Bundle 'kien/rainbow_parentheses.vim'
+Bundle 'majutsushi/tagbar'
+Bundle 'scrooloose/nerdtree'
+Bundle 'SirVer/ultisnips'
+Bundle 'sjl/gundo.vim'
+Bundle 'tpope/vim-classpath'
+Bundle 'tpope/vim-commentary'
+Bundle 'tpope/vim-foreplay'
+Bundle 'tpope/vim-fugitive'
+Bundle 'vim-scripts/Align'
+Bundle 'vim-scripts/YankRing.vim'
+Bundle 'vim-scripts/ZoomWin'
+filetype plugin indent on " required!
 " }}}
 
 " Settings {{{
