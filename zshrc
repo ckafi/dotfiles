@@ -6,7 +6,7 @@
 # So feel free to use any line you want.
 
 # Start tmux {{{
-if [[ -e /usr/bin/tmux \
+if [[ -n $(which tmux 2>/dev/null) \
   && -z $TMUX \
   && -z $SUDO_UID ]]; then
     if [[ $TERM == 'linux' ]]; then
