@@ -140,7 +140,6 @@ alias ll="ls -Ahl --time-style=posix-iso"
 alias mc="mc -x"
 alias mpdplay="mplayer -nocache -prefer-ipv4 http://maschinenraum:8000"
 alias mv="mv -iv"
-alias pacman="pacman-color "
 alias p="pacaur"
 alias psgrep="ps -ef | grep"
 alias remm='rem -hqcm -b1 -w$COLUMNS'
