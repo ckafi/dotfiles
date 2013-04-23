@@ -60,6 +60,7 @@ NULLCMD="cat"
 READNULLCMD=$PAGER
 WORDCHARS+=":"
 SUDO_PROMPT="[sudo] $USER@$HOST's passwd: "
+PS2="%F{173}(%_)%f "
 #really annoying!
 #WATCH=all
 #WATCHFMT="%S%B%T: %n has %a (%M)"
@@ -97,32 +98,6 @@ zmodload zsh/complist
 autoload zmv
 autoload -U compinit && compinit
 autoload colors && colors
-# }}}
-
-# Prompt {{{
-# All prompt and no work makes Tobias a poor boy
-# All prompt and no work makes Tobias a poor boy
-loading prompt
-
-# hostname:
-PS1="%F{173}%m%f:"
-# add red background if running with privileges
-PS1+="%(!.%K{red}.)"
-# username:
-PS1+="%F{111}%n%k%f:"
-# path with prefix, truncated to 55 characters
-PS1+="%F{192}%55<..<%~%<<%f"
-# newline if length(prompt)>70
-#PS1+="%70(l.
-#.)"
-# :jobs (if any)
-PS1+="%1(j.:%F{113}%j%f.)"
-# :exit code (if >0)
-PS1+="%(?..:%F{173}%?%f)"
-# % or # based on privileges
-PS1+="%# "
-
-PS2="%F{173}(%_)%f "
 # }}}
 
 # Aliases {{{
@@ -252,13 +227,19 @@ preexec () {
 }
 
 precmd () {
-  title 'zsh %2~'
+  if [[ -n $TAG ]]; then
+    title "($TAG) %2~"
+  else
+    title 'zsh %2~'
+  fi
   if git branch &>/dev/null; then
     update_git_prompt
     RPROMPT=$git_prompt
   else
     unset RPROMPT
   fi
+
+  update_prompt
 }
 
 title () {
@@ -371,6 +352,31 @@ mkcd () {
     mkdir -p $1
   fi
   cd $1
+}
+
+update_prompt () {
+  # All prompt and no work makes Tobias a poor boy
+  # All prompt and no work makes Tobias a poor boy
+  PS1=""
+  # (tag) if set
+  [[ -n $TAG ]] && PS1+="(%F{113}$TAG%f) "
+  # hostname: if in ssh
+  [[ -n $SSH_CONNECTION ]] && PS1+="%F{173}%m%f:"
+  # add red background if running with privileges
+  PS1+="%(!.%K{red}.)"
+  # username:
+  PS1+="%F{111}%n%k%f:"
+  # path with prefix, truncated to 55 characters
+  PS1+="%F{192}%55<..<%~%<<%f"
+  # newline if length(prompt)>70
+  #PS1+="%70(l.
+  #.)"
+  # :jobs (if any)
+  PS1+="%1(j.:%F{113}%j%f.)"
+  # :exit code (if >0)
+  PS1+="%(?..:%F{173}%?%f)"
+  # % or # based on privileges
+  PS1+="%# "
 }
 # }}}
 
