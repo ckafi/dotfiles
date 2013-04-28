@@ -117,6 +117,7 @@ alias mpdplay="mplayer -nocache -prefer-ipv4 http://maschinenraum:8000"
 alias mv="mv -iv"
 alias p="pacaur"
 alias psgrep="ps -ef | grep"
+alias pv="zathura --fork"
 alias remm='rem -hqcm -b1 -w$COLUMNS'
 alias rm="rm -v"
 alias rscp="rsync -ahP --no-whole-file --inplace"
@@ -126,7 +127,6 @@ alias sctl="systemctl"
 alias sudo="sudo "
 alias t="task"
 alias ts="rlwrap -i -r -C task task shell"
-alias vimwiki="vim +VimwikiIndex"
 # }}}
 
 # Key-bindings {{{
