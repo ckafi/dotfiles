@@ -17,3 +17,5 @@
   s = status -sb
 [push]
 	default = simple
+[diff]
+	algorithm = patience
