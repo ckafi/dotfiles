@@ -152,9 +152,3 @@ bar {
         # modifier Mod1
         status_command conky -c .conkyrc_i3
 }
-
-workspace 10 output LVDS
-
-exec parcellite
-exec pnmixer
-exec dropboxd
