@@ -22,7 +22,7 @@ for_window [class="mplayer2"] floating enable
 for_window [class="Xfce4-notifyd"] floating enable
 for_window [class="Xfce4-notifyd"] border none
 for_window [class="Gxmessage"] floating enable
-for_window [class="Kupfer"] border none
+for_window [class="Alarm-clock-applet"] floating enable
 
 # font for window titles
 font xft:sans 8
