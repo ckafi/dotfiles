@@ -261,11 +261,6 @@
     </keybind>
     <!--}}}-->
     <!-- Keybindings for running applications {{{-->
-    <keybind key="W-e">
-      <action name="Execute">
-        <command>gmrun</command>
-      </action>
-    </keybind>
     <keybind key="W-Return">
       <action name="Execute">
         <command>terminal</command>
