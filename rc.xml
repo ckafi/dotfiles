@@ -303,6 +303,16 @@
         <menu>client-list-combined-menu</menu>
       </action>
     </keybind>
+    <keybind key="XF86MonBrightnessUp">
+      <action name="Execute">
+        <command>xbacklight -inc 15</command>
+      </action>
+    </keybind>
+    <keybind key="XF86MonBrightnessDown">
+      <action name="Execute">
+        <command>xbacklight -dec 15</command>
+      </action>
+    </keybind>
     <!--}}}-->
   </keyboard>
   <!--}}}-->
