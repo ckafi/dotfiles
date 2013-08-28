@@ -18,6 +18,7 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 " github repos
 Bundle 'ckafi/vim-template'
+Bundle 'derekwyatt/vim-scala'
 Bundle 'ervandew/supertab'
 Bundle 'guns/vim-clojure-static'
 Bundle 'kien/ctrlp.vim'
