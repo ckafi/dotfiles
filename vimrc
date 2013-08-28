@@ -104,6 +104,7 @@ set shortmess+=I          " Don't show intro message
 set history=1000          " remember more commands and searches
 set statusline=(%n)%f\ %m%<%r\ %c,%l\/%L(%P)%=%y%h%w%q[%{&fenc}][%{&ff}]
 set dictionary=/usr/share/dict/ngerman " Dictionary for <C-X><C-K>
+set backspace=indent,start "allow backspace over autoindent and start of insert
 "}}}
 
 " Autocmds {{{
