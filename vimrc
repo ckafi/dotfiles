@@ -79,9 +79,9 @@ set cursorline            " Highlight the screen line of the cursor
 set foldcolumn=2          " Width of the fold column
 set foldtext=MyFoldText() " Function for the text on closed folds
 set spelllang=de          " Language for spell checking
-set shiftwidth=2          " Number of spaces for each (auto)indent
 set tabstop=2             " Number of spaces a Tab counts for in file
-set softtabstop=2         " Number of spaces a Tab counts for in insert
+set shiftwidth=0          " Number of spaces for each (auto)indent
+set softtabstop=-1        " Number of spaces a Tab counts for in insert
 set expandtab             " Use appropriate number of spaces instead of a tab
 set linebreak             " (Soft)wrap long lines
 set showbreak=└\          " Char to show at beginning of wrapped lines
