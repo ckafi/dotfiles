@@ -152,3 +152,6 @@ bar {
         # modifier Mod1
         status_command conky -c .conkyrc_i3
 }
+
+# autostart desktop files
+exec dex -a -e i3
