@@ -14,9 +14,10 @@ filetype off              " required!
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 " let Vundle manage Vundle
-" required! 
+" required!
 Bundle 'gmarik/vundle'
 " github repos
+Bundle 'bling/vim-airline'
 Bundle 'ckafi/vim-template'
 Bundle 'derekwyatt/vim-scala'
 Bundle 'ervandew/supertab'
@@ -156,6 +157,11 @@ let g:UltiSnipsExpandTrigger="<c-j>"
 let g:ctrlp_working_path_mode = '0'
 " Stop CtrlP from interfering with YankRing"
 let g:ctrlp_map = ''
+" Remove airline seperators
+let g:airline_left_sep=''
+let g:airline_right_sep=''
+" Set airline color theme
+let g:airline_theme = 'bubblegum'
 "}}}
 
 " Keymaps and Abbrevs {{{
