@@ -1,0 +1,11 @@
+ControlMaster auto
+ControlPath /home/%u/.ssh/%r@%h:%p
+ControlPersist yes
+
+Host info
+  HostName boma.mathematik.uni-marburg.de
+  Compression yes
+  User frilling
+
+Host maschinenraum.no-ip.org
+  Compression yes
