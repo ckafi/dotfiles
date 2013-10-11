@@ -18,7 +18,8 @@ new_window normal
 
 for_window [class="Gmrun"] floating enable
 for_window [class="Gmrun"] border none
-for_window [class="mplayer2"] floating enable
+for_window [class="Vlc"] floating enable
+for_window [class="mpv"] floating enable
 for_window [class="Xfce4-notifyd"] floating enable
 for_window [class="Xfce4-notifyd"] border none
 for_window [class="Gxmessage"] floating enable
