@@ -18,15 +18,6 @@ fi
 # }}}
 
 # Miscellaneous {{{
-# print a 'loading foo' message
-loading() {
-  1="loading $1..."
-  1=${(r:$COLUMNS:)1}
-  print -n $1'\r'
-}
-
-loading miscellaneous
-
 # compile .zshrc if necessary
 [[ ~/.zshrc -nt ~/.zshrc.zwc || ! -e ~/.zshrc.zwc ]] && \
   zcompile ~/.zshrc
@@ -41,7 +32,6 @@ loading miscellaneous
 # }}}
 
 # Environment {{{
-loading environment
 setopt all_export
 eval $(dircolors)
 PATH="$HOME/bin:$PATH"
@@ -68,8 +58,6 @@ unsetopt all_export
 # }}}
 
 # Options and modules {{{
-loading 'options and modules'
-
 ZOPTS=(
   'auto_pushd'
   'no_beep'
@@ -101,7 +89,6 @@ autoload colors && colors
 # }}}
 
 # Aliases {{{
-loading aliases
 #for i in cd ls; do
   #eval "alias $i=' $i'"
 #done
@@ -130,8 +117,6 @@ alias ts="rlwrap -i -r -C task task shell"
 # }}}
 
 # Key-bindings {{{
-loading key-bindings
-
 bindkey -v    # Vi-Keymap
 
 insert-last-typed-word() { zle insert-last-word -- 0 -1 }
@@ -171,7 +156,6 @@ bindkey -M menuselect '#' accept-and-infer-next-history
 # }}}
 
 # Completions {{{
-loading completions
 # based on jdongs .zshrc v0.2.1
 # TODO: Figure our what exactly this all does.
 # No more cargo-culting.
@@ -211,8 +195,6 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 # }}}
 
 # Functions {{{
-loading functions
-
 td () {
   task $@ pro:$PWD:t
 }
