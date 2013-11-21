@@ -224,6 +224,9 @@
     </keybind>
     <!--}}}-->
     <!-- Keybindings for windows {{{-->
+    <keybind key="W-S-q">
+      <action name="Close"/>
+    </keybind>
     <keybind key="A-Escape">
       <action name="Lower"/>
       <action name="FocusToBottom"/>
@@ -294,9 +297,6 @@
       <action name="ShowMenu">
         <menu>root-menu</menu>
       </action>
-    </keybind>
-    <keybind key="W-S-q">
-      <action name="Exit"/>
     </keybind>
     <keybind key="W-S-a">
       <action name="ShowMenu">
