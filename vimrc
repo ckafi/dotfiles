@@ -31,6 +31,7 @@ Bundle 'SirVer/ultisnips'
 Bundle 'sjl/gundo.vim'
 Bundle 'tpope/vim-classpath'
 Bundle 'tpope/vim-commentary'
+Bundle 'tpope/vim-dispatch'
 Bundle 'tpope/vim-fireplace'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-repeat'
@@ -38,7 +39,6 @@ Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-unimpaired'
 Bundle 'vim-scripts/Align'
 Bundle 'vim-scripts/YankRing.vim'
-Bundle 'vim-scripts/ZoomWin'
 filetype plugin indent on " required!
 " }}}
 
@@ -218,7 +218,7 @@ vnoremap > >gv
 nnoremap n nzz
 nnoremap N Nzz
 " make file and open/close quickfix window accordingly
-nnoremap <silent> <leader>m :silent! :write \| :make \| :botright :cwindow<cr>
+nnoremap <silent> <leader>m :silent! :write \| :Dispatch<CR>
 " Open a Quickfix window for the last search.
 nnoremap <silent> <leader>/ :execute 'vimgrep /'.@/.'/g %'<CR>:copen<CR>
 " Open a directory edit for the current working directory
