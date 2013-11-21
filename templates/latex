@@ -8,7 +8,7 @@
 \usepackage{fontspec}
 \setmainfont{Linux Libertine O}
 \setsansfont{Linux Biolinum O}
-\setmonofont{ckafi}
+\setmonofont{Cousine}
 %\renewcommand{\familydefault}{\sfdefault}
 %\setkomafont{sectioning}{\bfseries}
 
