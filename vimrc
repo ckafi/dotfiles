@@ -29,6 +29,7 @@ Bundle 'regedarek/ZoomWin'
 Bundle 'scrooloose/nerdtree'
 Bundle 'SirVer/ultisnips'
 Bundle 'sjl/gundo.vim'
+Bundle 'svermeulen/vim-easyclip'
 Bundle 'tpope/vim-classpath'
 Bundle 'tpope/vim-commentary'
 Bundle 'tpope/vim-dispatch'
@@ -38,7 +39,6 @@ Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-unimpaired'
 Bundle 'vim-scripts/Align'
-Bundle 'vim-scripts/YankRing.vim'
 filetype plugin indent on " required!
 " }}}
 
@@ -148,7 +148,6 @@ let Tlist_Use_Right_Window = 1
 let Tlist_Show_One_File = 1
 " Taglist settings for scala
 let tlist_scala_settings = 'scala;c:classes;o:objects;t:traits;T:types;m:methods;p:packages'
-let g:yankring_history_dir = "$HOME/.vim"
 let showmarks_enable = 0
 " use user, omni or file compl depending on context
 let g:SuperTabDefaultCompletionType = "context"
@@ -160,7 +159,7 @@ let g:NERDTreeShowBookmarks=1
 let g:UltiSnipsExpandTrigger="<c-j>"
 " CtrlP should behave more like Command-T
 let g:ctrlp_working_path_mode = '0'
-" Stop CtrlP from interfering with YankRing"
+" Stop CtrlP from interfering with easyclip"
 let g:ctrlp_map = ''
 " Remove airline seperators
 let g:airline_left_sep=''
@@ -194,7 +193,6 @@ nmap <F5>  :nohls<CR>
 nmap <F6>  :TagbarToggle<CR>
 nmap <F7>  :NERDTreeToggle<CR>
 " <F8> reserved for pastetoggle
-nmap <F11> :YRShow<CR>
 nmap <C-PageUp> :bnext<CR>
 nmap <C-PageDown> :bprevious<CR>
 nmap <C-Right> :cnext<CR>
@@ -207,8 +205,6 @@ nnoremap <C-Up> g;
 nnoremap <C-Down> g,
 " 'Focus' the current fold by folding all the others
 nnoremap <leader>z zMzv<esc>
-" Make 'Y' follow 'D' and 'C' conventions
-nnoremap Y y$
 " sudo and write (if you forgot to sudo first)
 cmap w!! w <esc>!sudo tee % >/dev/null
 " indent more or less in visual mode with < and >
