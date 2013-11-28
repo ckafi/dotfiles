@@ -137,17 +137,6 @@ highlight SpecialKey gui=None
 
 " Variable Settings {{{
 " Disable fold colmn in taglist
-let Tlist_Enable_Fold_Column = 0
-" Do not adjust window width when toggling taglist
-let Tlist_Inc_Winwidth = 0
-" Sort tags by name
-let Tlist_Sort_Type = "name"
-" Use right window for taglist
-let Tlist_Use_Right_Window = 1
-" Only show tags from current buffer
-let Tlist_Show_One_File = 1
-" Taglist settings for scala
-let tlist_scala_settings = 'scala;c:classes;o:objects;t:traits;T:types;m:methods;p:packages'
 let showmarks_enable = 0
 " use user, omni or file compl depending on context
 let g:SuperTabDefaultCompletionType = "context"
@@ -169,11 +158,6 @@ let g:airline_theme = 'bubblegum'
 "}}}
 
 " Keymaps and Abbrevs {{{
-" Disable arrow keys
-imap <up> <nop>
-imap <Down> <NOP>
-"imap <Left> <NOP>
-"imap <Right> <NOP>
 " Move the screen up or down
 nnoremap <Up> k<C-Y>
 nnoremap <Down> j<C-E>
@@ -183,9 +167,6 @@ nnoremap <Space> <PageDown>
 " Esc is so far away. There aren't that many word with two j's, are
 " there? Alternativ: CTRL-c
 inoremap jj <Esc>
-
-let g:LustyJugglerDefaultMappings = 0
-nnoremap ö :LustyJuggler<CR>
 
 " Toggle graphical undo window
 nmap <F4>  :GundoToggle<CR>
