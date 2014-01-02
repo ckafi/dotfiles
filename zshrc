@@ -248,7 +248,7 @@ update_git_prompt () {
 
   git_status=$(git status)
 
-  [[ $git_status =~ '# Initial commit' ]] && \
+  [[ $git_status =~ 'Initial commit' ]] && \
     git_branch_name="Initial"
 
   if [[ -z $git_branch_name ]]; then
@@ -256,19 +256,19 @@ update_git_prompt () {
     git_commit_hash=$(git rev-parse --short HEAD)
   fi
 
-  if [[ $git_status =~ '# Your branch and .* have diverged' ]]; then
+  if [[ $git_status =~ 'Your branch and .* have diverged' ]]; then
     git_branch_status='d'
-  elif [[ $git_status =~ '# Your branch is ahead of ' ]]; then
+  elif [[ $git_status =~ 'Your branch is ahead of ' ]]; then
     git_branch_status='a'
-  elif [[ $git_status =~ '# Your branch is behind ' ]]; then
+  elif [[ $git_status =~ 'Your branch is behind ' ]]; then
     git_branch_status='b'
   fi
 
-  [[ $git_status =~ "# Changes to be committed:" ]] && \
+  [[ $git_status =~ "Changes to be committed:" ]] && \
     git_tlights+="%F{green}s"
-  [[ $git_status =~ "# Changes not staged for commit:" ]] && \
+  [[ $git_status =~ "Changes not staged for commit:" ]] && \
     git_tlights+="%F{yellow}m"
-  [[ $git_status =~ "# Untracked files:" ]] && \
+  [[ $git_status =~ "Untracked files:" ]] && \
     git_tlights+="%F{red}u"
 
   git_prompt="%F{green}$git_branch_name"
