@@ -2,6 +2,8 @@
 
 nmap j <down>
 nmap k <up>
+nmap J gT
+nmap K gt
 set defsearch=duckduckgo
 set newtab=help
 set tabnumbers
