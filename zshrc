@@ -74,6 +74,7 @@ ZOPTS=(
   'mail_warning'
   'no_hup'
   'pushd_ignore_dups'
+  'rm_star_wait'
   'share_history'
   'transient_rprompt'
 )
