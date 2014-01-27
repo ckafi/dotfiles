@@ -4,6 +4,8 @@ nmap j <down>
 nmap k <up>
 nmap J gT
 nmap K gt
+inoremap <C-a> <C-t>ggVG
+
 set defsearch=duckduckgo
 set newtab=help
 set tabnumbers
