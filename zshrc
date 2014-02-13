@@ -94,7 +94,7 @@ autoload colors && colors
   #eval "alias $i=' $i'"
 #done
 
-alias -g grep="egrep --color=auto"
+alias -g grep="grep --color=auto"
 alias cp="cp -iv"
 alias dirs="dirs -v"
 alias ls="ls -F --color=auto"
