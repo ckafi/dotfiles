@@ -1,11 +1,11 @@
-# ControlMaster auto
-# ControlPath /home/%u/.ssh/%r@%h:%p
-# ControlPersist yes
-
 Host info
   HostName boma.mathematik.uni-marburg.de
-  Compression yes
   User frilling
 
-Host maschinenraum.no-ip.org
+Host maschinenraum.no-ip.org info
   Compression yes
+
+Host gibson wintermute info
+  ControlMaster auto
+  ControlPersist yes
+  ControlPath ~/.ssh/socket-%r@%h:%p
