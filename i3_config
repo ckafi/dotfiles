@@ -42,8 +42,8 @@ bindsym $mod+Return exec terminal
 bindsym $mod+Shift+q kill
 
 # bindsym $mod+d exec gmrun
-bindsym $mod+y exec amixer -q sset Master 1-
-bindsym $mod+x exec amixer -q sset Master 1+
+bindsym $mod+y exec amixer -q sset Master 1%-
+bindsym $mod+x exec amixer -q sset Master 1%+
 bindsym $mod+c exec amixer -q sset Master toggle
 bindsym $mod+q exec xset dpms force off
 

@@ -282,12 +282,12 @@
     </keybind>
     <keybind key="W-x">
       <action name="Execute">
-        <command>amixer -q sset Master 1+</command>
+        <command>amixer -q sset Master 1%+</command>
       </action>
     </keybind>
     <keybind key="W-y">
       <action name="Execute">
-        <command>amixer -q sset Master 1-</command>
+        <command>amixer -q sset Master 1%-</command>
       </action>
     </keybind>
     <!--}}}-->
