@@ -12,7 +12,7 @@ URxvt.visualBell       : true
 URxvt.scrollBar        : false
 URxvt.cursorBlink      : true
 !URxvt.cursorUnderline : true
-URxvt.font             : xft:Ubuntu Mono:pixelsize=16, xft:Dejavu Sans Mono, xft:Dejavu Sans
+URxvt.font             : xft:Anonymous Pro:pixelsize=15, xft:Dejavu Sans Mono, xft:Dejavu Sans
 URxvt.pointerBlank     : true
 !URxvt.transparent     : true
 !URxvt.tintColor       : darkblue
