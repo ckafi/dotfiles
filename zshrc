@@ -207,19 +207,19 @@ warn () {
 
 preexec () {
   title $1
+  echo -n ${(%):-%f}
 }
 
 precmd () {
   if [[ -n $TAG ]]; then
-    title "($TAG) %2~"
+    title "$TAG %2~"
   else
     title 'zsh %2~'
   fi
   if git branch &>/dev/null; then
     update_git_prompt
-    RPROMPT=$git_prompt
   else
-    unset RPROMPT
+    unset git_prompt
   fi
 
   update_prompt
@@ -264,6 +264,7 @@ update_git_prompt () {
   elif [[ $git_status =~ 'Your branch is behind ' ]]; then
     git_branch_status='b'
   fi
+  git_tlights+=${git_branch_status:+%F\{111\}$git_branch_status}
 
   [[ $git_status =~ "Changes to be committed:" ]] && \
     git_tlights+="%F{green}s"
@@ -272,10 +273,9 @@ update_git_prompt () {
   [[ $git_status =~ "Untracked files:" ]] && \
     git_tlights+="%F{red}u"
 
-  git_prompt="%F{green}$git_branch_name"
-  git_prompt+="%F{red}${git_branch_status:+ $git_branch_status}"
-  git_prompt+="%F{yellow}${git_commit_hash:+ $git_commit_hash}"
-  git_prompt+="${git_tlights:+ }$git_tlights%f"
+  git_prompt="%F{199}$git_branch_name"
+  git_prompt+="${git_commit_hash:+.$git_commit_hash}"
+  git_prompt+="${git_tlights:+%f($git_tlights%f)}%f"
 }
 
 ext () {
@@ -342,22 +342,23 @@ update_prompt () {
   # All prompt and no work makes Tobias a poor boy
   PS1=""
   # (tag) if set
-  [[ -n $TAG ]] && PS1+="(%F{113}$TAG%f) "
-  # hostname: if in ssh
-  [[ -n $SSH_CONNECTION ]] && PS1+="%F{173}%m%f:"
-  # add red background if running with privileges
-  PS1+="%(!.%K{red}.)"
-  # username:
-  PS1+="%F{111}%n%k%f:"
+  PS1+=${TAG+%F{113}$TAG%f }
+  # hostname if in ssh or root
+  [[ -n $SSH_CONNECTION || $UID == 0 ]] && PS1+="%F{111}%m%f:"
+  # username
+  PS1+="%F{111}%n%f "
   # path with prefix, truncated to 55 characters
   PS1+="%F{192}%55<..<%~%<<%f"
-  # newline if length(prompt)>70
-  #PS1+="%70(l.
-  #.)"
-  # :jobs (if any)
-  PS1+="%1(j.:%F{113}%j%f.)"
-  # :exit code (if >0)
-  PS1+="%(?..:%F{173}%?%f)"
+  # git prompt if set
+  PS1+=${git_prompt+ $git_prompt}
+  # jobs (if any)
+  PS1+="%1(j. %F{113}%j%f.)"
+  # exit code if >0
+  PS1+="%(?.. %F{173}%?%f)"
+  # newline
+  PS1+=$'\n'
+  # red text if root
+  PS1+="%(!.%F{196}.)"
   # % or # based on privileges
   PS1+="%# "
 }
