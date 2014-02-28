@@ -124,7 +124,8 @@ autocmd BufEnter *.tex   setfiletype tex
 " Use colors for a dark background
 set background=dark
 " Load color scheme
-colorscheme wombat256mod
+colorscheme lucius
+LuciusDarkLowContrast
 " Don't highlight closed folds
 highlight Folded cterm=None, gui=None
 " Highlight the 81st column if there is a character
@@ -154,7 +155,7 @@ let g:ctrlp_map = ''
 let g:airline_left_sep=''
 let g:airline_right_sep=''
 " Set airline color theme
-let g:airline_theme = 'bubblegum'
+let g:airline_theme = 'powerlineish'
 "}}}
 
 " Keymaps and Abbrevs {{{
