@@ -34,29 +34,29 @@ XTerm*faceSize: 10
 *color0      : #000000
 *color8      : #2e3436
 !red
-*color1      : #a40000
-*color9      : #cc0000
+*color1      : #870000
+*color9      : #d75f5f
 !green
-*color2      : #4e9a06
-*color10     : #73d216
+*color2      : #5f875f
+*color10     : #87af5f
 !yellow
 *color3      : #fde400
 *color11     : #fcf92f
 !blue
 *color4      : #3465a4
-*color12     : #325fef
+*color12     : #005f87
 !magenta
 *color5      : #6d0088
-*color13     : #ae0077
+*color13     : #af87af
 !cyan
-*color6      : #10b5c5
-*color14     : #10d0fc
+*color6      : #5fafd7
+*color14     : #00afd7
 !white
 *color7      : #eeeeec
 *color15     : #FFFFFF
 
-*cursorColor : #555753
-*background  : #242424
-*foreground  : #babdb6
+*cursorColor : #5f87af
+*background  : #303030
+*foreground  : #bcbcbc
 *fadeColor   : #000000
 !*fading      : 40
