@@ -40,11 +40,11 @@ XTerm*faceSize: 10
 *color2      : #5f875f
 *color10     : #87af5f
 !yellow
-*color3      : #fde400
-*color11     : #fcf92f
+*color3      : #bcbc4c
+*color11     : #c1c155
 !blue
 *color4      : #3465a4
-*color12     : #005f87
+*color12     : #207fa7
 !magenta
 *color5      : #6d0088
 *color13     : #af87af
