@@ -59,4 +59,4 @@ XTerm*faceSize: 10
 *background  : #303030
 *foreground  : #bcbcbc
 *fadeColor   : #000000
-!*fading      : 40
+*fading      : 15
