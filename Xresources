@@ -31,29 +31,29 @@ XTerm*faceName: Terminus
 XTerm*faceSize: 10
 
 !black
-*color0      : #000000
-*color8      : #2e3436
+*color0      : #101010
+*color8      : #101010
 !red
-*color1      : #870000
+*color1      : #d75f5f
 *color9      : #d75f5f
 !green
-*color2      : #5f875f
+*color2      : #87af5f
 *color10     : #87af5f
 !yellow
-*color3      : #bcbc4c
-*color11     : #c1c155
+*color3      : #afaf87
+*color11     : #afaf87
 !blue
-*color4      : #3465a4
+*color4      : #207fa7
 *color12     : #207fa7
 !magenta
-*color5      : #6d0088
+*color5      : #af87af
 *color13     : #af87af
 !cyan
 *color6      : #5fafd7
-*color14     : #00afd7
+*color14     : #5fafd7
 !white
-*color7      : #eeeeec
-*color15     : #FFFFFF
+*color7      : #dddddd
+*color15     : #dddddd
 
 *cursorColor : #5f87af
 *background  : #303030
