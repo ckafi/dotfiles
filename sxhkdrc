@@ -1,0 +1,11 @@
+super + Return
+  terminal
+
+super + v
+  xset dpms force off
+
+XF86AudioMute
+  amixer -q sset Master toggle
+
+XF86Audio{Lower,Raise}Volume
+  amixer -q sset Master 2%{-,+}
