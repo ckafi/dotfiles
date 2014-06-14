@@ -263,35 +263,6 @@
       <allDesktops>yes</allDesktops>
     </keybind>
     <!--}}}-->
-    <!-- Keybindings for running applications {{{-->
-    <keybind key="W-Return">
-      <action name="Execute">
-        <command>terminal</command>
-      </action>
-    </keybind>
-    <keybind key="W-q">
-      <action name="Execute">
-        <command>xset dpms force off</command>
-      </action>
-    </keybind>
-    <!--{{{ Sound-->
-    <keybind key="W-a">
-      <action name="Execute">
-        <command>amixer -q sset Master toggle</command>
-      </action>
-    </keybind>
-    <keybind key="W-x">
-      <action name="Execute">
-        <command>amixer -q sset Master 1%+</command>
-      </action>
-    </keybind>
-    <keybind key="W-y">
-      <action name="Execute">
-        <command>amixer -q sset Master 1%-</command>
-      </action>
-    </keybind>
-    <!--}}}-->
-    <!--}}}-->
     <!-- Other Stuff {{{-->
     <keybind key="W-w">
       <action name="ShowMenu">
