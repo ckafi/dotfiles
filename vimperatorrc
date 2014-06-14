@@ -1,9 +1,9 @@
 "3.5 (created: 2012/08/04 00:41:20)
 
-nmap j <down>
-nmap k <up>
-nmap J gT
-nmap K gt
+nmap \< :back<CR>
+nmap > :forward<CR>
+nmap ( :tabprevious<CR>
+nmap ) :tabnext<CR>
 inoremap <C-a> <C-t>ggVG
 
 set defsearch=duckduckgo
@@ -11,6 +11,7 @@ set newtab=help
 set tabnumbers
 set complete='l'
 set focuscontent=false
+set gui=nonavigation
 source! /home/tobias/.vimperatorrc.local
 
 " vim: set ft=vimperator:
