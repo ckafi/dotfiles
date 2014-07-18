@@ -1,5 +1,8 @@
 super + Return
-  terminal
+  urxvtc
+
+super + space
+  j4-dmenu-desktop --display-binary --dmenu='dmenu -i -fn monospace-10'
 
 super + v
   xset dpms force off

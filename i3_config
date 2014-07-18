@@ -26,17 +26,8 @@ client.focused          #4c7899 #285577 #ffffff #dd1111
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
-# start a terminal
-bindsym $mod+Return exec terminal
-
 # kill focused window
 bindsym $mod+x kill
-
-# change volume
-bindcode $mod+52 exec amixer -q sset Master 1%-    # ü
-bindcode $mod+53 exec amixer -q sset Master 1%+    # ö
-bindcode $mod+54 exec amixer -q sset Master toggle # ä
-bindsym $mod+v exec xset dpms force off
 
 # change focus
 bindsym $mod+n focus left
@@ -68,10 +59,10 @@ bindsym $mod+i layout tabbed
 bindsym $mod+a layout default
 
 # toggle tiling / floating
-bindsym $mod+Shift+space floating toggle
+bindsym $mod+Shift+l floating toggle
 
 # change focus between tiling / floating windows
-bindsym $mod+space focus mode_toggle
+bindsym $mod+l focus mode_toggle
 
 # focus the parent container
 bindsym $mod+s focus parent

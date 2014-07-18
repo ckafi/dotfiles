@@ -224,7 +224,7 @@
     </keybind>
     <!--}}}-->
     <!-- Keybindings for windows {{{-->
-    <keybind key="W-S-q">
+    <keybind key="W-x">
       <action name="Close"/>
     </keybind>
     <keybind key="A-Escape">
