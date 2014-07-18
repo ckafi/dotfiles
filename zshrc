@@ -101,7 +101,6 @@ alias ls="ls -F --color=auto"
 alias la="ls -A"
 alias ll="ls -Ahl --time-style=posix-iso"
 alias mc="mc -x"
-alias mpdplay="mplayer -nocache -prefer-ipv4 http://maschinenraum:8000"
 alias mv="mv -iv"
 alias p="pacaur"
 alias psgrep="ps -ef | grep"
@@ -113,8 +112,7 @@ alias rsmv="rscp --remove-source-files"
 alias rvim="gvim --remote-silent"
 alias scu="systemctl --user"
 alias sudo="sudo "
-alias t="task"
-alias ts="rlwrap -i -r -C task task shell"
+alias jrnl=" jrnl"
 # }}}
 
 # Key-bindings {{{
