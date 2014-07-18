@@ -160,7 +160,7 @@ let g:airline_theme = 'powerlineish'
 "}}}
 
 " Keymaps and Abbrevs {{{
-nnoremap <Space> <PageDown>
+nnoremap <Space> <NOP>
 " Esc is so far away. There aren't that many word with two j's, are
 " there? Alternativ: CTRL-c
 inoremap jj <Esc>
@@ -177,7 +177,7 @@ nmap <C-Right> :cnext<CR>
 nmap <C-Left> :cprevious<CR>
 nmap <leader>l :set list!<CR>
 nmap <leader>s :set spell!<CR>
-nmap , <leader>
+map , <leader>
 " Move up and down in the changelist
 nnoremap <C-Up> g;
 nnoremap <C-Down> g,
