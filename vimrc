@@ -27,12 +27,12 @@ Bundle 'jonathanfilip/vim-lucius.git'
 Bundle 'kien/ctrlp.vim'
 Bundle 'kien/rainbow_parentheses.vim'
 Bundle 'majutsushi/tagbar'
+Bundle 'maxbrunsfeld/vim-yankstack'
 Bundle 'regedarek/ZoomWin'
 Bundle 'scrooloose/nerdtree'
+Bundle 'tpope/vim-commentary'
 Bundle 'SirVer/ultisnips'
 Bundle 'sjl/gundo.vim'
-Bundle 'svermeulen/vim-easyclip'
-Bundle 'tomtom/tcomment_vim'
 Bundle 'tpope/vim-dispatch'
 Bundle 'tpope/vim-fireplace'
 Bundle 'tpope/vim-fugitive'
@@ -203,6 +203,9 @@ cabbrev bkm NERDTreeFromBookmark
 nnoremap <silent> <leader>f :CtrlP<CR>
 nnoremap <silent> <leader>b :CtrlPBuffer<CR>
 nnoremap <silent> <leader>t :CtrlPBufTag<CR>
+" for yank-stack
+nmap <leader>p <Plug>yankstack_substitute_older_paste
+nmap <leader>P <Plug>yankstack_substitute_newer_paste
 " }}}
 
 " Functions {{{
