@@ -14,4 +14,8 @@ set focuscontent=false
 set gui=nonavigation
 source! /home/tobias/.vimperatorrc.local
 
+" Disable bell
+set visualbell
+hi Bell display none;
+
 " vim: set ft=vimperator:
