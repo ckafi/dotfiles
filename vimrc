@@ -11,35 +11,37 @@ syntax enable             " Enable syntax highlighting
 
 " Vundle {{{
 filetype off              " required!
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 " let Vundle manage Vundle
 " required!
-Bundle 'gmarik/vundle'
+Plugin 'gmarik/Vundle.git'
 " github repos
-Bundle 'bling/vim-airline'
-Bundle 'ckafi/vim-template'
-Bundle 'derekwyatt/vim-scala'
-Bundle 'ervandew/supertab'
-Bundle 'guns/vim-clojure-static'
-Bundle 'honza/vim-snippets'
-Bundle 'jonathanfilip/vim-lucius.git'
-Bundle 'kien/ctrlp.vim'
-Bundle 'kien/rainbow_parentheses.vim'
-Bundle 'majutsushi/tagbar'
-Bundle 'maxbrunsfeld/vim-yankstack'
-Bundle 'regedarek/ZoomWin'
-Bundle 'scrooloose/nerdtree'
-Bundle 'tpope/vim-commentary'
-Bundle 'SirVer/ultisnips'
-Bundle 'sjl/gundo.vim'
-Bundle 'tpope/vim-dispatch'
-Bundle 'tpope/vim-fireplace'
-Bundle 'tpope/vim-fugitive'
-Bundle 'tpope/vim-repeat'
-Bundle 'tpope/vim-surround'
-Bundle 'tpope/vim-unimpaired'
-Bundle 'vim-scripts/Align'
+Plugin 'bling/vim-airline'
+Plugin 'ckafi/vim-template'
+Plugin 'derekwyatt/vim-scala'
+Plugin 'ervandew/supertab'
+Plugin 'guns/vim-clojure-static'
+Plugin 'honza/vim-snippets'
+Plugin 'jonathanfilip/vim-lucius.git'
+Plugin 'kien/ctrlp.vim'
+Plugin 'kien/rainbow_parentheses.vim'
+Plugin 'majutsushi/tagbar'
+Plugin 'maxbrunsfeld/vim-yankstack'
+Plugin 'regedarek/ZoomWin'
+Plugin 'scrooloose/nerdtree'
+Plugin 'tpope/vim-commentary'
+Plugin 'SirVer/ultisnips'
+Plugin 'sjl/gundo.vim'
+Plugin 'tpope/vim-dispatch'
+Plugin 'tpope/vim-fireplace'
+Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-repeat'
+Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-unimpaired'
+Plugin 'vim-scripts/Align'
+Plugin 'vim-scripts/paredit.vim'
+call vundle#end()         " required
 filetype plugin indent on " required!
 " }}}
 
@@ -130,8 +132,8 @@ LuciusDarkLowContrast
 " Don't highlight closed folds
 highlight Folded cterm=None, gui=None
 " Highlight the 81st column if there is a character
-highlight col81 ctermbg=red guibg=red
-match col81 /\%<82v.\%>81v/
+" highlight col81 ctermbg=red guibg=red
+" match col81 /\%<82v.\%>81v/
 " make non text chars less visible
 highlight NonText gui=None
 highlight SpecialKey gui=None
