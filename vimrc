@@ -13,28 +13,28 @@ syntax enable             " Enable syntax highlighting
 call plug#begin('~/.vim/plugins')
 Plug 'bling/vim-airline'
 Plug 'ckafi/vim-template'
-Plug 'derekwyatt/vim-scala'
+Plug 'derekwyatt/vim-scala', {'for': 'scala'}
 Plug 'ervandew/supertab'
-Plug 'guns/vim-clojure-static'
+Plug 'guns/vim-clojure-static', {'for': 'clojure'}
 Plug 'honza/vim-snippets'
 Plug 'jonathanfilip/vim-lucius'
 Plug 'kien/ctrlp.vim'
-Plug 'kien/rainbow_parentheses.vim'
+Plug 'kien/rainbow_parentheses.vim', {'on': 'RainbowParenthesesToggle'}
 Plug 'majutsushi/tagbar'
 Plug 'maxbrunsfeld/vim-yankstack'
 Plug 'regedarek/ZoomWin'
-Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'}
 Plug 'tpope/vim-commentary'
 Plug 'SirVer/ultisnips'
 Plug 'sjl/gundo.vim'
 Plug 'tpope/vim-dispatch'
-Plug 'tpope/vim-fireplace'
+Plug 'tpope/vim-fireplace', {'for': 'clojure'}
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 Plug 'vim-scripts/Align'
-Plug 'vim-scripts/paredit.vim'
+Plug 'vim-scripts/paredit.vim', {'for': 'clojure'}
 call plug#end()
 " }}}
 
