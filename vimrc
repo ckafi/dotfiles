@@ -9,40 +9,33 @@ set nocompatible          " Don't make Vim vi-compatible
 syntax enable             " Enable syntax highlighting
 " }}}
 
-" Vundle {{{
-filetype off              " required!
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-" let Vundle manage Vundle
-" required!
-Plugin 'gmarik/Vundle.vim'
-" github repos
-Plugin 'bling/vim-airline'
-Plugin 'ckafi/vim-template'
-Plugin 'derekwyatt/vim-scala'
-Plugin 'ervandew/supertab'
-Plugin 'guns/vim-clojure-static'
-Plugin 'honza/vim-snippets'
-Plugin 'jonathanfilip/vim-lucius.git'
-Plugin 'kien/ctrlp.vim'
-Plugin 'kien/rainbow_parentheses.vim'
-Plugin 'majutsushi/tagbar'
-Plugin 'maxbrunsfeld/vim-yankstack'
-Plugin 'regedarek/ZoomWin'
-Plugin 'scrooloose/nerdtree'
-Plugin 'tpope/vim-commentary'
-Plugin 'SirVer/ultisnips'
-Plugin 'sjl/gundo.vim'
-Plugin 'tpope/vim-dispatch'
-Plugin 'tpope/vim-fireplace'
-Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-repeat'
-Plugin 'tpope/vim-surround'
-Plugin 'tpope/vim-unimpaired'
-Plugin 'vim-scripts/Align'
-Plugin 'vim-scripts/paredit.vim'
-call vundle#end()         " required
-filetype plugin indent on " required!
+" Plugins {{{
+call plug#begin('~/.vim/plugins')
+Plug 'bling/vim-airline'
+Plug 'ckafi/vim-template'
+Plug 'derekwyatt/vim-scala'
+Plug 'ervandew/supertab'
+Plug 'guns/vim-clojure-static'
+Plug 'honza/vim-snippets'
+Plug 'jonathanfilip/vim-lucius'
+Plug 'kien/ctrlp.vim'
+Plug 'kien/rainbow_parentheses.vim'
+Plug 'majutsushi/tagbar'
+Plug 'maxbrunsfeld/vim-yankstack'
+Plug 'regedarek/ZoomWin'
+Plug 'scrooloose/nerdtree'
+Plug 'tpope/vim-commentary'
+Plug 'SirVer/ultisnips'
+Plug 'sjl/gundo.vim'
+Plug 'tpope/vim-dispatch'
+Plug 'tpope/vim-fireplace'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-unimpaired'
+Plug 'vim-scripts/Align'
+Plug 'vim-scripts/paredit.vim'
+call plug#end()
 " }}}
 
 " Settings {{{

@@ -1,6 +1,6 @@
 #!/bin/bash
 # run this script to initialize this repo
 
-mkdir backup/ undo/ swap/ bundle/
-git clone https://github.com/gmarik/Vundle.vim.git bundle/Vundle.vim
-vim +PluginInstall! +qall
+mkdir backup/ undo/ swap/ bundle/ autoload/
+curl -fLo autoload/plug.vim https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+vim +PlugInstall +qall
