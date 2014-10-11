@@ -15,7 +15,7 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 " let Vundle manage Vundle
 " required!
-Plugin 'gmarik/Vundle.git'
+Plugin 'gmarik/Vundle.vim'
 " github repos
 Plugin 'bling/vim-airline'
 Plugin 'ckafi/vim-template'
