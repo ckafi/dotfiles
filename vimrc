@@ -14,9 +14,7 @@ call plug#begin('~/.vim/plugins')
 Plug 'bling/vim-airline'
 Plug 'ckafi/vim-template'
 Plug 'derekwyatt/vim-scala', {'for': 'scala'}
-Plug 'ervandew/supertab'
 Plug 'guns/vim-clojure-static', {'for': 'clojure'}
-Plug 'honza/vim-snippets'
 Plug 'jonathanfilip/vim-lucius'
 Plug 'kien/ctrlp.vim'
 Plug 'kien/rainbow_parentheses.vim', {'on': 'RainbowParenthesesToggle'}
@@ -25,7 +23,9 @@ Plug 'maxbrunsfeld/vim-yankstack'
 Plug 'regedarek/ZoomWin'
 Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'}
 Plug 'tpope/vim-commentary'
-Plug 'SirVer/ultisnips'
+Plug 'shougo/neocomplcache'
+Plug 'shougo/neosnippet'
+Plug 'shougo/neosnippet-snippets'
 Plug 'sjl/gundo.vim'
 Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-fireplace', {'for': 'clojure'}
@@ -134,14 +134,8 @@ highlight SpecialKey gui=None
 " Variable Settings {{{
 " Disable fold colmn in taglist
 let showmarks_enable = 0
-" use user, omni or file compl depending on context
-let g:SuperTabDefaultCompletionType = "context"
-" enhance 'longest' completeopt
-let g:SuperTabLongestEnhanced = 1
 " NERDTree shows bookmars in tree
 let g:NERDTreeShowBookmarks=1
-" UltiSnips: Avoid map collision with Supertab
-let g:UltiSnipsExpandTrigger="<c-j>"
 " CtrlP should behave more like Command-T
 let g:ctrlp_working_path_mode = '0'
 " Stop CtrlP from interfering with easyclip"
@@ -151,6 +145,10 @@ let g:airline_left_sep=''
 let g:airline_right_sep=''
 " Set airline color theme
 let g:airline_theme = 'powerlineish'
+" Enable neocompl at startup
+let g:neocomplcache_enable_at_startup = 1
+" auto select first match
+let g:neocomplcache_enable_auto_select = 1
 "}}}
 
 " Keymaps and Abbrevs {{{
