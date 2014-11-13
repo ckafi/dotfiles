@@ -22,11 +22,12 @@ Plug 'majutsushi/tagbar'
 Plug 'maxbrunsfeld/vim-yankstack'
 Plug 'regedarek/ZoomWin'
 Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'}
-Plug 'tpope/vim-commentary'
+Plug 'scrooloose/syntastic'
 Plug 'shougo/neocomplcache'
 Plug 'shougo/neosnippet'
 Plug 'shougo/neosnippet-snippets'
 Plug 'sjl/gundo.vim'
+Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-fireplace', {'for': 'clojure'}
 Plug 'tpope/vim-fugitive'
