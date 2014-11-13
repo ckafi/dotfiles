@@ -99,7 +99,6 @@ set completeopt=menu      " Use a popup menu for completion
 set completeopt+=menuone  " ... also when there is only one match
 set completeopt+=longest  " Only insert the longest common text
 set completeopt+=preview  " Show information about current item in preview
-set cryptmethod=blowfish  " Default cipher for encryted files
 set laststatus=2          " Always show status line
 set shortmess+=I          " Don't show intro message
 set history=1000          " remember more commands and searches
