@@ -16,6 +16,7 @@ Plug 'ckafi/vim-template'
 Plug 'derekwyatt/vim-scala', {'for': 'scala'}
 Plug 'guns/vim-clojure-static', {'for': 'clojure'}
 Plug 'jonathanfilip/vim-lucius'
+Plug 'junegunn/vim-easy-align'
 Plug 'kien/ctrlp.vim'
 Plug 'kien/rainbow_parentheses.vim', {'on': 'RainbowParenthesesToggle'}
 Plug 'majutsushi/tagbar'
@@ -34,7 +35,6 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
-Plug 'vim-scripts/Align'
 Plug 'vim-scripts/paredit.vim', {'for': 'clojure'}
 call plug#end()
 " }}}
