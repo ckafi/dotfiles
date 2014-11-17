@@ -57,6 +57,6 @@ XTerm*faceSize: 10
 
 *cursorColor : #5f87af
 *background  : #303030
-*foreground  : #bcbcbc
+*foreground  : #efdfbb
 *fadeColor   : #000000
 *fading      : 15
