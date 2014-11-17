@@ -1,9 +1,16 @@
 Host info
-  HostName boma.mathematik.uni-marburg.de
+  HostName bana.mathematik.uni-marburg.de
   User frilling
 
 Host maschinenraum.no-ip.org info
   Compression yes
+
+Host home
+  HostName maschinenraum.no-ip.org
+  User tobias
+
+Host cac
+  HostName 168.235.155.95
 
 Host gibson wintermute github.com
   ControlMaster auto
