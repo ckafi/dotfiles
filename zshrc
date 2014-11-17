@@ -90,27 +90,24 @@ autoload colors && colors
 # }}}
 
 # Aliases {{{
-#for i in cd ls; do
-  #eval "alias $i=' $i'"
-#done
-
-alias -g grep="grep --color=auto"
-alias cp="cp -iv"
-alias dirs="dirs -v"
-alias ls="ls -F --color=auto"
-alias la="ls -A"
-alias ll="ls -Ahl --time-style=posix-iso"
-alias mc="mc -x"
-alias mv="mv -iv"
 alias p="pacaur"
 alias psgrep="ps -ef | grep"
 alias pv="zathura --fork &>/dev/null"
-alias remm='rem -hqcm -b1 -w$COLUMNS'
-alias rm="rm -v"
 alias rscp="rsync -ahP --no-whole-file --inplace"
 alias rsmv="rscp --remove-source-files"
-alias rvim="gvim --remote-silent"
-alias scu="systemctl --user"
+where nvim &>/dev/null && alias vim='nvim'
+
+alias -g grep="grep --color=auto"
+alias cp="cp -iv"
+alias rm="rm -v"
+alias mv="mv -iv"
+alias dirs="dirs -v"
+alias mc="mc -x"
+alias ls="ls -F --color=auto"
+alias la="ls -A"
+alias ll="ls -hl --time-style=posix-iso"
+alias lla="ll -A"
+
 alias sudo="sudo "
 alias jrnl=" jrnl"
 # }}}
