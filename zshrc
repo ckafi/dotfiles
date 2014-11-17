@@ -27,8 +27,8 @@ fi
 [[ -e /etc/zsh_command_not_found ]] && \
   source /etc/zsh_command_not_found
 # syntax highlighting
-#[[ -e /usr/share/zsh/plugins/zsh-syntax-highlight/zsh-syntax-highlighting.zsh ]] && \
-  #source /usr/share/zsh/plugins/zsh-syntax-highlight/zsh-syntax-highlighting.zsh
+[[ -e /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]] && \
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 # }}}
 
 # Environment {{{
