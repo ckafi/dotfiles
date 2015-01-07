@@ -152,6 +152,8 @@ let g:airline_theme = 'powerlineish'
 let g:neocomplcache_enable_at_startup = 1
 " auto select first match
 let g:neocomplcache_enable_auto_select = 1
+" disable double-newline in paredit
+let g:paredit_electric_return = 0
 "}}}
 
 " Keymaps and Abbrevs {{{
