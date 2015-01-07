@@ -155,9 +155,6 @@ let g:paredit_electric_return = 0
 
 " Keymaps and Abbrevs {{{
 nnoremap <Space> <NOP>
-" Esc is so far away. There aren't that many word with two j's, are
-" there? Alternativ: CTRL-c
-inoremap jj <Esc>
 
 " Toggle graphical undo window
 nmap <F4>  :GundoToggle<CR>
