@@ -135,6 +135,8 @@ highlight SpecialKey gui=None
 " Variable Settings {{{
 " Disable fold colmn in taglist
 let showmarks_enable = 0
+" Set space as leader
+let mapleader = "\<Space>"
 " NERDTree shows bookmars in tree
 let g:NERDTreeShowBookmarks=1
 " CtrlP should behave more like Command-T
@@ -170,7 +172,6 @@ nmap <C-Right> :cnext<CR>
 nmap <C-Left> :cprevious<CR>
 nmap <leader>l :set list!<CR>
 nmap <leader>s :set spell!<CR>
-map , <leader>
 " Move up and down in the changelist
 nnoremap <C-Up> g;
 nnoremap <C-Down> g,
