@@ -75,7 +75,7 @@ set listchars+=precedes:… " ... start and
 set listchars+=extends:…  " ... end of a truncated display line
 set fillchars=vert:│      " Disable annoying chars for stl, diff, fold etc.
 set fillchars+=diff:\     " ...
-set number                " Show line numbers
+set relativenumber        " Show relative line numbers
 set cursorline            " Highlight the screen line of the cursor
 set foldcolumn=2          " Width of the fold column
 set foldtext=MyFoldText() " Function for the text on closed folds
