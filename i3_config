@@ -17,7 +17,7 @@ for_window [class="Gxmessage"] floating enable
 for_window [class="Alarm-clock-applet"] floating enable
 
 # font for window titles
-font xft:sans 8
+font xft:sans 7
 
 # Change indicator to red
 # class                 border  backgr. text    indicator
@@ -32,14 +32,14 @@ bindsym $mod+x kill
 # change focus
 bindsym $mod+n focus left
 bindsym $mod+r focus down
-bindsym $mod+t focus up
-bindsym $mod+d focus right
+bindsym $mod+g focus up
+bindsym $mod+t focus right
 
 # move focused window
 bindsym $mod+Shift+n move left
 bindsym $mod+Shift+r move down
-bindsym $mod+Shift+t move up
-bindsym $mod+Shift+d move right
+bindsym $mod+Shift+g move up
+bindsym $mod+Shift+t move right
 
 # switch to next/prev workspace on output
 bindsym $mod+Left workspace prev_on_output
