@@ -20,12 +20,6 @@ fi
   zcompile ~/.zshrc
 # create a .zsh folder if none exists
 [[ ! -d ~/.zsh ]] && mkdir ~/.zsh
-# load a 'command not found' function with suggestions
-[[ -e /etc/zsh_command_not_found ]] && \
-  source /etc/zsh_command_not_found
-# syntax highlighting
-[[ -e /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]] && \
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 # }}}
 
 # Environment {{{
