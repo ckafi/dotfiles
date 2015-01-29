@@ -6,14 +6,11 @@
 # So feel free to use any line you want.
 
 # Start tmux {{{
-if [[ -n $(which tmux 2>/dev/null) \
-  && -z $TMUX \
-  && -z $SUDO_UID ]]; then
-    if [[ $TERM == 'linux' ]]; then
-      exec tmux
-    else
-      exec tmux -2 new
-    fi
+if [[ -n $SSH_CONNECTION \
+   && -z $TMUX \
+   && -z $SUDO_UID \
+   && -n $(which tmux 2>/dev/null) ]]; then
+   exec tmux -2
 fi
 # }}}
 
