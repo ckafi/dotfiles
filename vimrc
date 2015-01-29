@@ -13,7 +13,7 @@ syntax enable             " Enable syntax highlighting
 call plug#begin('~/.vim/plugins')
 Plug 'bling/vim-airline'
 Plug 'ckafi/vim-template'
-Plug 'derekwyatt/vim-scala', {'for': 'scala'}
+" Plug 'derekwyatt/vim-scala', {'for': 'scala'}
 Plug 'guns/vim-clojure-static', {'for': 'clojure'}
 Plug 'jonathanfilip/vim-lucius'
 Plug 'junegunn/vim-easy-align'
@@ -22,13 +22,13 @@ Plug 'kien/rainbow_parentheses.vim', {'on': 'RainbowParenthesesToggle'}
 Plug 'majutsushi/tagbar'
 Plug 'maxbrunsfeld/vim-yankstack'
 Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'}
-Plug 'scrooloose/syntastic'
+" Plug 'scrooloose/syntastic'
 Plug 'shougo/neocomplcache'
 Plug 'shougo/neosnippet'
 Plug 'shougo/neosnippet-snippets'
 Plug 'sjl/gundo.vim'
 Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-dispatch'
+" Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-fireplace', {'for': 'clojure'}
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat'
@@ -132,7 +132,7 @@ highlight SpecialKey gui=None
 "}}}
 
 " Variable Settings {{{
-" Disable fold colmn in taglist
+" Disable fold column in taglist
 let showmarks_enable = 0
 " Set space as leader
 let mapleader = "\<Space>"
