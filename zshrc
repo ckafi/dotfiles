@@ -331,7 +331,7 @@ update_prompt () {
   # (tag) if set
   PS1+=${TAG+%F{113}$TAG%f }
   # hostname if in ssh or root
-  [[ -n $SSH_CONNECTION || $UID == 0 ]] && PS1+="%F{111}%m%f:"
+  [[ -n $SSH_CONNECTION || $UID == 0 ]] && PS1+="%F{34}%m%f:"
   # username
   PS1+="%F{111}%n%f "
   # path with prefix, truncated to 55 characters
