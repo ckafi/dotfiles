@@ -84,9 +84,10 @@ autoload colors && colors
 alias p="pacaur"
 alias psgrep="ps -ef | grep"
 alias pv="zathura --fork &>/dev/null"
-alias rscp="rsync -ahP --no-whole-file --inplace"
+alias rscp="rsync -rhP --no-whole-file --inplace"
 alias rsmv="rscp --remove-source-files"
 where nvim &>/dev/null && alias vim='nvim'
+alias sc="systemctl"
 
 alias -g grep="grep --color=auto"
 alias cp="cp -iv"
