@@ -142,7 +142,7 @@ highlight SpecialKey gui=None
 " Disable fold column in taglist
 let showmarks_enable = 0
 " Set space as leader
-let mapleader = "\<Space>"
+let mapleader = ","
 " NERDTree shows bookmars in tree
 let g:NERDTreeShowBookmarks=1
 " Remove airline seperators
