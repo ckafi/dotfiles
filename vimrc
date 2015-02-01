@@ -14,14 +14,16 @@ call plug#begin('~/.vim/plugins')
 Plug 'benekastah/neomake'
 Plug 'bling/vim-airline'
 Plug 'ckafi/vim-template'
-" Plug 'derekwyatt/vim-scala', {'for': 'scala'}
 Plug 'guns/vim-clojure-static', {'for': 'clojure'}
 Plug 'jonathanfilip/vim-lucius'
+Plug 'joom/latex-unicoder.vim'
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
 Plug 'junegunn/vim-easy-align'
+Plug 'justinmk/vim-sneak'
 Plug 'kien/rainbow_parentheses.vim', {'on': 'RainbowParenthesesToggle'}
 Plug 'majutsushi/tagbar'
+Plug 'rking/ag.vim'
 Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'}
 Plug 'shougo/neocomplcache'
 Plug 'shougo/neosnippet'
