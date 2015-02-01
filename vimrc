@@ -17,6 +17,8 @@ Plug 'ckafi/vim-template'
 " Plug 'derekwyatt/vim-scala', {'for': 'scala'}
 Plug 'guns/vim-clojure-static', {'for': 'clojure'}
 Plug 'jonathanfilip/vim-lucius'
+Plug 'junegunn/goyo.vim'
+Plug 'junegunn/limelight.vim'
 Plug 'junegunn/vim-easy-align'
 Plug 'kien/ctrlp.vim'
 Plug 'kien/rainbow_parentheses.vim', {'on': 'RainbowParenthesesToggle'}
