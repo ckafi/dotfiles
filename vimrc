@@ -116,6 +116,10 @@ autocmd BufEnter *.go    setfiletype go
 autocmd BufEnter *.pde   setfiletype arduino
 autocmd BufEnter *.scala setfiletype scala
 autocmd BufEnter *.tex   setfiletype tex
+
+" Enable Limelight in Goyo
+autocmd User GoyoEnter Limelight
+autocmd User GoyoLeave Limelight!
 "}}}
 
 " Color-Settings {{{
@@ -150,6 +154,12 @@ let g:airline_theme = 'powerlineish'
 let g:neocomplcache_enable_at_startup = 1
 " disable double-newline in paredit
 let g:paredit_electric_return = 0
+" Press s for next sneak match
+let g:sneak#s_next = 1
+" Enable easymotion-like behaviour
+let g:sneak#streak = 1
+" Make neomake open clist/llist automatically
+let g:neomake_open_list = 1
 " Let unite track yank history
 let g:unite_source_history_yank_enable = 1
 " Use a fuzzy matcher for unite
