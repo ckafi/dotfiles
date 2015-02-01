@@ -20,14 +20,14 @@ Plug 'jonathanfilip/vim-lucius'
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
 Plug 'junegunn/vim-easy-align'
-Plug 'kien/ctrlp.vim'
 Plug 'kien/rainbow_parentheses.vim', {'on': 'RainbowParenthesesToggle'}
 Plug 'majutsushi/tagbar'
-Plug 'maxbrunsfeld/vim-yankstack'
 Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'}
 Plug 'shougo/neocomplcache'
 Plug 'shougo/neosnippet'
 Plug 'shougo/neosnippet-snippets'
+Plug 'shougo/unite-outline'
+Plug 'shougo/unite.vim'
 Plug 'sjl/gundo.vim'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fireplace', {'for': 'clojure'}
@@ -139,10 +139,6 @@ let showmarks_enable = 0
 let mapleader = "\<Space>"
 " NERDTree shows bookmars in tree
 let g:NERDTreeShowBookmarks=1
-" CtrlP should behave more like Command-T
-let g:ctrlp_working_path_mode = '0'
-" Stop CtrlP from interfering with easyclip"
-let g:ctrlp_map = ''
 " Remove airline seperators
 let g:airline_left_sep=''
 let g:airline_right_sep=''
@@ -152,6 +148,10 @@ let g:airline_theme = 'powerlineish'
 let g:neocomplcache_enable_at_startup = 1
 " disable double-newline in paredit
 let g:paredit_electric_return = 0
+" Let unite track yank history
+let g:unite_source_history_yank_enable = 1
+" Use a fuzzy matcher for unite
+call unite#filters#matcher_default#use(['matcher_fuzzy'])
 "}}}
 
 " Keymaps and Abbrevs {{{
@@ -190,13 +190,10 @@ nnoremap <silent> <leader>/ :execute 'vimgrep /'.@/.'/g %'<CR>:copen<CR>
 nnoremap <silent> <leader>d :edit <C-R>=escape(getcwd(), " ")<CR><CR>
 "open NERDTree bookmark with :bkm <name>
 cabbrev bkm NERDTreeFromBookmark
-" f=files, b=buffers, t=tags
-nnoremap <silent> <leader>f :CtrlP<CR>
-nnoremap <silent> <leader>b :CtrlPBuffer<CR>
-nnoremap <silent> <leader>t :CtrlPBufTag<CR>
-" for yank-stack
-nmap <leader>p <Plug>yankstack_substitute_older_paste
-nmap <leader>P <Plug>yankstack_substitute_newer_paste
+nnoremap <leader>p :Unite -no-split -buffer-name=yank history/yank<cr>
+nnoremap <leader>b :Unite -no-split -start-insert -buffer-name=buffer buffer<cr>
+nnoremap <leader>f :Unite -no-split -start-insert -buffer-name=files file_rec<cr>
+nnoremap <leader>o :Unite -no-split -start-insert -buffer-name=outline outline<cr>
 " }}}
 
 " Functions {{{
