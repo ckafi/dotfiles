@@ -11,6 +11,7 @@ syntax enable             " Enable syntax highlighting
 
 " Plugins {{{
 call plug#begin('~/.vim/plugins')
+Plug 'benekastah/neomake'
 Plug 'bling/vim-airline'
 Plug 'ckafi/vim-template'
 " Plug 'derekwyatt/vim-scala', {'for': 'scala'}
@@ -22,13 +23,11 @@ Plug 'kien/rainbow_parentheses.vim', {'on': 'RainbowParenthesesToggle'}
 Plug 'majutsushi/tagbar'
 Plug 'maxbrunsfeld/vim-yankstack'
 Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'}
-" Plug 'scrooloose/syntastic'
 Plug 'shougo/neocomplcache'
 Plug 'shougo/neosnippet'
 Plug 'shougo/neosnippet-snippets'
 Plug 'sjl/gundo.vim'
 Plug 'tpope/vim-commentary'
-" Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-fireplace', {'for': 'clojure'}
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat'
