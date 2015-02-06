@@ -141,7 +141,7 @@ highlight SpecialKey gui=None
 " Variable Settings {{{
 " Disable fold column in taglist
 let showmarks_enable = 0
-" Set space as leader
+" Set comma as leader
 let mapleader = ","
 " NERDTree shows bookmars in tree
 let g:NERDTreeShowBookmarks=1
@@ -167,7 +167,8 @@ call unite#filters#matcher_default#use(['matcher_fuzzy'])
 "}}}
 
 " Keymaps and Abbrevs {{{
-nnoremap <Space> <NOP>
+" Scroll down half a screen
+nnoremap <Space> <C-D>
 
 " Toggle graphical undo window
 nmap <F4>  :GundoToggle<CR>
