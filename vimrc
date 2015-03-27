@@ -13,6 +13,7 @@ syntax enable             " Enable syntax highlighting
 call plug#begin('~/.vim/plugins')
 Plug 'benekastah/neomake'
 Plug 'bling/vim-airline'
+Plug 'chrisbra/vim-diff-enhanced'
 Plug 'ckafi/vim-template'
 Plug 'guns/vim-clojure-static', {'for': 'clojure'}
 Plug 'jonathanfilip/vim-lucius'
