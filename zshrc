@@ -81,7 +81,7 @@ autoload colors && colors
 # }}}
 
 # Aliases {{{
-alias p="pacaur"
+alias p="PACMAN=powerpill pacaur"
 alias psgrep="ps -ef | grep"
 alias pv="zathura --fork &>/dev/null"
 alias rscp="rsync -rhP --no-whole-file --inplace"
