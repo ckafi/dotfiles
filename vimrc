@@ -195,7 +195,7 @@ vnoremap > >gv
 nnoremap n nzz
 nnoremap N Nzz
 " make file and open/close quickfix window accordingly
-nnoremap <silent> <leader>m :silent! :write \| :Dispatch<CR>
+nnoremap <silent> <leader>m :silent! :write \| :Neomake<CR>
 " Open a Quickfix window for the last search.
 nnoremap <silent> <leader>/ :execute 'vimgrep /'.@/.'/g %'<CR>:copen<CR>
 " Open a directory edit for the current working directory
