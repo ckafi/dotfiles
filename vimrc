@@ -181,8 +181,6 @@ nmap <C-PageUp> :bnext<CR>
 nmap <C-PageDown> :bprevious<CR>
 nmap <C-Right> :cnext<CR>
 nmap <C-Left> :cprevious<CR>
-nmap <leader>l :set list!<CR>
-nmap <leader>s :set spell!<CR>
 " Move up and down in the changelist
 nnoremap <C-Up> g;
 nnoremap <C-Down> g,
