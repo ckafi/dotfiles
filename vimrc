@@ -206,6 +206,11 @@ nnoremap <leader>p :Unite -no-split -buffer-name=yank history/yank<cr>
 nnoremap <leader>b :Unite -no-split -start-insert -buffer-name=buffer buffer<cr>
 nnoremap <leader>f :Unite -no-split -start-insert -buffer-name=files file_rec<cr>
 nnoremap <leader>o :Unite -no-split -start-insert -buffer-name=outline outline<cr>
+
+imap <C-k>     <Plug>(neosnippet_expand_or_jump)
+smap <C-k>     <Plug>(neosnippet_expand_or_jump)
+xmap <C-k>     <Plug>(neosnippet_expand_target)
+
 " }}}
 
 " Functions {{{
