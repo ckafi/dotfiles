@@ -12,3 +12,6 @@ XF86AudioMute
 
 XF86Audio{Lower,Raise}Volume
   amixer -q sset Master 2%{-,+}
+
+XF86MonBrightness{Up,Down}
+  xbacklight -{inc,dec} 5
