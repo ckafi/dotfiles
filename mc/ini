@@ -69,7 +69,6 @@ editor_simple_statusbar=0
 editor_check_new_line=0
 editor_show_right_margin=0
 nice_rotating_dash=1
-horizontal_split=1
 mcview_remember_file_position=0
 auto_fill_mkdir_name=1
 copymove_persistent_attr=1
@@ -92,15 +91,19 @@ permission_mode=0
 quick_search_case_sensitive=2
 ignore_ftp_chattr_errors=true
 keymap=mc.keymap
-skin=nicedark
+skin=modarin256-defbg
 
 editor_group_undo=0
 
 preallocate_space=0
 
+editor_drop_selection_on_copy=1
+editor_cursor_after_inserted_block=0
+editor_ask_filename_before_edit=0
+editor_filesize_threshold=64M
+editor_stop_format_chars=-+*\\,.;:&>
+
 [Layout]
-equal_split=1
-first_panel_size=10
 message_visible=0
 keybar_visible=1
 xterm_title=1
@@ -109,6 +112,12 @@ command_prompt=1
 menubar_visible=0
 show_mini_info=1
 free_space=1
+
+horizontal_split=1
+vertical_equal=1
+left_panel_size=10
+horizontal_equal=1
+top_panel_size=29
 
 [Misc]
 timeformat_recent=%b %e %H:%M
@@ -156,6 +165,8 @@ simple_swap=false
 
 show_mini_info=true
 torben_fj_mode=false
+
+select_flags=6
 
 [terminal:screen-256color]
 backspace=
