@@ -82,12 +82,13 @@ autoload colors && colors
 # }}}
 
 # Aliases {{{
+alias o="xdg-open"
+alias e="$EDITOR"
 alias p="pacaur"
+
 alias psgrep="ps -ef | grep"
-alias pv="zathura --fork &>/dev/null"
 alias rscp="rsync -rhP --no-whole-file --inplace"
 alias rsmv="rscp --remove-source-files"
-where nvim &>/dev/null && alias vim='nvim'
 alias sc="systemctl"
 
 alias -g grep="grep --color=auto"
@@ -103,6 +104,10 @@ alias lla="ll -A"
 
 alias sudo="sudo "
 alias jrnl=" jrnl"
+
+whence fasd >/dev/null &&  eval "$(fasd --init auto)"
+alias fe="f -e $EDITOR"
+alias fo="f -e xdg-open"
 # }}}
 
 # Key-bindings {{{
