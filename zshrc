@@ -29,8 +29,8 @@ PATH="$HOME/bin:$PATH"
 # gcc coloring
 [[ -d /usr/lib/colorgcc/bin ]] && PATH="/usr/lib/colorgcc/bin:$PATH"
 HISTFILE=$HOME/.zsh/zhistory
-HISTSIZE=10000
-SAVEHIST=10000
+HISTSIZE=50000
+SAVEHIST=50000
 PAGER="less"
 LESS="-iJM"
 VIEWER=$PAGER
