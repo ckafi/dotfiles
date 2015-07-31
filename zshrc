@@ -8,8 +8,8 @@
 # Start tmux {{{
 if [[ -n $SSH_CONNECTION \
    && -z $TMUX \
-   && -z $SUDO_UID \
-   && -n $(which tmux 2>/dev/null) ]]; then
+   && -z $SUDO_UID ]] \
+   && whence tmux >/dev/null ; then
    exec tmux -2
 fi
 # }}}
