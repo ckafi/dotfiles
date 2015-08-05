@@ -15,6 +15,7 @@ Plug 'benekastah/neomake'
 Plug 'bling/vim-airline'
 Plug 'chrisbra/vim-diff-enhanced'
 Plug 'ckafi/vim-template'
+Plug 'fmoralesc/vim-pad'
 Plug 'guns/vim-clojure-static', {'for': 'clojure'}
 Plug 'jonathanfilip/vim-lucius'
 Plug 'joom/latex-unicoder.vim'
@@ -38,7 +39,9 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
+Plug 'tpope/vim-vinegar'
 Plug 'vim-scripts/paredit.vim', {'for': 'clojure'}
+Plug 'wellle/targets.vim'
 call plug#end()
 " }}}
 
