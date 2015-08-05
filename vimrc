@@ -26,7 +26,7 @@ Plug 'justinmk/vim-sneak'
 Plug 'junegunn/rainbow_parentheses.vim', {'on': 'RainbowParentheses'}
 Plug 'majutsushi/tagbar'
 Plug 'rking/ag.vim'
-Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'}
+Plug 'scrooloose/nerdtree'
 Plug 'shougo/neocomplcache'
 Plug 'shougo/neosnippet'
 Plug 'shougo/neosnippet-snippets'
