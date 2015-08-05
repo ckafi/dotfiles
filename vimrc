@@ -210,10 +210,13 @@ nnoremap <leader>b :Unite -no-split -start-insert -buffer-name=buffer buffer<cr>
 nnoremap <leader>f :Unite -no-split -start-insert -buffer-name=files file_rec<cr>
 nnoremap <leader>o :Unite -no-split -start-insert -buffer-name=outline outline<cr>
 
-imap <C-k>     <Plug>(neosnippet_expand_or_jump)
-smap <C-k>     <Plug>(neosnippet_expand_or_jump)
-xmap <C-k>     <Plug>(neosnippet_expand_target)
+imap <C-k> <Plug>(neosnippet_expand_or_jump)
+smap <C-k> <Plug>(neosnippet_expand_or_jump)
+xmap <C-k> <Plug>(neosnippet_expand_target)
 
+inoremap <expr><Tab> neocomplete#start_manual_complete()
+inoremap <expr><C-g> neocomplete#undo_completion()
+inoremap <expr><C-h> neocomplete#complete_common_string()
 " }}}
 
 " Functions {{{
