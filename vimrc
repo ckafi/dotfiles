@@ -26,7 +26,6 @@ Plug 'justinmk/vim-sneak'
 Plug 'junegunn/rainbow_parentheses.vim', {'on': 'RainbowParentheses'}
 Plug 'majutsushi/tagbar'
 Plug 'rking/ag.vim'
-Plug 'scrooloose/nerdtree'
 Plug 'shougo/neocomplcache'
 Plug 'shougo/neosnippet'
 Plug 'shougo/neosnippet-snippets'
@@ -147,8 +146,6 @@ highlight SpecialKey gui=None
 let showmarks_enable = 0
 " Set comma as leader
 let mapleader = ","
-" NERDTree shows bookmars in tree
-let g:NERDTreeShowBookmarks=1
 " Remove airline seperators
 let g:airline_left_sep=''
 let g:airline_right_sep=''
@@ -178,7 +175,6 @@ nnoremap <Space> <C-D>
 nmap <F4>  :GundoToggle<CR>
 nmap <F5>  :nohls<CR>
 nmap <F6>  :TagbarToggle<CR>
-nmap <F7>  :NERDTreeToggle<CR>
 " <F8> reserved for pastetoggle
 nmap <C-PageUp> :bnext<CR>
 nmap <C-PageDown> :bprevious<CR>
@@ -203,8 +199,6 @@ nnoremap <silent> <leader>m :silent! :write \| :Neomake<CR>
 nnoremap <silent> <leader>/ :execute 'vimgrep /'.@/.'/g %'<CR>:copen<CR>
 " Open a directory edit for the current working directory
 nnoremap <silent> <leader>d :edit <C-R>=escape(getcwd(), " ")<CR><CR>
-"open NERDTree bookmark with :bkm <name>
-cabbrev bkm NERDTreeFromBookmark
 nnoremap <leader>p :Unite -no-split -buffer-name=yank history/yank<cr>
 nnoremap <leader>b :Unite -no-split -start-insert -buffer-name=buffer buffer<cr>
 nnoremap <leader>f :Unite -no-split -start-insert -buffer-name=files file_rec<cr>
