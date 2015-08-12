@@ -25,13 +25,13 @@ Plug 'junegunn/vim-easy-align'
 Plug 'justinmk/vim-sneak'
 Plug 'junegunn/rainbow_parentheses.vim', {'on': 'RainbowParentheses'}
 Plug 'majutsushi/tagbar'
+Plug 'mbbill/undotree'
 Plug 'rking/ag.vim'
 Plug 'shougo/neocomplcache'
 Plug 'shougo/neosnippet'
 Plug 'shougo/neosnippet-snippets'
 Plug 'shougo/unite-outline'
 Plug 'shougo/unite.vim'
-Plug 'sjl/gundo.vim'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fireplace', {'for': 'clojure'}
 Plug 'tpope/vim-fugitive'
@@ -172,7 +172,7 @@ call unite#filters#matcher_default#use(['matcher_fuzzy'])
 nnoremap <Space> <C-D>
 
 " Toggle graphical undo window
-nmap <F4>  :GundoToggle<CR>
+nmap <F4>  :UndotreeToggle<CR>
 nmap <F5>  :nohls<CR>
 nmap <F6>  :TagbarToggle<CR>
 " <F8> reserved for pastetoggle
