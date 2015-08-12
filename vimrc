@@ -45,10 +45,6 @@ call plug#end()
 " }}}
 
 " Settings {{{
-if has("gui_running")
-  set columns=90          " Resize GVim to 90x25
-  set lines=25            " ...
-endif
 set showcmd               " Show (partial) command in status line.
 set showmatch             " Show matching brackets.
 set ignorecase            " Do case insensitive matching
@@ -98,9 +94,6 @@ set formatoptions+=r      " Inset comment leader after <Enter>
 set formatoptions+=q      " Allow formatting of comments with 'gq'
 set formatoptions+=n      " Recognize numbered lists
 set formatoptions+=l      " Don't break already too long lines
-set guifont=Anonymous\ Pro\ 11 " Font for GVim
-set guioptions+=c         " Use console for simple dialogues in GVim
-set guioptions-=mrLtT     " Remove menu-,scroll- and toolbar from GUI
 set completeopt=menu      " Use a popup menu for completion
 set completeopt+=menuone  " ... also when there is only one match
 set completeopt+=longest  " Only insert the longest common text
