@@ -158,6 +158,17 @@ let g:neomake_open_list = 1
 let g:unite_source_history_yank_enable = 1
 " Use a fuzzy matcher for unite
 call unite#filters#matcher_default#use(['matcher_fuzzy'])
+" Rank results by matching length
+call unite#filters#sorter_default#use(['sorter_rank'])
+if executable('ag')
+  let g:unite_source_grep_command='ag'
+  let g:unite_source_grep_default_opts='--nocolor --line-numbers --nogroup -S -C4'
+  let g:unite_source_grep_recursive_opt=''
+endif
+call unite#custom#profile('default', 'context', {
+  \ 'start_insert': 1,
+  \ 'split': 0,
+  \ })
 "}}}
 
 " Keymaps and Abbrevs {{{
@@ -188,14 +199,11 @@ nnoremap n nzz
 nnoremap N Nzz
 " make file and open/close quickfix window accordingly
 nnoremap <silent> <leader>m :silent! :write \| :Neomake<CR>
-" Open a Quickfix window for the last search.
-nnoremap <silent> <leader>/ :execute 'vimgrep /'.@/.'/g %'<CR>:copen<CR>
-" Open a directory edit for the current working directory
-nnoremap <silent> <leader>d :edit <C-R>=escape(getcwd(), " ")<CR><CR>
-nnoremap <leader>p :Unite -no-split -buffer-name=yank history/yank<cr>
-nnoremap <leader>b :Unite -no-split -start-insert -buffer-name=buffer buffer<cr>
-nnoremap <leader>f :Unite -no-split -start-insert -buffer-name=files file_rec<cr>
-nnoremap <leader>o :Unite -no-split -start-insert -buffer-name=outline outline<cr>
+nnoremap <leader>p :Unite -buffer-name=yank history/yank<cr>
+nnoremap <leader>b :Unite -buffer-name=buffer buffer<cr>
+nnoremap <leader>f :Unite -buffer-name=files file_rec<cr>
+nnoremap <leader>o :Unite -buffer-name=outline outline<cr>
+nnoremap <leader>l :Unite -buffer-name=line line<cr>
 
 imap <C-k> <Plug>(neosnippet_expand_or_jump)
 smap <C-k> <Plug>(neosnippet_expand_or_jump)
