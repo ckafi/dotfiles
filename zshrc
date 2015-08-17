@@ -65,6 +65,7 @@ ZOPTS=(
   'list_types'
   'mail_warning'
   'no_hup'
+  'prompt_subst'
   'pushd_ignore_dups'
   'rm_star_wait'
   'share_history'
@@ -211,7 +212,7 @@ precmd () {
     unset git_prompt
   fi
 
-  update_prompt
+  # update_prompt
 }
 
 title () {
@@ -325,30 +326,30 @@ mkcd () {
   fi
   cd $1
 }
+# }}}
 
-update_prompt () {
+# Prompt {{{
   # All prompt and no work makes Tobias a poor boy
   # All prompt and no work makes Tobias a poor boy
-  PS1=""
+  PS1=''
   # hostname if in ssh or root
-  [[ -n $SSH_CONNECTION || $UID == 0 ]] && PS1+="%F{34}%m%f:"
+  [[ -n $SSH_CONNECTION || $UID == 0 ]] && PS1+='%F{34}%m%f:'
   # username
-  PS1+="%F{111}%n%f "
+  PS1+='%F{111}%n%f '
   # path with prefix, truncated to 55 characters
-  PS1+="%F{192}%55<..<%~%<<%f"
+  PS1+='%F{192}%55<..<%~%<<%f'
   # git prompt if set
-  PS1+=${git_prompt+ $git_prompt}
+  PS1+='${git_prompt+ $git_prompt}'
   # jobs (if any)
-  PS1+="%1(j. %F{113}%j%f.)"
+  PS1+='%1(j. %F{113}%j%f.)'
   # exit code if >0
-  PS1+="%(?.. %F{173}%?%f)"
+  PS1+='%(?.. %F{173}%?%f)'
   # newline
   PS1+=$'\n'
   # red text if root
-  PS1+="%(!.%F{196}.)"
+  PS1+='%(!.%F{196}.)'
   # % or # based on privileges
-  PS1+="%# "
-}
+  PS1+='%# '
 # }}}
 
 # vim: foldmethod=marker
