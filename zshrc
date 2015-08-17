@@ -204,11 +204,7 @@ preexec () {
 }
 
 precmd () {
-  if [[ -n $TAG ]]; then
-    title "$TAG %2~"
-  else
-    title 'zsh %2~'
-  fi
+  title 'zsh %2~'
   if git branch &>/dev/null; then
     update_git_prompt
   else
@@ -334,8 +330,6 @@ update_prompt () {
   # All prompt and no work makes Tobias a poor boy
   # All prompt and no work makes Tobias a poor boy
   PS1=""
-  # (tag) if set
-  PS1+=${TAG+%F{113}$TAG%f }
   # hostname if in ssh or root
   [[ -n $SSH_CONNECTION || $UID == 0 ]] && PS1+="%F{34}%m%f:"
   # username
