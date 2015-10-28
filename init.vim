@@ -119,6 +119,8 @@ autocmd User GoyoLeave Limelight!
 "}}}
 
 " Color-Settings {{{
+" enable true color
+let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 " Use colors for a dark background
 set background=dark
 " Load color scheme
