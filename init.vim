@@ -17,6 +17,7 @@ Plug 'chrisbra/vim-diff-enhanced'
 Plug 'ckafi/vim-template'
 Plug 'fmoralesc/vim-pad'
 Plug 'guns/vim-clojure-static', {'for': 'clojure'}
+Plug 'guns/vim-sexp', {'for': 'clojure'}
 Plug 'jonathanfilip/vim-lucius'
 Plug 'joom/latex-unicoder.vim'
 Plug 'junegunn/goyo.vim'
@@ -36,10 +37,10 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fireplace', {'for': 'clojure'}
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-sexp-mappings-for-regular-people', {'for': 'clojure'}
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-vinegar'
-Plug 'vim-scripts/paredit.vim', {'for': 'clojure'}
 Plug 'wellle/targets.vim'
 call plug#end()
 " }}}
@@ -148,8 +149,6 @@ let g:airline_right_sep=''
 let g:airline_theme = 'powerlineish'
 " Enable neocompl at startup
 let g:neocomplcache_enable_at_startup = 1
-" disable double-newline in paredit
-let g:paredit_electric_return = 0
 " Press s for next sneak match
 let g:sneak#s_next = 1
 " Enable easymotion-like behaviour
