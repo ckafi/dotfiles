@@ -10,7 +10,7 @@ syntax enable             " Enable syntax highlighting
 " }}}
 
 " Plugins {{{
-call plug#begin('~/.vim/plugins')
+call plug#begin('~/.config/nvim/plugins')
 Plug 'benekastah/neomake'
 Plug 'bling/vim-airline'
 Plug 'chrisbra/vim-diff-enhanced'
@@ -64,10 +64,10 @@ set autoindent            " Use auto indenting
 set smartindent           " ... and smart-indenting
 set pastetoggle=<F8>      " Toggle (no)paste with F8
 set undofile              " Save undo history
-set undodir=~/.vim/undo/  " Directory for undo files
+set undodir=~/.config/nvim/undo/  " Directory for undo files
 set backup                " Save backups
-set backupdir=~/.vim/backup/ " Directory for backup files
-set directory=~/.vim/swap//  " Directory for swap files with complete path
+set backupdir=~/.config/nvim/backup/ " Directory for backup files
+set directory=~/.config/nvim/swap//  " Directory for swap files with complete path
 set modeline              " Enable modelines
 set visualbell            " Visual bell instead of beeping
 set listchars=tab:·\      " List mode character for tab
@@ -271,13 +271,6 @@ function! SummarizeTabs()
     echohl None
   endtry
 endfunction
-" }}}
-
-" Local config Files {{{
-" Source a file for local configurations
-if filereadable($HOME."/.vim/local.vim")
-  source $HOME/.vim/local.vim
-endif
 " }}}
 
 " vim: foldmethod=marker
