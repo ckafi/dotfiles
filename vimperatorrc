@@ -4,6 +4,10 @@ nmap \< :back<CR>
 nmap > :forward<CR>
 nmap ( :tabprevious<CR>
 nmap ) :tabnext<CR>
+nmap u <C-u>
+nmap d <C-d>
+nmap x :bdelete -select left<CR>
+nmap X :undo<CR>
 inoremap <C-a> <C-t>ggVG
 
 set defsearch=duckduckgo
