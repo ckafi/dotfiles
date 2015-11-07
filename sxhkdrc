@@ -15,3 +15,6 @@ XF86Audio{Lower,Raise}Volume
 
 XF86MonBrightness{Up,Down}
   xbacklight -{inc,dec} 5
+
+XF86Sleep
+  systemctl suspend
