@@ -1,42 +1,43 @@
 \documentclass[paper=a4]{scrartcl}
 
 \usepackage[ngerman]{babel}
-\usepackage{graphicx}
-\usepackage{amsmath,amssymb}
-\usepackage{color}
-%\usepackage[iso,ngerman]{isodate}
-\usepackage[math-style=ISO, bold-style=ISO]{unicode-math}
+\usepackage{amsmath,amssymb,mathtools}
 
-\usepackage[unicode=true, pdfusetitle, bookmarks=true, bookmarksnumbered=false,
-            bookmarksopen=false, breaklinks=false, pdfborder={0 0 0},
-            backref=false, colorlinks=true]
-           {hyperref}
+% \usepackage{graphicx}
+% \usepackage{color}
+% \usepackage[iso,ngerman]{isodate}
+% \usepackage[math-style=ISO, bold-style=ISO]{unicode-math}
+% \usepackage[unicode=true, pdfusetitle, bookmarks=true, bookmarksnumbered=false,
+%             bookmarksopen=false, breaklinks=false, pdfborder={0 0 0},
+%             backref=false, colorlinks=true]
+%            {hyperref}
 
-\usepackage{fontspec}
-\setmainfont[Ligatures=TeX]{TeX Gyre Termes}
-\setsansfont[Ligatures=TeX]{TeX Gyre Heros}
-\setmonofont{Inconsolata}
-\setmathfont{TeX Gyre Termes Math}
-%\renewcommand{\familydefault}{\sfdefault}
-%\setkomafont{sectioning}{\bfseries}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
 
-%\renewcommand{\theenumi}{\Roman{enumi}}
-%\renewcommand{\labelenumi}{(\theenumi)}
+% \usepackage{fontspec}
+% \setmainfont[Ligatures=TeX]{TeX Gyre Termes}
+% \setsansfont[Ligatures=TeX]{TeX Gyre Heros}
+% \setmonofont{Inconsolata}
+% \setmathfont{TeX Gyre Termes Math}
 
-\titlehead{}
+% \renewcommand{\familydefault}{\sfdefault}
+% \setkomafont{sectioning}{\bfseries}
 
-\subject{}
-\title{}
-\subtitle{}
+% \renewcommand{\theenumi}{\alph{enumi}}
+% \renewcommand{\labelenumi}{\theenumi)}
 
-\author{Tobias Frilling}
-\publishers{}
+% \usepackage[margin=1.5cm]{geometry}
 
-\date{\today}
-\dedication{}
+% \titlehead{}
+% \subject{}
+% \title{}
+% \subtitle{}
+% \author{Tobias Frilling}
+% \publishers{}
+% \date{\today}
+% \dedication{}
 
 \begin{document}
-
-
 
 \end{document}
