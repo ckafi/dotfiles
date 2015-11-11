@@ -99,6 +99,7 @@ set completeopt=menu      " Use a popup menu for completion
 set completeopt+=menuone  " ... also when there is only one match
 set completeopt+=longest  " Only insert the longest common text
 set completeopt+=preview  " Show information about current item in preview
+set complete=.,w,b,u,t,i  " Complete sources are all buffers, tags and includes
 set laststatus=2          " Always show status line
 set shortmess+=I          " Don't show intro message
 set history=1000          " remember more commands and searches
@@ -210,9 +211,9 @@ imap <C-k> <Plug>(neosnippet_expand_or_jump)
 smap <C-k> <Plug>(neosnippet_expand_or_jump)
 xmap <C-k> <Plug>(neosnippet_expand_target)
 
-inoremap <expr><Tab> neocomplete#start_manual_complete()
-inoremap <expr><C-g> neocomplete#undo_completion()
-inoremap <expr><C-h> neocomplete#complete_common_string()
+inoremap <expr><Tab> neocomplcache#start_manual_complete()
+inoremap <expr><C-g> neocomplcache#undo_completion()
+inoremap <expr><C-h> neocomplcache#complete_common_string()
 " }}}
 
 " Functions {{{
