@@ -145,7 +145,7 @@ let mapleader = ","
 let g:airline_left_sep=''
 let g:airline_right_sep=''
 " Set airline color theme
-let g:airline_theme = 'powerlineish'
+let g:airline_theme = 'gruvbox'
 " Enable neocompl at startup
 let g:neocomplcache_enable_at_startup = 1
 " Press s for next sneak match
