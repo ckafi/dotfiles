@@ -18,7 +18,6 @@ Plug 'ckafi/vim-template'
 Plug 'fmoralesc/vim-pad'
 Plug 'guns/vim-clojure-static', {'for': 'clojure'}
 Plug 'guns/vim-sexp', {'for': 'clojure'}
-Plug 'jonathanfilip/vim-lucius'
 Plug 'joom/latex-unicoder.vim'
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
@@ -27,6 +26,7 @@ Plug 'justinmk/vim-sneak'
 Plug 'junegunn/rainbow_parentheses.vim', {'on': 'RainbowParentheses'}
 Plug 'majutsushi/tagbar'
 Plug 'mbbill/undotree'
+Plug 'morhetz/gruvbox'
 Plug 'rking/ag.vim'
 Plug 'shougo/neocomplcache'
 Plug 'shougo/neosnippet'
@@ -125,17 +125,15 @@ autocmd User GoyoLeave Limelight!
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 " Use colors for a dark background
 set background=dark
+" Force some text decorations
+let g:gruvbox_italic=1
+let g:gruvbox_bold=1
+let g:gruvbox_underline=1
 " Load color scheme
-colorscheme lucius
-LuciusDarkLowContrast
-" Don't highlight closed folds
-highlight Folded cterm=None, gui=None
+colorscheme gruvbox
 " Highlight the 81st column if there is a character
 " highlight col81 ctermbg=red guibg=red
 " match col81 /\%<82v.\%>81v/
-" make non text chars less visible
-highlight NonText gui=None
-highlight SpecialKey gui=None
 "}}}
 
 " Variable Settings {{{
