@@ -30,9 +30,10 @@ browser = firefox
 
 [colors]
 cursor = #5f87af
-foreground = #efdfbb
+foreground = #ebdbb2
+
 foreground_bold = #efdfbb
-background = #303030
+background = #282828
 
 # 20% background transparency (requires a compositor)
 #background = rgba(63, 63, 63, 0.8)
@@ -45,26 +46,26 @@ background = #303030
 color0 = #101010
 color8 = #101010
 # red
-color1 = #d75f5f
-color9 = #d75f5f
+color1 = #cc241d
+color9 = #fb4924
 # green
-color2 = #87af5f
-color10 = #87af5f
+color2 = #98981a
+color10 = #b8bb26
 # yellow
-color3 = #afaf87
-color11 = #afaf87
+color3 = #d79921
+color11 = #fabd2f
 # blue
-color4 = #207fa7
-color12 = #207fa7
+color4 = #458588
+color12 = #83a598
 # magenta
-color5 = #af87af
-color13 = #af87af
+color5 = #b16286
+color13 = #d3869b
 # cyan
-color6 = #5fafd7
-color14 = #5fafd7
+color6 = #689d6a
+color14 = #8ec07c
 # white
-color7 = #dddddd
-color15 = #dddddd
+color7 = #a89984
+color15 = #ebdbb2
 
 [hints]
 #font = Monospace 12
