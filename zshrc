@@ -244,7 +244,7 @@ update_git_prompt () {
     git_branch_name="Initial"
 
   if [[ -z $git_branch_name ]]; then
-    git_branch_name=$(git branch | grep '^\*' | sed 's/* //')
+    git_branch_name=$(git rev-parse --abbrev-ref HEAD)
     git_commit_hash=$(git rev-parse --short HEAD)
   fi
 
