@@ -106,4 +106,4 @@ bar {
 }
 
 # autostart desktop files
-exec dex -a -e i3
+# exec dex -a -e i3
