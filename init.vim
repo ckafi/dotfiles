@@ -28,7 +28,7 @@ Plug 'majutsushi/tagbar'
 Plug 'mbbill/undotree'
 Plug 'morhetz/gruvbox'
 Plug 'rking/ag.vim'
-Plug 'shougo/neocomplcache'
+Plug 'shougo/deoplete.nvim'
 Plug 'shougo/neosnippet'
 Plug 'shougo/neosnippet-snippets'
 Plug 'shougo/unite-outline'
@@ -146,8 +146,8 @@ let g:airline_left_sep=''
 let g:airline_right_sep=''
 " Set airline color theme
 let g:airline_theme = 'gruvbox'
-" Enable neocompl at startup
-let g:neocomplcache_enable_at_startup = 1
+" Enable deoplete at startup
+let g:deoplete#enable_at_startup = 1
 " Press s for next sneak match
 let g:sneak#s_next = 1
 " Enable easymotion-like behaviour
@@ -209,9 +209,9 @@ imap <C-k> <Plug>(neosnippet_expand_or_jump)
 smap <C-k> <Plug>(neosnippet_expand_or_jump)
 xmap <C-k> <Plug>(neosnippet_expand_target)
 
-inoremap <expr><Tab> neocomplcache#start_manual_complete()
-inoremap <expr><C-g> neocomplcache#undo_completion()
-inoremap <expr><C-h> neocomplcache#complete_common_string()
+" inoremap <expr><Tab> neocomplcache#start_manual_complete()
+" inoremap <expr><C-g> neocomplcache#undo_completion()
+" inoremap <expr><C-h> neocomplcache#complete_common_string()
 " }}}
 
 " Functions {{{
