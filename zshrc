@@ -83,9 +83,10 @@ autoload colors && colors
 # }}}
 
 # Aliases {{{
-alias o="xdg-open"
+alias o="mimeo"
 alias e="$EDITOR"
 alias p="pacaur"
+alias u="systemctl --user"
 
 alias psgrep="ps -ef | grep"
 alias rscp="rsync -rhP --no-whole-file --inplace"
