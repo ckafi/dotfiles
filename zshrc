@@ -42,7 +42,7 @@ NULLCMD="cat"
 READNULLCMD=$PAGER
 WORDCHARS+=":"
 SUDO_PROMPT="[sudo] $USER@$HOST's passwd: "
-PS2="%F{173}(%_)%f "
+PS2="%F{cyan}(%_)%f "
 #really annoying!
 #WATCH=all
 #WATCHFMT="%S%B%T: %n has %a (%M)"
@@ -264,7 +264,7 @@ update_git_prompt () {
   [[ $git_status =~ "Untracked files:" ]] && \
     git_tlights+="%F{red}u"
 
-  git_prompt="%F{199}$git_branch_name"
+  git_prompt="%F{magenta}$git_branch_name"
   git_prompt+="${git_commit_hash:+.$git_commit_hash}"
   git_prompt+="${git_tlights:+%f($git_tlights%f)}%f"
 }
@@ -334,21 +334,21 @@ mkcd () {
   # All prompt and no work makes Tobias a poor boy
   PS1=''
   # hostname if in ssh or root
-  [[ -n $SSH_CONNECTION || $UID == 0 ]] && PS1+='%F{34}%m%f:'
+  [[ -n $SSH_CONNECTION || $UID == 0 ]] && PS1+='%F{green}%m%f:'
   # username
-  PS1+='%F{111}%n%f '
+  PS1+='%F{blue}%n%f '
   # path with prefix, truncated to 55 characters
-  PS1+='%F{192}%55<..<%~%<<%f'
+  PS1+='%F{yellow}%55<..<%~%<<%f'
   # git prompt if set
   PS1+='${git_prompt+ $git_prompt}'
   # jobs (if any)
-  PS1+='%1(j. %F{113}%j%f.)'
+  PS1+='%1(j. %F{cyan}%j%f.)'
   # exit code if >0
-  PS1+='%(?.. %F{173}%?%f)'
+  PS1+='%(?.. %F{red}%?%f)'
   # newline
   PS1+=$'\n'
   # red text if root
-  PS1+='%(!.%F{196}.)'
+  PS1+='%(!.%F{red}.)'
   # % or # based on privileges
   PS1+='%# '
 # }}}
