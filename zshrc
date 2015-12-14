@@ -151,7 +151,7 @@ bindkey -M menuselect '#' accept-and-infer-next-history
 # }}}
 
 # External configs {{{
-eval $(dircolors .dircolors)
+eval $(dircolors ~/.dircolors)
 whence fasd >/dev/null && eval "$(fasd --init auto)"
 [[ -f /etc/profile.d/fzf.zsh ]] && source /etc/profile.d/fzf.zsh
 # }}}
