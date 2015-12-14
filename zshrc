@@ -196,14 +196,7 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 # }}}
 
 # Functions {{{
-td () {
-  task $@ pro:$PWD:t
-}
 
-warn () {
-  beep -r 3
-  echo "$bg[red]$fg_bold[white] !!! Warning !!! \a"
-}
 
 preexec () {
   title $1
