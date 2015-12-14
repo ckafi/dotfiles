@@ -108,7 +108,7 @@ alias sudo="sudo "
 alias jrnl=" jrnl"
 
 alias fe="f -e $EDITOR"
-alias fo="f -e xdg-open"
+alias fo="f -e mimeo"
 # }}}
 
 # Key-bindings {{{
