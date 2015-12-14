@@ -46,6 +46,8 @@ PS2="%F{cyan}(%_)%f "
 #really annoying!
 #WATCH=all
 #WATCHFMT="%S%B%T: %n has %a (%M)"
+FZF_DEFAULT_OPTS="--reverse --multi"
+[[ -f /etc/profile.d/fzf.zsh ]] && source /etc/profile.d/fzf.zsh
 unsetopt all_export
 # }}}
 
