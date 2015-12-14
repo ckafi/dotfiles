@@ -105,5 +105,6 @@ bar {
         status_command conky -c .conkyrc_i3
 }
 
-# autostart desktop files
-# exec dex -a -e i3
+# start window manager target
+exec systemctl --user import-environment
+exec systemctl --user start window-manager.target
