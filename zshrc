@@ -24,7 +24,6 @@ fi
 
 # Environment {{{
 setopt all_export
-eval $(dircolors)
 PATH="$HOME/bin:$PATH"
 # gcc coloring
 [[ -d /usr/lib/colorgcc/bin ]] && PATH="/usr/lib/colorgcc/bin:$PATH"
@@ -47,7 +46,6 @@ PS2="%F{cyan}(%_)%f "
 #WATCH=all
 #WATCHFMT="%S%B%T: %n has %a (%M)"
 FZF_DEFAULT_OPTS="--reverse --multi"
-[[ -f /etc/profile.d/fzf.zsh ]] && source /etc/profile.d/fzf.zsh
 unsetopt all_export
 # }}}
 
@@ -109,7 +107,6 @@ alias lla="ll -A"
 alias sudo="sudo "
 alias jrnl=" jrnl"
 
-whence fasd >/dev/null &&  eval "$(fasd --init auto)"
 alias fe="f -e $EDITOR"
 alias fo="f -e xdg-open"
 # }}}
@@ -151,6 +148,12 @@ case $TERM in
 esac
 bindkey -M menuselect '+' accept-and-menu-complete
 bindkey -M menuselect '#' accept-and-infer-next-history
+# }}}
+
+# External configs {{{
+eval $(dircolors .dircolors)
+whence fasd >/dev/null && eval "$(fasd --init auto)"
+[[ -f /etc/profile.d/fzf.zsh ]] && source /etc/profile.d/fzf.zsh
 # }}}
 
 # Completions {{{
