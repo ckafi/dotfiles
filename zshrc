@@ -197,6 +197,14 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 
 # Functions {{{
 
+fasd_fzf () {
+  local -a param
+  param=("${(f)$(fasd -lR${2} $1 | fzf --no-sort -0 -1)}")
+  [[ -n $param ]] && $3 "$param[@]" || return 1
+}
+
+ze () { fasd_fzf "$1" f $EDITOR }
+zd () { fasd_fzf "$1" d cd }
 
 preexec () {
   title $1
