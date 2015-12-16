@@ -28,6 +28,7 @@ Plug 'junegunn/vim-easy-align'
 Plug 'justinmk/vim-sneak'
 Plug 'junegunn/rainbow_parentheses.vim', {'on': 'RainbowParentheses'}
 Plug 'majutsushi/tagbar'
+Plug 'maxbrunsfeld/vim-yankstack'
 Plug 'mbbill/undotree'
 Plug 'morhetz/gruvbox'
 Plug 'rking/ag.vim'
@@ -156,11 +157,17 @@ let g:sneak#s_next = 1
 let g:sneak#streak = 1
 " Make neomake open clist/llist automatically
 let g:neomake_open_list = 1
+" Don't overwrite sneak command
+let g:yankstack_yank_keys = ['c', 'C', 'd', 'D', 'x', 'X', 'y', 'Y']
 "}}}
 
 " Keymaps and Abbrevs {{{
 " Scroll down half a screen
 nnoremap <Space> <C-D>
+
+" Move into black hole register
+map <silent> m "_d
+nmap <silent> mm "_dd
 
 " Toggle graphical undo window
 nmap <F4>  :UndotreeToggle<CR>
@@ -190,6 +197,9 @@ nnoremap <silent> <leader>m :silent! :write \| :Neomake<CR>
 nnoremap <leader>b :Buffers<cr>
 nnoremap <leader>f :Files<cr>
 nnoremap <leader>l :BLines<cr>
+
+nmap <leader>p <Plug>yankstack_substitute_older_paste
+nmap <leader>P <Plug>yankstack_substitute_newer_paste
 
 imap <C-k> <Plug>(neosnippet_expand_or_jump)
 smap <C-k> <Plug>(neosnippet_expand_or_jump)
