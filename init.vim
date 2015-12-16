@@ -34,8 +34,6 @@ Plug 'rking/ag.vim'
 Plug 'shougo/deoplete.nvim'
 Plug 'shougo/neosnippet'
 Plug 'shougo/neosnippet-snippets'
-Plug 'shougo/unite-outline'
-Plug 'shougo/unite.vim'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fireplace', {'for': 'clojure'}
 Plug 'tpope/vim-fugitive'
@@ -158,21 +156,6 @@ let g:sneak#s_next = 1
 let g:sneak#streak = 1
 " Make neomake open clist/llist automatically
 let g:neomake_open_list = 1
-" Let unite track yank history
-let g:unite_source_history_yank_enable = 1
-" Use a fuzzy matcher for unite
-call unite#filters#matcher_default#use(['matcher_fuzzy'])
-" Rank results by matching length
-call unite#filters#sorter_default#use(['sorter_rank'])
-if executable('ag')
-  let g:unite_source_grep_command='ag'
-  let g:unite_source_grep_default_opts='--nocolor --line-numbers --nogroup -S -C4'
-  let g:unite_source_grep_recursive_opt=''
-endif
-call unite#custom#profile('default', 'context', {
-  \ 'start_insert': 1,
-  \ 'split': 0,
-  \ })
 "}}}
 
 " Keymaps and Abbrevs {{{
@@ -204,15 +187,16 @@ nnoremap n nzz
 nnoremap N Nzz
 " make file and open/close quickfix window accordingly
 nnoremap <silent> <leader>m :silent! :write \| :Neomake<CR>
-nnoremap <leader>p :Unite -buffer-name=yank history/yank<cr>
-nnoremap <leader>b :Unite -buffer-name=buffer buffer<cr>
-nnoremap <leader>f :Unite -buffer-name=files file_rec<cr>
-nnoremap <leader>o :Unite -buffer-name=outline outline<cr>
-nnoremap <leader>l :Unite -buffer-name=line line<cr>
+nnoremap <leader>b :Buffers<cr>
+nnoremap <leader>f :Files<cr>
+nnoremap <leader>l :BLines<cr>
 
 imap <C-k> <Plug>(neosnippet_expand_or_jump)
 smap <C-k> <Plug>(neosnippet_expand_or_jump)
 xmap <C-k> <Plug>(neosnippet_expand_target)
+
+" use fzf for path completion
+imap <c-x><c-f> <plug>(fzf-complete-path)
 
 " inoremap <expr><Tab> neocomplcache#start_manual_complete()
 " inoremap <expr><C-g> neocomplcache#undo_completion()
