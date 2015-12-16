@@ -18,6 +18,7 @@ Plug 'ckafi/vim-template'
 Plug 'fmoralesc/vim-pad'
 Plug 'guns/vim-clojure-static', {'for': 'clojure'}
 Plug 'guns/vim-sexp', {'for': 'clojure'}
+Plug 'jeetsukumaran/vim-filebeagle'
 Plug 'joom/latex-unicoder.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all --no-update-rc' }
 Plug 'junegunn/fzf.vim'
@@ -42,7 +43,6 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-sexp-mappings-for-regular-people', {'for': 'clojure'}
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
-Plug 'tpope/vim-vinegar'
 Plug 'wellle/targets.vim'
 call plug#end()
 " }}}
