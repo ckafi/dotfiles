@@ -194,9 +194,13 @@ nnoremap n nzz
 nnoremap N Nzz
 " make file and open/close quickfix window accordingly
 nnoremap <silent> <leader>m :silent! :write \| :Neomake<CR>
+
+" open buffer-, file- or linelist in fuzzy finder
 nnoremap <leader>b :Buffers<cr>
 nnoremap <leader>f :Files<cr>
 nnoremap <leader>l :BLines<cr>
+" use fzf for path completion
+imap <c-x><c-f> <plug>(fzf-complete-path)
 
 nmap <leader>p <Plug>yankstack_substitute_older_paste
 nmap <leader>P <Plug>yankstack_substitute_newer_paste
@@ -204,9 +208,6 @@ nmap <leader>P <Plug>yankstack_substitute_newer_paste
 imap <C-k> <Plug>(neosnippet_expand_or_jump)
 smap <C-k> <Plug>(neosnippet_expand_or_jump)
 xmap <C-k> <Plug>(neosnippet_expand_target)
-
-" use fzf for path completion
-imap <c-x><c-f> <plug>(fzf-complete-path)
 
 " inoremap <expr><Tab> neocomplcache#start_manual_complete()
 " inoremap <expr><C-g> neocomplcache#undo_completion()
