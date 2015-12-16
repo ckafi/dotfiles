@@ -97,6 +97,7 @@ set formatoptions+=r      " Inset comment leader after <Enter>
 set formatoptions+=q      " Allow formatting of comments with 'gq'
 set formatoptions+=n      " Recognize numbered lists
 set formatoptions+=l      " Don't break already too long lines
+set formatoptions+=j      " Remove unneeded commelnt leader when joining
 set completeopt=menu      " Use a popup menu for completion
 set completeopt+=menuone  " ... also when there is only one match
 set completeopt+=longest  " Only insert the longest common text
