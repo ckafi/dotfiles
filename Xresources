@@ -60,3 +60,32 @@ XTerm*faceSize: 10
 *foreground  : #efdfbb
 *fadeColor   : #000000
 *fading      : 15
+
+! Enabled modi
+rofi.modi:                           window,drun
+! Terminal to use
+rofi.terminal:                       termite
+! Window width
+rofi.width:                          50
+! Number of lines
+rofi.lines:                          30
+! Threads to use for string matching
+rofi.threads:                        4
+! Border width
+rofi.bw:                             1
+! Padding
+rofi.padding:                        1
+! Hide scroll-bar
+rofi.hide-scrollbar:                 true
+! Use extended color scheme
+rofi.color-enabled:                  true
+! State:           'bg',     'fg',     'bgalt',  'hlbg',   'hlfg'
+rofi.color-normal: #32302f,  #928374,  #1d2021,  #689d6a,  #282828
+rofi.color-urgent: #cc241d,  #ebddb2,  #b53a34,  #689d6a,  #282828
+rofi.color-active: #458588,  #ebddb2,  #83a598,  #689d6a,  #282828
+
+!                  'background', 'border'
+rofi.color-window: #000000,      #000000
+
+! Location on screen
+rofi.location:                       0
