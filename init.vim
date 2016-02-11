@@ -12,7 +12,6 @@ syntax enable             " Enable syntax highlighting
 " Plugins {{{
 call plug#begin('~/.config/nvim/plugins')
 Plug 'benekastah/neomake'
-Plug 'bling/vim-airline'
 Plug 'chrisbra/vim-diff-enhanced'
 Plug 'ckafi/vim-template'
 Plug 'fmoralesc/vim-pad'
@@ -42,6 +41,7 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-sexp-mappings-for-regular-people', {'for': 'clojure'}
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
+Plug 'vim-airline/vim-airline'
 Plug 'wellle/targets.vim'
 call plug#end()
 " }}}
