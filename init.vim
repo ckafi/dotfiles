@@ -17,13 +17,13 @@ Plug 'ckafi/vim-template'
 Plug 'fmoralesc/vim-pad'
 Plug 'guns/vim-clojure-static', {'for': 'clojure'}
 Plug 'guns/vim-sexp', {'for': 'clojure'}
-Plug 'jeetsukumaran/vim-filebeagle'
 Plug 'joom/latex-unicoder.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all --no-update-rc' }
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
 Plug 'junegunn/vim-easy-align'
+Plug 'justinmk/vim-dirvish'
 Plug 'justinmk/vim-sneak'
 Plug 'junegunn/rainbow_parentheses.vim', {'on': 'RainbowParentheses'}
 Plug 'majutsushi/tagbar'
@@ -194,6 +194,9 @@ nnoremap n nzz
 nnoremap N Nzz
 " make file and open/close quickfix window accordingly
 nnoremap <silent> <leader>m :silent! :write \| :Neomake<CR>
+
+" open Dirvish with -
+map <silent> - :Dirvish %<cr>
 
 " open buffer-, file- or linelist in fuzzy finder
 nnoremap <leader>b :Buffers<cr>
