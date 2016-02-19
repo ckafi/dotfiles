@@ -205,6 +205,7 @@ fasd_fzf () {
 
 ze () { fasd_fzf "$1" f $EDITOR }
 zd () { fasd_fzf "$1" d cd }
+zo () { fasd_fzf "$1" f mimeo }
 
 preexec () {
   title $1
