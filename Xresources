@@ -30,34 +30,34 @@ URxvt.geometry         : 90x25
 XTerm*faceName: Terminus
 XTerm*faceSize: 10
 
-!black
-*color0      : #101010
-*color8      : #101010
-!red
-*color1      : #d75f5f
-*color9      : #d75f5f
-!green
-*color2      : #87af5f
-*color10     : #87af5f
-!yellow
-*color3      : #afaf87
-*color11     : #afaf87
-!blue
-*color4      : #207fa7
-*color12     : #207fa7
-!magenta
-*color5      : #af87af
-*color13     : #af87af
-!cyan
-*color6      : #5fafd7
-*color14     : #5fafd7
-!white
-*color7      : #dddddd
-*color15     : #dddddd
+! black
+*color0 : #282828
+*color8 : #928374
+! red
+*color1 : #cc241d
+*color9 : #fb4924
+! green
+*color2 : #98981a
+*color10 : #b8bb26
+! yellow
+*color3 : #d79921
+*color11 : #fabd2f
+! blue
+*color4 : #458588
+*color12 : #83a598
+! magenta
+*color5 : #b16286
+*color13 : #d3869b
+! cyan
+*color6 : #689d6a
+*color14 : #8ec07c
+! white
+*color7 : #a89984
+*color15 : #ebdbb2
 
 *cursorColor : #5f87af
-*background  : #303030
-*foreground  : #efdfbb
+*background  : #32302f
+*foreground  : #ebdbb2
 *fadeColor   : #000000
 *fading      : 15
 

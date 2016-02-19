@@ -33,7 +33,7 @@ cursor = #5f87af
 foreground = #ebdbb2
 
 foreground_bold = #efdfbb
-background = #282828
+background = #32302f
 
 # 20% background transparency (requires a compositor)
 #background = rgba(63, 63, 63, 0.8)
@@ -43,8 +43,8 @@ background = #282828
 
 # colors from color0 to color254 can be set
 # black
-color0 = #101010
-color8 = #101010
+color0 = #282828
+color8 = #928374
 # red
 color1 = #cc241d
 color9 = #fb4924
