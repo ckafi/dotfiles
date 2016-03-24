@@ -53,7 +53,7 @@ set smartcase             " Do smart case matching
 set incsearch             " Do an incremental search
 set nohlsearch              " Highlight matching strings when searching
 set hidden                " Hide buffers when they are abandoned
-set mouse=a               " Enable mouse usage (all modes)
+set mouse=n               " Enable mouse usage (normal mode)
 set splitbelow            " For split: new window below old one
 set splitright            " For vsplit: new window right of old one
 set lazyredraw            " Do not redraw the screen during macros
