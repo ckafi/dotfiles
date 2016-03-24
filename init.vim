@@ -44,6 +44,7 @@ Plug 'tpope/vim-sexp-mappings-for-regular-people', {'for': 'clojure'}
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 Plug 'vim-airline/vim-airline'
+Plug 'vimoutliner/vimoutliner'
 Plug 'wellle/targets.vim'
 call plug#end()
 " }}}
@@ -171,6 +172,9 @@ let g:vimtex_latexmk_progname = 'nvr'
 
 let g:hardtime_default_on = 1
 let g:hardtime_showmsg = 1
+
+let g:pad#dir = "~/Dropbox/notes/"
+let g:pad#default_format = "votl"
 "}}}
 
 " Keymaps and Abbrevs {{{
