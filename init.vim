@@ -5,7 +5,6 @@
 " So feel free to use any line you want.
 
 " Prologue {{{
-set nocompatible          " Don't make Vim vi-compatible
 syntax enable             " Enable syntax highlighting
 " }}}
 
