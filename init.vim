@@ -51,7 +51,7 @@ set showmatch             " Show matching brackets.
 set ignorecase            " Do case insensitive matching
 set smartcase             " Do smart case matching
 set incsearch             " Do an incremental search
-set hlsearch              " Highlight matching strings when searching
+set nohlsearch              " Highlight matching strings when searching
 set hidden                " Hide buffers when they are abandoned
 set mouse=a               " Enable mouse usage (all modes)
 set splitbelow            " For split: new window below old one
