@@ -162,6 +162,8 @@ let g:sneak#streak = 1
 let g:neomake_open_list = 1
 " Don't overwrite sneak command
 let g:yankstack_yank_keys = ['c', 'C', 'd', 'D', 'x', 'X', 'y', 'Y']
+" Set fzf layout
+let g:fzf_layout = { 'up': '~40%' }
 
 let g:vimtex_view_method = "zathura"
 let g:vimtex_latexmk_progname = 'nvr'
