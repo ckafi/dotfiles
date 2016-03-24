@@ -143,7 +143,8 @@ colorscheme gruvbox
 " Disable fold column in taglist
 let showmarks_enable = 0
 " Set comma as leader
-let mapleader = ","
+let mapleader = " "
+let maplocalleader = ","
 " Remove airline seperators
 let g:airline_left_sep=''
 let g:airline_right_sep=''
@@ -162,8 +163,6 @@ let g:yankstack_yank_keys = ['c', 'C', 'd', 'D', 'x', 'X', 'y', 'Y']
 "}}}
 
 " Keymaps and Abbrevs {{{
-" Scroll down half a screen
-nnoremap <Space> <C-D>
 
 " Move into black hole register
 map <silent> m "_d
