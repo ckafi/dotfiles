@@ -170,6 +170,8 @@ let g:vimtex_latexmk_progname = 'nvr'
 "}}}
 
 " Keymaps and Abbrevs {{{
+" Let Y fit in
+nnoremap Y y$
 
 " Move into black hole register
 map <silent> m "_d
