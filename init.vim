@@ -26,6 +26,7 @@ Plug 'junegunn/vim-easy-align'
 Plug 'justinmk/vim-dirvish'
 Plug 'justinmk/vim-sneak'
 Plug 'junegunn/rainbow_parentheses.vim', {'on': 'RainbowParentheses'}
+Plug 'lervag/vimtex', {'for': 'tex'}
 Plug 'majutsushi/tagbar'
 Plug 'maxbrunsfeld/vim-yankstack'
 Plug 'mbbill/undotree'
@@ -161,6 +162,9 @@ let g:sneak#streak = 1
 let g:neomake_open_list = 1
 " Don't overwrite sneak command
 let g:yankstack_yank_keys = ['c', 'C', 'd', 'D', 'x', 'X', 'y', 'Y']
+
+let g:vimtex_view_method = "zathura"
+let g:vimtex_latexmk_progname = 'nvr'
 "}}}
 
 " Keymaps and Abbrevs {{{
