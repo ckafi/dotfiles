@@ -108,6 +108,7 @@ set statusline=(%n)%f\ %m%<%r\ %c,%l\/%L(%P)%=%y%h%w%q[%{&fenc}][%{&ff}]
 set dictionary=/usr/share/dict/ngerman " Dictionary for <C-X><C-K>
 set backspace=indent,start,eol "allow backspace over those
 set noshowmode            " Disable display of mode (-- INSERT --)
+set switchbuf="useopen"   " Switch to buffer when already open
 "}}}
 
 " Autocmds {{{
