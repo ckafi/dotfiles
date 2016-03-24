@@ -81,7 +81,7 @@ set fillchars+=diff:\     " ...
 set relativenumber        " Show relative line numbers
 set cursorline            " Highlight the screen line of the cursor
 set foldcolumn=2          " Width of the fold column
-set foldtext=MyFoldText() " Function for the text on closed folds
+set foldtext=MyFoldFunc() " Function for the text on closed folds
 set spelllang=de          " Language for spell checking
 set tabstop=2             " Number of spaces a Tab counts for in file
 set shiftwidth=0          " Number of spaces for each (auto)indent
@@ -218,7 +218,7 @@ xmap <C-k> <Plug>(neosnippet_expand_target)
 
 " Functions {{{
 " get the text for 'foldtext'
-function! MyFoldText ()
+function! MyFoldFunc ()
   let ftextmarker = '+> '
   " number of lines of the fold
   let flength = 1 + v:foldend - v:foldstart
