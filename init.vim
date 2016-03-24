@@ -16,6 +16,7 @@ Plug 'ckafi/vim-template'
 Plug 'fmoralesc/vim-pad'
 Plug 'guns/vim-clojure-static', {'for': 'clojure'}
 Plug 'guns/vim-sexp', {'for': 'clojure'}
+Plug 'jalvesaq/Nvim-R'
 Plug 'joom/latex-unicoder.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all --no-update-rc' }
 Plug 'junegunn/fzf.vim'
