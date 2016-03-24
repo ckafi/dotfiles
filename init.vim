@@ -182,10 +182,6 @@ nmap <F4>  :UndotreeToggle<CR>
 nmap <F5>  :nohls<CR>
 nmap <F6>  :TagbarToggle<CR>
 " <F8> reserved for pastetoggle
-nmap <C-PageUp> :bnext<CR>
-nmap <C-PageDown> :bprevious<CR>
-nmap <C-Right> :cnext<CR>
-nmap <C-Left> :cprevious<CR>
 nmap <C-j> <C-^>
 " Move up and down in the changelist
 nnoremap <C-Up> g;
