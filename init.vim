@@ -216,6 +216,9 @@ imap <C-k> <Plug>(neosnippet_expand_or_jump)
 smap <C-k> <Plug>(neosnippet_expand_or_jump)
 xmap <C-k> <Plug>(neosnippet_expand_target)
 
+map <F1> <Nop>
+imap <F1> <Nop>
+
 " inoremap <expr><Tab> neocomplcache#start_manual_complete()
 " inoremap <expr><C-g> neocomplcache#undo_completion()
 " inoremap <expr><C-h> neocomplcache#complete_common_string()
