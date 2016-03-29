@@ -36,15 +36,11 @@ VIEWER=$PAGER
 EDITOR="vim"
 whence nvim >/dev/null && EDITOR="nvim"
 VISUAL=$EDITOR
-MAILPATH="/var/mail/${USER};/var/spool/mail/${USER}"
 NULLCMD="cat"
 READNULLCMD=$PAGER
 WORDCHARS+=":"
 SUDO_PROMPT="[sudo] $USER@$HOST's passwd: "
 PS2="%F{cyan}(%_)%f "
-#really annoying!
-#WATCH=all
-#WATCHFMT="%S%B%T: %n has %a (%M)"
 FZF_DEFAULT_OPTS="--reverse --multi"
 unsetopt all_export
 # }}}
@@ -63,7 +59,6 @@ ZOPTS=(
   'hist_ignore_space'
   'list_packed'
   'list_types'
-  'mail_warning'
   'no_hup'
   'prompt_subst'
   'pushd_ignore_dups'
