@@ -39,32 +39,30 @@ VISUAL=$EDITOR
 NULLCMD="cat"
 READNULLCMD=$PAGER
 WORDCHARS+=":"
-SUDO_PROMPT="[sudo] $USER@$HOST's passwd: "
-PS2="%F{cyan}(%_)%f "
 FZF_DEFAULT_OPTS="--reverse --multi"
 unsetopt all_export
 # }}}
 
 # Options and modules {{{
 ZOPTS=(
-  'auto_pushd'
-  'no_beep'
-  'no_clobber'
-  'correct'
-  'correct_all'
-  'extended_glob'
-  'extended_history'
-  'glob_complete'
-  'hist_ignore_all_dups'
-  'hist_ignore_space'
-  'list_packed'
-  'list_types'
-  'no_hup'
-  'prompt_subst'
-  'pushd_minus'
-  'rm_star_wait'
-  'share_history'
-  'transient_rprompt'
+  'auto_pushd' # push dir onto dir stack
+  'no_beep' # no beeping on error
+  'no_clobber' # do not truncate exist. files
+  'correct' # correct spelling of commands
+  'correct_all' # correct all arguments
+  'extended_glob' # make # ~ ^ "magic"
+  'extended_history' # save hist with timestamp
+  'glob_complete' # glob + tab = compl menu
+  'hist_ignore_all_dups' # new commands replaces old one
+  'hist_ignore_space' # dont save if cmd starts with space 
+  'list_packed' # print a smaller compl list
+  'list_types' # add type ident mark to compl entries
+  'long_list_jobs' # list jobs in long format
+  'prompt_subst' # perform subst in prompt
+  'pushd_minus' # switch behav of cd +n/-n
+  'rm_star_wait' # wait 10 sec before rm *
+  'share_history' # share hist between zsh insts
+  'transient_rprompt' # remove right promt on accept cmd line
 )
 
 setopt $ZOPTS
