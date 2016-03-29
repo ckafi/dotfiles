@@ -87,6 +87,8 @@ alias psgrep="ps -ef | grep"
 alias rscp="rsync -rhP --no-whole-file --inplace"
 alias rsmv="rscp --remove-source-files"
 alias sc="systemctl"
+alias -g copy="xsel --clipboard --input"
+alias paste="xsel --clipboard --output"
 
 alias -g grep="grep --color=auto"
 alias cp="cp -iv"
