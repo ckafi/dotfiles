@@ -61,7 +61,7 @@ ZOPTS=(
   'list_types'
   'no_hup'
   'prompt_subst'
-  'pushd_ignore_dups'
+  'pushd_minus'
   'rm_star_wait'
   'share_history'
   'transient_rprompt'
