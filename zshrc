@@ -46,23 +46,29 @@ unsetopt all_export
 # Options and modules {{{
 ZOPTS=(
   'auto_pushd' # push dir onto dir stack
-  'no_beep' # no beeping on error
-  'no_clobber' # do not truncate exist. files
+  'pushd_minus' # switch behav of cd +n/-n
+
   'correct' # correct spelling of commands
   'correct_all' # correct all arguments
+
   'extended_glob' # make # ~ ^ "magic"
-  'extended_history' # save hist with timestamp
   'glob_complete' # glob + tab = compl menu
+
+  'extended_history' # save hist with timestamp
   'hist_ignore_all_dups' # new commands replaces old one
   'hist_ignore_space' # dont save if cmd starts with space 
+  'share_history' # share hist between zsh insts
+
   'list_packed' # print a smaller compl list
   'list_types' # add type ident mark to compl entries
-  'long_list_jobs' # list jobs in long format
+
   'prompt_subst' # perform subst in prompt
-  'pushd_minus' # switch behav of cd +n/-n
-  'rm_star_wait' # wait 10 sec before rm *
-  'share_history' # share hist between zsh insts
   'transient_rprompt' # remove right promt on accept cmd line
+
+  'no_beep' # no beeping on error
+  'no_clobber' # do not truncate exist. files
+  'long_list_jobs' # list jobs in long format
+  'rm_star_wait' # wait 10 sec before rm *
 )
 
 setopt $ZOPTS
