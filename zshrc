@@ -58,7 +58,9 @@ ZOPTS=(
   'hist_ignore_all_dups' # new commands replaces old one
   'hist_ignore_space' # dont save if cmd starts with space 
   'share_history' # share hist between zsh insts
+  'hist_verify' # dont exec hist expn, but reload line
 
+  'no_menu_complete' # dont autoselect first match
   'list_packed' # print a smaller compl list
   'list_types' # add type ident mark to compl entries
 
