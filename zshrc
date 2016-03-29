@@ -336,6 +336,9 @@ mkcd () {
 # Prompt {{{
   # All prompt and no work makes Tobias a poor boy
   # All prompt and no work makes Tobias a poor boy
+  SUDO_PROMPT="[sudo] $USER@$HOST's passwd: "
+  PS2="%F{cyan}(%_)%f "
+
   PS1=''
   # hostname if in ssh or root
   [[ -n $SSH_CONNECTION || $UID == 0 ]] && PS1+='%F{green}%m%f:'
