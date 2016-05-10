@@ -125,7 +125,7 @@ bindkey "^F"    history-beginning-search-forward
 bindkey "^[[5~" history-beginning-search-backward       # PgUp
 bindkey "^[[6~" history-beginning-search-forward        # PgDown
 bindkey "^E"    push-input
-bindkey "^H"    run-help
+# bindkey "^H"    run-help
 bindkey "^[[3~" vi-delete-char                          # Del
 bindkey "^R"    history-incremental-search-backward
 
@@ -205,17 +205,17 @@ fasd_fzf () {
   [[ -n $param ]] && $3 "$param[@]" || return 1
 }
 
-ze () { fasd_fzf "$1" f $EDITOR }
-zd () { fasd_fzf "$1" d cd }
-zo () { fasd_fzf "$1" f mimeo }
+ze () { fasd_fzf "$*" a $EDITOR }
+zd () { fasd_fzf "$*" d cd }
+zo () { fasd_fzf "$*" a mimeo }
 
 preexec () {
-  title $1
+  title "${TAG:+($TAG) }" "$1"
   echo -n ${(%):-%f}
 }
 
 precmd () {
-  title 'zsh %2~'
+  title "${TAG:+($TAG) }" 'zsh %2~'
   if git branch &>/dev/null; then
     update_git_prompt
   else
@@ -226,17 +226,18 @@ precmd () {
 }
 
 title () {
-  1=${(%)1}
-  1=${(V)1}
-  1=${(q)1}
+  local P=$@
+  P=${(%)P}
+  P=${(V)P}
+  P=${(q)P}
 
   case $TERM in
     screen*)
-      print -n "\ek$1\e\\" ;;
+      print -n "\ek$P\e\\" ;;
     linux)
       ;;
     *)
-      print -n "\e]2;$1\a" ;;
+      print -n "\e]2;$P\a" ;;
   esac
 }
 
