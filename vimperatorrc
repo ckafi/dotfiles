@@ -16,10 +16,17 @@ set tabnumbers
 set complete='l'
 set focuscontent=false
 set gui=nonavigation
+set status=ssl,location,bookmark
 source! /home/tobias/.vimperatorrc.local
 
 " Disable bell
 set visualbell
 hi Bell display none;
+hi StatusLine max-height: 18px;
+hi -append HintElem background-color: #00BCD4; color: white;
+hi -append CompItem[selected] background-color: #00BCD4; color: white;
+hi -append InfoMsg color: #00BCD4;
+hi -append CompDesc color: lightgray;
+hi Filter border-radius: 2px; background: #a7c8f1;
 
 " vim: set ft=vimperator:
