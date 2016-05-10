@@ -62,13 +62,15 @@ XTerm*faceSize: 12
 *fading      : 15
 
 ! Enabled modi
-rofi.modi:                           window,drun
+rofi.modi:                           window,run
+! Enable fuzzy matching
+rofi.fuzzy:                          true
 ! Terminal to use
 rofi.terminal:                       termite
 ! Window width
 rofi.width:                          50
 ! Number of lines
-rofi.lines:                          30
+rofi.lines:                          25
 ! Threads to use for string matching
 rofi.threads:                        4
 ! Border width

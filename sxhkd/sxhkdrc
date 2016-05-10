@@ -4,6 +4,12 @@ super + Return
 super + v
   xset dpms force off
 
+super + space
+  rofi -show run
+
+super + Tab
+  rofi -show window
+
 XF86AudioMute
   amixer -q sset Master toggle
 
