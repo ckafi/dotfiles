@@ -67,10 +67,10 @@ bindsym $mod+s focus parent
 bindsym $mod+Escape workspace back_and_forth
 
 # prompt for a new workspace to be created
-bindsym $mod+Mod1+n exec i3-input -F 'workspace %s' -P 'New workspace: '
+bindsym $mod+Ctrl+n exec i3-input -F 'workspace %s' -P 'New workspace: '
 
 # prompt for new workspace name
-bindsym $mod+Mod1+r exec i3-input -F 'rename workspace to %s' -P 'New name: '
+bindsym $mod+Ctrl+r exec i3-input -F 'rename workspace to %s' -P 'New name: '
 
 # switch to workspace
 bindsym $mod+1 workspace number 1
