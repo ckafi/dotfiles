@@ -1,5 +1,5 @@
-{:user {:plugins [[lein-ancient "0.6.1"]
-                  [venantius/ultra "0.1.9"]
-                  [lein-kibit "0.0.8"]
-                  [lein-bikeshed "0.2.0"]
-                  [lein-cljfmt "0.1.10"]]}}
+{:user {:plugins [[lein-ancient "0.6.10"]
+                  [venantius/ultra "0.4.1"]
+                  [lein-kibit "0.1.2"]
+                  [lein-bikeshed "0.3.0"]
+                  [lein-cljfmt "0.5.2"]]}}
