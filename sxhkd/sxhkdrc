@@ -1,8 +1,8 @@
 super + Return
-  termite
+  st
 
 super + v
-  xset dpms force off
+  xset -display :0 dpms force off
 
 super + space
   rofi -show run
@@ -17,7 +17,7 @@ XF86Audio{Lower,Raise}Volume
   amixer -q sset Master 2%{-,+}
 
 XF86MonBrightness{Up,Down}
-  xbacklight -{inc,dec} 5
+  xbacklight -{inc,dec} 3
 
 XF86Sleep
   systemctl suspend
