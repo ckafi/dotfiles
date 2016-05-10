@@ -1,5 +1,5 @@
 Host info
-  HostName bana.mathematik.uni-marburg.de
+  HostName algier.mathematik.uni-marburg.de
   User frilling
 
 Host maschinenraum.no-ip.org info
@@ -10,9 +10,13 @@ Host home
   User tobias
 
 Host cac
-  HostName 168.235.155.95
+  HostName 162.219.2.238
 
 Host gibson wintermute
   ControlMaster auto
   ControlPersist yes
   ControlPath ~/.ssh/socket-%r@%h:%p
+
+Host roswitha
+  HostName kettlack.ddns.net
+  User roswitha
