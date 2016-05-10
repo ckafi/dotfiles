@@ -177,6 +177,9 @@ let g:pad#default_format = "votl"
 " Let Y fit in
 nnoremap Y y$
 
+" The terminal escape is impossible in neo2
+tnoremap <leader><esc> <C-\><C-n>
+
 " Move into black hole register
 map <silent> m "_d
 nmap <silent> mm "_dd
