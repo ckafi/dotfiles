@@ -35,7 +35,6 @@ Plug 'rking/ag.vim'
 Plug 'shougo/deoplete.nvim'
 Plug 'shougo/neosnippet'
 Plug 'shougo/neosnippet-snippets'
-Plug 'takac/vim-hardtime'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fireplace', {'for': 'clojure'}
 Plug 'tpope/vim-fugitive'
@@ -170,9 +169,6 @@ let g:fzf_layout = { 'up': '~40%' }
 
 let g:vimtex_view_method = "zathura"
 let g:vimtex_latexmk_progname = 'nvr'
-
-let g:hardtime_default_on = 1
-let g:hardtime_showmsg = 1
 
 let g:pad#dir = "~/Dropbox/notes/"
 let g:pad#default_format = "votl"
