@@ -149,9 +149,8 @@ let showmarks_enable = 0
 " Set comma as leader
 let mapleader = " "
 let maplocalleader = ","
-" Remove airline seperators
-let g:airline_left_sep=''
-let g:airline_right_sep=''
+" Enable powerline font
+let g:airline_powerline_fonts = 1
 " Set airline color theme
 let g:airline_theme = 'gruvbox'
 " Enable deoplete at startup
