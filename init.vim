@@ -13,7 +13,6 @@ call plug#begin('~/.config/nvim/plugins')
 Plug 'benekastah/neomake'
 Plug 'chrisbra/vim-diff-enhanced'
 Plug 'ckafi/vim-template'
-Plug 'fmoralesc/vim-pad'
 Plug 'guns/vim-clojure-static', {'for': 'clojure'}
 Plug 'guns/vim-sexp', {'for': 'clojure'}
 Plug 'jalvesaq/Nvim-R'
@@ -44,8 +43,10 @@ Plug 'tpope/vim-sexp-mappings-for-regular-people', {'for': 'clojure'}
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 Plug 'vim-airline/vim-airline'
-Plug 'vimoutliner/vimoutliner'
 Plug 'wellle/targets.vim'
+
+Plug 'zah/nim.vim', {'for': 'nim'}
+Plug 'chrisbra/Colorizer'
 call plug#end()
 " }}}
 
@@ -54,7 +55,6 @@ set showcmd               " Show (partial) command in status line.
 set showmatch             " Show matching brackets.
 set ignorecase            " Do case insensitive matching
 set smartcase             " Do smart case matching
-set incsearch             " Do an incremental search
 set nohlsearch              " Highlight matching strings when searching
 set hidden                " Hide buffers when they are abandoned
 set mouse=n               " Enable mouse usage (normal mode)
@@ -62,18 +62,15 @@ set splitbelow            " For split: new window below old one
 set splitright            " For vsplit: new window right of old one
 set lazyredraw            " Do not redraw the screen during macros
 set scrolloff=3           " Number of lines always above/below cursor
-set wildmenu              " Use a menu in command completion
 set wildmode=longest:full " Complete longest common string and start wildmenu
 set wildmode+=full        " ... then go to next full match
-set autoindent            " Use auto indenting
-set smartindent           " ... and smart-indenting
+set smartindent           " Use smart-indenting
 set pastetoggle=<F8>      " Toggle (no)paste with F8
 set undofile              " Save undo history
 set undodir=~/.config/nvim/undo/  " Directory for undo files
 set backup                " Save backups
 set backupdir=~/.config/nvim/backup/ " Directory for backup files
 set directory=~/.config/nvim/swap//  " Directory for swap files with complete path
-set modeline              " Enable modelines
 set visualbell            " Visual bell instead of beeping
 set listchars=tab:·\      " List mode character for tab
 set listchars+=eol:⌟      " ... end of line
@@ -107,10 +104,8 @@ set completeopt+=preview  " Show information about current item in preview
 set complete=.,w,b,u,t,i  " Complete sources are all buffers, tags and includes
 set laststatus=2          " Always show status line
 set shortmess+=I          " Don't show intro message
-set history=1000          " remember more commands and searches
 set statusline=(%n)%f\ %m%<%r\ %c,%l\/%L(%P)%=%y%h%w%q[%{&fenc}][%{&ff}]
 set dictionary=/usr/share/dict/ngerman " Dictionary for <C-X><C-K>
-set backspace=indent,start,eol "allow backspace over those
 set noshowmode            " Disable display of mode (-- INSERT --)
 set switchbuf="useopen"   " Switch to buffer when already open
 "}}}
