@@ -96,6 +96,19 @@ bindsym $mod+Shift+8 move container to workspace number 8; workspace number 8
 bindsym $mod+Shift+9 move container to workspace number 9; workspace number 9
 bindsym $mod+Shift+0 move container to workspace number 10; workspace number 10
 
+# key bindings for program execution
+bindsym $mod+Return exec st
+bindsym $mod+space  exec rofi -show run
+bindsym $mod+Tab    exec rofi -show window
+bindsym $mod+v      exec xset -display :0 dpms force off
+
+bindsym XF86AudioMute         exec amixer -q sset Master toggle
+bindsym XF86AudioLowerVolume  exec amixer -q sset Master 2%-
+bindsym XF86AudioRaiseVolume  exec amixer -q sset Master 2%+
+bindsym XF86MonBrightnessDown exec xbacklight -dec 3
+bindsym XF86MonBrightnessUp   exec xbacklight -inc 3
+bindsym XF86Sleep             exec systemctl suspend
+
 
 # class                 border  backgr. text    indicator
 client.focused          #00BCD4 #00BCD4 #282828 #cc241d 
