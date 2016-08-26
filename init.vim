@@ -152,6 +152,7 @@ let g:fzf_layout = { 'up': '~40%' }
 
 let g:vimtex_view_method = "zathura"
 let g:vimtex_latexmk_progname = 'nvr'
+let g:vimtex_quickfix_mode = 0
 
 let g:pad#dir = "~/Dropbox/notes/"
 let g:pad#default_format = "votl"
