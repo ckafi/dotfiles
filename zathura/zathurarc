@@ -1,3 +1,4 @@
 set adjust-open width
 set selection-clipboard "clipboard"
 set show-recent 0
+set guioptions ""
