@@ -201,7 +201,7 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 
 fasd_fzf () {
   local -a param
-  param=("${(f)$(fasd -lR${2} $1 | fzf --no-sort -0 -1)}")
+  param=("${(f)$(fasd -lR${2} | fzf --no-sort -0 -1 -q $1)}")
   [[ -n $param ]] && $3 "$param[@]" || return 1
 }
 
