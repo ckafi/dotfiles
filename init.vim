@@ -4,10 +4,6 @@
 " http://creativecommons.org/publicdomain/zero/1.0/
 " So feel free to use any line you want.
 
-" Prologue {{{
-syntax enable             " Enable syntax highlighting
-" }}}
-
 " Plugins {{{
 call plug#begin('~/.config/nvim/plugins')
 Plug 'benekastah/neomake'
@@ -102,7 +98,6 @@ set completeopt+=menuone  " ... also when there is only one match
 set completeopt+=longest  " Only insert the longest common text
 set completeopt+=preview  " Show information about current item in preview
 set complete=.,w,b,u,t,i  " Complete sources are all buffers, tags and includes
-set laststatus=2          " Always show status line
 set shortmess+=I          " Don't show intro message
 set statusline=(%n)%f\ %m%<%r\ %c,%l\/%L(%P)%=%y%h%w%q[%{&fenc}][%{&ff}]
 set dictionary=/usr/share/dict/ngerman " Dictionary for <C-X><C-K>
@@ -115,15 +110,11 @@ autocmd BufEnter *.go    setfiletype go
 autocmd BufEnter *.pde   setfiletype arduino
 autocmd BufEnter *.scala setfiletype scala
 autocmd BufEnter *.tex   setfiletype tex
-
-" Enable Limelight in Goyo
-autocmd User GoyoEnter Limelight
-autocmd User GoyoLeave Limelight!
 "}}}
 
 " Color-Settings {{{
 " enable true color
-let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+set termguicolors
 " Use colors for a dark background
 set background=dark
 " Force some text decorations
@@ -152,8 +143,6 @@ let g:airline_theme = 'gruvbox'
 let g:deoplete#enable_at_startup = 1
 " Press s for next sneak match
 let g:sneak#s_next = 1
-" Enable easymotion-like behaviour
-let g:sneak#streak = 1
 " Make neomake open clist/llist automatically
 let g:neomake_open_list = 1
 " Don't overwrite sneak command
@@ -166,6 +155,8 @@ let g:vimtex_latexmk_progname = 'nvr'
 
 let g:pad#dir = "~/Dropbox/notes/"
 let g:pad#default_format = "votl"
+
+let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
 "}}}
 
 " Keymaps and Abbrevs {{{
