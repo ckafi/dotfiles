@@ -11,3 +11,6 @@ let g:neomake_tex_pdflatex_maker = {
     \ }
 " let g:neomake_tex_enabled_makers = ['chktex','lacheck','lualatex']
 let g:neomake_tex_enabled_makers = ['pdflatex']
+
+call deoplete#initialize()
+let g:deoplete#omni_patterns.tex = ['[^ ]\w*']
