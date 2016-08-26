@@ -1,0 +1,49 @@
+\RequirePackage[l2tabu, orthodox]{nag}
+\documentclass[pagesize=false]{scrlttr2}
+% \usepackage{luatex85}
+
+\usepackage[ngerman]{babel}
+\usepackage{csquotes}
+\MakeOuterQuote{"}
+\MakeAutoQuote{„}{“}
+% \usepackage{graphicx}
+
+\usepackage{fontspec}
+\defaultfontfeatures{Scale=MatchLowercase}
+\defaultfontfeatures+[\rmfamily,\sffamily]{Ligatures=TeX}
+\setmainfont{Fira Sans}
+\setsansfont{Fira Sans}
+
+\usepackage{microtype}
+
+\KOMAoptions{
+  fromphone,
+  fromemail,
+  fromalign=locationleft,
+  refline=wide,
+}
+
+\setkomavar{backaddressseparator}{~\textperiodcentered~}
+\setkomavar{fromname}    {Tobias Frilling}
+\setkomavar{fromaddress} {An der Haustatt 20\\35037 Marburg}
+\setkomavar{place}       {Marburg}
+\setkomavar{fromphone} []  {06421 / 580 75 53}
+\setkomavar{fromemail} []  {tobias@frilling-online.de}
+
+\setkomavar{yourref}{} % Ihr Zeichen
+\setkomavar{yourmail}{} % Ihr Schreiben vom
+\setkomavar{myref}{} % Unser Zeichen
+\setkomavar{customer}{} % Kundennummer
+\setkomavar{invoice}{} % Rechnungsnummer
+\setkomavar{title}{} % Titel
+
+\setkomavar{subject}{} % Betreff
+\setkomavar{date}{\today} % Datum
+
+\begin{document}
+\begin{letter}{Max Mustermann\\Musterstraße 1\\12345 Musterstadt}
+  \opening{Sehr geehrter Herr Mustermann,}
+  \closing{Mit freundlichen Grüßen}
+  % \encl{Anlage 1}
+\end{letter}
+\end{document}
