@@ -16,6 +16,9 @@ for_window [class="mpv"] floating enable
 for_window [class="Gxmessage"] floating enable
 for_window [class="Alarm-clock-applet"] floating enable
 
+assign [class="Firefox"] 10:Browser
+assign [class="Thunderbird"] 9:Mail
+
 # font for window titles
 font xft:sans 8
 
@@ -38,8 +41,8 @@ bindsym $mod+Shift+g move up
 bindsym $mod+Shift+t move right
 
 # switch to next/prev workspace on output
-bindsym $mod+Left workspace prev_on_output
-bindsym $mod+Right workspace next_on_output
+bindsym $mod+mod5+parenleft workspace prev_on_output
+bindsym $mod+mod5+minus workspace next_on_output
 # split in horizontal orientation
 bindsym $mod+m split h
 
@@ -97,7 +100,7 @@ bindsym $mod+Shift+9 move container to workspace number 9; workspace number 9
 bindsym $mod+Shift+0 move container to workspace number 10; workspace number 10
 
 # key bindings for program execution
-bindsym $mod+Return exec st
+bindsym $mod+Return exec termite
 bindsym $mod+space  exec rofi -show run
 bindsym $mod+Tab    exec rofi -show window
 bindsym $mod+v      exec xset -display :0 dpms force off
