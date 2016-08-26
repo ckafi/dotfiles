@@ -27,8 +27,8 @@ URxvt.termName         : rxvt-256color
 URxvt.geometry         : 90x25
 
 
-XTerm*faceName: xft:Hack
-XTerm*faceSize: 12
+XTerm*faceName: xft:Iosevka Term Light
+XTerm*faceSize: 13
 
 ! black
 *color0 : #282828
