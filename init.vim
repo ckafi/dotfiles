@@ -7,6 +7,7 @@
 " Plugins {{{
 call plug#begin('~/.config/nvim/plugins')
 Plug 'benekastah/neomake'
+Plug 'chrisbra/NrrwRgn'
 Plug 'chrisbra/vim-diff-enhanced'
 Plug 'ckafi/vim-template'
 Plug 'fmoralesc/vim-pad'
@@ -217,6 +218,9 @@ imap <F1> <Nop>
 
 inoremap <expr><C-g> deoplete#mappings#undo_completion()
 nnoremap <leader>g :Grepper<cr>
+
+vmap <leader>rr :'<,'>NR!<cr>:Goyo 90<cr>
+nmap <leader>rr vip<leader>rr
 " }}}
 
 " Functions {{{
