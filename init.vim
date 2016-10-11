@@ -43,9 +43,6 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 Plug 'vim-airline/vim-airline'
 Plug 'wellle/targets.vim'
-
-Plug 'zah/nim.vim', {'for': 'nim'}
-Plug 'chrisbra/Colorizer'
 call plug#end()
 " }}}
 
