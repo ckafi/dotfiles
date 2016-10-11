@@ -9,9 +9,11 @@ call plug#begin('~/.config/nvim/plugins')
 Plug 'benekastah/neomake'
 Plug 'chrisbra/vim-diff-enhanced'
 Plug 'ckafi/vim-template'
+Plug 'fmoralesc/vim-pad'
 Plug 'guns/vim-clojure-static', {'for': 'clojure'}
 Plug 'guns/vim-sexp', {'for': 'clojure'}
 Plug 'jalvesaq/Nvim-R'
+Plug 'jceb/vim-orgmode'
 Plug 'joom/latex-unicoder.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all --no-update-rc' }
 Plug 'junegunn/fzf.vim'
@@ -36,6 +38,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-obsession'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-sexp-mappings-for-regular-people', {'for': 'clojure'}
+Plug 'tpope/vim-speeddating'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 Plug 'vim-airline/vim-airline'
@@ -155,7 +158,9 @@ let g:vimtex_latexmk_progname = 'nvr'
 let g:vimtex_quickfix_mode = 0
 
 let g:pad#dir = "~/Dropbox/notes/"
-let g:pad#default_format = "votl"
+let g:pad#default_format = "org"
+let g:pad#search_backend = "ag"
+let g:pad#window_height = 15
 
 let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
 "}}}
