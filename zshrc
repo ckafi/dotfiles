@@ -31,7 +31,6 @@ HISTFILE=$HOME/.zsh/zhistory
 HISTSIZE=50000
 SAVEHIST=50000
 PAGER="less"
-LESS="-iJM"
 VIEWER=$PAGER
 EDITOR="vim"
 whence nvim >/dev/null && EDITOR="nvim"
@@ -40,6 +39,22 @@ NULLCMD="cat"
 READNULLCMD=$PAGER
 WORDCHARS+=":"
 FZF_DEFAULT_OPTS="--reverse --multi"
+# Options for less
+LESS="-iJM"
+# begin blinking
+LESS_TERMCAP_mb=$(tput blink)
+# begin bold
+LESS_TERMCAP_md=$(tput bold; tput setaf 2)
+# end mode
+LESS_TERMCAP_me=$(tput sgr0)
+# begin standout-mode - info box
+LESS_TERMCAP_so=$(tput smso; tput setaf 4; tput setab 15)
+# end standout-mode
+LESS_TERMCAP_se=$(tput rmso; tput sgr0)
+# begin underline
+LESS_TERMCAP_us=$(tput smul; tput setaf 6)
+# end underline
+LESS_TERMCAP_ue=$(tput rmul; tput sgr0)
 unsetopt all_export
 # }}}
 
