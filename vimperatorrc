@@ -13,7 +13,7 @@ inoremap <C-a> <C-t>ggVG
 set defsearch=duckduckgo
 set newtab=help
 set tabnumbers
-set complete='l'
+set complete='tl'
 set focuscontent=false
 set gui=nonavigation
 set status=ssl,location,bookmark
@@ -31,5 +31,7 @@ hi! -append URL color: #458588;
 hi! Filter border-radius: 2px; background: #458588;
 hi -append CmdLine background-color: #32302f; color: #ebdbb2
 hi -append Normal background-color: #32302f; color: #ebdbb2
+
+js services.services.autoCompleteSearch.class_="@mozilla.org/autocomplete/search;1?name=unifiedcomplete"
 
 " vim: set ft=vimperator:
