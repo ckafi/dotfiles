@@ -217,12 +217,12 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 fasd_fzf () {
   local -a param
   param=("${(f)$(fasd -lR${2} | fzf --no-sort -0 -1 -q $1)}")
-  [[ -n $param ]] && $3 "$param[@]" || return 1
+  [[ -n $param ]] && echo "$param[@]" || return 1
 }
 
-ze () { fasd_fzf "$*" a $EDITOR }
-zd () { fasd_fzf "$*" d cd }
-zo () { fasd_fzf "$*" a mimeo }
+za () { fasd_fzf "$*" a }
+zd () { fasd_fzf "$*" d }
+zf () { fasd_fzf "$*" f }
 
 preexec () {
   title "${TAG:+($TAG) }" "$1"
