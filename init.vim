@@ -213,9 +213,7 @@ xmap <C-k> <Plug>(neosnippet_expand_target)
 map <F1> <Nop>
 imap <F1> <Nop>
 
-" inoremap <expr><Tab> neocomplcache#start_manual_complete()
-" inoremap <expr><C-g> neocomplcache#undo_completion()
-" inoremap <expr><C-h> neocomplcache#complete_common_string()
+inoremap <expr><C-g> deoplete#mappings#undo_completion()
 " }}}
 
 " Functions {{{
