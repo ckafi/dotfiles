@@ -25,8 +25,8 @@ Plug 'lervag/vimtex', {'for': 'tex'}
 Plug 'majutsushi/tagbar'
 Plug 'maxbrunsfeld/vim-yankstack'
 Plug 'mbbill/undotree'
+Plug 'mhinz/vim-grepper'
 Plug 'morhetz/gruvbox'
-Plug 'rking/ag.vim'
 Plug 'shougo/deoplete.nvim'
 Plug 'shougo/neosnippet'
 Plug 'shougo/neosnippet-snippets'
@@ -214,6 +214,7 @@ map <F1> <Nop>
 imap <F1> <Nop>
 
 inoremap <expr><C-g> deoplete#mappings#undo_completion()
+nnoremap <leader>g :Grepper<cr>
 " }}}
 
 " Functions {{{
