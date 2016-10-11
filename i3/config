@@ -114,7 +114,7 @@ bindsym XF86Sleep             exec systemctl suspend
 
 
 # class                 border  backgr. text    indicator
-client.focused          #00BCD4 #00BCD4 #282828 #cc241d 
+client.focused          #00BCD4 #076788 #ebdbb2 #cc241d
 client.focused_inactive #1d2021 #1d2021 #928374 #928374
 client.unfocused        #32302f #32302f #928374 #928374
 client.urgent           #cc241d #cc241d #ebdbb2 #cc241d
@@ -124,9 +124,9 @@ bar {
   status_command conky -c .conkyrc_i3
   colors {
     separator          #928374
-    background         #282828
+    background         #556a6f
     statusline         #ebdbb2
-    focused_workspace  #00BCD4 #00BCD4 #282828
+    focused_workspace  #00BCD4 #076788 #ebdbb2
     active_workspace   #1d2021 #1d2021 #928374
     inactive_workspace #32302f #32302f #928374
     urgent_workspace   #cc241d #cc241d #ebdbb2

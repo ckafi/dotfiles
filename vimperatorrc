@@ -21,12 +21,15 @@ source! /home/tobias/.vimperatorrc.local
 
 " Disable bell
 set visualbell
-hi Bell display none;
-hi StatusLine max-height: 18px;
-hi -append HintElem background-color: #00BCD4; color: white;
-hi -append CompItem[selected] background-color: #00BCD4; color: white;
-hi -append InfoMsg color: #00BCD4;
-hi -append CompDesc color: lightgray;
-hi Filter border-radius: 2px; background: #a7c8f1;
+hi! Bell display none;
+hi! StatusLine max-height: 18px;
+hi! -append HintElem background-color: #00BCD4; color: white;
+hi! -append CompItem[selected] background-color: #00BCD4; color: white;
+hi! -append InfoMsg color: #00BCD4;
+hi! -append CompDesc color: #458588;
+hi! -append URL color: #458588;
+hi! Filter border-radius: 2px; background: #458588;
+hi -append CmdLine background-color: #32302f; color: #ebdbb2
+hi -append Normal background-color: #32302f; color: #ebdbb2
 
 " vim: set ft=vimperator:
