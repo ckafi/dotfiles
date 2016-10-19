@@ -1,0 +1,287 @@
+
+# Dark 256 color solarized theme for the color GNU ls utility.
+# Used and tested with dircolors (GNU coreutils) 8.5
+#
+# @author  {@link http://sebastian.tramp.name Sebastian Tramp}
+# @license http://sam.zoy.org/wtfpl/  Do What The Fuck You Want To Public License (WTFPL)
+#
+# More Information at
+# https://github.com/seebi/dircolors-solarized
+
+# Term Section
+TERM Eterm
+TERM ansi
+TERM color-xterm
+TERM con132x25
+TERM con132x30
+TERM con132x43
+TERM con132x60
+TERM con80x25
+TERM con80x28
+TERM con80x30
+TERM con80x43
+TERM con80x50
+TERM con80x60
+TERM cons25
+TERM console
+TERM cygwin
+TERM dtterm
+TERM dvtm
+TERM dvtm-256color
+TERM eterm-color
+TERM fbterm
+TERM gnome
+TERM gnome-256color
+TERM jfbterm
+TERM konsole
+TERM konsole-256color
+TERM kterm
+TERM linux
+TERM linux-c
+TERM mach-color
+TERM mlterm
+TERM putty
+TERM putty-256color
+TERM rxvt
+TERM rxvt-256color
+TERM rxvt-cygwin
+TERM rxvt-cygwin-native
+TERM rxvt-unicode
+TERM rxvt-unicode256
+TERM rxvt-unicode-256color
+TERM screen
+TERM screen-16color
+TERM screen-16color-bce
+TERM screen-16color-s
+TERM screen-16color-bce-s
+TERM screen-256color
+TERM screen-256color-bce
+TERM screen-256color-s
+TERM screen-256color-bce-s
+TERM screen-256color-italic
+TERM screen-bce
+TERM screen-w
+TERM screen.linux
+TERM screen.xterm-256color
+TERM st
+TERM st-meta
+TERM st-256color
+TERM st-meta-256color
+TERM tmux
+TERM tmux-256color
+TERM vt100
+TERM xterm
+TERM xterm-16color
+TERM xterm-256color
+TERM xterm-256color-italic
+TERM xterm-88color
+TERM xterm-color
+TERM xterm-debian
+TERM xterm-termite
+
+# Attribute codes:
+# 00=none 01=bold 04=underscore 05=blink 07=reverse 08=concealed
+# Text 256 color coding:
+# 38;5;COLOR_NUMBER
+# Background 256 color coding:
+# 48;5;COLOR_NUMBER
+
+## Special files
+
+RESET 0 # reset to "normal" color
+NORMAL 00;38;5;250 # no color code at all
+FILE 00;38;5;250 # regular file: use no color at all
+DIR 00;38;5;33 # directory 01;34
+LINK 00;38;5;37 # symbolic link. (If you set this to 'target' instead of a
+ # numerical value, the color is as for the file pointed to.)
+MULTIHARDLINK 00 # regular file with more than one link
+FIFO 48;5;230;38;5;136;01 # pipe
+SOCK 48;5;3;38;5;0 # socket
+DOOR 48;5;230;38;5;136;01 # door
+BLK 48;5;14;38;5;0 # block device driver
+CHR 48;5;6;38;5;0 # character device driver
+ORPHAN 48;5;0;38;5;1 # symlink to nonexistent file, or non-stat'able file
+SETUID 48;5;1;38;5;15 # file that is setuid (u+s)
+SETGID 48;5;3;38;5;0 # file that is setgid (g+s)
+CAPABILITY 30;41 # file with capability
+STICKY_OTHER_WRITABLE 48;5;2;38;5;0 # dir that is sticky and other-writable (+t,o+w)
+OTHER_WRITABLE 48;5;12;38;5;33 # dir that is other-writable (o+w) and not sticky
+STICKY 48;5;33;38;5;230 # dir with the sticky bit set (+t) and not other-writable
+# This is for files with execute permission:
+EXEC 00;38;5;10
+
+## Archives or compressed
+.tar    00;38;5;5
+.tgz    00;38;5;5
+.arj    00;38;5;5
+.taz    00;38;5;5
+.lzh    00;38;5;5
+.lzma   00;38;5;5
+.tlz    00;38;5;5
+.txz    00;38;5;5
+.zip    00;38;5;5
+.z      00;38;5;5
+.Z      00;38;5;5
+.dz     00;38;5;5
+.gz     00;38;5;5
+.lz     00;38;5;5
+.xz     00;38;5;5
+.bz2    00;38;5;5
+.bz     00;38;5;5
+.tbz    00;38;5;5
+.tbz2   00;38;5;5
+.tz     00;38;5;5
+.deb    00;38;5;5
+.rpm    00;38;5;5
+.jar    00;38;5;5
+.rar    00;38;5;5
+.ace    00;38;5;5
+.zoo    00;38;5;5
+.cpio   00;38;5;5
+.7z     00;38;5;5
+.rz     00;38;5;5
+.apk    00;38;5;5
+.gem    00;38;5;5
+
+# Image formats
+.jpg    00;38;5;11
+.JPG    00;38;5;11
+.jpeg   00;38;5;11
+.gif    00;38;5;11
+.bmp    00;38;5;11
+.pbm    00;38;5;11
+.pgm    00;38;5;11
+.ppm    00;38;5;11
+.tga    00;38;5;11
+.xbm    00;38;5;11
+.xpm    00;38;5;11
+.tif    00;38;5;11
+.tiff   00;38;5;11
+.png    00;38;5;11
+.PNG    00;38;5;11
+.svg    00;38;5;11
+.svgz   00;38;5;11
+.mng    00;38;5;11
+.pcx    00;38;5;11
+.dl     00;38;5;11
+.xcf    00;38;5;11
+.xwd    00;38;5;11
+.yuv    00;38;5;11
+.cgm    00;38;5;11
+.emf    00;38;5;11
+.eps    00;38;5;11
+.CR2    00;38;5;11
+.ico    00;38;5;11
+
+# Files of special interest
+.tex             00;38;5;14
+.pdf             00;38;5;14
+.djvu            00;38;5;14
+.rdf             00;38;5;14
+.owl             00;38;5;14
+.n3              00;38;5;14
+.ttl             00;38;5;14
+.nt              00;38;5;14
+.torrent         00;38;5;14
+.xml             00;38;5;14
+*Makefile        00;38;5;14
+*Rakefile        00;38;5;14
+*Dockerfile      00;38;5;14
+*build.xml       00;38;5;14
+*rc              00;38;5;14
+*1               00;38;5;14
+.nfo             00;38;5;14
+*README          00;38;5;14
+*README.txt      00;38;5;14
+*readme.txt      00;38;5;14
+.md              00;38;5;14
+*README.markdown 00;38;5;14
+.ini             00;38;5;14
+.yml             00;38;5;14
+.cfg             00;38;5;14
+.conf            00;38;5;14
+.h               00;38;5;14
+.hpp             00;38;5;14
+.c               00;38;5;14
+.cpp             00;38;5;14
+.cxx             00;38;5;14
+.cc              00;38;5;14
+.objc            00;38;5;14
+.sqlite          00;38;5;14
+.go              00;38;5;14
+.sql             00;38;5;14
+.csv             00;38;5;14
+.clj             00;38;5;14
+
+# "unimportant" files as logs and backups
+.log        00;38;5;242
+.bak        00;38;5;242
+.aux        00;38;5;242
+.lof        00;38;5;242
+.lol        00;38;5;242
+.lot        00;38;5;242
+.out        00;38;5;242
+.toc        00;38;5;242
+.bbl        00;38;5;242
+.blg        00;38;5;242
+*~          00;38;5;242
+*#          00;38;5;242
+.part       00;38;5;242
+.incomplete 00;38;5;242
+.swp        00;38;5;242
+.tmp        00;38;5;242
+.temp       00;38;5;242
+.o          00;38;5;242
+.pyc        00;38;5;242
+.class      00;38;5;242
+.cache      00;38;5;242
+
+# Audio formats
+.aac    00;38;5;3
+.au     00;38;5;3
+.flac   00;38;5;3
+.mid    00;38;5;3
+.midi   00;38;5;3
+.mka    00;38;5;3
+.mp3    00;38;5;3
+.mpc    00;38;5;3
+.ogg    00;38;5;3
+.opus   00;38;5;3
+.ra     00;38;5;3
+.wav    00;38;5;3
+.m4a    00;38;5;3
+.axa    00;38;5;3
+.oga    00;38;5;3
+.spx    00;38;5;3
+.xspf   00;38;5;3
+
+# Video formats
+.mov    00;38;5;9
+.MOV    00;38;5;9
+.mpg    00;38;5;9
+.mpeg   00;38;5;9
+.m2v    00;38;5;9
+.mkv    00;38;5;9
+.ogm    00;38;5;9
+.mp4    00;38;5;9
+.m4v    00;38;5;9
+.mp4v   00;38;5;9
+.vob    00;38;5;9
+.qt     00;38;5;9
+.nuv    00;38;5;9
+.wmv    00;38;5;9
+.asf    00;38;5;9
+.rm     00;38;5;9
+.rmvb   00;38;5;9
+.flc    00;38;5;9
+.avi    00;38;5;9
+.fli    00;38;5;9
+.flv    00;38;5;9
+.gl     00;38;5;9
+.m2ts   00;38;5;9
+.divx   00;38;5;9
+.webm   00;38;5;9
+.axv    00;38;5;9
+.anx    00;38;5;9
+.ogv    00;38;5;9
+.ogx    00;38;5;9
