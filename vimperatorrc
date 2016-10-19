@@ -13,7 +13,7 @@ inoremap <C-a> <C-t>ggVG
 set defsearch=duckduckgo
 set newtab=help
 set tabnumbers
-set complete='tl'
+set complete='tbl'
 set focuscontent=false
 set gui=nonavigation
 set status=ssl,location,bookmark
