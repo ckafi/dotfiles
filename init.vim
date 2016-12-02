@@ -104,6 +104,7 @@ set statusline=(%n)%f\ %m%<%r\ %c,%l\/%L(%P)%=%y%h%w%q[%{&fenc}][%{&ff}]
 set dictionary=/usr/share/dict/ngerman " Dictionary for <C-X><C-K>
 set noshowmode            " Disable display of mode (-- INSERT --)
 set switchbuf="useopen"   " Switch to buffer when already open
+set inccommand=split      " Show live substitutions in split
 "}}}
 
 " Autocmds {{{
