@@ -6,7 +6,6 @@
 
 " Plugins {{{
 call plug#begin('~/.config/nvim/plugins')
-Plug 'benekastah/neomake'
 Plug 'chrisbra/NrrwRgn'
 Plug 'chrisbra/vim-diff-enhanced'
 Plug 'ckafi/vim-template'
@@ -21,9 +20,9 @@ Plug 'junegunn/fzf.vim'
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
 Plug 'junegunn/vim-easy-align'
+Plug 'junegunn/rainbow_parentheses.vim', {'on': 'RainbowParentheses'}
 Plug 'justinmk/vim-dirvish'
 Plug 'justinmk/vim-sneak'
-Plug 'junegunn/rainbow_parentheses.vim', {'on': 'RainbowParentheses'}
 Plug 'lervag/vimtex', {'for': 'tex'}
 Plug 'majutsushi/tagbar'
 Plug 'maxbrunsfeld/vim-yankstack'
@@ -43,6 +42,7 @@ Plug 'tpope/vim-speeddating'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 Plug 'vim-airline/vim-airline'
+Plug 'w0rp/ale'
 Plug 'wellle/targets.vim'
 call plug#end()
 " }}}
@@ -144,8 +144,6 @@ let g:airline_theme = 'gruvbox'
 let g:deoplete#enable_at_startup = 1
 " Press s for next sneak match
 let g:sneak#s_next = 1
-" Make neomake open clist/llist automatically
-let g:neomake_open_list = 1
 " Don't overwrite sneak command
 let g:yankstack_yank_keys = ['c', 'C', 'd', 'D', 'x', 'X', 'y', 'Y']
 " Set fzf layout
@@ -193,8 +191,6 @@ vnoremap > >gv
 " center matching line from n and N
 nnoremap n nzz
 nnoremap N Nzz
-" make file and open/close quickfix window accordingly
-nnoremap <silent> <leader>m :silent! :write \| :Neomake<CR>
 
 " open Dirvish with -
 map <silent> - :Dirvish %<cr>
