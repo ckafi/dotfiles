@@ -155,15 +155,31 @@ let g:yankstack_yank_keys = ['c', 'C', 'd', 'D', 'x', 'X', 'y', 'Y']
 let g:fzf_layout = { 'up': '~40%' }
 
 let g:vimtex_view_method = "zathura"
-let g:vimtex_latexmk_progname = 'nvr'
+let g:vimtex_compiler_progname = 'nvr'
 let g:vimtex_quickfix_mode = 0
 
-let g:pad#dir = "~/Dropbox/notes/"
-let g:pad#default_format = "org"
-let g:pad#search_backend = "ag"
-let g:pad#window_height = 15
-
 let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
+let g:gtfo#terminals = { 'unix' : 'fork termite -d' }
+let g:grepper = { 'tools' : ['rg', 'git', 'grep'] }
+
+let g:racer_cmd = "/usr/bin/racer"
+let g:nv_directories = ['~/Dropbox/wiki']
+let g:nv_default_extension = '.wiki'
+let g:vimwiki_list = [{'path': '~/Dropbox/wiki/'}]
+let g:org_indent = 1
+
+let g:startify_commands = [
+    \ ['VimWiki', 'VimwikiIndex'],
+    \ ['Diary', 'VimwikiDiaryIndex'],
+    \ ['New Note', 'VimwikiMakeDiaryNote'], 
+    \ ]
+let g:startify_files_number = 5
+let g:startify_enable_special = 0
+let g:startify_custom_header = map(startify#fortune#quote(), '"   ".v:val')
+let g:startify_session_persistence = 1
+let g:startify_session_dir = '~/.config/nvim/sessions'
+" enable racer completion
+let g:racer_experimental_completer = 1
 "}}}
 
 " Keymaps and Abbrevs {{{
@@ -222,6 +238,16 @@ nnoremap <leader>g :Grepper<cr>
 
 vmap <leader>rr :'<,'>NR!<cr>:Goyo 90<cr>
 nmap <leader>rr vip<leader>rr
+
+" Start interactive EasyAlign in visual mode (e.g. vipga)
+xmap ga <Plug>(EasyAlign)
+
+" Start interactive EasyAlign for a motion/text object (e.g. gaip)
+nmap ga <Plug>(EasyAlign)
+
+" Start searching with notational-fzf
+nnoremap <silent> <c-s> :NV<CR>
+
 " }}}
 
 " Functions {{{
@@ -280,6 +306,27 @@ function! SummarizeTabs()
   finally
     echohl None
   endtry
+endfunction
+
+" open vimwiki vfiles in vim
+function! VimwikiLinkHandler(link)
+  " Use Vim to open external files with the 'vfile:' scheme.  E.g.:
+  "   1) [[vfile:~/Code/PythonProject/abc123.py]]
+  "   2) [[vfile:./|Wiki Home]]
+  let link = a:link
+  if link =~# '^vfile:'
+    let link = link[1:]
+  else
+    return 0
+  endif
+  let link_infos = vimwiki#base#resolve_link(link)
+  if link_infos.filename == ''
+    echomsg 'Vimwiki Error: Unable to resolve link!'
+    return 0
+  else
+    exe 'tabnew ' . fnameescape(link_infos.filename)
+    return 1
+  endif
 endfunction
 " }}}
 
