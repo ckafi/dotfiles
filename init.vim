@@ -189,10 +189,6 @@ nnoremap Y y$
 " The terminal escape is impossible in neo2
 tnoremap <leader><esc> <C-\><C-n>
 
-" Move into black hole register
-map <silent> m "_d
-nmap <silent> mm "_dd
-
 " Toggle graphical undo window
 nmap <F4>  :UndotreeToggle<CR>
 nmap <F5>  :nohls<CR>
@@ -223,6 +219,9 @@ nnoremap <leader>l :BLines<cr>
 " use fzf for path completion
 imap <c-x><c-f> <plug>(fzf-complete-path)
 
+" make macros a bit more convenient
+nnoremap Q @@
+
 nmap <leader>p <Plug>yankstack_substitute_older_paste
 nmap <leader>P <Plug>yankstack_substitute_newer_paste
 
@@ -238,6 +237,11 @@ nnoremap <leader>g :Grepper<cr>
 
 vmap <leader>rr :'<,'>NR!<cr>:Goyo 90<cr>
 nmap <leader>rr vip<leader>rr
+
+nmap <silent> R :set opfunc=Replace<CR>g@
+function! Replace(type, ...)
+  silent exe "normal! `[\"_d`]\"_xP"
+endfunction
 
 " Start interactive EasyAlign in visual mode (e.g. vipga)
 xmap ga <Plug>(EasyAlign)
