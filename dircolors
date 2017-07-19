@@ -89,8 +89,8 @@ TERM xterm-termite
 ## Special files
 
 RESET 0 # reset to "normal" color
-NORMAL 00;38;5;250 # no color code at all
-FILE 00;38;5;250 # regular file: use no color at all
+NORMAL 00;38;5;15 # no color code at all
+FILE 00;38;5;15 # regular file: use no color at all
 DIR 00;38;5;33 # directory 01;34
 LINK 00;38;5;37 # symbolic link. (If you set this to 'target' instead of a
  # numerical value, the color is as for the file pointed to.)
@@ -142,6 +142,7 @@ EXEC 00;38;5;10
 .rz     00;38;5;5
 .apk    00;38;5;5
 .gem    00;38;5;5
+.lzo    00;38;5;5
 
 # Image formats
 .jpg    00;38;5;11
@@ -256,32 +257,33 @@ EXEC 00;38;5;10
 .xspf   00;38;5;3
 
 # Video formats
-.mov    00;38;5;9
-.MOV    00;38;5;9
-.mpg    00;38;5;9
-.mpeg   00;38;5;9
-.m2v    00;38;5;9
-.mkv    00;38;5;9
-.ogm    00;38;5;9
-.mp4    00;38;5;9
-.m4v    00;38;5;9
-.mp4v   00;38;5;9
-.vob    00;38;5;9
-.qt     00;38;5;9
-.nuv    00;38;5;9
-.wmv    00;38;5;9
+.anx    00;38;5;9
 .asf    00;38;5;9
-.rm     00;38;5;9
-.rmvb   00;38;5;9
-.flc    00;38;5;9
 .avi    00;38;5;9
+.AVI    00;38;5;9
+.axv    00;38;5;9
+.divx   00;38;5;9
+.flc    00;38;5;9
 .fli    00;38;5;9
 .flv    00;38;5;9
 .gl     00;38;5;9
 .m2ts   00;38;5;9
-.divx   00;38;5;9
-.webm   00;38;5;9
-.axv    00;38;5;9
-.anx    00;38;5;9
+.m2v    00;38;5;9
+.m4v    00;38;5;9
+.mkv    00;38;5;9
+.mov    00;38;5;9
+.MOV    00;38;5;9
+.mp4    00;38;5;9
+.mp4v   00;38;5;9
+.mpeg   00;38;5;9
+.mpg    00;38;5;9
+.nuv    00;38;5;9
+.ogm    00;38;5;9
 .ogv    00;38;5;9
 .ogx    00;38;5;9
+.qt     00;38;5;9
+.rm     00;38;5;9
+.rmvb   00;38;5;9
+.vob    00;38;5;9
+.webm   00;38;5;9
+.wmv    00;38;5;9
