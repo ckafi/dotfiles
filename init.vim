@@ -144,7 +144,7 @@ let maplocalleader = ","
 " Enable powerline font
 let g:airline_powerline_fonts = 1
 " Set airline color theme
-let g:airline_theme = 'gruvbox'
+let g:airline_theme = 'distinguished'
 " Enable deoplete at startup
 let g:deoplete#enable_at_startup = 1
 " Press s for next sneak match
