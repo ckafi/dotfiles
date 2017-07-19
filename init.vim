@@ -7,6 +7,7 @@
 " Plugins {{{
 call plug#begin('~/.config/nvim/plugins')
 Plug 'Alok/notational-fzf-vim'
+Plug 'brooth/far.vim'
 Plug 'chrisbra/Colorizer'
 Plug 'chrisbra/NrrwRgn'
 Plug 'chrisbra/vim-diff-enhanced'
@@ -80,9 +81,8 @@ set listchars+=precedes:… " ... start and
 set listchars+=extends:…  " ... end of a truncated display line
 set fillchars=vert:│      " Disable annoying chars for stl, diff, fold etc.
 set fillchars+=diff:\     " ...
-set relativenumber        " Show relative line numbers
+set number                " Show line numbers
 set cursorline            " Highlight the screen line of the cursor
-set foldcolumn=2          " Width of the fold column
 set foldtext=MyFoldFunc() " Function for the text on closed folds
 set spelllang=de          " Language for spell checking
 set tabstop=2             " Number of spaces a Tab counts for in file
