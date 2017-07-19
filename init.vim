@@ -6,42 +6,46 @@
 
 " Plugins {{{
 call plug#begin('~/.config/nvim/plugins')
+Plug 'Alok/notational-fzf-vim'
+Plug 'chrisbra/Colorizer'
 Plug 'chrisbra/NrrwRgn'
 Plug 'chrisbra/vim-diff-enhanced'
 Plug 'ckafi/vim-template'
-Plug 'fmoralesc/vim-pad'
-Plug 'guns/vim-clojure-static', {'for': 'clojure'}
+Plug 'dhruvasagar/vim-table-mode'
 Plug 'guns/vim-sexp', {'for': 'clojure'}
 Plug 'jalvesaq/Nvim-R'
-Plug 'jceb/vim-orgmode'
-Plug 'joom/latex-unicoder.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all --no-update-rc' }
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
 Plug 'junegunn/vim-easy-align'
-Plug 'junegunn/rainbow_parentheses.vim', {'on': 'RainbowParentheses'}
 Plug 'justinmk/vim-dirvish'
+Plug 'justinmk/vim-gtfo'
 Plug 'justinmk/vim-sneak'
 Plug 'lervag/vimtex', {'for': 'tex'}
 Plug 'majutsushi/tagbar'
 Plug 'maxbrunsfeld/vim-yankstack'
 Plug 'mbbill/undotree'
 Plug 'mhinz/vim-grepper'
+Plug 'mhinz/vim-startify'
 Plug 'morhetz/gruvbox'
-Plug 'shougo/deoplete.nvim'
+Plug 'NLKNguyen/papercolor-theme'
+Plug 'racer-rust/vim-racer', {'for': 'rust'}
+Plug 'sheerun/vim-polyglot'
+Plug 'shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'Shougo/echodoc.vim'
 Plug 'shougo/neosnippet'
 Plug 'shougo/neosnippet-snippets'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fireplace', {'for': 'clojure'}
 Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-obsession'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-sexp-mappings-for-regular-people', {'for': 'clojure'}
-Plug 'tpope/vim-speeddating'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'vimwiki/vimwiki'
 Plug 'w0rp/ale'
 Plug 'wellle/targets.vim'
 call plug#end()
