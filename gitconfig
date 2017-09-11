@@ -28,3 +28,7 @@
   default = simple
 [diff]
   algorithm = patience
+[url "https://aur.archlinux.org/"]
+  insteadOf = aur://
+[pull]
+  rebase = true
