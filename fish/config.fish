@@ -1,7 +1,7 @@
 if test -n "$SSH_CONNECTION"
   set -g theme_display_user yes
   if test -z "$TMUX"
-    exec tmux
+    exec tmux new fish
   end
 end
 set -g theme_display_vi no
