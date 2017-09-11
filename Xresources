@@ -64,7 +64,7 @@ XTerm*faceSize: 13
 ! Enabled modi
 rofi.modi:                           window,run
 ! Enable fuzzy matching
-rofi.fuzzy:                          true
+rofi.matching:                       fuzzy
 ! Terminal to use
 rofi.terminal:                       termite
 ! Window width
