@@ -39,8 +39,6 @@ if status is-interactive
   set -xg LESS_TERMCAP_ue (tput rmul; tput sgr0)
 end
 
-source ~/.config/pacman/makepkg.conf
-
 alias o "mimeo"
 alias e "$EDITOR"
 alias p "pacaur"
