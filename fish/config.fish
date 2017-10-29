@@ -9,6 +9,7 @@ set -g theme_date_format "+%T"
 set -g theme_title_display_process yes
 set -g theme_display_ruby no
 set -g theme_show_exit_status yes
+set -g theme_color_scheme terminal2-dark
 # set -g theme_newline_cursor yes
 
 fish_vi_key_bindings
