@@ -30,5 +30,5 @@
   algorithm = patience
 [url "https://aur.archlinux.org/"]
   insteadOf = aur://
-[pull]
-  rebase = true
+; [pull]
+;   rebase = true

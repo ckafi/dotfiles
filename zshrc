@@ -6,12 +6,12 @@
 # So feel free to use any line you want.
 
 # Start tmux {{{
-if [[ -n $SSH_CONNECTION \
-   && -z $TMUX \
-   && -z $SUDO_UID ]] \
-   && whence tmux >/dev/null ; then
-   exec tmux -2
-fi
+# if [[ -n $SSH_CONNECTION \
+#    && -z $TMUX \
+#    && -z $SUDO_UID ]] \
+#    && whence tmux >/dev/null ; then
+#    exec tmux
+# fi
 # }}}
 
 # Miscellaneous {{{
@@ -112,8 +112,9 @@ alias paste="xsel --clipboard --output"
 
 alias -g grep="grep --color=auto"
 alias cp="cp -iv"
-alias rm="rm -v"
+alias rm="rm -iv"
 alias mv="mv -iv"
+alias t="trash"
 alias dirs="dirs -v"
 alias mc="mc -x"
 alias ls="ls -F --color=auto"
@@ -122,7 +123,7 @@ alias ll="ls -hl --time-style=posix-iso"
 alias lla="ll -A"
 
 alias sudo="sudo "
-alias jrnl=" jrnl"
+alias nt='fork termite -d "$(pwd)"'
 
 alias fe="f -e $EDITOR"
 alias fo="f -e mimeo"
@@ -169,7 +170,7 @@ bindkey -M menuselect '#' accept-and-infer-next-history
 
 # External configs {{{
 eval $(dircolors ~/.dircolors)
-whence fasd >/dev/null && eval "$(fasd --init auto)"
+whence fasd >/dev/null && eval "$(fasd --init posix-alias zsh-hook zsh-ccomp zsh-ccomp-install)"
 [[ -f ~/.fzf.zsh ]] && source ~/.fzf.zsh
 # }}}
 
@@ -265,7 +266,7 @@ update_git_prompt () {
 
   git_status=$(git status)
 
-  [[ $git_status =~ 'Initial commit' ]] && \
+  [[ $git_status =~ 'No commits yet' ]] && \
     git_branch_name="Initial"
 
   if [[ -z $git_branch_name ]]; then
