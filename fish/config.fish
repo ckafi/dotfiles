@@ -20,6 +20,7 @@ set -xg VIEWER $PAGER
 set -xg EDITOR "nvim"
 set -xg VISUAL $EDITOR
 set -xg FZF_DEFAULT_OPTS "--reverse --multi"
+set -xg FZF_LEGACY_KEYBINDINGS 0
 
 if status is-interactive
   # Less
@@ -57,3 +58,12 @@ alias la "ls -A"
 alias ll "ls -hl --time-style=posix-iso"
 alias lla "ll -A"
 alias nt 'fork termite -d (pwd)'
+alias cc 'gcc -Wall -Wextra -Wpedantic -Wduplicated-cond -Wduplicated-branches -Wlogical-op -Wrestrict -Wnull-dereference -Wjump-misses-init -Wshadow -Wformat=2 -Wcast-qual -Wstrict-prototypes -Wfloat-equal -Wswitch-default -Wswitch-enum -Wredundant-decls'
+# alias cc 'gcc -Wall -Wextra -Wpedantic -Wduplicated-cond -Wduplicated-branches -Wlogical-op -Wrestrict -Wnull-dereference -Wold-style-cast -Wuseless-cast -Wjump-misses-init -Wshadow -Wformat=2 -Wcast-qual -Wstrict-prototypes -Wfloat-equal -Wswitch-default -Wswitch-enum -Wredundant-decls'
+
+function __resudo
+  set cursor_pos (math (commandline -C) + 5)
+  commandline -C 0
+  commandline -pi 'sudo '
+  commandline -C "$cursor_pos"
+end

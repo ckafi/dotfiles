@@ -6,7 +6,7 @@ function ext -d "Extract compressed archive"
         case '*.tar*' '*.tgz' '*.tbz'
           tar -xvf $file
         case '*.zip'
-          unzip $file
+          7z x $file
         case '*.7z'
           7z x $file
         case '*'
