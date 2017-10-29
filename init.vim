@@ -15,7 +15,6 @@ Plug 'ckafi/vim-template'
 Plug 'dhruvasagar/vim-table-mode'
 Plug 'guns/vim-sexp', {'for': 'clojure'}
 Plug 'jalvesaq/Nvim-R'
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all --no-update-rc' }
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
@@ -33,7 +32,11 @@ Plug 'morhetz/gruvbox'
 Plug 'NLKNguyen/papercolor-theme'
 Plug 'racer-rust/vim-racer', {'for': 'rust'}
 Plug 'sheerun/vim-polyglot'
-Plug 'shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+if has('python3')
+  Plug 'shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+else
+  Plug 'ervandew/supertab'
+endif
 Plug 'Shougo/echodoc.vim'
 Plug 'shougo/neosnippet'
 Plug 'shougo/neosnippet-snippets'
@@ -69,10 +72,8 @@ set wildmode+=full        " ... then go to next full match
 set smartindent           " Use smart-indenting
 set pastetoggle=<F8>      " Toggle (no)paste with F8
 set undofile              " Save undo history
-set undodir=~/.config/nvim/undo/  " Directory for undo files
 set backup                " Save backups
-set backupdir=~/.config/nvim/backup/ " Directory for backup files
-set directory=~/.config/nvim/swap//  " Directory for swap files with complete path
+set backupdir=~/.local/share/nvim/backup/ " Directory for backup files
 set visualbell            " Visual bell instead of beeping
 set listchars=tab:·\      " List mode character for tab
 set listchars+=eol:⌟      " ... end of line
@@ -128,6 +129,7 @@ let g:gruvbox_italic=1
 let g:gruvbox_bold=1
 let g:gruvbox_underline=1
 let g:gruvbox_contrast_dark="soft"
+let g:gruvbox_contrast_light="soft"
 " Load color scheme
 colorscheme gruvbox
 " Highlight the 81st column if there is a character
@@ -157,7 +159,6 @@ let g:fzf_layout = { 'up': '~40%' }
 
 let g:vimtex_view_method = "zathura"
 let g:vimtex_compiler_progname = 'nvr'
-let g:vimtex_quickfix_mode = 0
 
 let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
 let g:gtfo#terminals = { 'unix' : 'fork termite -d' }
