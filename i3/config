@@ -17,6 +17,7 @@ for_window [class="Gxmessage"] floating enable
 for_window [class="Alarm-clock-applet"] floating enable
 
 assign [class="Firefox"] 10:Browser
+assign [class="Nightly"] 10:Browser
 assign [class="Thunderbird"] 9:Mail
 
 # font for window titles
