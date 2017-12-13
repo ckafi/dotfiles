@@ -6,12 +6,12 @@
 # So feel free to use any line you want.
 
 # Start tmux {{{
-# if [[ -n $SSH_CONNECTION \
-#    && -z $TMUX \
-#    && -z $SUDO_UID ]] \
-#    && whence tmux >/dev/null ; then
-#    exec tmux
-# fi
+if [[ -n $SSH_CONNECTION \
+   && -z $TMUX \
+   && -z $SUDO_UID ]] \
+   && whence tmux >/dev/null ; then
+   exec tmux
+fi
 # }}}
 
 # Miscellaneous {{{
