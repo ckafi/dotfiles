@@ -171,7 +171,7 @@ bindkey -M menuselect '#' accept-and-infer-next-history
 # External configs {{{
 eval $(dircolors ~/.dircolors)
 whence fasd >/dev/null && eval "$(fasd --init posix-alias zsh-hook zsh-ccomp zsh-ccomp-install)"
-[[ -f ~/.fzf.zsh ]] && source ~/.fzf.zsh
+[[ -d /usr/bin/fzf ]] && source /usr/bin/fzf/*.zsh
 # }}}
 
 # Completions {{{
@@ -217,7 +217,7 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 
 fasd_fzf () {
   local -a param
-  param=("${(f)$(fasd -lR${2} "$1" | fzf --no-sort -0 -1)}")
+  fasd -lR${2} "$1" | fzf --no-sort -0 -1 | read param
   [[ -n $param ]] && echo "$param[@]" || return 1
 }
 
@@ -304,10 +304,9 @@ ext () {
         *.tar*|*.tgz|*.tbz)  tar -xvf $file ;;
         *.bz2)               bunzip2 $file ;;
         *.gz|*.z)            gunzip $file ;;
-        *.zip|*.cbz)         unzip $file ;;
+        *.7z|*.zip|*.cbz)    7z x $file ;;
         *.rar|*.cbr)         unrar x $file ;;
         *.xz)                unxz $file ;;
-        *.7z)                7z x $file ;;
         *) echo "'$file' is not a recognized archive format." ;;
       esac
     else
