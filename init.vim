@@ -31,10 +31,11 @@ Plug 'mhinz/vim-grepper'
 Plug 'mhinz/vim-startify'
 Plug 'morhetz/gruvbox'
 Plug 'NLKNguyen/papercolor-theme'
-Plug 'racer-rust/vim-racer', {'for': 'rust'}
 Plug 'sheerun/vim-polyglot'
 if has('python3')
   Plug 'shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+  Plug 'zchee/deoplete-clang'
+  Plug 'sebastianmarkow/deoplete-rust'
 else
   Plug 'ervandew/supertab'
 endif
@@ -183,6 +184,14 @@ let g:startify_session_persistence = 1
 let g:startify_session_dir = '~/.config/nvim/sessions'
 " enable racer completion
 let g:racer_experimental_completer = 1
+" disable LaTeX-Box (conflict with vimtex)
+let g:polyglot_disabled = ['latex']
+" set paths for deoplete-clang
+let g:deoplete#sources#clang#libclang_path = "/usr/lib/libclang.so"
+let g:deoplete#sources#clang#clang_header = "/usr/lib/clang/"
+" set paths for deoplete-rust
+let g:deoplete#sources#rust#racer_binary = "/usr/bin/racer"
+let g:deoplete#sources#rust#rust_source_path = "/usr/src/rust/src"
 "}}}
 
 " Keymaps and Abbrevs {{{
