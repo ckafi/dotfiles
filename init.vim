@@ -15,6 +15,7 @@ Plug 'ckafi/vim-template'
 Plug 'dhruvasagar/vim-table-mode'
 Plug 'guns/vim-sexp', {'for': 'clojure'}
 Plug 'jalvesaq/Nvim-R'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
@@ -218,6 +219,7 @@ map <silent> - :Dirvish %<cr>
 nnoremap <leader>b :Buffers<cr>
 nnoremap <leader>f :Files<cr>
 nnoremap <leader>l :BLines<cr>
+nnoremap <leader>t :BTags<cr>
 " use fzf for path completion
 imap <c-x><c-f> <plug>(fzf-complete-path)
 
