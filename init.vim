@@ -112,9 +112,15 @@ set dictionary=/usr/share/dict/ngerman " Dictionary for <C-X><C-K>
 set noshowmode            " Disable display of mode (-- INSERT --)
 set switchbuf="useopen"   " Switch to buffer when already open
 set inccommand=split      " Show live substitutions in split
+set rtp^=/usr/share/vim/vimfiles/ " include old vimfiles
 "}}}
 
 " Autocmds {{{
+" augroup vimrc-incsearch-highlight
+"   autocmd!
+"   autocmd CmdlineEnter /,\? :set hlsearch
+"   autocmd CmdlineLeave /,\? :set nohlsearch
+" augroup END
 autocmd BufEnter *.go    setfiletype go
 autocmd BufEnter *.pde   setfiletype arduino
 autocmd BufEnter *.scala setfiletype scala
@@ -167,7 +173,7 @@ let g:gtfo#terminals = { 'unix' : 'fork termite -d' }
 let g:grepper = { 'tools' : ['rg', 'git', 'grep'] }
 
 let g:racer_cmd = "/usr/bin/racer"
-let g:nv_directories = ['~/Dropbox/wiki']
+let g:nv_search_paths = ['~/Dropbox/wiki']
 let g:nv_default_extension = '.wiki'
 let g:vimwiki_list = [{'path': '~/Dropbox/wiki/'}]
 let g:org_indent = 1
