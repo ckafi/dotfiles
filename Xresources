@@ -58,6 +58,7 @@ Xft.rgba      : rgb
 Xft.hinting   : true
 Xft.hintstyle : hintslight
 Xft.antialias : true
+/* Xft.dpi       : 135 */
 
 Xcursor.theme: Openzone-Black-Slim
 
@@ -86,11 +87,11 @@ XTerm*faceName: xft:Iosevka Term Light
 XTerm*faceSize: 13
 
 ! Enabled modi
-rofi.modi:                           window,run
+rofi.modi:                           window,run,ssh
 ! Enable fuzzy matching
 rofi.matching:                       fuzzy
 ! Terminal to use
-rofi.terminal:                       termite
+rofi.terminal:                       /usr/bin/konsole
 ! Window width
 rofi.width:                          50
 ! Number of lines
