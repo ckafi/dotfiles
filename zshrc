@@ -143,7 +143,7 @@ bindkey "^[[6~" history-beginning-search-forward        # PgDown
 bindkey "^E"    push-input
 # bindkey "^H"    run-help
 bindkey "^[[3~" vi-delete-char                          # Del
-bindkey "^R"    history-incremental-search-backward
+# bindkey "^R"    history-incremental-search-backward
 
 
 # for vicmd-keymap
@@ -171,7 +171,7 @@ bindkey -M menuselect '#' accept-and-infer-next-history
 # External configs {{{
 eval $(dircolors ~/.dircolors)
 whence fasd >/dev/null && eval "$(fasd --init posix-alias zsh-hook zsh-ccomp zsh-ccomp-install)"
-[[ -d /usr/bin/fzf ]] && source /usr/bin/fzf/*.zsh
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 # }}}
 
 # Completions {{{
