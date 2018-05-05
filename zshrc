@@ -1,9 +1,5 @@
-# A zsh start-up file
-# Written by Tobias Frilling (tobias@frilling-online.de)
-# but heavily influenced by grmls zshrc
 # Any copyright is dedicated to the Public Domain.
 # http://creativecommons.org/publicdomain/zero/1.0/
-# So feel free to use any line you want.
 
 # Start tmux {{{
 if [[ -n $SSH_CONNECTION \
