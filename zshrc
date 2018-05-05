@@ -97,7 +97,7 @@ autoload colors && colors
 # Aliases {{{
 alias o="mimeo"
 alias e="$EDITOR"
-alias p="pacaur"
+alias p="yay"
 alias u="systemctl --user"
 
 alias psgrep="ps -ef | grep"
@@ -106,24 +106,27 @@ alias rsmv="rscp --remove-source-files"
 alias sc="systemctl"
 alias -g copy="xsel --clipboard --input"
 alias paste="xsel --clipboard --output"
+alias ext="aunpack"
 
 alias -g grep="grep --color=auto"
 alias cp="cp -iv"
 alias rm="rm -iv"
 alias mv="mv -iv"
-alias t="trash"
 alias dirs="dirs -v"
-alias mc="mc -x"
 alias ls="ls -F --color=auto"
 alias la="ls -A"
 alias ll="ls -hl --time-style=posix-iso"
 alias lla="ll -A"
 
 alias sudo="sudo "
-alias nt='fork termite -d "$(pwd)"'
+alias nt='fork konsole --workdir "$(pwd)"'
 
 alias fe="f -e $EDITOR"
 alias fo="f -e mimeo"
+
+alias t=" task"
+alias to=" taskopen"
+alias in=" task add +inbox"
 # }}}
 
 # Key-bindings {{{
@@ -290,26 +293,6 @@ update_git_prompt () {
   git_prompt="%F{magenta}$git_branch_name"
   git_prompt+="${git_commit_hash:+.$git_commit_hash}"
   git_prompt+="${git_tlights:+%f($git_tlights%f)}%f"
-}
-
-ext () {
-  for file in $@; do
-    if [[ -f $file ]]; then
-      case ${(L)file} in
-        *.tar.lrz)           lrzuntar $file ;;
-        *.lrz)               lrunzip $file ;;
-        *.tar*|*.tgz|*.tbz)  tar -xvf $file ;;
-        *.bz2)               bunzip2 $file ;;
-        *.gz|*.z)            gunzip $file ;;
-        *.7z|*.zip|*.cbz)    7z x $file ;;
-        *.rar|*.cbr)         unrar x $file ;;
-        *.xz)                unxz $file ;;
-        *) echo "'$file' is not a recognized archive format." ;;
-      esac
-    else
-      echo "'$file' is not a valid file"
-    fi
-  done
 }
 
 up () {
