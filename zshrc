@@ -21,11 +21,12 @@ fi
 # Environment {{{
 setopt all_export
 PATH="$HOME/bin:$PATH"
+fpath+=~/.zfunc
 # gcc coloring
 [[ -d /usr/lib/colorgcc/bin ]] && PATH="/usr/lib/colorgcc/bin:$PATH"
 HISTFILE=$HOME/.zsh/zhistory
-HISTSIZE=50000
-SAVEHIST=50000
+HISTSIZE=10000
+SAVEHIST=10000
 PAGER="less"
 VIEWER=$PAGER
 EDITOR="vim"
