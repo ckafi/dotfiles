@@ -24,7 +24,7 @@ Plug 'justinmk/vim-dirvish'
 Plug 'justinmk/vim-gtfo'
 Plug 'justinmk/vim-sneak'
 Plug 'lervag/vimtex', {'for': 'tex'}
-Plug 'majutsushi/tagbar'
+Plug 'ludovicchabant/vim-gutentags'
 Plug 'maxbrunsfeld/vim-yankstack'
 Plug 'mbbill/undotree'
 Plug 'mhinz/vim-grepper'
@@ -146,8 +146,6 @@ colorscheme gruvbox
 "}}}
 
 " Variable Settings {{{
-" Disable fold column in taglist
-let showmarks_enable = 0
 " Set comma as leader
 let mapleader = " "
 let maplocalleader = ","
@@ -157,7 +155,6 @@ let g:airline_powerline_fonts = 1
 let g:airline_theme = 'distinguished'
 " Enable deoplete at startup
 let g:deoplete#enable_at_startup = 1
-let g:deoplete#sources = []
 " Press s for next sneak match
 let g:sneak#s_next = 1
 " Don't overwrite sneak command
@@ -168,8 +165,8 @@ let g:fzf_layout = { 'up': '~40%' }
 let g:vimtex_view_method = "zathura"
 let g:vimtex_compiler_progname = 'nvr'
 
-let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
-let g:gtfo#terminals = { 'unix' : 'fork termite -d' }
+" let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
+let g:gtfo#terminals = { 'unix' : 'fork konsole --workdir' }
 let g:grepper = { 'tools' : ['rg', 'git', 'grep'] }
 
 let g:racer_cmd = "/usr/bin/racer"
@@ -207,10 +204,11 @@ nnoremap Y y$
 " The terminal escape is impossible in neo2
 tnoremap <leader><esc> <C-\><C-n>
 
+" Follow tag under cursor
+nmap gt <C-]>
 " Toggle graphical undo window
 nmap <F4>  :UndotreeToggle<CR>
 nmap <F5>  :nohls<CR>
-nmap <F6>  :TagbarToggle<CR>
 " <F8> reserved for pastetoggle
 nmap <C-j> <C-^>
 " Move up and down in the changelist
