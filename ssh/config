@@ -13,11 +13,11 @@ Host info
   HostName uige.mathematik.uni-marburg.de
   User frilling
 
-Host maschinenraum.no-ip.org info
+Host maschinenraum.dynip.online info
   Compression yes
 
 Host home
-  HostName maschinenraum.no-ip.org
+  HostName maschinenraum.dynip.online
   User tobias
 
 Host gibson wintermute
