@@ -29,9 +29,6 @@ Host roswitha
   HostName kettlack.ddns.net
   User roswitha
 
-Host cac
-  HostName 64.137.211.50
-
 # Github needs diffie-hellman-group-exchange-sha1 some of the time but not always.
 Host github.com
   KexAlgorithms curve25519-sha256@libssh.org,diffie-hellman-group-exchange-sha256,diffie-hellman-group-exchange-sha1,diffie-hellman-group14-sha1
