@@ -73,13 +73,13 @@ color13 = #d3869b
 color6  = #8ec07c
 color14 = #8ec07c
 
-# Extra colors
-color16 = #fe8019
-color17 = #d65d0e
-color18 = #3c3836
-color19 = #504945
-color20 = #bdae93
-color21 = #ebdbb2
+# # Extra colors
+# color16 = #fe8019
+# color17 = #d65d0e
+# color18 = #3c3836
+# color19 = #504945
+# color20 = #bdae93
+# color21 = #ebdbb2
 
 [hints]
 #font = Monospace 12
