@@ -9,16 +9,14 @@ bindsym $mod+Shift+e move scratchpad
 # Show the first scratchpad window
 bindsym $mod+e scratchpad show
 
-# new_window normal 1
+# Do not draw title bar
+default_border pixel
 
-for_window [class="Vlc"] floating enable
 for_window [class="mpv"] floating enable
-for_window [class="Gxmessage"] floating enable
-for_window [class="Alarm-clock-applet"] floating enable
 
 assign [class="Firefox"] 10:Browser
-assign [class="Nightly"] 10:Browser
 assign [class="Thunderbird"] 9:Mail
+assign [class="org-jabref-JabRefMain"] 8:JabRef
 
 # font for window titles
 font xft:sans 8
@@ -108,17 +106,17 @@ bindsym $mod+Shift+9 move container to workspace number 9; workspace number 9
 bindsym $mod+Shift+0 move container to workspace number 10; workspace number 10
 
 # key bindings for program execution
-bindsym $mod+Return exec termite -e fish
+bindsym $mod+Return exec $TERMCMD
 bindsym $mod+space  exec rofi -show run
 bindsym $mod+Tab    exec rofi -show window
-bindsym $mod+v      exec xset -display :0 dpms force off
+bindsym $mod+v      exec rofi -show ssh
 
-bindsym XF86AudioMute         exec amixer -q sset Master toggle
-bindsym XF86AudioLowerVolume  exec amixer -q sset Master 2%-
-bindsym XF86AudioRaiseVolume  exec amixer -q sset Master 2%+
-bindsym XF86MonBrightnessDown exec xbacklight -dec 3
-bindsym XF86MonBrightnessUp   exec xbacklight -inc 3
-bindsym XF86Sleep             exec systemctl suspend
+bindsym XF86AudioMute         exec --no-startup-id amixer -q sset Master toggle
+bindsym XF86AudioLowerVolume  exec --no-startup-id amixer -q sset Master 2%-
+bindsym XF86AudioRaiseVolume  exec --no-startup-id amixer -q sset Master 2%+
+bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 3
+bindsym XF86MonBrightnessUp   exec --no-startup-id xbacklight -inc 3
+bindsym XF86Sleep             exec --no-startup-id systemctl suspend
 
 
 ## Base16 Gruvbox dark, soft
@@ -145,7 +143,7 @@ set $base0F #d65d0e
 
 # Basic color configuration using the Base16 variables for windows and borders.
 # Property Name         Border  BG      Text    Indicator Child Border
-client.focused          $base05 $base0D $base00 $base0D $base0D
+client.focused          $base05 $base0D $base00 $base08 $base0D
 client.focused_inactive $base01 $base01 $base05 $base03 $base01
 client.unfocused        $base01 $base00 $base05 $base01 $base01
 client.urgent           $base08 $base08 $base00 $base08 $base08
@@ -170,5 +168,5 @@ bar {
 }
 
 # start window manager target
-exec systemctl --user import-environment
-exec systemctl --user start window-manager.target
+exec --no-startup-id systemctl --user import-environment
+exec --no-startup-id systemctl --user start window-manager.target
