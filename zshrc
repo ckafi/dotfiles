@@ -119,7 +119,7 @@ alias ll="ls -hl --time-style=posix-iso"
 alias lla="ll -A"
 
 alias sudo="sudo "
-alias nt='fork konsole --workdir "$(pwd)"'
+alias nt='fork alacritty --working-directory "$(pwd)"'
 
 alias fe="f -e $EDITOR"
 alias fo="f -e mimeo"
