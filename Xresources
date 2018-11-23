@@ -91,7 +91,7 @@ rofi.modi:                           window,run,ssh
 ! Enable fuzzy matching
 rofi.matching:                       fuzzy
 ! Terminal to use
-rofi.terminal:                       /usr/bin/konsole
+rofi.terminal:                       /usr/bin/alacritty
 ! Window width
 rofi.width:                          50
 ! Number of lines
