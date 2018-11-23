@@ -170,7 +170,7 @@ bindkey -M menuselect '#' accept-and-infer-next-history
 
 # External configs {{{
 eval $(dircolors ~/.dircolors)
-whence fasd >/dev/null && eval "$(fasd --init posix-alias)"
+whence fasd >/dev/null && eval "$(fasd --init auto)"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 # }}}
 
