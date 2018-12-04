@@ -155,6 +155,8 @@ let g:airline_powerline_fonts = 1
 let g:airline_theme = 'distinguished'
 " Enable deoplete at startup
 let g:deoplete#enable_at_startup = 1
+" Do on include dictionary in deoplete sources
+call deoplete#custom#option('ignore_sources', { '_': ['dictionary'], })
 " Press s for next sneak match
 let g:sneak#s_next = 1
 " Don't overwrite sneak command
