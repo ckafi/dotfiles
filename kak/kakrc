@@ -1,0 +1,54 @@
+source "%val{config}/plugins/plug.kak/rc/plug.kak"
+
+plug "andreyorst/powerline.kak" config %{
+    hook -once global WinCreate .* %{
+        powerline-theme gruvbox
+        powerline-separator none
+    }
+}
+
+plug "andreyorst/fzf.kak" config %{
+    map global user f ': fzf-mode<ret>' -docstring 'fzf mode'
+    set-option global fzf_file_command 'rg'
+    set-option global fzf_highlighter 'bat'
+}
+
+plug "alexherbo2/auto-pairs.kak" config %{
+    map global user s -docstring 'Surround'   ':<space>auto-pairs-surround<ret>'
+    map global user S -docstring 'Surround++' ':<space>auto-pairs-surround _ _ * *<ret>'
+}
+
+plug "alexherbo2/distraction-free.kak"
+plug "Delapouite/kakoune-text-objects"
+plug "occivink/kakoune-expand" config %{
+    map -docstring "expand" global user e ': expand<ret>'
+}
+
+hook global InsertKey <tab> 'exec -draft h@'
+
+set-option global ui_options ncurses_assistant=none
+set-option global tabstop 4
+
+colorscheme gruvbox
+
+map global normal -docstring 'comment line' '#' '<space>:comment-line<ret>'
+map global normal -docstring 'Move to next paragraph' '<plus>' ']pjvv'
+map global normal -docstring 'Move to prev paragraph' '<minus>' '[p;vv'
+map global normal -docstring 'Pipe to clipboard' '=' '<a-|>xsel -ib<ret>'
+map global normal -docstring 'Pipe from clipboard' '<a-=>' '|xsel -b<ret>'
+map global normal 'n' 'nvv'
+
+add-highlighter global/ number-lines
+add-highlighter global/ wrap
+
+set-face global Information rgb:a89984,rgb:3c3836
+
+define-command -docstring %{x11-repl [<arguments>]: create a new window for repl interaction
+All optional parameters are forwarded to the new window} \
+    -override \
+    -params .. \
+    -shell-completion \
+    x11-repl %{ evaluate-commands %sh{
+        if [ $# -eq 0 ]; then cmd="${SHELL:-sh}"; else cmd="$@"; fi
+        setsid alacritty -t kak_repl_window -e sh -c ${cmd} < /dev/null > /dev/null 2>&1 &
+}}
