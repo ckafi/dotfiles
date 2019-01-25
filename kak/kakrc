@@ -1,12 +1,5 @@
 source "%val{config}/plugins/plug.kak/rc/plug.kak"
 
-plug "andreyorst/powerline.kak" config %{
-    hook -once global WinCreate .* %{
-        powerline-theme gruvbox
-        powerline-separator none
-    }
-}
-
 plug "andreyorst/fzf.kak" config %{
     map global user f ': fzf-mode<ret>' -docstring 'fzf mode'
     set-option global fzf_file_command 'rg'
@@ -19,7 +12,6 @@ plug "alexherbo2/auto-pairs.kak" config %{
 }
 
 plug "alexherbo2/distraction-free.kak"
-plug "Delapouite/kakoune-text-objects"
 plug "occivink/kakoune-expand" config %{
     map -docstring "expand" global user e ': expand<ret>'
 }
