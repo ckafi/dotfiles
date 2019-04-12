@@ -1,0 +1,89 @@
+actions:
+  mkdir: mkdir -p '{0}'
+config:
+  backup: true
+  banner: false
+  create: true
+  dotpath: .
+  ignoreempty: false
+  keepdot: false
+  link_dotfile_default: link
+  link_on_import: link
+  longkey: false
+  showdiff: false
+  workdir: ~/.config/dotdrop
+dotfiles:
+  d_fontconfig:
+    dst: ~/.config/fontconfig
+    src: config/fontconfig
+  d_htop:
+    dst: ~/.config/htop
+    src: config/htop
+  d_i3:
+    dst: ~/.config/i3
+    src: config/i3
+  d_kak:
+    dst: ~/.config/kak
+    link: link_children
+    src: config/kak
+  d_konsole:
+    dst: ~/.local/share/konsole
+    src: local/share/konsole
+  d_ranger:
+    dst: ~/.config/ranger
+    src: config/ranger
+  f_alacritty.yml:
+    dst: ~/.config/alacritty/alacritty.yml
+    src: config/alacritty/alacritty.yml
+  f_aria2.conf:
+    dst: ~/.config/aria2/aria2.conf
+    src: config/aria2/aria2.conf
+  f_config:
+    dst: ~/.config/git/config
+    src: config/git/config
+  f_dircolors:
+    dst: ~/.dircolors
+    src: dircolors
+  f_dunstrc:
+    dst: ~/.config/dunst/dunstrc
+    src: config/dunst/dunstrc
+  f_latexmkrc:
+    dst: ~/.latexmkrc
+    src: latexmkrc
+  f_makepkg.conf:
+    dst: ~/.config/pacman/makepkg.conf
+    src: config/pacman/makepkg.conf
+  f_profiles.clj:
+    dst: ~/.lein/profiles.clj
+    src: lein/profiles.clj
+  f_redshift.conf:
+    dst: ~/.config/redshift.conf
+    src: config/redshift.conf
+  f_ssh:
+    dst: ~/.ssh/config
+    src: ssh/config
+  f_tmux.conf:
+    dst: ~/.tmux.conf
+    src: tmux.conf
+  f_xresources:
+    dst: ~/.Xresources
+    src: Xresources
+  f_zathurarc:
+    dst: ~/.config/zathura/zathurarc
+    src: config/zathura/zathurarc
+  f_zshenv:
+    dst: ~/.zshenv
+    src: zshenv
+  f_zshrc:
+    dst: ~/.zshrc
+    src: zshrc
+profiles:
+  Gibson:
+    dotfiles:
+    - ALL
+  wintermute:
+    dotfiles:
+    - ALL
+  jane:
+    dotfiles:
+    - ALL

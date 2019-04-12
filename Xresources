@@ -68,7 +68,8 @@ URxvt.visualBell       : true
 URxvt.scrollBar        : false
 URxvt.cursorBlink      : true
 !URxvt.cursorUnderline : true
-URxvt.font             : xft:Hack
+URxvt.font             : xft:Source Code Pro Medium
+URxvt.italicFont       : xft:Source Code Pro Medium Italic
 URxvt.pointerBlank     : true
 !URxvt.transparent     : true
 !URxvt.tintColor       : darkblue
@@ -83,7 +84,7 @@ URxvt.termName         : rxvt-256color
 URxvt.geometry         : 90x25
 
 
-XTerm*faceName: xft:Iosevka Term Light
+XTerm*faceName: xft:Source Code Pro Medium
 XTerm*faceSize: 13
 
 ! Enabled modi

@@ -29,12 +29,13 @@ HISTSIZE=10000
 SAVEHIST=10000
 PAGER="less"
 VIEWER=$PAGER
-EDITOR="kak"
+EDITOR="nvim"
 VISUAL=$EDITOR
 NULLCMD="cat"
 READNULLCMD=$PAGER
 WORDCHARS+=":"
 FZF_DEFAULT_OPTS="--reverse --multi"
+SKIM_DEFAULT_OPTIONS="--reverse --multi"
 # Options for less
 LESS="-iJM"
 # begin blinking
@@ -118,7 +119,7 @@ alias ll="ls -hl --time-style=posix-iso"
 alias lla="ll -A"
 
 alias sudo="sudo "
-alias nt='fork alacritty --working-directory "$(pwd)"'
+alias nt='fork alacritty'
 
 alias fe="f -e $EDITOR"
 alias fo="f -e mimeo"
@@ -131,23 +132,19 @@ alias in=" task add +inbox"
 # Key-bindings {{{
 bindkey -v    # Vi-Keymap
 
-insert-last-typed-word() { zle insert-last-word -- 0 -1 }
-zle -N insert-last-typed-word
-bindkey "^P"    insert-last-typed-word
+bindkey -M vicmd 'h' run-help
+
+autoload edit-command-line
+zle -N edit-command-line
+bindkey -M vicmd 'v' edit-command-line
+
+bindkey "^P"    copy-prev-shell-word
 bindkey "^K"    insert-last-word
 bindkey "^B"    history-beginning-search-backward
 bindkey "^F"    history-beginning-search-forward
-bindkey "^[[5~" history-beginning-search-backward       # PgUp
-bindkey "^[[6~" history-beginning-search-forward        # PgDown
 bindkey "^E"    push-input
-# bindkey "^H"    run-help
 bindkey "^[[3~" vi-delete-char                          # Del
 # bindkey "^R"    history-incremental-search-backward
-
-
-# for vicmd-keymap
-bindkey -a "u"  undo
-bindkey -a "^R" redo
 
 case $TERM in
   linux | screen* )
@@ -163,8 +160,6 @@ case $TERM in
     bindkey "^[[7~" beginning-of-line
     bindkey "^[[8~" end-of-line ;;
 esac
-bindkey -M menuselect '+' accept-and-menu-complete
-bindkey -M menuselect '#' accept-and-infer-next-history
 # }}}
 
 # External configs {{{
@@ -225,19 +220,17 @@ zd () { fasd_fzf "$*" d }
 zf () { fasd_fzf "$*" f }
 
 preexec () {
-  title "${TAG:+($TAG) }" "$1"
+  title "$1"
   echo -n ${(%):-%f}
 }
 
 precmd () {
-  title "${TAG:+($TAG) }" 'zsh %2~'
+  title 'zsh %2~'
   if git branch &>/dev/null; then
     update_git_prompt
   else
     unset git_prompt
   fi
-
-  # update_prompt
 }
 
 title () {
