@@ -32,6 +32,10 @@ dotfiles:
   d_ranger:
     dst: ~/.config/ranger
     src: config/ranger
+  d_vifm:
+    dst: ~/.config/vifm
+    link: link_children
+    src: config/vifm
   f_alacritty.yml:
     dst: ~/.config/alacritty/alacritty.yml
     src: config/alacritty/alacritty.yml
