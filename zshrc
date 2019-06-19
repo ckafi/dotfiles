@@ -36,6 +36,7 @@ READNULLCMD=$PAGER
 WORDCHARS+=":"
 FZF_DEFAULT_OPTS="--reverse --multi"
 SKIM_DEFAULT_OPTIONS="--reverse --multi"
+RUSTC_WRAPPER=sccache
 # Options for less
 LESS="-iJM"
 # begin blinking
@@ -117,6 +118,7 @@ alias ls="ls -F --color=auto"
 alias la="ls -A"
 alias ll="ls -hl --time-style=posix-iso"
 alias lla="ll -A"
+alias diff='diff --color=auto'
 
 alias sudo="sudo "
 alias nt='fork alacritty'
