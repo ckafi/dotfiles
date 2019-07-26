@@ -22,6 +22,9 @@ dotfiles:
   d_i3:
     dst: ~/.config/i3
     src: config/i3
+  d_sway:
+    dst: ~/.config/sway
+    src: config/sway
   d_kak:
     dst: ~/.config/kak
     link: link_children
