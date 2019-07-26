@@ -16,11 +16,7 @@ font:
     family: IBM Plex Mono
     style: Text Italic
 
-  {%@@ if profile == "wintermute" @@%}
-  size: 9.0
-  {%@@ else @@%}
   size: 13.0
-  {%@@ endif @@%}
 
   # Offset is the extra space around each character. `offset.y` can be thought of
   # as modifying the line spacing, and `offset.x` as modifying the letter spacing.
@@ -66,3 +62,6 @@ colors:
 mouse:
   url:
     launcher: xdg-open
+
+key_bindings:
+  - { key: N, mods: Control|Shift, action: SpawnNewInstance }
