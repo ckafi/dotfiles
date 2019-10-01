@@ -39,6 +39,9 @@ dotfiles:
     dst: ~/.config/vifm
     link: link_children
     src: config/vifm
+  d_mako:
+    dst: ~/.config/mako
+    src: config/mako
   d_mpv:
     dst: ~/.config/mpv
     src: config/mpv
