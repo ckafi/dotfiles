@@ -39,6 +39,9 @@ dotfiles:
     dst: ~/.config/vifm
     link: link_children
     src: config/vifm
+  d_mpv:
+    dst: ~/.config/mpv
+    src: config/mpv
   f_alacritty.yml:
     dst: ~/.config/alacritty/alacritty.yml
     src: config/alacritty/alacritty.yml
