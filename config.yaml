@@ -29,6 +29,9 @@ dotfiles:
     dst: ~/.config/kak
     link: link_children
     src: config/kak
+  d_kaklsp:
+    dst: ~/.config/kak-lsp
+    src: config/kak-lsp
   d_konsole:
     dst: ~/.local/share/konsole
     src: local/share/konsole
