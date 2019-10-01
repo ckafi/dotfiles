@@ -20,23 +20,16 @@ fi
 
 # Environment {{{
 setopt all_export
-PATH="$HOME/bin:$PATH"
 fpath+=~/.zfunc
 # gcc coloring
 [[ -d /usr/lib/colorgcc/bin ]] && PATH="/usr/lib/colorgcc/bin:$PATH"
 HISTFILE=$HOME/.zsh/zhistory
 HISTSIZE=10000
 SAVEHIST=10000
-PAGER="less"
-VIEWER=$PAGER
-EDITOR="nvim"
-VISUAL=$EDITOR
 NULLCMD="cat"
 READNULLCMD=$PAGER
 WORDCHARS+=":"
-FZF_DEFAULT_OPTS="--reverse --multi"
-SKIM_DEFAULT_OPTIONS="--reverse --multi"
-RUSTC_WRAPPER=sccache
+
 # Options for less
 LESS="-iJM"
 # begin blinking
@@ -71,7 +64,7 @@ ZOPTS=(
   'hist_ignore_all_dups' # new commands replaces old one
   'hist_ignore_space' # dont save if cmd starts with space 
   'share_history' # share hist between zsh insts
-  'hist_verify' # dont exec hist expn, but reload line
+  # 'hist_verify' # dont exec hist expn, but reload line
 
   'no_menu_complete' # dont autoselect first match
   'list_packed' # print a smaller compl list
@@ -105,8 +98,8 @@ alias psgrep="ps -ef | grep"
 alias rscp="rsync -rhP --no-whole-file --inplace"
 alias rsmv="rscp --remove-source-files"
 alias sc="systemctl"
-alias -g copy="xsel --clipboard --input"
-alias paste="xsel --clipboard --output"
+# alias -g copy="xsel --clipboard --input"
+# alias paste="xsel --clipboard --output"
 alias ext="aunpack"
 
 alias -g grep="grep --color=auto"
@@ -114,17 +107,18 @@ alias cp="cp -iv"
 alias rm="rm -iv"
 alias mv="mv -iv"
 alias dirs="dirs -v"
-alias ls="ls -F --color=auto"
-alias la="ls -A"
-alias ll="ls -hl --time-style=posix-iso"
-alias lla="ll -A"
+alias ls="exa -F"
+alias la="ls -a"
+alias ll="ls -l --time-style long-iso"
+alias lla="ll -a"
 alias diff='diff --color=auto'
+alias trash='trash -v'
 
 alias sudo="sudo "
 alias nt='fork alacritty'
 
-alias fe="f -e $EDITOR"
-alias fo="f -e mimeo"
+alias skvi='f(){ x="$(sk --ansi)"; [[ $? -eq 0 ]] && nvim "$x" || true }; f'
+alias rgvi='f(){ x="$(sk --ansi -i -c "rg --color=always --line-number \"{}\"")"; [[ $? -eq 0 ]] && nvim "$(echo $x|cut -d: -f1)" "+$(echo $x|cut -d: -f2)" || true }; f'
 
 alias t=" task"
 alias to=" taskopen"
@@ -166,8 +160,12 @@ esac
 
 # External configs {{{
 eval $(dircolors ~/.dircolors)
-whence fasd >/dev/null && eval "$(fasd --init auto)"
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+whence pazi >/dev/null && eval "$(pazi init zsh)"
+
+# Fuzzy finding
+whence sk >/dev/null && \
+  source /usr/share/skim/completion.zsh && \
+  source /usr/share/skim/key-bindings.zsh
 # }}}
 
 # Completions {{{
@@ -211,15 +209,16 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 
 # Functions {{{
 
-fasd_fzf () {
-  local -a param
-  fasd -lR${2} "$1" | fzf --no-sort -0 -1 | read param
-  [[ -n $param ]] && echo "$param[@]" || return 1
-}
+# fasd no longer maintained
+# fasd_fzf () {
+#   local -a param
+#   fasd -lR${2} "$1" | fzf --no-sort -0 -1 | read param
+#   [[ -n $param ]] && echo "$param[@]" || return 1
+# }
 
-za () { fasd_fzf "$*" a }
-zd () { fasd_fzf "$*" d }
-zf () { fasd_fzf "$*" f }
+# za () { fasd_fzf "$*" a }
+# zd () { fasd_fzf "$*" d }
+# zf () { fasd_fzf "$*" f }
 
 preexec () {
   title "$1"

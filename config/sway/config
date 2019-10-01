@@ -9,10 +9,11 @@ input type:touchpad {
   natural_scroll enabled
   tap enabled
   tap_button_map lrm
+  drag enabled
 }
 
 output * {
-  background "/home/tobias/Sync/Bilder/wallpapers/Portrait Sophie.jpg" stretch
+  background "$HOME/Sync/Bilder/wallpapers/Portrait Sophie.jpg" stretch
 }
 
 xwayland enable
@@ -31,11 +32,10 @@ bindsym $mod+e scratchpad show
 # Do not draw title bar
 default_border pixel
 
-for_window [class="mpv"] floating enable
+for_window [app_id="mpv"] floating enable
 
-assign [class="firefox"] 10:Browser
-assign [class="Thunderbird"] 9:Mail
-assign [class="org-jabref-JabRefMain"] 8:JabRef
+assign [app_id="firefox"] 10:Browser
+assign [app_id="thunderbird"] 9:Mail
 
 # font for window titles
 font xft:sans 8
@@ -94,15 +94,6 @@ bindsym $mod+s focus parent
 bindsym $mod+Escape workspace back_and_forth
 bindsym $mod+BackSpace workspace back_and_forth
 
-# # prompt for a new workspace to be created
-# bindsym $mod+Ctrl+n exec i3-input -F 'workspace %s' -P 'New workspace: '
-
-# # prompt for new workspace name
-bindsym $mod+Ctrl+r exec /home/tobias/bin/i3_rename_workspace
-
-# prompt for a command
-bindsym $mod+c exec i3-input -f 'xft:Source Code Pro' -P 'Command: '
-
 # switch to workspace
 bindsym $mod+1 workspace number 1
 bindsym $mod+2 workspace number 2
@@ -129,9 +120,14 @@ bindsym $mod+Shift+0 move container to workspace number 10; workspace number 10
 
 # key bindings for program execution
 bindsym $mod+Return exec $TERMCMD
-bindsym $mod+space  exec rofi -show run
-bindsym $mod+Tab    exec rofi -show window
-bindsym $mod+v      exec rofi -show ssh
+
+set $launcher dmenu_path | sk | xargs swaymsg exec
+set $terminal alacritty --title floating --dimensions 90 25
+bindsym $mod+space exec $terminal -e zsh -c \'$launcher\'
+# need nohup for wl-copy (for whatever reason)
+bindsym $mod+p exec $terminal -e zsh -c 'PASSWORD_STORE_ENABLE_EXTENSIONS=true nohup pass fuzzy -c &>/dev/null'
+for_window [title="^floating$"] floating enable
+for_window [floating] border csd
 
 bindsym XF86AudioMute         exec --no-startup-id amixer -q sset Master toggle
 bindsym --release XF86AudioMute exec pkill -SIGRTMIN+10 i3blocks
@@ -144,6 +140,20 @@ bindsym XF86MonBrightnessDown exec --no-startup-id light -U 10
 bindsym XF86MonBrightnessUp   exec --no-startup-id light -A 10
 
 bindsym XF86Sleep             exec --no-startup-id systemctl suspend
+
+# key bindings for macro pad
+bindsym XF86Launch1 exec $HOME/.scripts/Launch1
+bindsym XF86Launch2 exec $HOME/.scripts/Launch2
+bindsym XF86Launch3 exec $HOME/.scripts/Launch3
+bindsym XF86Launch4 exec $HOME/.scripts/Launch4
+bindsym XF86Launch5 exec $HOME/.scripts/Launch5
+bindsym XF86Launch6 exec $HOME/.scripts/Launch6
+bindsym XF86Launch7 exec $HOME/.scripts/Launch7
+bindsym XF86Launch8 exec $HOME/.scripts/Launch8
+bindsym XF86Launch9 exec $HOME/.scripts/Launch9
+bindsym XF86LaunchA exec $HOME/.scripts/LaunchA
+bindsym XF86LaunchB exec $HOME/.scripts/LaunchB
+bindsym XF86LaunchC exec $HOME/.scripts/LaunchC
 
 
 ## Base16 Gruvbox dark, soft
@@ -195,9 +205,8 @@ bar {
   }
 }
 
-exec --no-startup-id swayidle -w \
-  timeout 600 'swaymsg "output * dpms off"' \
-  resume 'swaymsg "output * dpms on"' \
+exec --no-startup-id mako
+exec --no-startup-id $HOME/.scripts/gtk3_settings.sh
 
 # start window manager target
 exec --no-startup-id systemctl --user import-environment

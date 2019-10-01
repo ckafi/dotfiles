@@ -2,7 +2,7 @@
 AntiAliasFonts=true
 BoldIntense=false
 ColorScheme=base16-gruvbox-dark-soft
-Font=IBM Plex Mono,12,-1,5,53,0,0,0,0,0,Text
+Font=Ligalex Mono,12,-1,5,53,0,0,0,0,0,Text
 
 [Cursor Options]
 CursorShape=0

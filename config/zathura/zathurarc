@@ -9,6 +9,7 @@ set statusbar-home-tilde true
 
 map d scroll half-down
 map u scroll half-up
+map t toggle_page_mode
 
 # Base16 Gruvbox dark, soft
 # Author: Dawid Kurek (dawikur@gmail.com), morhetz (https://github.com/morhetz/gruvbox)
