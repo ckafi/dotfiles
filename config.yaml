@@ -87,6 +87,9 @@ dotfiles:
   f_zshrc:
     dst: ~/.zshrc
     src: zshrc
+  f_pam_env:
+    dst: ~/.pam_environment
+    src: pam_environment
 profiles:
   Gibson:
     dotfiles:
