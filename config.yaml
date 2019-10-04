@@ -1,5 +1,3 @@
-actions:
-  mkdir: mkdir -p '{0}'
 config:
   backup: true
   banner: false
@@ -13,6 +11,10 @@ config:
   showdiff: false
   workdir: ~/.config/dotdrop
 dotfiles:
+  d_nvim:
+    dst: ~/.config/nvim
+    src: config/nvim
+    link: link_children
   d_fontconfig:
     dst: ~/.config/fontconfig
     src: config/fontconfig
