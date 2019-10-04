@@ -6,20 +6,16 @@
 
 " Plugins {{{
 call plug#begin('~/.config/nvim/plugins')
-Plug 'Alok/notational-fzf-vim'
-Plug 'brooth/far.vim'
 Plug 'chrisbra/Colorizer'
 Plug 'chrisbra/NrrwRgn'
 Plug 'chrisbra/vim-diff-enhanced'
-Plug 'ckafi/vim-template'
-Plug 'dhruvasagar/vim-table-mode'
-Plug 'guns/vim-sexp', {'for': 'clojure'}
+Plug 'editorconfig/editorconfig-vim'
+Plug 'honza/vim-snippets'
 Plug 'jalvesaq/Nvim-R'
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'junegunn/fzf.vim'
+Plug 'joom/latex-unicoder.vim'
+Plug 'JuliaEditorSupport/julia-vim'
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
-Plug 'junegunn/vim-easy-align'
 Plug 'justinmk/vim-dirvish'
 Plug 'justinmk/vim-gtfo'
 Plug 'justinmk/vim-sneak'
@@ -32,19 +28,15 @@ Plug 'mhinz/vim-startify'
 Plug 'morhetz/gruvbox'
 Plug 'NLKNguyen/papercolor-theme'
 Plug 'sheerun/vim-polyglot'
-if has('python3')
-  Plug 'shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-  Plug 'zchee/deoplete-clang'
-  Plug 'sebastianmarkow/deoplete-rust'
-else
-  Plug 'ervandew/supertab'
-endif
-Plug 'Shougo/echodoc.vim'
+Plug 'shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'shougo/neosnippet'
 Plug 'shougo/neosnippet-snippets'
+Plug 'lionawurscht/deoplete-biblatex'
+Plug 'tommcdo/vim-lion'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fireplace', {'for': 'clojure'}
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-obsession'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-sexp-mappings-for-regular-people', {'for': 'clojure'}
 Plug 'tpope/vim-surround'
@@ -54,6 +46,10 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'vimwiki/vimwiki'
 Plug 'w0rp/ale'
 Plug 'wellle/targets.vim'
+Plug 'autozimu/LanguageClient-neovim', {
+    \ 'branch': 'next',
+    \ 'do': 'bash install.sh',
+    \ }
 call plug#end()
 " }}}
 
@@ -107,13 +103,25 @@ set completeopt+=longest  " Only insert the longest common text
 set completeopt+=preview  " Show information about current item in preview
 set complete=.,w,b,u,t,i  " Complete sources are all buffers, tags and includes
 set shortmess+=I          " Don't show intro message
+set shortmess+=c          " don't give ins-completion-menu messages.
 set statusline=(%n)%f\ %m%<%r\ %c,%l\/%L(%P)%=%y%h%w%q[%{&fenc}][%{&ff}]
 set dictionary=/usr/share/dict/ngerman " Dictionary for <C-X><C-K>
 set noshowmode            " Disable display of mode (-- INSERT --)
 set switchbuf="useopen"   " Switch to buffer when already open
 set inccommand=split      " Show live substitutions in split
 set rtp^=/usr/share/vim/vimfiles/ " include old vimfiles
+set signcolumn=yes        " always show signcolumn
+set updatetime=300        " Smaller updatetime for CursorHold & CursorHoldI
 "}}}
+
+" LanguageClient {{{
+let g:LanguageClient_serverCommands = {
+    \ 'rust': ['rustup', 'run', 'stable', 'rls'],
+    \ 'r': ['R', '--slave', '-e', 'languageserver::run()'],
+    \ 'julia': ['julia', '--project=@.', '--startup-file=no', '--history-file=no', '-e', 'using Pkg; using LanguageServer; import StaticLint; import SymbolServer; env_path = dirname(Pkg.Types.Context().env.project_file); debug = false; server = LanguageServer.LanguageServerInstance(stdin, stdout, debug, env_path, "", Dict()); server.runlinter = true; run(server);']
+    \ }
+let g:LanguageClient_useVirtualText = 0
+" }}}
 
 " Autocmds {{{
 " augroup vimrc-incsearch-highlight
@@ -137,7 +145,7 @@ let g:gruvbox_italic=1
 let g:gruvbox_bold=1
 let g:gruvbox_underline=1
 let g:gruvbox_contrast_dark="soft"
-let g:gruvbox_contrast_light="soft"
+let g:gruvbox_contrast_light="hard"
 " Load color scheme
 colorscheme gruvbox
 " Highlight the 81st column if there is a character
@@ -150,7 +158,7 @@ colorscheme gruvbox
 let mapleader = " "
 let maplocalleader = ","
 " Enable powerline font
-let g:airline_powerline_fonts = 1
+let g:airline_powerline_fonts = 0
 " Set airline color theme
 let g:airline_theme = 'distinguished'
 " Enable deoplete at startup
@@ -161,42 +169,43 @@ call deoplete#custom#option('ignore_sources', { '_': ['dictionary'], })
 let g:sneak#s_next = 1
 " Don't overwrite sneak command
 let g:yankstack_yank_keys = ['c', 'C', 'd', 'D', 'x', 'X', 'y', 'Y']
-" Set fzf layout
-let g:fzf_layout = { 'up': '~40%' }
+" Set skim layout
+let g:skim_layout = { 'up': '~40%' }
 
 let g:vimtex_view_method = "zathura"
 let g:vimtex_compiler_progname = 'nvr'
 
-" let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
-let g:gtfo#terminals = { 'unix' : 'fork konsole --workdir' }
+let g:gtfo#terminals = { 'unix' : 'fork alacritty --working-directory' }
 let g:grepper = { 'tools' : ['rg', 'git', 'grep'] }
 
-let g:racer_cmd = "/usr/bin/racer"
-let g:nv_search_paths = ['~/Dropbox/wiki']
+let g:nv_search_paths = ['~/Sync/wiki']
 let g:nv_default_extension = '.wiki'
-let g:vimwiki_list = [{'path': '~/Dropbox/wiki/'}]
+let g:vimwiki_list = [{'path': '~/Sync/wiki/'}]
 let g:org_indent = 1
 
 let g:startify_commands = [
-    \ ['VimWiki', 'VimwikiIndex'],
-    \ ['Diary', 'VimwikiDiaryIndex'],
-    \ ['New Note', 'VimwikiMakeDiaryNote'], 
+    \ {'w': ['VimWiki', 'VimwikiIndex']},
+    \ {'p': ['Scratchpad', 'edit ~/Sync/scratchpad.wiki']}
     \ ]
+    " \ ['Diary', 'VimwikiDiaryIndex'],
+    " \ ['New Note', 'VimwikiMakeDiaryNote'],
 let g:startify_files_number = 5
 let g:startify_enable_special = 0
 let g:startify_custom_header = map(startify#fortune#quote(), '"   ".v:val')
 let g:startify_session_persistence = 1
 let g:startify_session_dir = '~/.config/nvim/sessions'
-" enable racer completion
-let g:racer_experimental_completer = 1
-" disable LaTeX-Box (conflict with vimtex)
-let g:polyglot_disabled = ['latex']
-" set paths for deoplete-clang
-let g:deoplete#sources#clang#libclang_path = "/usr/lib/libclang.so"
-let g:deoplete#sources#clang#clang_header = "/usr/lib/clang/"
-" set paths for deoplete-rust
-let g:deoplete#sources#rust#racer_binary = "/usr/bin/racer"
-let g:deoplete#sources#rust#rust_source_path = "/usr/src/rust/src"
+let g:startify_skiplist = ['.*\.wiki']
+" disable some polyglot plugins
+let g:polyglot_disabled = ['latex', 'julia']
+
+let g:ale_lint_on_text_changed = 'normal'
+let g:ale_lint_on_insert_leave = 1
+let g:ale_lint_delay = 0
+
+let r_indent_align_args = 0
+
+" Disable editorconfig for fugitive
+let g:EditorConfig_exclude_patterns = ['fugitive://.\*']
 "}}}
 
 " Keymaps and Abbrevs {{{
@@ -240,6 +249,7 @@ imap <c-x><c-f> <plug>(fzf-complete-path)
 
 " make macros a bit more convenient
 nnoremap Q @@
+vnoremap Q @@
 
 nmap <leader>p <Plug>yankstack_substitute_older_paste
 nmap <leader>P <Plug>yankstack_substitute_newer_paste
@@ -262,14 +272,8 @@ function! Replace(type, ...)
   silent exe "normal! `[\"_d`]\"_xP"
 endfunction
 
-" Start interactive EasyAlign in visual mode (e.g. vipga)
-xmap ga <Plug>(EasyAlign)
-
-" Start interactive EasyAlign for a motion/text object (e.g. gaip)
-nmap ga <Plug>(EasyAlign)
-
-" Start searching with notational-fzf
-nnoremap <silent> <c-s> :NV<CR>
+" Select pasted text
+nmap gp `[v`]
 
 " }}}
 
