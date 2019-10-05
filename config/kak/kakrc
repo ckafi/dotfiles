@@ -13,7 +13,6 @@ plug "danr/kakoune-easymotion" config %{
     map global user e ': enter-user-mode easymotion<ret>' -docstring 'easymotion commands'
 }
 
-hook global InsertKey <tab> 'exec -draft h@'
 hook global WinCreate ^[^*]+$ %{editorconfig-load}
 
 set-option global ui_options ncurses_assistant=none
@@ -35,6 +34,10 @@ map global normal '<a-?>' '<a-?>(?i)' -docstring 'case insensitive backward exte
 map global normal 'n' 'nvv'
 map global normal 'ü' '<a-;>'
 map global normal 'ö' '<a-:>'
+map global normal 'ä' '<a-S>'
+
+map global insert '<tab>'   '<a-;><gt>'
+map global insert '<s-tab>' '<a-;><lt>'
 
 map global user l ': enter-user-mode lsp<ret>' -docstring 'Language Server commands'
 
