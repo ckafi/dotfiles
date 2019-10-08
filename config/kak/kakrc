@@ -35,6 +35,7 @@ map global normal 'n' 'nvv'
 map global normal 'ü' '<a-;>'
 map global normal 'ö' '<a-:>'
 map global normal 'ä' '<a-S>'
+map global normal '<minus>' 'x_c'
 
 map global insert '<tab>'   '<a-;><gt>'
 map global insert '<s-tab>' '<a-;><lt>'
