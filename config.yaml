@@ -98,6 +98,9 @@ dotfiles:
   f_pam_env:
     dst: ~/.pam_environment
     src: pam_environment
+  f_cargo_config:
+    src: cargo/config
+    dst: ~/.cargo/config
 profiles:
   Gibson:
     dotfiles:

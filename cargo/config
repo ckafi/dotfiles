@@ -1,0 +1,9 @@
+[cargo-new]
+name = "Tobias Frilling"
+email = "tobias@frilling-online.de"
+
+[profile.release]
+lto = false
+
+# [build]
+# rustflags = ["-C", "target-cpu=native"]
