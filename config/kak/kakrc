@@ -1,5 +1,8 @@
 source "%val{config}/plugins/plug.kak/rc/plug.kak"
 plug "andreyorst/plug.kak" noload
+plug "andreyorst/smarttab.kak" config %{
+    set-option global softtabstop 4
+}
 
 plug "andreyorst/fzf.kak" config %{
     map global user f ': fzf-mode<ret>' -docstring 'fzf mode'
@@ -14,6 +17,7 @@ plug "danr/kakoune-easymotion" config %{
 }
 
 hook global WinCreate ^[^*]+$ %{editorconfig-load}
+hook global BufCreate ^[^*]+$ expandtab
 
 set-option global ui_options ncurses_assistant=none
 set-option global tabstop 4
@@ -36,9 +40,6 @@ map global normal 'ü' '<a-;>'
 map global normal 'ö' '<a-:>'
 map global normal 'ä' '<a-S>'
 map global normal '<minus>' 'x_c'
-
-map global insert '<tab>'   '<a-;><gt>'
-map global insert '<s-tab>' '<a-;><lt>'
 
 map global user l ': enter-user-mode lsp<ret>' -docstring 'Language Server commands'
 
