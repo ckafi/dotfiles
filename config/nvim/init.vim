@@ -115,6 +115,7 @@ set updatetime=300        " Smaller updatetime for CursorHold & CursorHoldI
 "}}}
 
 " LanguageClient {{{
+let g:LanguageClient_autoStart = 0
 let g:LanguageClient_serverCommands = {
     \ 'rust': ['rustup', 'run', 'stable', 'rls'],
     \ 'r': ['R', '--slave', '-e', 'languageserver::run()'],
