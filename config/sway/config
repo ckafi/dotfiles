@@ -16,32 +16,35 @@ output * {
   background "$HOME/Sync/Bilder/wallpapers/Portrait Sophie.jpg" stretch
 }
 
-xwayland enable
+output "Goldstar Company Ltd 24MB65 603NTFA28643" {
+    # background "$HOME/Sync/Bilder/wallpapers/Portrait Sophie.jpg" stretch
+    mode 1920x1200
+    position 0 0
+}
+
+output "Dell Inc. DELL U2312HM 59DJP24JGYNL" {
+    background "$HOME/Sync/Bilder/wallpapers/sophie_hochkant.JPG" stretch
+    mode 1920x1080
+    position 1920 -310
+    transform 270
+}
 
 set $mod Mod4
 
 # Don't let focus follow the mouse
 focus_follows_mouse no
-
-# Make the currently focused window a scratchpad
-bindsym $mod+Shift+e move scratchpad
-
-# Show the first scratchpad window
-bindsym $mod+e scratchpad show
-
 # Do not draw title bar
 default_border pixel
+# font for window titles
+font xft:sans 8
+# Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
 
 for_window [app_id="mpv"] floating enable
 
-assign [app_id="firefox"] 10:Browser
-assign [app_id="thunderbird"] 9:Mail
-
-# font for window titles
-font xft:sans 8
-
-# Use Mouse+$mod to drag floating windows to their wanted position
-floating_modifier $mod
+# Scratchpad
+bindsym $mod+Shift+e move scratchpad
+bindsym $mod+e scratchpad show
 
 # kill focused window
 bindsym $mod+x kill
@@ -52,25 +55,19 @@ bindsym $mod+r focus down
 bindsym $mod+g focus up
 bindsym $mod+t focus right
 
-# change output
-bindsym $mod+Ctrl+n focus output left
-bindsym $mod+Ctrl+t focus output right
-
 # move focused window
 bindsym $mod+Shift+n move left
 bindsym $mod+Shift+r move down
 bindsym $mod+Shift+g move up
 bindsym $mod+Shift+t move right
 
-# switch to next/prev workspace on output
-bindsym $mod+mod5+parenleft workspace prev_on_output
-bindsym $mod+mod5+parenright workspace next_on_output
-bindsym $mod+dead_grave workspace prev_on_output
+# output
+bindsym $mod+BackSpace focus output left
+bindsym $mod+Shift+BackSpace move workspace output left
+bindsym $mod+d workspace next_on_output
 
-# split in horizontal orientation
+# split
 bindsym $mod+m split h
-
-# split in vertical orientation
 bindsym $mod+b split v
 
 # enter fullscreen mode for the focused container
@@ -92,7 +89,6 @@ bindsym $mod+s focus parent
 
 # switch to last used workspace
 bindsym $mod+Escape workspace back_and_forth
-bindsym $mod+BackSpace workspace back_and_forth
 
 # switch to workspace
 bindsym $mod+1 workspace number 1
@@ -129,17 +125,17 @@ bindsym $mod+p exec $terminal -e zsh -c 'PASSWORD_STORE_ENABLE_EXTENSIONS=true n
 for_window [title="^floating$"] floating enable
 for_window [floating] border csd
 
-bindsym XF86AudioMute         exec --no-startup-id amixer -q sset Master toggle
+bindsym XF86AudioMute         exec amixer -q sset Master toggle
 bindsym --release XF86AudioMute exec pkill -SIGRTMIN+10 i3blocks
-bindsym XF86AudioLowerVolume  exec --no-startup-id amixer -q sset Master 2%-
+bindsym XF86AudioLowerVolume  exec amixer -q sset Master 2%-
 bindsym --release XF86AudioLowerVolume exec pkill -SIGRTMIN+10 i3blocks
-bindsym XF86AudioRaiseVolume  exec --no-startup-id amixer -q sset Master 2%+
+bindsym XF86AudioRaiseVolume  exec amixer -q sset Master 2%+
 bindsym --release XF86AudioRaiseVolume exec pkill -SIGRTMIN+10 i3blocks
 
-bindsym XF86MonBrightnessDown exec --no-startup-id light -U 10
-bindsym XF86MonBrightnessUp   exec --no-startup-id light -A 10
+bindsym XF86MonBrightnessDown exec light -U 10
+bindsym XF86MonBrightnessUp   exec light -A 10
 
-bindsym XF86Sleep             exec --no-startup-id systemctl suspend
+bindsym XF86Sleep             exec systemctl suspend
 
 # key bindings for macro pad
 bindsym XF86Launch1 exec $HOME/.scripts/Launch1
@@ -205,9 +201,9 @@ bar {
   }
 }
 
-exec --no-startup-id mako
-exec --no-startup-id $HOME/.scripts/gtk3_settings.sh
+exec $HOME/.scripts/gtk3_settings.sh
 
-# start window manager target
-exec --no-startup-id systemctl --user import-environment
-exec --no-startup-id systemctl --user start window-manager.target
+# start systemd target
+exec systemctl --user import-environment
+exec dbus-update-activation-environment --systemd --all
+exec systemctl --user start sway-session.target
