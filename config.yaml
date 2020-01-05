@@ -101,6 +101,9 @@ dotfiles:
   f_cargo_config:
     src: cargo/config
     dst: ~/.cargo/config
+  d_juliaconfig:
+    src: julia/config
+    dst: ~/.julia/config
 profiles:
   Gibson:
     dotfiles:
