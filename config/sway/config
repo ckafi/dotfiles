@@ -16,8 +16,8 @@ output * {
   background "$HOME/Sync/Bilder/wallpapers/Portrait Sophie.jpg" stretch
 }
 
+{%@@ if profile == "Gibson" @@%}
 output "Goldstar Company Ltd 24MB65 603NTFA28643" {
-    # background "$HOME/Sync/Bilder/wallpapers/Portrait Sophie.jpg" stretch
     mode 1920x1200
     position 0 0
 }
@@ -28,6 +28,8 @@ output "Dell Inc. DELL U2312HM 59DJP24JGYNL" {
     position 1920 -310
     transform 270
 }
+workspace 10 output 'Dell Inc. DELL U2312HM 59DJP24JGYNL'
+{%@@ endif @@%}
 
 set $mod Mod4
 
@@ -138,18 +140,18 @@ bindsym XF86MonBrightnessUp   exec light -A 10
 bindsym XF86Sleep             exec systemctl suspend
 
 # key bindings for macro pad
-bindsym XF86Launch1 exec $HOME/.scripts/Launch1
-bindsym XF86Launch2 exec $HOME/.scripts/Launch2
-bindsym XF86Launch3 exec $HOME/.scripts/Launch3
-bindsym XF86Launch4 exec $HOME/.scripts/Launch4
-bindsym XF86Launch5 exec $HOME/.scripts/Launch5
-bindsym XF86Launch6 exec $HOME/.scripts/Launch6
-bindsym XF86Launch7 exec $HOME/.scripts/Launch7
-bindsym XF86Launch8 exec $HOME/.scripts/Launch8
-bindsym XF86Launch9 exec $HOME/.scripts/Launch9
-bindsym XF86LaunchA exec $HOME/.scripts/LaunchA
-bindsym XF86LaunchB exec $HOME/.scripts/LaunchB
-bindsym XF86LaunchC exec $HOME/.scripts/LaunchC
+bindsym XF86Launch1 exec $HOME/.scripts/ScriptA
+bindsym XF86Launch2 exec $HOME/.scripts/ScriptB
+bindsym XF86Launch3 exec $HOME/.scripts/ScriptC
+bindsym XF86Launch4 exec $HOME/.scripts/ScriptD
+bindsym XF86Launch5 exec $HOME/.scripts/ScriptE
+bindsym XF86Launch6 exec $HOME/.scripts/ScriptF
+bindsym XF86Launch7 exec $HOME/.scripts/ScriptG
+bindsym XF86Launch8 exec $HOME/.scripts/ScriptH
+bindsym XF86Launch9 exec $HOME/.scripts/ScriptI
+bindsym XF86LaunchA exec $HOME/.scripts/ScriptJ
+bindsym XF86LaunchB exec $HOME/.scripts/ScriptK
+bindsym XF86LaunchC exec $HOME/.scripts/ScriptL
 
 
 ## Base16 Gruvbox dark, soft
