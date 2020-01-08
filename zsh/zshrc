@@ -1,0 +1,59 @@
+# Source Prezto.
+if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
+  source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
+fi
+
+# External configs
+eval $(dircolors ~/.dircolors)
+whence pazi >/dev/null && eval "$(pazi init zsh)"
+
+zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+
+# Fuzzy finding
+whence sk >/dev/null && \
+  source /usr/share/skim/completion.zsh && \
+  source /usr/share/skim/key-bindings.zsh
+
+# Options for less
+LESS="-iJM"
+# begin blinking
+LESS_TERMCAP_mb=$(tput blink)
+# begin bold
+LESS_TERMCAP_md=$(tput setaf 2)
+# end mode
+LESS_TERMCAP_me=$(tput sgr0)
+# begin standout-mode - info box
+LESS_TERMCAP_so=$(tput smso; tput setaf 4; tput setab 15)
+# end standout-mode
+LESS_TERMCAP_se=$(tput rmso; tput sgr0)
+# begin underline
+LESS_TERMCAP_us=$(tput smul; tput setaf 6)
+# end underline
+LESS_TERMCAP_ue=$(tput rmul; tput sgr0)
+
+bindkey "^K" insert-last-word
+bindkey "^B" history-beginning-search-backward
+bindkey "^E" push-input
+
+up () {
+  local ups
+  if [[ -z $1 ]]; then
+    1=1
+  fi
+  for i in {1..$1}; do
+    ups+='../'
+  done
+  cd $ups
+}
+
+alias o="mimeo"
+alias p="yay"
+alias u="systemctl --user"
+alias psgrep="ps -ef | grep -i"
+alias ext="aunpack"
+alias ls="exa -F -@"
+alias diff='diff --color=auto'
+alias nt='fork alacritty'
+alias t=" task"
+alias to=" taskopen"
+alias in=" task add +inbox"
