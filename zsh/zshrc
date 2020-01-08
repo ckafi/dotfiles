@@ -51,9 +51,12 @@ alias p="yay"
 alias u="systemctl --user"
 alias psgrep="ps -ef | grep -i"
 alias ext="aunpack"
-alias ls="exa -F -@"
 alias diff='diff --color=auto'
 alias nt='fork alacritty'
 alias t=" task"
 alias to=" taskopen"
 alias in=" task add +inbox"
+alias ls="exa -F"
+alias la="ls -a"
+alias ll="ls -lgh --color-scale --git"
+alias lla="ll -a"
