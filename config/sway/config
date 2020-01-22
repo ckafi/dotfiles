@@ -119,7 +119,7 @@ bindsym $mod+Shift+0 move container to workspace number 10; workspace number 10
 # key bindings for program execution
 bindsym $mod+Return exec $TERMCMD
 
-set $launcher dmenu_path | sk | xargs swaymsg exec
+set $launcher dmenu_path | fzf | xargs swaymsg exec
 set $terminal alacritty --title floating --dimensions 90 25
 bindsym $mod+space exec $terminal -e zsh -c \'$launcher\'
 # need nohup for wl-copy (for whatever reason)
@@ -209,3 +209,5 @@ exec $HOME/.scripts/gtk3_settings.sh
 exec systemctl --user import-environment
 exec dbus-update-activation-environment --systemd --all
 exec systemctl --user start sway-session.target
+
+# vim: filetype=i3config

@@ -10,9 +10,9 @@ whence pazi >/dev/null && eval "$(pazi init zsh)"
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 
 # Fuzzy finding
-whence sk >/dev/null && \
-  source /usr/share/skim/completion.zsh && \
-  source /usr/share/skim/key-bindings.zsh
+whence fzf >/dev/null && \
+  source /usr/share/fzf/completion.zsh && \
+  source /usr/share/fzf/key-bindings.zsh
 
 # Options for less
 LESS="-iJM"
@@ -60,3 +60,23 @@ alias ls="exa -F"
 alias la="ls -a"
 alias ll="ls -lgh --color-scale --git"
 alias lla="ll -a"
+
+
+fvi () {
+  fd -c always -t f . $1 | \
+    fzf --preview='bat --color always {}' \
+        --bind='enter:execute-silent(nvr --remote-silent {+})+clear-selection,?:toggle-preview'
+}
+
+fo () {
+  fd -c always -t f . $1 | \
+    fzf --bind='enter:execute-silent(mimeo {+})+clear-selection'
+}
+
+fcd () {
+  cd $(fd -t d . $1 | fzf --no-multi)
+}
+
+ff () {
+  fd -c always $1 | fzf
+}
