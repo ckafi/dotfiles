@@ -7,14 +7,14 @@ tabspaces: 4
 
 font:
   normal:
-    family: IBM Plex Mono
-    style: Text
+    family: BlexMono Nerd Font
+    style: Medium
   bold:
-    family: IBM Plex Mono
-    #style: Bold
+    style: Semibold
   italic:
-    family: IBM Plex Mono
-    style: Text Italic
+    style: Medium Italic
+  bold_italic:
+    style: Semibold Italic
 
   size: 13.0
 
@@ -22,7 +22,7 @@ font:
   # as modifying the line spacing, and `offset.x` as modifying the letter spacing.
   offset:
     x: 0
-    y: -2
+    y: 0
 
 # Base16 Gruvbox dark, soft - alacritty color config
 # Dawid Kurek (dawikur@gmail.com), morhetz (https://github.com/morhetz/gruvbox)
