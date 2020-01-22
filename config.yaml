@@ -50,6 +50,10 @@ dotfiles:
   d_mpv:
     dst: ~/.config/mpv
     src: config/mpv
+  d_zsh:
+    dst: ~/.zsh
+    src: zsh
+    link: link_children
   f_alacritty.yml:
     dst: ~/.config/alacritty/alacritty.yml
     src: config/alacritty/alacritty.yml
@@ -89,18 +93,6 @@ dotfiles:
   f_zathurarc:
     dst: ~/.config/zathura/zathurarc
     src: config/zathura/zathurarc
-  f_zshenv:
-    dst: ~/.zsh/.zshenv
-    src: zsh/zshenv
-  f_zshrc:
-    dst: ~/.zsh/.zshrc
-    src: zsh/zshrc
-  f_zprofile:
-    src: zsh/zprofile
-    dst: ~/.zsh/.zprofile
-  f_zpreztorc:
-    src: zsh/zpreztorc
-    dst: ~/.zsh/.zpreztorc
   f_pam_env:
     dst: ~/.pam_environment
     src: pam_environment

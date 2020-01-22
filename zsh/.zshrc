@@ -1,3 +1,5 @@
+fpath+="${ZDOTDIR}/functions"
+
 # Source Prezto.
 if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
@@ -5,7 +7,9 @@ fi
 
 # External configs
 eval $(dircolors ~/.dircolors)
-whence pazi >/dev/null && eval "$(pazi init zsh)"
+if command -v pazi &>/dev/null; then
+  eval "$(pazi init zsh)" # or 'bash'
+fi
 
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 
@@ -13,6 +17,8 @@ zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 whence fzf >/dev/null && \
   source /usr/share/fzf/completion.zsh && \
   source /usr/share/fzf/key-bindings.zsh
+
+[[ -n $WAYLAND_DISPLAY ]] && export NVR_CMD=nvim-qt
 
 # Options for less
 LESS="-iJM"
@@ -31,20 +37,11 @@ LESS_TERMCAP_us=$(tput smul; tput setaf 6)
 # end underline
 LESS_TERMCAP_ue=$(tput rmul; tput sgr0)
 
+export SUDO_PROMPT="[sudo] $USER@$HOST's passwd: "
+
 bindkey "^K" insert-last-word
 bindkey "^B" history-beginning-search-backward
 bindkey "^E" push-input
-
-up () {
-  local ups
-  if [[ -z $1 ]]; then
-    1=1
-  fi
-  for i in {1..$1}; do
-    ups+='../'
-  done
-  cd $ups
-}
 
 alias o="mimeo"
 alias p="yay"
@@ -60,6 +57,18 @@ alias ls="exa -F"
 alias la="ls -a"
 alias ll="ls -lgh --color-scale --git"
 alias lla="ll -a"
+
+
+alias re="nvr --remote-silent"
+nvim-server() {
+  if [[ -n $NVIM_LISTEN_ADDRESS ]]; then
+    echo "Server environment already set"
+    return 1
+  fi
+  local socket_path="/tmp/nvim_sockets"
+  mkdir $socket_path 2>/dev/null
+  export NVIM_LISTEN_ADDRESS=${socket_path}/$(echo ${(qq)PWD} | tr -cd '[:alpha:]')
+}
 
 
 fvi () {
@@ -79,4 +88,16 @@ fcd () {
 
 ff () {
   fd -c always $1 | fzf
+}
+
+
+up () {
+  local ups
+  if [[ -z $1 ]]; then
+    1=1
+  fi
+  for i in {1..$1}; do
+    ups+='../'
+  done
+  cd $ups
 }

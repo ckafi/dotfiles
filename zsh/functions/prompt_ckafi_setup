@@ -1,0 +1,60 @@
+pmodload 'helper'
+
+function prompt_ckafi_precmd {
+  setopt LOCAL_OPTIONS
+  unsetopt XTRACE KSH_ARRAYS
+
+  # Get Git repository information.
+  if (( $+functions[git-info] )); then
+      git-info
+  fi
+}
+
+function prompt_ckafi_setup {
+  setopt LOCAL_OPTIONS
+  unsetopt XTRACE KSH_ARRAYS
+  prompt_opts=(cr percent sp subst)
+
+  # Load required functions.
+  autoload -Uz add-zsh-hook
+
+  # Add hook to set up prompt parameters before each command.
+  add-zsh-hook precmd prompt_ckafi_precmd
+
+  # Tell prezto we can manage this prompt
+  zstyle ':prezto:module:prompt' managed 'yes'
+
+  # Git info
+  zstyle ':prezto:module:git:info:branch' format '%b'
+  zstyle ':prezto:module:git:info:position' format '%p'
+  zstyle ':prezto:module:git:info:commit' format '%.7c'
+
+  zstyle ':prezto:module:git:info:action' format '%s'
+  zstyle ':prezto:module:git:info:ahead' format '↑'
+  zstyle ':prezto:module:git:info:behind' format '↓'
+  zstyle ':prezto:module:git:info:indexed' format '✔'
+  zstyle ':prezto:module:git:info:unindexed' format '≠'
+  zstyle ':prezto:module:git:info:untracked' format '?'
+  zstyle ':prezto:module:git:info:stashed' format '→'
+
+  zstyle ':prezto:module:git:info:keys' format \
+    'name' ' $(coalesce "%b" "%p" "%c")'\
+    'status' '%A%B%i%I%u%S %s'
+
+  # Define prompts.
+  PROMPT=''
+  PROMPT+='%F{blue}%n%f' # username
+  PROMPT+='${SSH_TTY:+"@%F{green}%m%f"}' # @hostname if remote
+  PROMPT+=' %F{yellow}%55<..<%~%<<%f' # path with prefix, truncated to 55 characters
+  PROMPT+='${git_info[name]:+" %F{magenta}${(e)git_info[name]}%f"}'
+  PROMPT+='${git_info[status]:+" %F{cyan}${git_info[status]}%f"}'
+  PROMPT+=$'\n' # newline
+  PROMPT+='%1(j.%F{cyan}%j%f .)' # jobs (if any)
+  PROMPT+='%(?..%F{red}%?%f )' # exit code if >0
+  PROMPT+="%(!.%F{red}∺.∹)%f " # prompt symbol based on privileges
+  # PROMPT+="%(!.%F{red}.)⊫%f " # prompt symbol based on privileges
+  # PROMPT+="%(!.%F{red}❱❱❱.❭)%f " # prompt symbol based on privileges
+}
+
+prompt_ckafi_setup "$@"
+# vim: filetype=zsh
