@@ -1,4 +1,4 @@
-ENV["JULIA_EDITOR"] = "nvim"
+ENV["JULIA_EDITOR"] = "mvim"
 
 function typetree(T, level=0)
     println("\t" ^ level, T)
