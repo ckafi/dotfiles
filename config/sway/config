@@ -34,6 +34,10 @@ workspace 10 output 'Dell Inc. DELL U2312HM 59DJP24JGYNL'
 {%@@ endif @@%}
 
 set $mod Mod4
+set $terminal alacritty --title floating --dimensions 90 25
+set $launcher dmenu_path | fzf | xargs swaymsg exec
+
+bindsym $mod+w exec $terminal -e $HOME/Sync/scripts/focus_window_fzf
 
 # Don't let focus follow the mouse
 focus_follows_mouse no
@@ -41,11 +45,13 @@ focus_follows_mouse no
 default_border pixel
 # font for window titles
 font xft:sans 8
-# Use Mouse+$mod to drag floating windows to their wanted position
+# Use Mouse+$mod to drag floating windows
 floating_modifier $mod
 
 for_window [app_id="mpv"] floating enable
 for_window [title="PassFF"] floating enable
+for_window [title="^floating$"] floating enable
+for_window [floating] border csd
 
 # Scratchpad
 bindsym $mod+Shift+e move scratchpad
@@ -123,13 +129,9 @@ bindsym $mod+Shift+0 move container to workspace number 10; workspace number 10
 # key bindings for program execution
 bindsym $mod+Return exec $TERMCMD
 
-set $launcher dmenu_path | fzf | xargs swaymsg exec
-set $terminal alacritty --title floating --dimensions 90 25
 bindsym $mod+space exec $terminal -e zsh -c \'$launcher\'
 # need nohup for wl-copy (for whatever reason)
 bindsym $mod+p exec $terminal -e zsh -c 'PASSWORD_STORE_ENABLE_EXTENSIONS=true nohup pass fuzzy -c &>/dev/null'
-for_window [title="^floating$"] floating enable
-for_window [floating] border csd
 
 bindsym XF86AudioMute         exec amixer -q sset Master toggle
 bindsym --release XF86AudioMute exec pkill -SIGRTMIN+10 i3blocks
