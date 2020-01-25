@@ -20,6 +20,7 @@ output * {
 output "Goldstar Company Ltd 24MB65 603NTFA28643" {
     mode 1920x1200
     position 0 0
+    subpixel rgb
 }
 
 output "Dell Inc. DELL U2312HM 59DJP24JGYNL" {
@@ -27,6 +28,7 @@ output "Dell Inc. DELL U2312HM 59DJP24JGYNL" {
     mode 1920x1080
     position 1920 -310
     transform 270
+    subpixel vrgb
 }
 workspace 10 output 'Dell Inc. DELL U2312HM 59DJP24JGYNL'
 {%@@ endif @@%}
@@ -43,6 +45,7 @@ font xft:sans 8
 floating_modifier $mod
 
 for_window [app_id="mpv"] floating enable
+for_window [title="PassFF"] floating enable
 
 # Scratchpad
 bindsym $mod+Shift+e move scratchpad
@@ -56,6 +59,7 @@ bindsym $mod+n focus left
 bindsym $mod+r focus down
 bindsym $mod+g focus up
 bindsym $mod+t focus right
+bindsym $mod+Tab [con_mark=_last] focus
 
 # move focused window
 bindsym $mod+Shift+n move left
@@ -179,11 +183,9 @@ set $base0F #d65d0e
 # Basic color configuration using the Base16 variables for windows and borders.
 # Property Name         Border  BG      Text    Indicator Child Border
 client.focused          $base05 $base0D $base00 $base08 $base0D
-client.focused_inactive $base01 $base01 $base05 $base03 $base01
-client.unfocused        $base01 $base00 $base05 $base01 $base01
+client.focused_inactive $base03 $base03 $base05 $base03 $base03
+client.unfocused        $base02 $base02 $base05 $base02 $base02
 client.urgent           $base08 $base08 $base00 $base08 $base08
-client.placeholder      $base00 $base00 $base05 $base00 $base00
-client.background       $base07
 
 bar {
   position top
@@ -204,6 +206,7 @@ bar {
 }
 
 exec $HOME/.scripts/gtk3_settings.sh
+exec $HOME/Sync/scripts/track_last_focus
 
 # start systemd target
 exec systemctl --user import-environment
