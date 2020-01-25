@@ -59,7 +59,7 @@ bindsym $mod+n focus left
 bindsym $mod+r focus down
 bindsym $mod+g focus up
 bindsym $mod+t focus right
-bindsym $mod+Tab [con_mark=_last] focus
+bindsym $mod+Tab [con_mark=_prev] focus
 
 # move focused window
 bindsym $mod+Shift+n move left
@@ -206,7 +206,7 @@ bar {
 }
 
 exec $HOME/.scripts/gtk3_settings.sh
-exec $HOME/Sync/scripts/track_last_focus
+exec $HOME/Sync/scripts/track_prev_focus
 
 # start systemd target
 exec systemctl --user import-environment
