@@ -105,6 +105,9 @@ dotfiles:
   d_yay:
     src: config/yay
     dst: ~/.config/yay
+  f_gtkrc-2.0:
+    src: gtkrc-2.0
+    dst: ~/.gtkrc-2.0
 profiles:
   Gibson:
     dotfiles:
