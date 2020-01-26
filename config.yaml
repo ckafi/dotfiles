@@ -108,6 +108,9 @@ dotfiles:
   f_gtkrc-2.0:
     src: gtkrc-2.0
     dst: ~/.gtkrc-2.0
+  d_oomox:
+    src: config/oomox
+    dst: ~/.config/oomox
 profiles:
   Gibson:
     dotfiles:
