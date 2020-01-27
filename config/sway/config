@@ -16,7 +16,7 @@ output * {
   background "$HOME/Sync/Bilder/wallpapers/Portrait Sophie.jpg" stretch
 }
 
-{%@@ if profile == "Gibson" @@%}
+{%@@ if hostname == "gibson" @@%}
 output "Goldstar Company Ltd 24MB65 603NTFA28643" {
     mode 1920x1200
     position 0 0
@@ -42,7 +42,7 @@ bindsym $mod+w exec $terminal -e $HOME/Sync/scripts/focus_window_fzf
 # Don't let focus follow the mouse
 focus_follows_mouse no
 # Do not draw title bar
-default_border pixel
+default_border pixel 2
 # font for window titles
 font xft:sans 8
 # Use Mouse+$mod to drag floating windows
@@ -160,11 +160,7 @@ bindsym XF86LaunchB exec $HOME/.scripts/ScriptK
 bindsym XF86LaunchC exec $HOME/.scripts/ScriptL
 
 
-## Base16 Gruvbox dark, soft
-# Author: Dawid Kurek (dawikur@gmail.com), morhetz (https://github.com/morhetz/gruvbox)
-#
-# You can use these variables anywhere in the i3 configuration file.
-
+# Gruvbox dark soft (https://github.com/morhetz/gruvbox)
 set $base00 #32302f
 set $base01 #3c3836
 set $base02 #504945
@@ -173,14 +169,26 @@ set $base04 #bdae93
 set $base05 #d5c4a1
 set $base06 #ebdbb2
 set $base07 #fbf1c7
-set $base08 #fb4934
-set $base09 #fe8019
-set $base0A #fabd2f
-set $base0B #b8bb26
-set $base0C #8ec07c
-set $base0D #83a598
-set $base0E #d3869b
-set $base0F #d65d0e
+
+# # Gruvbox light soft (https://github.com/morhetz/gruvbox)
+# set $base00 #f2e5bc
+# set $base01 #ebdbb2
+# set $base02 #d5c4a1
+# set $base03 #bdae93
+# set $base04 #665c54
+# set $base05 #504945
+# set $base06 #3c3836
+# set $base07 #282828
+
+
+set $base08 #cc241d
+set $base09 #d65d0e
+set $base0A #d79921
+set $base0B #98971a
+set $base0C #689d6a
+set $base0D #458588
+set $base0E #b16286
+set $base0F #af3a03
 
 # Basic color configuration using the Base16 variables for windows and borders.
 # Property Name         Border  BG      Text    Indicator Child Border
@@ -207,7 +215,7 @@ bar {
   }
 }
 
-exec $HOME/.scripts/gtk3_settings.sh
+exec $HOME/Sync/scripts/gtk3_settings.sh
 exec $HOME/Sync/scripts/track_prev_focus
 
 # start systemd target
