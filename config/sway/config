@@ -37,6 +37,9 @@ set $mod Mod4
 set $terminal alacritty --title floating --dimensions 90 25
 set $launcher dmenu_path | fzf | xargs swaymsg exec
 
+bindsym $mod+space exec $terminal -e zsh -c \'$launcher\'
+bindsym $mod+l exec $terminal -e zsh -c \'$launcher\'
+bindsym $mod+p exec $HOME/Sync/scripts/pass-fuzzy
 bindsym $mod+w exec $terminal -e $HOME/Sync/scripts/focus_window_fzf
 
 # Don't let focus follow the mouse
@@ -91,10 +94,10 @@ bindsym $mod+i layout tabbed
 bindsym $mod+a layout default
 
 # toggle tiling / floating
-bindsym $mod+Shift+l floating toggle
+bindsym $mod+Shift+v floating toggle
 
 # change focus between tiling / floating windows
-bindsym $mod+l focus mode_toggle
+bindsym $mod+v focus mode_toggle
 
 # focus the parent container
 bindsym $mod+s focus parent
@@ -129,10 +132,6 @@ bindsym $mod+Shift+0 move container to workspace number 10; workspace number 10
 # key bindings for program execution
 bindsym $mod+Return exec $TERMCMD
 
-bindsym $mod+space exec $terminal -e zsh -c \'$launcher\'
-# need nohup for wl-copy (for whatever reason)
-bindsym $mod+p exec $terminal -e zsh -c 'PASSWORD_STORE_ENABLE_EXTENSIONS=true nohup pass fuzzy -c &>/dev/null'
-
 bindsym XF86AudioMute         exec amixer -q sset Master toggle
 bindsym --release XF86AudioMute exec pkill -SIGRTMIN+10 i3blocks
 bindsym XF86AudioLowerVolume  exec amixer -q sset Master 2%-
@@ -146,18 +145,18 @@ bindsym XF86MonBrightnessUp   exec light -A 10
 bindsym XF86Sleep             exec systemctl suspend
 
 # key bindings for macro pad
-bindsym XF86Launch1 exec $HOME/.scripts/ScriptA
-bindsym XF86Launch2 exec $HOME/.scripts/ScriptB
-bindsym XF86Launch3 exec $HOME/.scripts/ScriptC
-bindsym XF86Launch4 exec $HOME/.scripts/ScriptD
-bindsym XF86Launch5 exec $HOME/.scripts/ScriptE
-bindsym XF86Launch6 exec $HOME/.scripts/ScriptF
-bindsym XF86Launch7 exec $HOME/.scripts/ScriptG
-bindsym XF86Launch8 exec $HOME/.scripts/ScriptH
-bindsym XF86Launch9 exec $HOME/.scripts/ScriptI
-bindsym XF86LaunchA exec $HOME/.scripts/ScriptJ
-bindsym XF86LaunchB exec $HOME/.scripts/ScriptK
-bindsym XF86LaunchC exec $HOME/.scripts/ScriptL
+bindcode 191 exec $HOME/.scripts/ScriptA
+bindcode 192 exec $HOME/.scripts/ScriptB
+bindcode 193 exec $HOME/.scripts/ScriptC
+bindcode 194 exec $HOME/.scripts/ScriptD
+bindcode 195 exec $HOME/.scripts/ScriptE
+bindcode 196 exec $HOME/.scripts/ScriptF
+bindcode 197 exec $HOME/.scripts/ScriptG
+bindcode 198 exec $HOME/.scripts/ScriptH
+bindcode 199 exec $HOME/.scripts/ScriptI
+bindcode 200 exec $HOME/.scripts/ScriptJ
+bindcode 201 exec $HOME/.scripts/ScriptK
+bindcode 202 exec $HOME/.scripts/ScriptL
 
 
 # Gruvbox dark soft (https://github.com/morhetz/gruvbox)
