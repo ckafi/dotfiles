@@ -1,1 +1,0 @@
-setlocal makeprg=chmod\ +x\ %;./%

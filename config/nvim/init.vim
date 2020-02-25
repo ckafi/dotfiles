@@ -28,10 +28,8 @@ Plug 'mhinz/vim-startify'
 Plug 'morhetz/gruvbox'
 Plug 'NLKNguyen/papercolor-theme'
 Plug 'sheerun/vim-polyglot'
-Plug 'shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'shougo/neosnippet'
 Plug 'shougo/neosnippet-snippets'
-Plug 'lionawurscht/deoplete-biblatex'
 Plug 'tommcdo/vim-lion'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fireplace', {'for': 'clojure'}
@@ -50,6 +48,13 @@ Plug 'autozimu/LanguageClient-neovim', {
     \ 'branch': 'next',
     \ 'do': 'bash install.sh',
     \ }
+" NCM
+Plug 'roxma/nvim-yarp'
+Plug 'ncm2/ncm2'
+Plug 'ncm2/ncm2-bufword'
+Plug 'fgrsnau/ncm2-otherbuf'
+Plug 'ncm2/ncm2-path'
+Plug 'ncm2/ncm2-neosnippet'
 call plug#end()
 " }}}
 
@@ -99,8 +104,10 @@ set formatoptions+=l      " Don't break already too long lines
 set formatoptions+=j      " Remove unneeded commelnt leader when joining
 set completeopt=menu      " Use a popup menu for completion
 set completeopt+=menuone  " ... also when there is only one match
-set completeopt+=longest  " Only insert the longest common text
-set completeopt+=preview  " Show information about current item in preview
+" set completeopt+=longest  " Only insert the longest common text
+" set completeopt+=preview  " Show information about current item in preview
+set completeopt+=noinsert
+set completeopt+=noselect
 set complete=.,w,b,u,t,i  " Complete sources are all buffers, tags and includes
 set shortmess+=I          " Don't show intro message
 set shortmess+=c          " don't give ins-completion-menu messages.
@@ -130,10 +137,9 @@ let g:LanguageClient_useVirtualText = 0
 "   autocmd CmdlineEnter /,\? :set hlsearch
 "   autocmd CmdlineLeave /,\? :set nohlsearch
 " augroup END
-autocmd BufEnter *.go    setfiletype go
 autocmd BufEnter *.pde   setfiletype arduino
-autocmd BufEnter *.scala setfiletype scala
 autocmd BufEnter *.tex   setfiletype tex
+autocmd BufEnter * call ncm2#enable_for_buffer()
 "}}}
 
 " Color-Settings {{{
@@ -162,10 +168,6 @@ let maplocalleader = ","
 let g:airline_powerline_fonts = 0
 " Set airline color theme
 let g:airline_theme = 'distinguished'
-" Enable deoplete at startup
-let g:deoplete#enable_at_startup = 1
-" Do on include dictionary in deoplete sources
-call deoplete#custom#option('ignore_sources', { '_': ['dictionary'], })
 " Press s for next sneak match
 let g:sneak#s_next = 1
 " Don't overwrite sneak command
@@ -221,7 +223,6 @@ nmap gt <C-]>
 " Toggle graphical undo window
 nmap <F4>  :UndotreeToggle<CR>
 nmap <F5>  :nohls<CR>
-" <F8> reserved for pastetoggle
 nmap <C-j> <C-^>
 " Move up and down in the changelist
 nnoremap <C-Up> g;
@@ -262,9 +263,7 @@ xmap <C-k> <Plug>(neosnippet_expand_target)
 map <F1> <Nop>
 imap <F1> <Nop>
 
-inoremap <expr><C-g> deoplete#mappings#undo_completion()
 nnoremap <leader>g :Grepper<cr>
-
 vmap <leader>rr :'<,'>NR!<cr>:Goyo 90<cr>
 nmap <leader>rr vip<leader>rr
 
