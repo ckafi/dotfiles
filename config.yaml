@@ -10,7 +10,6 @@ config:
   longkey: false
   showdiff: false
   workdir: ~/.config/dotdrop
-
 dotfiles:
   d_nvim:
     dst: ~/.config/nvim
@@ -112,10 +111,18 @@ dotfiles:
   d_oomox:
     src: config/oomox
     dst: ~/.config/oomox
-
+  f_rc.elv:
+    src: elvish/rc.elv
+    dst: ~/.elvish/rc.elv
+  d_elvish_lib:
+    dst: ~/.elvish/lib/
+    src: elvish/lib/
+    link: link_children
+  f_profile:
+    src: profile
+    dst: ~/.profile
 dynvariables:
-  hostname: "hostname -s"
-
+  hostname: hostname -s
 profiles:
   desktop:
     dotfiles:
@@ -123,21 +130,23 @@ profiles:
 
   server:
     dotfiles:
-      - d_nvim
-      - d_htop
-      - d_kak
-      - d_kaklsp
-      - d_ranger
-      - d_vifm
-      - d_zsh
-      - f_git
-      - f_dircolors
-      - f_latexmkrc
-      - f_makepkg.conf
-      - f_profiles.clj
-      - f_ssh
-      - f_tmux.conf
-      - f_pam_env
-      - f_cargo_config
-      - d_juliaconfig
-      - d_yay
+    - d_nvim
+    - d_htop
+    - d_kak
+    - d_kaklsp
+    - d_ranger
+    - d_vifm
+    - d_zsh
+    - f_git
+    - f_dircolors
+    - f_latexmkrc
+    - f_makepkg.conf
+    - f_profiles.clj
+    - f_ssh
+    - f_tmux.conf
+    - f_pam_env
+    - f_cargo_config
+    - d_juliaconfig
+    - d_yay
+    - f_rc.elv
+    - d_elvish_lib
