@@ -130,7 +130,7 @@ bindsym $mod+Shift+9 move container to workspace number 9; workspace number 9
 bindsym $mod+Shift+0 move container to workspace number 10; workspace number 10
 
 # key bindings for program execution
-bindsym $mod+Return exec $TERMCMD
+bindsym $mod+Return exec $TERMCMD -e elvish
 
 bindsym XF86AudioMute         exec amixer -q sset Master toggle
 bindsym --release XF86AudioMute exec pkill -SIGRTMIN+10 i3blocks
