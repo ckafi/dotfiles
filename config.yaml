@@ -50,10 +50,6 @@ dotfiles:
   d_mpv:
     dst: ~/.config/mpv
     src: config/mpv
-  d_zsh:
-    dst: ~/.zsh
-    src: zsh
-    link: link_children
   f_alacritty.yml:
     dst: ~/.config/alacritty/alacritty.yml
     src: config/alacritty/alacritty.yml
@@ -142,7 +138,6 @@ profiles:
     - d_kaklsp
     - d_ranger
     - d_vifm
-    - d_zsh
     - f_git
     - f_dircolors
     - f_latexmkrc
