@@ -111,6 +111,9 @@ dotfiles:
   d_oomox:
     src: config/oomox
     dst: ~/.config/oomox
+  f_conf.toml:
+    src: config/broot/conf.toml
+    dst: ~/.config/broot/conf.toml
   f_rc.elv:
     src: elvish/rc.elv
     dst: ~/.elvish/rc.elv
@@ -121,6 +124,9 @@ dotfiles:
   f_profile:
     src: profile
     dst: ~/.profile
+  d_vis:
+    src: config/vis
+    dst: ~/.config/vis
 dynvariables:
   hostname: hostname -s
 profiles:
