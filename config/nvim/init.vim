@@ -6,7 +6,6 @@
 
 " Plugins {{{
 call plug#begin('~/.config/nvim/plugins')
-Plug 'chrisbra/Colorizer'
 Plug 'chrisbra/NrrwRgn'
 Plug 'chrisbra/vim-diff-enhanced'
 Plug 'editorconfig/editorconfig-vim'
@@ -20,13 +19,14 @@ Plug 'justinmk/vim-dirvish'
 Plug 'justinmk/vim-gtfo'
 Plug 'justinmk/vim-sneak'
 Plug 'lervag/vimtex', {'for': 'tex'}
-Plug 'ludovicchabant/vim-gutentags'
+" Plug 'ludovicchabant/vim-gutentags'
 Plug 'maxbrunsfeld/vim-yankstack'
 Plug 'mbbill/undotree'
 Plug 'mhinz/vim-grepper'
 Plug 'mhinz/vim-startify'
 Plug 'morhetz/gruvbox'
 Plug 'NLKNguyen/papercolor-theme'
+Plug 'norcalli/nvim-colorizer.lua'
 Plug 'sheerun/vim-polyglot'
 Plug 'shougo/neosnippet'
 Plug 'shougo/neosnippet-snippets'
@@ -41,13 +41,14 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'vimwiki/vimwiki'
 Plug 'w0rp/ale'
 Plug 'wellle/targets.vim'
 Plug 'autozimu/LanguageClient-neovim', {
     \ 'branch': 'next',
     \ 'do': 'bash install.sh',
     \ }
+Plug 'liuchengxu/vim-clap'
+Plug 'liuchengxu/vista.vim'
 " NCM
 Plug 'roxma/nvim-yarp'
 Plug 'ncm2/ncm2'
@@ -55,6 +56,8 @@ Plug 'ncm2/ncm2-bufword'
 Plug 'fgrsnau/ncm2-otherbuf'
 Plug 'ncm2/ncm2-path'
 Plug 'ncm2/ncm2-neosnippet'
+
+Plug 'dmix/elvish.vim', {'for': 'elvish'}
 call plug#end()
 " }}}
 
@@ -75,8 +78,6 @@ set wildmode+=full        " ... then go to next full match
 set smartindent           " Use smart-indenting
 set pastetoggle=<F8>      " Toggle (no)paste with F8
 set undofile              " Save undo history
-set backup                " Save backups
-set backupdir=~/.local/share/nvim/backup/ " Directory for backup files
 set visualbell            " Visual bell instead of beeping
 set listchars=tab:·\      " List mode character for tab
 set listchars+=eol:⌟      " ... end of line
@@ -119,6 +120,7 @@ set inccommand=split      " Show live substitutions in split
 set rtp^=/usr/share/vim/vimfiles/ " include old vimfiles
 set signcolumn=yes        " always show signcolumn
 set updatetime=300        " Smaller updatetime for CursorHold & CursorHoldI
+set title                 " set window title"
 "}}}
 
 " LanguageClient {{{
@@ -152,7 +154,8 @@ let g:gruvbox_italic=1
 let g:gruvbox_bold=1
 let g:gruvbox_underline=1
 let g:gruvbox_contrast_dark="soft"
-let g:gruvbox_contrast_light="hard"
+let g:gruvbox_contrast_light="soft"
+let g:gruvbox_italicize_strings=1
 " Load color scheme
 colorscheme gruvbox
 " Highlight the 81st column if there is a character
@@ -165,15 +168,13 @@ colorscheme gruvbox
 let mapleader = " "
 let maplocalleader = ","
 " Enable powerline font
-let g:airline_powerline_fonts = 0
+" let g:airline_powerline_fonts = 1
 " Set airline color theme
-let g:airline_theme = 'distinguished'
+let g:airline_theme = 'gruvbox'
 " Press s for next sneak match
 let g:sneak#s_next = 1
 " Don't overwrite sneak command
 let g:yankstack_yank_keys = ['c', 'C', 'd', 'D', 'x', 'X', 'y', 'Y']
-" Set skim layout
-let g:skim_layout = { 'up': '~40%' }
 
 let g:vimtex_view_method = "zathura"
 let g:vimtex_compiler_progname = 'nvr'
@@ -181,23 +182,14 @@ let g:vimtex_compiler_progname = 'nvr'
 let g:gtfo#terminals = { 'unix' : 'fork alacritty --working-directory' }
 let g:grepper = { 'tools' : ['rg', 'git', 'grep'] }
 
-let g:nv_search_paths = ['~/Sync/wiki']
-let g:nv_default_extension = '.wiki'
-let g:vimwiki_list = [{'path': '~/Sync/wiki/'}]
-let g:org_indent = 1
-
 let g:startify_commands = [
-    \ {'w': ['VimWiki', 'VimwikiIndex']},
-    \ {'p': ['Scratchpad', 'edit ~/Sync/scratchpad.wiki']}
+    \ {'p': ['Scratchpad', 'edit ~/Sync/scratchpad.md']}
     \ ]
-    " \ ['Diary', 'VimwikiDiaryIndex'],
-    " \ ['New Note', 'VimwikiMakeDiaryNote'],
 let g:startify_files_number = 5
 let g:startify_enable_special = 0
 let g:startify_custom_header = map(startify#fortune#quote(), '"   ".v:val')
 let g:startify_session_persistence = 1
 let g:startify_session_dir = '~/.config/nvim/sessions'
-let g:startify_skiplist = ['.*\.wiki']
 " disable some polyglot plugins
 let g:polyglot_disabled = ['latex', 'julia']
 
@@ -241,13 +233,11 @@ nnoremap N Nzz
 " open Dirvish with -
 map <silent> - :Dirvish %<cr>
 
-" open buffer-, file- or linelist in fuzzy finder
-nnoremap <leader>b :Buffers<cr>
-nnoremap <leader>f :Files<cr>
-nnoremap <leader>l :BLines<cr>
-nnoremap <leader>t :BTags<cr>
-" use fzf for path completion
-imap <c-x><c-f> <plug>(fzf-complete-path)
+" " open buffer-, file- or linelist in fuzzy finder
+nnoremap <leader>b :Clap buffers<cr>
+nnoremap <leader>f :Clap files<cr>
+nnoremap <leader>g :Clap grep<cr>
+nnoremap <leader>l :Clap blines<cr>
 
 " make macros a bit more convenient
 nnoremap Q @@
@@ -263,8 +253,7 @@ xmap <C-k> <Plug>(neosnippet_expand_target)
 map <F1> <Nop>
 imap <F1> <Nop>
 
-nnoremap <leader>g :Grepper<cr>
-vmap <leader>rr :'<,'>NR!<cr>:Goyo 90<cr>
+vmap <leader>rr :NR!<cr>
 nmap <leader>rr vip<leader>rr
 
 nmap <silent> R :set opfunc=Replace<CR>g@
@@ -335,26 +324,7 @@ function! SummarizeTabs()
   endtry
 endfunction
 
-" open vimwiki vfiles in vim
-function! VimwikiLinkHandler(link)
-  " Use Vim to open external files with the 'vfile:' scheme.  E.g.:
-  "   1) [[vfile:~/Code/PythonProject/abc123.py]]
-  "   2) [[vfile:./|Wiki Home]]
-  let link = a:link
-  if link =~# '^vfile:'
-    let link = link[1:]
-  else
-    return 0
-  endif
-  let link_infos = vimwiki#base#resolve_link(link)
-  if link_infos.filename == ''
-    echomsg 'Vimwiki Error: Unable to resolve link!'
-    return 0
-  else
-    exe 'tabnew ' . fnameescape(link_infos.filename)
-    return 1
-  endif
-endfunction
 " }}}
 
+set guifont=IBM\ Plex\ Mono:h13
 " vim: foldmethod=marker
