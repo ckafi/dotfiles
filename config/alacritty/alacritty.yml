@@ -80,5 +80,8 @@ mouse:
   url:
     launcher: xdg-open
 
+shell:
+  program: /usr/bin/elvish
+
 key_bindings:
   - { key: N, mods: Control|Shift, action: SpawnNewInstance }
