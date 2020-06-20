@@ -1,6 +1,4 @@
 XDG_CONFIG_HOME DEFAULT=@{HOME}/.config
-PATH DEFAULT=@{HOME}/bin:/usr/local/bin:/usr/local/sbin:/usr/bin
-ZDOTDIR DEFAULT=@{HOME}/.zsh/
 
 PAGER DEFAULT=less
 VIEWER DEFAULT=${PAGER}
