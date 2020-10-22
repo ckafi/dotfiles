@@ -50,6 +50,9 @@ dotfiles:
   d_mpv:
     dst: ~/.config/mpv
     src: config/mpv
+  d_ctags:
+    dst: ~/.config/ctags
+    src: config/ctags
   f_alacritty.yml:
     dst: ~/.config/alacritty/alacritty.yml
     src: config/alacritty/alacritty.yml
@@ -151,3 +154,4 @@ profiles:
     - d_yay
     - f_rc.elv
     - d_elvish_lib
+    - f_profile
