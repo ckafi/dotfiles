@@ -1,3 +1,5 @@
+PATH=$HOME/.local/bin:$PATH
+PATH=$HOME/.cargo/bin:$PATH
 PATH=$HOME/bin:$PATH
 
 # If running from tty1 start sway
