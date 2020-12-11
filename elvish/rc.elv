@@ -51,6 +51,35 @@ fn up [@arg]{
 }
 
 fn bytes []{ each $echo~ }
+fn nvim-server []{
+  if (has-env NVIM_LISTEN_ADDRESS) {
+    echo "Server environment already set"
+    return
+  }
+  socket_path = "/tmp/nvim_sockets/"
+  mkdir -p $socket_path
+  socket = (pwd | re:replace "[[:^alpha:]]" "" (all))
+  set-env NVIM_LISTEN_ADDRESS $socket_path$socket
+}
+
+# Poor mans VCS
+fn keep [f]{
+  try {
+    latest = (order &reverse=$true [$f.*[number]] | take 1)
+    cmp -s $f $latest
+    echo $f "not modified" >&stderr
+  } except e {
+    cp -va $f $f.(date '+%s')
+  }
+}
+
+# Create and return current clutter folder
+fn clutter []{
+  path = ~/clutter/(date '+%G/%V')
+  mkdir -p $path
+  put $path
+}
+fn cl []{ cd (clutter) }
 
 edit:insert:binding[Ctrl-B]  = $edit:history:start~
 edit:history:binding[Ctrl-B] = $edit:history:up~
