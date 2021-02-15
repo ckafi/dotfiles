@@ -1,10 +1,11 @@
 use re
+use str
 
 fn git_prompt {
   nop ?(
     styled (git rev-parse --abbrev-ref HEAD) magenta
     styled ':'(git rev-parse --short HEAD) magenta
-    status = (git status | joins '\n')
+    status = (git status | str:join '\n')
     put ' '
     if (re:match 'Changes to be committed:' $status) { styled 's' green }
     if (re:match 'Changes not staged for commit:' $status) { styled 'm' yellow }

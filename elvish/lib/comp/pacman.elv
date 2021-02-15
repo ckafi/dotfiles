@@ -7,7 +7,7 @@ fn pacman_pkg_external [arg]{
 }
 
 fn pacman_is_mode [mode args]{
-  or (peach [arg]{ has-prefix $arg $mode } $args)
+  or (peach [arg]{ str:has-prefix $arg $mode } $args)
 }
 
 fn pacman_main_opt [@args]{

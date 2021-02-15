@@ -1,4 +1,6 @@
-value-out-indicator = ':> '
+use path
+use str
+use re
 
 E:LS_COLORS = [(splits "'" (dircolors ~/.dircolors | head -1))][1]
 E:SUDO_PROMPT = "[sudo] "$E:USER@(hostname)"'s passwd: "
@@ -25,7 +27,7 @@ fn o   [@a]{ fork mimeo $@a }
 fn ext [@a]{ aunpack $@a }
 
 fn fo [@dir]{
-  fd -c always -t f . (take 1 $dir) | \
+  fd -c always -t f . (take 1 $dir) | ^
     fzf --bind='enter:execute-silent(mimeo {+})+clear-selection'
 }
 
@@ -47,7 +49,7 @@ fn br [@a]{
 fn up [@arg]{
   local:count = 1
   if (not-eq $arg []) { count = $arg[0] }
-  cd (joins "/" [(repeat $count "..")])
+  cd (str:join "/" [(repeat $count "..")])
 }
 
 fn bytes []{ each $echo~ }
@@ -96,11 +98,7 @@ use comp/pacman
 use comp/pass
 use comp/systemctl
 use comp/man
-use github.com/zzamboni/elvish-completions/cd
-use github.com/zzamboni/elvish-completions/ssh
-use github.com/zzamboni/elvish-completions/builtins
 
 edit:completion:arg-completer[yay]  = $edit:completion:arg-completer[pacman]
 edit:completion:arg-completer[p]    = $edit:completion:arg-completer[pacman]
-edit:completion:arg-completer[mosh] = $edit:completion:arg-completer[ssh]
 edit:completion:arg-completer[sudo] = $edit:complete-sudo~
