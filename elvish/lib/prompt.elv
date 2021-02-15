@@ -18,14 +18,12 @@ fn git_prompt {
 }
 
 fn main_prompt {
-  styled $E:USER blue
-  if (has-env SSH_TTY) { styled "@"(hostname) green }
-  styled " "(tilde-abbr $pwd) yellow
-  put "\n"
-  if (>= $num-bg-jobs 1) { styled $num-bg-jobs" " cyan }
-  if (==s $E:USER root) {
-    styled "∺ " red
-  } else {
-    put "∹ "
+  if (has-env SSH_CONNECTION) {
+    styled $E:USER yellow
+    styled "@"(hostname) green
+    put "\n"
   }
+  styled (tilde-abbr $pwd)" " blue
+  if (>= $num-bg-jobs 1) { styled $num-bg-jobs" " cyan }
+  put "λ "
 }
