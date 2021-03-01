@@ -34,9 +34,6 @@ dotfiles:
   d_kaklsp:
     dst: ~/.config/kak-lsp
     src: config/kak-lsp
-  d_konsole:
-    dst: ~/.local/share/konsole
-    src: local/share/konsole
   d_ranger:
     dst: ~/.config/ranger
     src: config/ranger
@@ -53,9 +50,9 @@ dotfiles:
   d_ctags:
     dst: ~/.config/ctags
     src: config/ctags
-  f_alacritty.yml:
-    dst: ~/.config/alacritty/alacritty.yml
-    src: config/alacritty/alacritty.yml
+  d_alacritty:
+    dst: ~/.config/alacritty
+    src: config/alacritty
   f_aria2.conf:
     dst: ~/.config/aria2/aria2.conf
     src: config/aria2/aria2.conf
