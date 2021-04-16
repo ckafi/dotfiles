@@ -15,6 +15,7 @@
 [alias]
   lg = log --pretty=format:'%C(yellow)%h%Cred%d %Creset%s %Cred|%Cblue%ad,%Cgreen%aN%Creset' --date=short --graph --abbrev-commit
   s = status -sb
+  co = checkout
   branches = branch -a
   tags = tag
   stashes = stash list
