@@ -6,7 +6,7 @@ set completeopt+=noinsert " or insern any text
 set cursorline            " Highlight the screen line of the cursor
 set dictionary=/usr/share/dict/words " Dictionary for <C-X><C-K>
 set expandtab             " Use appropriate number of spaces instead of a tab
-set guifont=IBM\ Plex\ Mono:h13 " Font for GUI (nvim-qt)
+set guifont=JetBrains\ Mono\ NL:h13 " Font for GUI (nvim-qt)
 set fillchars=vert:│      " Disable annoying chars for stl, diff, fold etc.
 set fillchars+=diff:\     " ...
 set formatoptions=c       " Auto-wrap comments
