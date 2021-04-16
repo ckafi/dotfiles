@@ -71,9 +71,6 @@ dotfiles:
   f_makepkg.conf:
     dst: ~/.config/pacman/makepkg.conf
     src: config/pacman/makepkg.conf
-  f_profiles.clj:
-    dst: ~/.lein/profiles.clj
-    src: lein/profiles.clj
   f_redshift.conf:
     dst: ~/.config/redshift.conf
     src: config/redshift.conf
@@ -104,9 +101,6 @@ dotfiles:
   f_gtkrc-2.0:
     src: gtkrc-2.0
     dst: ~/.gtkrc-2.0
-  d_oomox:
-    src: config/oomox
-    dst: ~/.config/oomox
   f_conf.toml:
     src: config/broot/conf.toml
     dst: ~/.config/broot/conf.toml
