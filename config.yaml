@@ -18,9 +18,6 @@ dotfiles:
   d_fontconfig:
     dst: ~/.config/fontconfig
     src: config/fontconfig
-  d_htop:
-    dst: ~/.config/htop
-    src: config/htop
   d_i3:
     dst: ~/.config/i3
     src: config/i3
@@ -110,7 +107,6 @@ profiles:
   server:
     dotfiles:
     - d_nvim
-    - d_htop
     - f_git
     - f_dircolors
     - f_latexmkrc
