@@ -27,10 +27,6 @@ dotfiles:
   d_sway:
     dst: ~/.config/sway
     src: config/sway
-  d_vifm:
-    dst: ~/.config/vifm
-    link: link_children
-    src: config/vifm
   d_mako:
     dst: ~/.config/mako
     src: config/mako
