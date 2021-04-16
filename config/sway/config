@@ -156,42 +156,39 @@ bindcode 201 exec $HOME/.scripts/ScriptK
 bindcode 202 exec $HOME/.scripts/ScriptL
 
 
-# Gruvbox dark soft (https://github.com/morhetz/gruvbox)
-set $base00 #32302f
-set $base01 #3c3836
-set $base02 #504945
-set $base03 #665c54
-set $base04 #bdae93
-set $base05 #d5c4a1
-set $base06 #ebdbb2
-set $base07 #fbf1c7
+# Gruvbox
+set $dark0_soft  #32302f
+set $light0_soft #f2e5bc
 
-# # Gruvbox light soft (https://github.com/morhetz/gruvbox)
-# set $base00 #f2e5bc
-# set $base01 #ebdbb2
-# set $base02 #d5c4a1
-# set $base03 #bdae93
-# set $base04 #665c54
-# set $base05 #504945
-# set $base06 #3c3836
-# set $base07 #282828
+set $dark1  #3c3836
+set $dark2  #504945
+set $dark3  #665c54
+set $light1 #ebdbb2
+set $light2 #d5c4a1
+set $light3 #bdae93
 
+set $neutral_red    #cc241d
+set $neutral_orange #d65d0e
+set $neutral_yellow #d79921
+set $neutral_green  #98971a
+set $neutral_aqua   #689d6a
+set $neutral_blue   #458588
+set $neutral_purple #b16286
 
-set $base08 #cc241d
-set $base09 #d65d0e
-set $base0A #d79921
-set $base0B #98971a
-set $base0C #689d6a
-set $base0D #458588
-set $base0E #b16286
-set $base0F #af3a03
+set $red    $neutral_red
+set $orange $neutral_orange
+set $yellow $neutral_yellow
+set $green  $neutral_green
+set $aqua   $neutral_aqua
+set $blue   $neutral_blue
+set $purple $neutral_purple
 
 # Basic color configuration using the Base16 variables for windows and borders.
-# Property Name         Border  BG      Text    Indicator Child Border
-client.focused          $base05 $base0D $base00 $base08 $base0D
-client.focused_inactive $base03 $base03 $base05 $base03 $base03
-client.unfocused        $base02 $base02 $base05 $base02 $base02
-client.urgent           $base08 $base08 $base00 $base08 $base08
+# Property Name, Border, BG, Text, Indicator, Child Border
+client.focused          $light2 $blue  $dark0_soft $red   $blue
+client.focused_inactive $dark3  $dark3 $light2     $dark3 $dark3
+client.unfocused        $dark2  $dark2 $light2     $dark2 $dark2
+client.urgent           $red    $red   $dark0_soft $red   $red
 
 bar {
   position top
@@ -199,16 +196,16 @@ bar {
   separator_symbol "•"
   font "JetBrains Mono NL Regular 8"
   colors {
-    background $base00
-    separator  $base03
-    statusline $base04
+    background $dark0_soft
+    separator  $dark3
+    statusline $light3
 
-    # State             Border  BG      Text
-    focused_workspace   $base05 $base0D $base00
-    active_workspace    $base05 $base03 $base00
-    inactive_workspace  $base03 $base01 $base05
-    urgent_workspace    $base08 $base08 $base00
-    binding_mode        $base00 $base0A $base00
+    # State, Border, BG, Text
+    focused_workspace  $light2     $blue   $dark0_soft
+    active_workspace   $light2     $dark3  $dark0_soft
+    inactive_workspace $dark3      $dark1  $light2
+    urgent_workspace   $red        $red    $dark0_soft
+    binding_mode       $dark0_soft $yellow $dark0_soft
   }
 }
 
