@@ -27,13 +27,6 @@ dotfiles:
   d_sway:
     dst: ~/.config/sway
     src: config/sway
-  d_kak:
-    dst: ~/.config/kak
-    link: link_children
-    src: config/kak
-  d_kaklsp:
-    dst: ~/.config/kak-lsp
-    src: config/kak-lsp
   d_ranger:
     dst: ~/.config/ranger
     src: config/ranger
@@ -114,9 +107,6 @@ dotfiles:
   f_profile:
     src: profile
     dst: ~/.profile
-  d_vis:
-    src: config/vis
-    dst: ~/.config/vis
 dynvariables:
   hostname: hostname -s
 profiles:
