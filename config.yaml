@@ -97,6 +97,9 @@ dotfiles:
   f_profile:
     src: profile
     dst: ~/.profile
+  d_qt5ct:
+    src: config/qt5ct
+    dst: ~/.config/qt5ct
 dynvariables:
   hostname: hostname -s
 profiles:
