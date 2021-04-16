@@ -60,9 +60,6 @@ dotfiles:
   f_redshift.conf:
     dst: ~/.config/redshift.conf
     src: config/redshift.conf
-  f_ssh:
-    dst: ~/.ssh/config
-    src: ssh/config
   f_tmux.conf:
     dst: ~/.tmux.conf
     src: tmux.conf
