@@ -5,14 +5,14 @@ window:
 
 font:
   normal:
-    family: IBM Plex Mono
+    family: JetBrains Mono NL
     style: Regular
   bold:
-    style: Semibold
+    style: ExtraBold
   italic:
     style: Italic
   bold_italic:
-    style: Semibold Italic
+    style: ExtraBold Italic
 
   size: 13.0
 

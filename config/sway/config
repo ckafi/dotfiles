@@ -197,6 +197,7 @@ bar {
   position top
   status_command LC_TIME=de_DE.UTF-8 i3blocks
   separator_symbol "•"
+  font "JetBrains Mono NL Regular 8"
   colors {
     background $base00
     separator  $base03
