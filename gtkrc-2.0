@@ -2,8 +2,8 @@
 # Any customization should be done in ~/.gtkrc-2.0.mine instead.
 
 include "/home/tobias/.gtkrc-2.0.mine"
-gtk-theme-name="oomox-gruvbox-dark-soft"
-gtk-icon-theme-name="oomox-gruvbox-dark-soft"
+gtk-theme-name="Gruvbox-Material-Dark"
+gtk-icon-theme-name="Gruvbox-Material-Dark"
 gtk-font-name="Sans 10"
 gtk-cursor-theme-name="OpenZone_Black_Slim"
 gtk-cursor-theme-size=0
