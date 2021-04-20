@@ -97,6 +97,9 @@ dotfiles:
   d_qt5ct:
     src: config/qt5ct
     dst: ~/.config/qt5ct
+  d_nim:
+    src: config/nim
+    dst: ~/.config/nim
 dynvariables:
   hostname: hostname -s
 profiles:
