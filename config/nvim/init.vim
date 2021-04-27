@@ -82,10 +82,6 @@ nnoremap <leader>b :Buffers<CR>
 " nnoremap <leader>l :Lines<CR>
 nnoremap <leader>t :Tags<CR>
 vnoremap <leader>r ""p
-nnoremap äl :lprevious<cr>
-nnoremap ül :lnext<cr>
-nnoremap äc :cprevious<cr>
-nnoremap üc :cnext<cr>
 
 
 " Commands

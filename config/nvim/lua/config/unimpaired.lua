@@ -1,0 +1,6 @@
+vim.api.nvim_set_keymap('n', 'ä', '[', {})
+vim.api.nvim_set_keymap('n', 'ü', ']', {})
+vim.api.nvim_set_keymap('o', 'ä', '[', {})
+vim.api.nvim_set_keymap('o', 'ü', ']', {})
+vim.api.nvim_set_keymap('x', 'ä', '[', {})
+vim.api.nvim_set_keymap('x', 'ü', ']', {})
