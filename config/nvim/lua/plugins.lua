@@ -23,7 +23,6 @@ return require('packer').startup(function()
     use {'neovim/nvim-lspconfig', config = 'require [[config/lsp]]'}
     use {'norcalli/snippets.nvim', config = 'require [[config/snippets]]'}
     use 'tpope/vim-surround'
-    use 'b4winckler/vim-angry'
     use 'sheerun/vim-polyglot'
     use {'norcalli/nvim-colorizer.lua', config = 'require[[colorizer]].setup()', cmd = 'ColorizerToggle'}
     use {'kg8m/vim-simple-align', cmd = 'SimpleAlign'}
