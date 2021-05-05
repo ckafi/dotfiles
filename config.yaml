@@ -81,9 +81,6 @@ dotfiles:
   f_gtkrc-2.0:
     src: gtkrc-2.0
     dst: ~/.gtkrc-2.0
-  f_conf.toml:
-    src: config/broot/conf.toml
-    dst: ~/.config/broot/conf.toml
   f_rc.elv:
     src: elvish/rc.elv
     dst: ~/.elvish/rc.elv
@@ -100,6 +97,9 @@ dotfiles:
   d_nim:
     src: config/nim
     dst: ~/.config/nim
+  f_broot_conf:
+    src: config/broot/conf.hjson
+    dst: ~/.config/broot/conf.hjson
 dynvariables:
   hostname: hostname -s
 profiles:
