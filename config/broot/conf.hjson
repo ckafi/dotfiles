@@ -17,57 +17,65 @@
       invocation: edit
       shortcut: e
       key: ctrl-e
-      execution: "$EDITOR +{line} {file}"
+      external: "$EDITOR +{line} {file}"
       leave_broot: false
     }
     {
       invocation: spawn_edit
       shortcut: se
-      execution: "nvim-qt +{line} {file}"
+      external: "nvim-qt +{line} {file}"
       leave_broot: false
     }
     {
       invocation: remote_edit
       shortcut: "re"
       key: "ctrl-r"
-      execution: "/usr/bin/nvr --remote-silent +{line} {file}"
+      external: "/usr/bin/nvr --remote-silent +{line} {file}"
       leave_broot: false
     }
     {
       invocation: create {subpath}
-      execution: "$EDITOR {directory}/{subpath}"
+      external: "$EDITOR {directory}/{subpath}"
       leave_broot: false
     }
     {
       invocation: git_diff
       shortcut: gd
       leave_broot: false
-      execution: "git difftool -y {file}"
+      external: "git difftool -y {file}"
     }
     {
       invocation: git_add
       shortcut: ga
       leave_broot: false
-      execution: "git add {file}"
+      external: "git add {file}"
     }
     {
       invocation: git_add_patch
       shortcut: gp
       leave_broot: false
-      execution: "git add -p {file}"
+      external: "git add -p {file}"
     }
     {
-      invocation: terminal
-      key: ctrl-t
-      execution: elvish
+      invocation: shell
+      key: ctrl-s
+      external: elvish
       set_working_dir: true
       leave_broot: false
     }
     {
       invocation: trash
       shortcut: tr
-      execution: "/usr/bin/trash {file}"
+      external: "/usr/bin/trash {file}"
       leave_broot: false
+    }
+    {
+      key: ctrl-t
+      internal: ":panel_left"
+    }
+    {
+      key: ctrl-n
+      internal: ":panel_right"
     }
   ]
 
