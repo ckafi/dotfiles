@@ -160,10 +160,6 @@ schemes:
 # Apply the color scheme.
 colors: *gruvbox_material_soft_dark
 
-mouse:
-  url:
-    launcher: xdg-open
-
 shell:
   program: /usr/bin/elvish
 
