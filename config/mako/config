@@ -2,3 +2,4 @@ format=%a: <b>%s</b>\n%b
 background-color=#504945FF
 text-color=#d5c4a1FF
 border-color=#282828FF
+default-timeout=5000

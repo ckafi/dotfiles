@@ -1,0 +1,14 @@
+import:
+  - ~/.config/alacritty/alacritty.yml
+
+window:
+  dimensions:
+    columns: 90
+    lines: 25
+  class:
+    instance: floating
+  decorations: none
+  dynamic_title: false
+
+scrolling:
+  history: 0

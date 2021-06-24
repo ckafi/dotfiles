@@ -75,12 +75,7 @@ nnoremap N Nzz
 nnoremap Q @@
 vnoremap Q @@
 nmap gp `[v`]
-nnoremap <silent> - :Dirvish %<cr>
 nnoremap <leader>n :NV<CR>
-nnoremap <leader>f :Files<CR>
-nnoremap <leader>b :Buffers<CR>
-" nnoremap <leader>l :Lines<CR>
-nnoremap <leader>t :Tags<CR>
 vnoremap <leader>r ""p
 
 

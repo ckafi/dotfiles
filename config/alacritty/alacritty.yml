@@ -158,7 +158,7 @@ schemes:
       white:   '0xe6d5ae'
 
 # Apply the color scheme.
-colors: *gruvbox_material_soft_dark
+colors: *gruvbox_material_hard_dark
 
 shell:
   program: /usr/bin/elvish

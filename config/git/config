@@ -32,3 +32,7 @@
 	tool = nvimdiff
 [url "https://aur.archlinux.org/"]
   insteadOf = aur://
+[init]
+	defaultBranch = main
+[pull]
+	ff = only
