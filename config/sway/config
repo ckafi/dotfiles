@@ -1,6 +1,6 @@
 input type:keyboard {
   xkb_layout "de"
-  xkb_variant "neo"
+  xkb_variant "koy"
 }
 
 input type:touchpad {
@@ -26,7 +26,7 @@ output "Goldstar Company Ltd 24MB65 603NTFA28643" {
 output "Dell Inc. DELL U2312HM 59DJP24JGYNL" {
     background "$HOME/Sync/Bilder/wallpapers/sophie_hochkant.JPG" stretch
     mode 1920x1080
-    position 1920 -310
+    position 1920 0
     transform 270
     subpixel vrgb
 }
@@ -34,13 +34,13 @@ workspace 10 output 'Dell Inc. DELL U2312HM 59DJP24JGYNL'
 {%@@ endif @@%}
 
 set $mod Mod4
-set $terminal alacritty --title floating --dimensions 90 25
-set $launcher dmenu_path | fzf | xargs swaymsg exec
+set $fmenu alacritty --config-file $HOME/.config/alacritty/fmenu.yml -e
 
-bindsym $mod+space exec $terminal -e dash -c \'$launcher\'
-bindsym $mod+l exec $terminal -e dash -c \'$launcher\'
-bindsym $mod+p exec $HOME/Sync/scripts/pass-fuzzy
-bindsym $mod+w exec $terminal -e $HOME/Sync/scripts/focus_window_fzf
+bindsym $mod+space exec $fmenu dash -c 'dmenu_path | fzf | xargs swaymsg exec'
+bindsym $mod+e exec $fmenu dash -c 'dmenu_path | fzf | xargs swaymsg exec'
+bindsym $mod+w exec $fmenu $HOME/Sync/scripts/focus_window_fzf
+bindsym $mod+y exec clipman pick -t CUSTOM -T fmenu
+bindsym $mod+p exec $fmenu dash -c 'pass fuzzy -c'
 
 # Don't let focus follow the mouse
 focus_follows_mouse no
@@ -54,53 +54,49 @@ floating_modifier $mod
 for_window [app_id="mpv"] floating enable
 for_window [title="PassFF"] floating enable
 for_window [title="^floating$"] floating enable
+for_window [app_id="^floating$"] floating enable
 for_window [floating] border csd
 
 # Scratchpad
-bindsym $mod+Shift+e move scratchpad
-bindsym $mod+e scratchpad show
+bindsym $mod+Shift+s move scratchpad
+bindsym $mod+s scratchpad show
 
 # kill focused window
-bindsym $mod+x kill
+bindsym $mod+k kill
 
 # change focus
-bindsym $mod+n focus left
+bindsym $mod+t focus left
 bindsym $mod+r focus down
-bindsym $mod+g focus up
-bindsym $mod+t focus right
+bindsym $mod+c focus up
+bindsym $mod+n focus right
 bindsym $mod+Tab [con_mark=_prev] focus
 
 # move focused window
-bindsym $mod+Shift+n move left
+bindsym $mod+Shift+t move left
 bindsym $mod+Shift+r move down
-bindsym $mod+Shift+g move up
-bindsym $mod+Shift+t move right
+bindsym $mod+Shift+c move up
+bindsym $mod+Shift+n move right
 
 # output
 bindsym $mod+BackSpace focus output left
 bindsym $mod+Shift+BackSpace move workspace output left
-bindsym $mod+d workspace next_on_output
+bindsym $mod+l workspace next_on_output
 
 # split
-bindsym $mod+m split h
-bindsym $mod+b split v
+bindsym $mod+h split h
+bindsym $mod+v split v
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen
 
-# change container layout (stacked, tabbed, default)
-bindsym $mod+u layout stacking
-bindsym $mod+i layout tabbed
-bindsym $mod+a layout default
+# change container layout (stacked, tabbed, splits)
+bindsym $mod+g layout toggle all
 
 # toggle tiling / floating
-bindsym $mod+Shift+v floating toggle
-
-# change focus between tiling / floating windows
-bindsym $mod+v focus mode_toggle
+bindsym $mod+Shift+f floating toggle
 
 # focus the parent container
-bindsym $mod+s focus parent
+bindsym $mod+Shift+p focus parent
 
 # switch to last used workspace
 bindsym $mod+Escape workspace back_and_forth
@@ -158,7 +154,9 @@ bindcode 202 exec $HOME/.scripts/ScriptL
 
 # Gruvbox
 set $dark0_soft  #32302f
+set $dark0_hard  #1d2021
 set $light0_soft #f2e5bc
+set $light0_hard #f9f5d7
 
 set $dark1  #3c3836
 set $dark2  #504945
@@ -185,36 +183,35 @@ set $purple $neutral_purple
 
 # Basic color configuration using the Base16 variables for windows and borders.
 # Property Name, Border, BG, Text, Indicator, Child Border
-client.focused          $light2 $blue  $dark0_soft $red   $blue
+client.focused          $light2 $blue  $dark0_hard $red   $blue
 client.focused_inactive $dark3  $dark3 $light2     $dark3 $dark3
 client.unfocused        $dark2  $dark2 $light2     $dark2 $dark2
-client.urgent           $red    $red   $dark0_soft $red   $red
+client.urgent           $red    $red   $dark0_hard $red   $red
 
 bar {
   position top
-  status_command LC_TIME=de_DE.UTF-8 i3blocks
+  font "IBM Plex Sans 8"
+  status_command i3status-rs
   separator_symbol "•"
-  font "JetBrains Mono NL Regular 8"
   colors {
-    background $dark0_soft
+    background $dark0_hard
     separator  $dark3
     statusline $light3
 
     # State, Border, BG, Text
-    focused_workspace  $light2     $blue   $dark0_soft
-    active_workspace   $light2     $dark3  $dark0_soft
+    focused_workspace  $light2     $blue   $dark0_hard
+    active_workspace   $light2     $dark3  $dark0_hard
     inactive_workspace $dark3      $dark1  $light2
-    urgent_workspace   $red        $red    $dark0_soft
-    binding_mode       $dark0_soft $yellow $dark0_soft
+    urgent_workspace   $red        $red    $dark0_hard
+    binding_mode       $dark0_hard $yellow $dark0_hard
   }
+  tray_bindsym button1 Activate
+  tray_bindsym button3 ContextMenu
 }
 
 exec $HOME/Sync/scripts/gtk3_settings.sh
 exec $HOME/Sync/scripts/track_prev_focus
+exec wl-paste -t text --watch clipman store
 
-# start systemd target
-exec systemctl --user import-environment
-exec dbus-update-activation-environment --systemd --all
-exec systemctl --user start sway-session.target
-
-# vim: filetype=i3config
+include /etc/sway/config.d/*
+exec "systemctl --user start sway-session.target"
