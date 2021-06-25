@@ -34,13 +34,13 @@ workspace 10 output 'Dell Inc. DELL U2312HM 59DJP24JGYNL'
 {%@@ endif @@%}
 
 set $mod Mod4
-set $fmenu alacritty --config-file $HOME/.config/alacritty/fmenu.yml -e
+set $launcher footclient -a launcher -W 90x25
 
-bindsym $mod+space exec $fmenu dash -c 'dmenu_path | fzf | xargs swaymsg exec'
-bindsym $mod+e exec $fmenu dash -c 'dmenu_path | fzf | xargs swaymsg exec'
-bindsym $mod+w exec $fmenu $HOME/Sync/scripts/focus_window_fzf
-bindsym $mod+y exec clipman pick -t CUSTOM -T fmenu
-bindsym $mod+p exec $fmenu dash -c 'pass fuzzy -c'
+bindsym $mod+space exec $launcher dash -c 'dmenu_path | fzf | xargs swaymsg exec'
+bindsym $mod+e exec $launcher dash -c 'dmenu_path | fzf | xargs swaymsg exec'
+bindsym $mod+y exec $launcher dash -c 'clipman pick -t STDOUT | fzf --print0 | tr -d \\\\000 | clipman store'
+bindsym $mod+p exec $launcher dash -c 'pass fuzzy -c'
+bindsym $mod+w exec $launcher $HOME/Sync/scripts/focus_window_fzf
 
 # Don't let focus follow the mouse
 focus_follows_mouse no
@@ -53,9 +53,8 @@ floating_modifier $mod
 
 for_window [app_id="mpv"] floating enable
 for_window [title="PassFF"] floating enable
-for_window [title="^floating$"] floating enable
-for_window [app_id="^floating$"] floating enable
-for_window [floating] border csd
+for_window [app_id="^launcher$"] floating enable
+#for_window [floating] border csd
 
 # Scratchpad
 bindsym $mod+Shift+s move scratchpad
